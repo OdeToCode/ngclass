@@ -11,7 +11,7 @@ namespace AtTheMovies.Tests.Controllers
         public void Can_Return_Comnpany_Info()
         {
             var controller = new CompanyController();
-            var result = controller.Info("Scott");
+            var result = controller.Info("Scott", "");
 
             var model = result.Model as GreetingInfoModel;
             Assert.AreEqual("Scott", model.Username);

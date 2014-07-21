@@ -13,14 +13,18 @@ namespace AtTheMovies
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            //   /home
-
+            routes.MapRoute(name: "Test", url: "test/{name}/{*info}", 
+                defaults: new
+            {
+                controller="Company", action="Info" 
+            });
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new 
                 { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
         }
     }
 }
