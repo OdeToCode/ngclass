@@ -15,6 +15,22 @@ namespace AtTheMovies.Controllers
             return View(model);
         }
 
+        public ActionResult Detail(int id)
+        {
+            var model = _data.GetMovieById(id);
+            if (model == null)
+            {
+                return HttpNotFound();
+            }
+            return View(model);
+        }
+
+        [HttpGet]
+        public ViewResult Create()
+        {
+            return View();
+        }
+
         [HttpGet]
         public ActionResult Edit(int id)
         {
@@ -24,6 +40,17 @@ namespace AtTheMovies.Controllers
                 return HttpNotFound();
             }
             return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Create(Movie newMovie)
+        {
+            if (ModelState.IsValid)
+            {
+                _data.Insert(newMovie);
+                return RedirectToAction("Detail", new  { id=newMovie.Id});
+            }
+            return View(newMovie);
         }
 
         [HttpPost]

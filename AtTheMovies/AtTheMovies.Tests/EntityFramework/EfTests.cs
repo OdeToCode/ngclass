@@ -72,7 +72,7 @@ namespace AtTheMovies.Tests.EntityFramework
             db2.SaveChanges();
 
             movie1 = db1.Movies.First(m => m.Id == 1);
-            
+         
             Assert.IsTrue(movie1.Length == originalLength);
         }
 
@@ -92,10 +92,12 @@ namespace AtTheMovies.Tests.EntityFramework
 
             movie1 = db1.Movies.First(m => m.Id == 1);
             movie1.Length += 2;
-            db1.SaveChanges();
 
+           
+           db1.SaveChanges();
+           
 
-           Assert.Fail("Should have an exception by now...");
+            Assert.Fail("Should have an exception by now...");
 
         }
 

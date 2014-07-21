@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Web;
 using AtTheMovies.Models;
 
@@ -32,8 +34,14 @@ namespace AtTheMovies.Data
 
         public void Update(Movie movie)
         {
-           // _movies.Remove(_movies.Find(m => m.Id == movie.Id));
-           // _movies.Add(movie);
+            _context.Entry(movie).State = EntityState.Modified;
+            _context.SaveChanges();
+        }
+
+        public void Insert(Movie newMovie)
+        {
+            _context.Movies.Add(newMovie);
+            _context.SaveChanges();
         }
 
         private MovieDataContext _context;
