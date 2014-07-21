@@ -31,7 +31,7 @@ namespace AtTheMovies.Data
         {
             return _context.Movies.Find(id);
         }
-
+         
         public void Update(Movie movie)
         {
             _context.Entry(movie).State = EntityState.Modified;

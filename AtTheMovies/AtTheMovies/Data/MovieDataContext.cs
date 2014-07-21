@@ -5,7 +5,7 @@ namespace AtTheMovies.Data
 {
     public class MovieDataContext : DbContext
     {
-        public MovieDataContext()
+        public MovieDataContext() 
             : base("name=MyMoviesDb")
         {
             

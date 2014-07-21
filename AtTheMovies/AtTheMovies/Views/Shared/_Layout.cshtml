@@ -22,8 +22,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Movies", "Index", "Movie")</li>
                     <li>@Html.ActionLink("Company", "Info", "Company", new { name="Scott"}, null)</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -34,7 +33,11 @@
         @RenderBody()
         <hr />
         <footer>
+            @RenderSection("footer", required:false)
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <div>
+                @Html.Action("current", "Weather")
+            </div>
         </footer>
     </div>
 

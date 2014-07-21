@@ -172,6 +172,7 @@
     <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MovieController.cs" />
+    <Compile Include="Controllers\WeatherController.cs" />
     <Compile Include="Data\MovieDataContext.cs" />
     <Compile Include="Data\MovieDataSource.cs" />
     <Compile Include="Global.asax.cs">
@@ -249,6 +250,8 @@
     <Content Include="Views\Movie\Edit.cshtml" />
     <Content Include="Views\Movie\Create.cshtml" />
     <Content Include="Views\Movie\Detail.cshtml" />
+    <Content Include="Views\Movie\_MovieTable.cshtml" />
+    <Content Include="Views\Weather\Current.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
