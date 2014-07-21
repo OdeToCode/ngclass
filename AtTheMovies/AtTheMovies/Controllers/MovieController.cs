@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Web.Mvc;
 using AtTheMovies.Data;
 using AtTheMovies.Models;
@@ -9,7 +10,8 @@ namespace AtTheMovies.Controllers
     {
         public ViewResult Index()
         {
-            var model = _data.GetAllMovies();
+            var model = _data.GetAllMovies().OrderByDescending(m => m.ReleaseDate);
+                                            
             return View(model);
         }
 

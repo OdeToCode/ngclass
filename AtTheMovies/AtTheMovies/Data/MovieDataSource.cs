@@ -6,34 +6,36 @@ using AtTheMovies.Models;
 
 namespace AtTheMovies.Data
 {
-    public class MovieDataSource
+    public class MovieDataSource 
     {
-        static MovieDataSource()
+        public MovieDataSource()
         {
-            _movies.Add(new Movie() { Id = 1, Title = "Star Wars 4", Length=120, ReleaseDate=new DateTime(1976, 6, 1)});
-            _movies.Add(new Movie() { Id = 1, Title = "Toy Story", Length = 90, ReleaseDate = new DateTime(1995, 1, 1) });
-            _movies.Add(new Movie() { Id = 1, Title = "Jurassic Park", Length = 140, ReleaseDate = new DateTime(1993, 10, 1) });
+            _context = new MovieDataContext();
+        }
+
+
+        public IList<Movie> GetAllMovies(int pageNumber, int pageSize)
+        {
+            return _context.Movies.Skip(pageNumber*(pageSize - 1)).Take(pageSize).ToList();
         }
 
         public IQueryable<Movie> GetAllMovies()
         {
-            return _movies.AsQueryable();
+
+            return _context.Movies;
         }
 
         public Movie GetMovieById(int id)
         {
-            return _movies.FirstOrDefault(m => m.Id == id);
+            return _context.Movies.Find(id);
         }
 
         public void Update(Movie movie)
         {
-            _movies.Remove(_movies.Find(m => m.Id == movie.Id));
-            _movies.Add(movie);
+           // _movies.Remove(_movies.Find(m => m.Id == movie.Id));
+           // _movies.Add(movie);
         }
 
-        static List<Movie> _movies = new List<Movie>();
-
-
-       
+        private MovieDataContext _context;
     }
 }
