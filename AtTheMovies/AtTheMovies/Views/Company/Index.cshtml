@@ -1,0 +1,31 @@
+﻿@model AtTheMovies.Models.GreetingInfoModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h1>
+            @Model.Greeting
+        </h1>
+        <div>
+            Name: <span>@Model.Username</span>
+        </div>
+        <div>
+            @Model.CurrentTime.ToLongTimeString()
+        </div>
+        <div>
+            <ul>
+                @foreach (var number in Model.LotteryNumbers)
+                {
+                    <li>@number</li>
+                }
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
