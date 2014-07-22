@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 using System.Web;
 using AtTheMovies.Models;
 
@@ -42,6 +43,12 @@ namespace AtTheMovies.Data
         {
             _context.Movies.Add(newMovie);
             _context.SaveChanges();
+        }
+
+        public Task<int> InsertAsync(Movie newMovie)
+        {
+            _context.Movies.Add(newMovie);
+            return _context.SaveChangesAsync();
         }
 
         private MovieDataContext _context;

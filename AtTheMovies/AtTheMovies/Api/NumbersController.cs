@@ -8,5 +8,10 @@ namespace AtTheMovies.Api
         {
             return new[] {42, 24};
         }
+
+        public int PostNumber([FromBody]int number)
+        {
+            return number;
+        }
     }
 }

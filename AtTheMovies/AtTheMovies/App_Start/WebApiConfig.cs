@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web.Helpers;
 using System.Web.Http;
+using Newtonsoft.Json.Serialization;
 
 namespace AtTheMovies
 {
@@ -10,6 +12,9 @@ namespace AtTheMovies
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
+            var jsonFormatter = config.Formatters.JsonFormatter;
+            jsonFormatter.SerializerSettings.ContractResolver =
+                new CamelCasePropertyNamesContractResolver();
 
             // Web API routes
             config.MapHttpAttributeRoutes();

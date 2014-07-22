@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
+using System.Web.UI;
 using AtTheMovies.Data;
 using AtTheMovies.Models;
+using Glimpse.Core.Extensibility;
 
 namespace AtTheMovies.Api
 {
@@ -26,11 +29,11 @@ namespace AtTheMovies.Api
             return NotFound();
         }
 
-        public IHttpActionResult PostMovie(Movie movie)
+        public async Task<IHttpActionResult> PostMovie(Movie movie)
         {
             if (ModelState.IsValid)
             {
-                _dataSource.Insert(movie);
+                await _dataSource.InsertAsync(movie);
                 return CreatedAtRoute("DefaultApi", new {movie.Id}, movie);
             }
             return BadRequest(ModelState);
