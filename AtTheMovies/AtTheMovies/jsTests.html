@@ -56,7 +56,6 @@
 
             });
 
-
             describe("a closure", function() {
 
                 it("how scope works", function() {
@@ -97,26 +96,6 @@
 
 
             });
-
-            describe("how to create an object", function() {
-
-                it("use object literal", function() {
-
-                    var employee = {
-                        firstName: "Scott",
-                        lastName: "Allen",
-                        formatName: function() {
-                            return this.firstName + " " + this.lastName;
-                        }
-
-                    };
-
-                    expect(employee.formatName()).toBe("Scott Allen");
-                });
-
-
-            });
-
 
             describe("how to create an object ", function () {
 
@@ -198,6 +177,46 @@
 
 
             });
+
+            describe("how to create a module", function() {
+
+                it("should be easy to use revealing module", function() {
+                    var domWriter = function() {
+
+                     
+                        var writeImplementation = function(message) {
+                            //...
+                            totalMessages += 1;
+                        };
+
+                        var totalMessages = 0;
+
+
+                        var write = function(message) {
+                            writeImplementation(message);
+                        };
+
+                        var getCount = function() {
+                            return totalMessages;
+                        };
+
+                        return {
+                            write: write,
+                            totalMessages: getCount
+                        };
+
+
+
+                    }();
+
+                    domWriter.write("Message");
+                    domWriter.write("Message 2");
+                    expect(domWriter.totalMessages()).toBe(2);
+                });
+
+
+            });
+
 
         </script>
     </body>
