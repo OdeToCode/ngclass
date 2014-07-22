@@ -16,7 +16,189 @@
                 output.innerHTML = message;
             }
 
-            write("hello!");
+            var writeResult = function(f, x, y) {
+                write(f(x, y));
+            }
+
+            var add = function(x,y) {
+                return x + y;
+            };
+
+            var getBinaryOperator = function () {
+
+                var subtract = function(x, y) {
+                    return x - y;
+                }
+
+                return subtract;
+            }
+            
+            writeResult(getBinaryOperator(), 5,6);
+            
+        </script>
+        
+        
+        <script>
+
+            describe("basic jasmine test", function() {
+
+                it("i can compare true", function () {
+                    var result = true;
+                    expect(result).toBe(true);
+                });
+
+                it("how does == work?", function() {
+
+                    var number = 3;
+                    expect(number == "3").toBe(true);
+
+                });
+
+            });
+
+
+            describe("a closure", function() {
+
+                it("how scope works", function() {
+                    "use strict";
+                    var doWork = function() {
+                        var x = undefined;
+
+                        if (false) {
+                            x = 3;
+                            return x;
+                        }
+
+                        return x;
+
+                    };
+
+                    var result = doWork();
+                    expect(result).toBeUndefined();
+
+
+                });
+
+                it("a function will lexically capture variables", function() {
+
+                    var makeGreeting = function (name) {
+                        return function() {
+                            return "Hello," + name;
+                        }
+                    }
+
+                    var f1 = makeGreeting("Scott");
+                    var f2 = makeGreeting("Allen");
+
+                    expect(f1()).toBe("Hello,Scott");
+                    expect(f2()).toBe("Hello,Allen");
+
+                });
+
+
+            });
+
+            describe("how to create an object", function() {
+
+                it("use object literal", function() {
+
+                    var employee = {
+                        firstName: "Scott",
+                        lastName: "Allen",
+                        formatName: function() {
+                            return this.firstName + " " + this.lastName;
+                        }
+
+                    };
+
+                    expect(employee.formatName()).toBe("Scott Allen");
+                });
+
+
+            });
+
+
+            describe("how to create an object ", function () {
+
+                it("use object literal", function () {
+
+                    var employee = {
+                        firstName: "Scott",
+                        lastName: "Allen",
+                        formatName: function () {
+                            return this.firstName + " " + this.lastName;
+                        }
+
+                    };
+
+                    expect(employee.formatName()).toBe("Scott Allen");
+                });
+
+
+                it("use a constructor function", function() {
+
+                    var Employee = function(firstName, lastName) {
+
+                        if (this instanceof Employee) {
+                            this.lastName = lastName;
+                            this.firstName = firstName;
+                        } else {
+                            return new Employee(firstName, lastName);
+                        }
+                    };
+
+                    Employee.prototype = {
+                        formatName: function() {
+                            return this.firstName + " " + this.lastName;
+                        },
+                        giveRaise: function() {
+
+                        }
+                   };
+
+                    var e3 = Employee("Sue", "Smith");
+                    expect(e3.formatName()).toBe("Sue Smith");
+
+                    var e1 = new Employee("Scott", "Allen");
+                    // e1 = {};
+                    // Employee.call(e1, "Scott", "Allen");
+                    // e1.__proto__ s f= Employee.prototype;
+                    var e2 = new Employee("Rick", "Fox");
+                   
+                    expect(Object.getPrototypeOf(e1)).toEqual(Object.getPrototypeOf(e2));
+
+
+                    expect(e1.formatName()).toBe("Scott Allen");
+                    expect(e1.formatName.call(e2)).toBe("Rick Fox");
+
+                });
+
+
+                it("hiding firstName", function() {
+
+                    var Employee = function(firstName, lastName) {
+
+                        this.getFirstName = function() {
+                            return firstName;
+                        }
+                        this.setFirstName = function(newName) {
+                            firstName = newName;
+                        }
+
+                    };
+
+                    var e1 = new Employee("Scott", "Allen");
+                    expect(e1.getFirstName()).toBe("Scott");
+                    e1.firstName = "Bill";
+                    expect(e1.getFirstName()).toBe("Scott");
+
+
+
+                });
+
+
+            });
+
         </script>
     </body>
 </html>
