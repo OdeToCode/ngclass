@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Fun With JavaScript</title>
+    <link href="Scripts/jasmine.css" rel="stylesheet" />
+    <script src="Scripts/jasmine.js"></script>
+    <script src="Scripts/jasmine-html.js"></script>
+    <script src="Scripts/boot.js"></script>
+</head>
+    <body>
+        <div id="output"></div>
+
+        <script>
+            var write = function(message) {
+                var output = document.getElementById("output");
+                output.innerHTML = message;
+            }
+
+            write("hello!");
+        </script>
+    </body>
+</html>
