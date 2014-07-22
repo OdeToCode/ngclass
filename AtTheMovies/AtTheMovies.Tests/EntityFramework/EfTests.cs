@@ -78,7 +78,7 @@ namespace AtTheMovies.Tests.EntityFramework
 
 
         [TestMethod]
-        public void DbContext_Has_Optimisic_ConcurrencyByDefault()
+        public void DbContext_DOES_NOT_Have_Optimisic_Concurrency_By_Default()
         {
             var db1 = new MovieDataContext();
             var db2 = new MovieDataContext();
@@ -90,14 +90,12 @@ namespace AtTheMovies.Tests.EntityFramework
             movie2.Length += 1;
             db2.SaveChanges();
 
-            movie1 = db1.Movies.First(m => m.Id == 1);
-            movie1.Length += 2;
+            movie1.Length += 2;           
+            db1.SaveChanges();
 
-           
-           db1.SaveChanges();
-           
-
-            Assert.Fail("Should have an exception by now...");
+            var db3 = new MovieDataContext();
+            var movie3 = db3.Movies.Find(1);
+            Assert.AreEqual(originalLength + 2, movie3.Length);
 
         }
 
