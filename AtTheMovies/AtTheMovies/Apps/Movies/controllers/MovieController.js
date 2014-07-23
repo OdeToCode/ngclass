@@ -15,13 +15,27 @@
 
     var module = angular.module("atTheMovies");
     
-    var MovieController = function (movieDataService) {
+    var MovieController = function (movieDataService, $log) {
+
+        var onMoviesComplete = function(response) {
+            vm.movies = response.data;
+        };
+
+        var onMoviesError = function(reason) {
+            vm.error = reason;
+        };
+
 
         var vm = this;
 
-        vm.movies = movieDataService.getAll();
+        movieDataService
+            .getAll()
+            .then(onMoviesComplete, onMoviesError);
+
+        $log.info("I have movies!!");
+
         vm.increment = function (index) {
-            movies[index].length += 1;
+            vm.movies[index].length += 1;
         };
         vm.decrement = function (movie) {
             movie.length -= 1;
