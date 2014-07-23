@@ -6,38 +6,41 @@
 
 </head>
 <body class="container">
+    
+    {{ angular.version }}
 
     <h1>Movies</h1>
+    <div ng-controller="MovieController as vm">
+        {{ vm.error.data.message }}
+        <table class="table table-condensed table-striped" ng-cloak
+               ng-show="vm.movies">
+            <thead>
+                <tr>
+                    <td>Title</td>
+                    <td>Length</td>
+                    <td>Release Date</td>
+                    <td>Actions</td>
+                </tr>
+            </thead>
 
-    <table ng-controller="MovieController as vm"
-           class="table table-condensed table-striped" ng-cloak
-           ng-show="vm.movies">
-        <thead>
-            <tr>
-                <td>Title</td>
-                <td>Length</td>
-                <td>Release Date</td>
-                <td>Actions</td>
-            </tr>
-        </thead>
+            <tbody>
+                <tr ng-repeat="movie in vm.movies">
+                    <td>
+                        {{movie.title}}
 
-        <tbody>
-            <tr ng-repeat="movie in vm.movies">
-                <td>
-                    {{movie.title}}
-
-                </td>
-                <td>{{movie.length}}</td>
-                <td>{{movie.released}}</td>
-                <td>
-                    <button class="glyphicon glyphicon-plus"
-                            ng-click="vm.increment($index)"></button>
-                    <button class="glyphicon glyphicon-minus"
-                            ng-click="vm.decrement(movie)"></button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                    </td>
+                    <td>{{movie.length}}</td>
+                    <td>{{movie.released}}</td>
+                    <td>
+                        <button class="glyphicon glyphicon-plus"
+                                ng-click="vm.increment($index)"></button>
+                        <button class="glyphicon glyphicon-minus"
+                                ng-click="vm.decrement(movie)"></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     <script src="../../Scripts/angular.js"></script>
     <script src="app.js"></script>

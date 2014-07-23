@@ -17,8 +17,8 @@
     
     var MovieController = function (movieDataService, $log) {
 
-        var onMoviesComplete = function(response) {
-            vm.movies = response.data;
+        var onMoviesComplete = function(data) {
+            vm.movies = data;
         };
 
         var onMoviesError = function(reason) {
@@ -30,7 +30,8 @@
 
         movieDataService
             .getAll()
-            .then(onMoviesComplete, onMoviesError);
+            .then(onMoviesComplete)
+            .catch(onMoviesError);
 
         $log.info("I have movies!!");
 
