@@ -7,8 +7,13 @@
 </head>
 <body class="container">
     
-    {{ angular.version }}
+    
+    <div ng-controller="CountdownController as count">
+        {{count.countdownValue}}
 
+    </div>
+
+ 
     <h1>Movies</h1>
     <div ng-controller="MovieController as vm">
         {{ vm.error.data.message }}
