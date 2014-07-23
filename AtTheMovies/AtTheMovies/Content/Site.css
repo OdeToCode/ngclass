@@ -2,6 +2,11 @@
     display: none;
 }
 
+input.ng-invalid.ng-dirty {
+    background-color: red;
+}
+
+
 body {
     padding-top: 50px;
     padding-bottom: 20px;

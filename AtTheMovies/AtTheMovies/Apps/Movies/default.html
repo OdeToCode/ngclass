@@ -7,16 +7,23 @@
 </head>
 <body class="container">
     
-    
-    <div ng-controller="CountdownController as count">
-        {{count.countdownValue}}
 
-    </div>
-
- 
     <h1>Movies</h1>
     <div ng-controller="MovieController as vm">
         {{ vm.error.data.message }}
+        <button ng-click="vm.add()">
+            Add new movie
+        </button>
+        
+        <div ng-show="vm.isCreatingMovie">
+            <form name="vm.movieForm" ng-submit="vm.saveMovie()" novalidate>
+                <input type="text" name="title" ng-model="vm.newMovie.title" required />
+                <input type="number" name="length" ng-model="vm.newMovie.length" min="10" max="500" />
+                <input type="text" name="releaseDate" ng-model="vm.newMovie.releaseDate" />
+                <input type="submit" value="Save" ng-disabled="vm.movieForm.$invalid"/>
+            </form>
+        </div>
+        
         <table class="table table-condensed table-striped" ng-cloak
                ng-show="vm.movies">
             <thead>

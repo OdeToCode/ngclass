@@ -17,10 +17,12 @@
 
         var onMoviesComplete = function(data) {
             vm.movies = data;
+
         };
 
         var onMoviesError = function(reason) {
             vm.error = reason;
+            vm.isCreatingMovie = false;
         };
 
 
@@ -39,6 +41,24 @@
         vm.decrement = function (movie) {
             movie.length -= 1;
         };
+        vm.saveMovie = function() {
+
+            if (this.movieForm.$valid) {
+                movieDataService
+                    .insert(vm.newMovie)
+                    .then(function(movie) {
+                        vm.movies.push(movie);
+                        vm.isCreatingMovie = false;
+                    })
+                    .catch(onMoviesError);
+            }
+        };
+        vm.add = function() {
+            vm.isCreatingMovie = true;
+            vm.newMovie = {
+                
+            };
+        }
     };
 
     module.controller("MovieController", MovieController);

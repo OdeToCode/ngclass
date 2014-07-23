@@ -12,8 +12,17 @@
                         });
         };
 
+        var insert = function(movie) {
+            return h.post("/api/movies", movie)
+                .then(function(response) {
+                    return response.data;
+                });
+
+        };
+
         return {
-            getAll: getAllMovies
+            getAll: getAllMovies,
+            insert: insert
         }
     };
     movieService.$inject = ["$http"];
