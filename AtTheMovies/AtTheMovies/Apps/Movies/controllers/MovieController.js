@@ -9,9 +9,7 @@
 //    $scope.movies = movies;
 //};
 
-
 (function() {
-
 
     var module = angular.module("atTheMovies");
     

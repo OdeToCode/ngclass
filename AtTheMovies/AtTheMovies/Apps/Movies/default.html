@@ -30,7 +30,7 @@
 
                     </td>
                     <td>{{movie.length}}</td>
-                    <td>{{movie.released}}</td>
+                    <td>{{movie.releaseDate | date:short}}</td>
                     <td>
                         <button class="glyphicon glyphicon-plus"
                                 ng-click="vm.increment($index)"></button>
