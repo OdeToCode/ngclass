@@ -1,14 +1,14 @@
-﻿<html ng-app>
+﻿<html ng-app="atTheMovies">
 <head>
     <title>At The Movies</title>
     <link href="../../Content/bootstrap.css" rel="stylesheet" />
     <link href="../../Content/Site.css" rel="stylesheet" />
 
 </head>
-<body class="container" >
+<body class="container">
 
     <h1>Movies</h1>
-   
+
     <table ng-controller="MovieController as vm"
            class="table table-condensed table-striped" ng-cloak
            ng-show="vm.movies">
@@ -40,6 +40,8 @@
     </table>
 
     <script src="../../Scripts/angular.js"></script>
+    <script src="app.js"></script>
+    <script src="services/movieDataService.js"></script>
     <script src="controllers/MovieController.js"></script>
 </body>
 </html>
