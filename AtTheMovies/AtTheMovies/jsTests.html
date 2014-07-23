@@ -11,30 +11,35 @@
         <div id="output"></div>
 
         <script>
-            var write = function(message) {
-                var output = document.getElementById("output");
-                output.innerHTML = message;
-            }
 
-            var writeResult = function(f, x, y) {
-                write(f(x, y));
-            }
-
-            var add = function(x,y) {
-                return x + y;
-            };
-
-            var getBinaryOperator = function () {
-
-                var subtract = function(x, y) {
-                    return x - y;
+            (function (window, undefined) {
+                
+                // IIFE -> immed imvoked function expression
+                // SEAF -> self executing anon funcit
+                var a = function(message) {
+                    var output = document.getElementById("output");
+                    output.innerHTML = message;
                 }
 
-                return subtract;
-            }
-            
-            writeResult(getBinaryOperator(), 5,6);
-            
+                var writeResult = function(f, x, y) {
+                    write(f(x, y));
+                }
+
+                var add = function(x, y) {
+                    return x + y;
+                };
+
+                var getBinaryOperator = function() {
+
+                    var subtract = function(x, y) {
+                        return x - y;
+                    }
+
+                    return subtract;
+                }
+
+                writeResult(getBinaryOperator(), 5, 6);
+            }(window));
         </script>
         
         
@@ -133,7 +138,7 @@
                         giveRaise: function() {
 
                         }
-                   };
+                    };
 
                     var e3 = Employee("Sue", "Smith");
                     expect(e3.formatName()).toBe("Sue Smith");
@@ -204,8 +209,6 @@
                             write: write,
                             totalMessages: getCount
                         };
-
-
 
                     }();
 

@@ -1,0 +1,32 @@
+﻿<html ng-app>
+<head>
+    <title>At The Movies</title>
+    <link href="../../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../../Content/Site.css" rel="stylesheet" />
+
+</head>
+<body class="container">
+    
+    <h1>Movies</h1>
+    
+    <table ng-controller="MovieController" class="table table-condensed table-striped">
+        <thead>
+            <tr>
+                <td>Title</td>
+                <td>Length</td>
+                <td>Release Date</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="movie in movies">
+                <td>{{movie.title}}</td>
+                <td>{{movie.length}}</td>
+                <td>{{movie.released}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <script src="../../Scripts/angular.js"></script> 
+    <script src="controllers/MovieController.js"></script>
+</body>
+</html>
