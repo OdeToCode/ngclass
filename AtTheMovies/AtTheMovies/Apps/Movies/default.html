@@ -14,15 +14,20 @@
         <button ng-click="vm.add()">
             Add new movie
         </button>
-        
-        <div ng-show="vm.isCreatingMovie">
-            <form name="vm.movieForm" ng-submit="vm.saveMovie()" novalidate>
-                <input type="text" name="title" ng-model="vm.newMovie.title" required />
-                <input type="number" name="length" ng-model="vm.newMovie.length" min="10" max="500" />
-                <input type="text" name="releaseDate" ng-model="vm.newMovie.releaseDate" />
-                <input type="submit" value="Save" ng-disabled="vm.movieForm.$invalid"/>
-            </form>
+       
+        <div ng-include="'templates/createMovie.html'">
+            
         </div>
+       
+        
+        
+        <input type="search" placeholder="Search" ng-model="vm.searchTerm"/>
+        <select ng-model="vm.sortBy">
+            <option value="+title">Title</option>
+            <option value="-length">Length</option>
+            <option value="-releaseDate">Release Date</option>
+        </select>
+
         
         <table class="table table-condensed table-striped" ng-cloak
                ng-show="vm.movies">
@@ -36,7 +41,7 @@
             </thead>
 
             <tbody>
-                <tr ng-repeat="movie in vm.movies">
+                <tr ng-repeat="movie in vm.movies | filter:vm.searchTerm | orderBy:vm.sortBy">
                     <td>
                         {{movie.title}}
 
@@ -45,7 +50,7 @@
                     <td>{{movie.releaseDate | date:short}}</td>
                     <td>
                         <button class="glyphicon glyphicon-plus"
-                                ng-click="vm.increment($index)"></button>
+                                ng-click="vm.increment(movie)"></button>
                         <button class="glyphicon glyphicon-minus"
                                 ng-click="vm.decrement(movie)"></button>
                     </td>

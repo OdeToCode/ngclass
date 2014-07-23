@@ -35,8 +35,8 @@
 
         $log.info("I have movies!!");
 
-        vm.increment = function (index) {
-            vm.movies[index].length += 1;
+        vm.increment = function (movie) {
+            movie.length += 1;
         };
         vm.decrement = function (movie) {
             movie.length -= 1;

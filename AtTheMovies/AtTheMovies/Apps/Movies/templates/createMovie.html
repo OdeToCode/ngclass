@@ -1,0 +1,8 @@
+﻿<div ng-show="vm.isCreatingMovie">
+    <form name="vm.movieForm" ng-submit="vm.saveMovie()" novalidate>
+        <input type="text" name="title" ng-model="vm.newMovie.title" required />
+        <input type="number" name="length" ng-model="vm.newMovie.length" min="10" max="500" />
+        <input type="text" name="releaseDate" ng-model="vm.newMovie.releaseDate" />
+        <input type="submit" value="Save" ng-disabled="vm.movieForm.$invalid" />
+    </form>
+</div>
