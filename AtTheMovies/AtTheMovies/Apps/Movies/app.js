@@ -6,7 +6,12 @@
         $routeProvider
             .when("/movies", {
                 controller: "MovieController as vm",
-                templateUrl: "templates/movieList.html"
+                templateUrl: "templates/movieList.html",
+                resolve: {
+                    movies: function(movieDataService) {
+                        return movieDataService.getAll();
+                    }
+                }
             })
             .when("/editMovie", {
                 controller: "MovieEditController as vm",

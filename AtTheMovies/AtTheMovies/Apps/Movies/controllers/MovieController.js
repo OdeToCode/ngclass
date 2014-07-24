@@ -14,26 +14,11 @@
     var module = angular.module("atTheMovies");
     
     var MovieController = function (
-            movieDataService, $log,
-            $location) {
-
-        var onMoviesComplete = function(data) {
-            vm.movies = data;
-
-        };
-
-        var onMoviesError = function(reason) {
-            vm.error = reason;
-            vm.isCreatingMovie = false;
-        };
-
+            movies, $log,$location) {
 
         var vm = this;
 
-        movieDataService
-            .getAll()
-            .then(onMoviesComplete)
-            .catch(onMoviesError);
+        vm.movies = movies;       
 
         vm.newAlert = { type: "info", message: "", reason: "" };
         vm.createNewAlert = function() {
