@@ -2,6 +2,9 @@
 
     var app = angular.module("atTheMovies", []);
 
+    app.constant("urlConfig", {
+        movieApi: "api/movies"
+    });
 
     app.filter("alljson", function() {
         return function(o) {

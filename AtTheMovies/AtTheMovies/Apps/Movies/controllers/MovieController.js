@@ -13,7 +13,7 @@
 
     var module = angular.module("atTheMovies");
     
-    var MovieController = function (movieDataService, $log) {
+    var MovieController = function (movieDataService, $log, $location, $anchorScroll) {
 
         var onMoviesComplete = function(data) {
             vm.movies = data;
@@ -35,6 +35,7 @@
 
         $log.info("I have movies!!");
 
+       // vm.sortBy = "-length";
         vm.increment = function (movie) {
             movie.length += 1;
         };
@@ -53,8 +54,15 @@
                     .catch(onMoviesError);
             }
         };
-        vm.add = function() {
+
+        vm.cancel = function() {
+            vm.isCreatingMovie = false;
+        };
+
+        vm.add = function () {
+
             vm.isCreatingMovie = true;
+            $location.hash("movieFormDiv");
             vm.newMovie = {
                 
             };

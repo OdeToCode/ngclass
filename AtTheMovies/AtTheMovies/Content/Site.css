@@ -2,6 +2,10 @@
     display: none;
 }
 
+background-color: {
+  
+}
+
 input.ng-invalid.ng-dirty {
     background-color: red;
 }

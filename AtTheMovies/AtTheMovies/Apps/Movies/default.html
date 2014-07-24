@@ -15,14 +15,11 @@
             Add new movie
         </button>
        
-        <div ng-include="'templates/createMovie.html'">
-            
-        </div>
        
         
         
         <input type="search" placeholder="Search" ng-model="vm.searchTerm"/>
-        <select ng-model="vm.sortBy">
+        <select ng-model="vm.sortBy" ng-init="vm.sortBy='-length'">
             <option value="+title">Title</option>
             <option value="-length">Length</option>
             <option value="-releaseDate">Release Date</option>
@@ -57,6 +54,12 @@
                 </tr>
             </tbody>
         </table>
+        
+        <div id="movieFormDiv" ng-include="'templates/createMovie.html'">
+
+        </div>
+
+
     </div>
 
     <script src="../../Scripts/angular.js"></script>

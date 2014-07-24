@@ -217,6 +217,7 @@
     <Content Include="Apps\Movies\controllers\MovieController.js" />
     <Content Include="Apps\Movies\default.html" />
     <Content Include="Apps\Movies\services\movieDataService.js" />
+    <Content Include="Apps\Movies\templates\createMovie.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />

@@ -1,0 +1,29 @@
+﻿Scott Allen
+scott@OdeToCode.com
+
+Now: 
+Next: 
+Day 4: Angular
+
+
+WebAPI samples
+https://github.com/howarddierking/RestBugs
+https://github.com/Particular/NServiceBus.SqlServer.Samples
+  (sort of)
+
+Example APIs:
+https://developer.paypal.com/docs/api/
+http://msdn.microsoft.com/en-us/library/azure/dn166981.aspx
+https://trello.com/docs/api/index.html
+
+Links:
+WebAPI Help Pages http://www.asp.net/web-api/overview/creating-web-apis/creating-api-help-pages
+
+Books:
+http://www.amazon.com/Designing-Evolvable-Web-APIs-ASP-NET/dp/1449337716/ref=sr_1_1?ie=UTF8&qid=1406175225&sr=8-1&keywords=webapi
+
+http://www.amazon.com/Building-Hypermedia-APIs-HTML5-Node/dp/1449306578/ref=sr_1_1?ie=UTF8&qid=1406175239&sr=8-1&keywords=hypermedia
+
+Slides: 
+https://dl.dropboxusercontent.com/u/79231895/ngwebapi.zip
+Code: https://github.com/odetocode/ngwebapi
