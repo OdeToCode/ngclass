@@ -9,13 +9,26 @@
     
 
     <h1>Movies</h1>
-    <div ng-controller="MovieController as vm">
+    <div ng-controller="MovieController as vm" ng-init="vm.reason2='none'">
         {{ vm.error.data.message }}
         <button ng-click="vm.add()">
             Add new movie
         </button>
        
-       
+        <hr/>
+        
+        {{counter}}
+        <div ds-alert type="info">
+            Hi!
+        </div>f
+
+        <ds-alert type="warning" reason="vm.reason2">
+            <h3>Important!</h3>
+            <div>This is dangerous!</div>
+        </ds-alert>
+        {{vm.reason2}}
+
+        <hr/>
         
         
         <input type="search" placeholder="Search" ng-model="vm.searchTerm"/>
@@ -66,5 +79,6 @@
     <script src="app.js"></script>
     <script src="services/movieDataService.js"></script>
     <script src="controllers/MovieController.js"></script>
+    <script src="directives/alert.js"></script>
 </body>
 </html>
