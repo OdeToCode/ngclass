@@ -1,6 +1,19 @@
 ﻿(function() {
 
-    var app = angular.module("atTheMovies", []);
+    var app = angular.module("atTheMovies", ["ngRoute"]);
+
+    app.config(function($routeProvider) {
+        $routeProvider
+            .when("/movies", {
+                controller: "MovieController as vm",
+                templateUrl: "templates/movieList.html"
+            })
+            .when("/editMovie", {
+                controller: "MovieEditController as vm",
+                templateUrl: "templates/createMovie.html"
+            })
+            .otherwise({ redirectTo: "/movies" });
+    });
 
     app.constant("urlConfig", {
         movieApi: "api/movies"
@@ -14,12 +27,6 @@
 
     app.run(function($rootScope) {
         $rootScope.angular = angular;
-    });
-
-
-    app.config(function($httpProvider) {
-
-
     });
 
 }());

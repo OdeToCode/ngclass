@@ -215,11 +215,13 @@
   <ItemGroup>
     <Content Include="Apps\Movies\app.js" />
     <Content Include="Apps\Movies\controllers\MovieController.js" />
+    <Content Include="Apps\Movies\controllers\MovieEditController.js" />
     <Content Include="Apps\Movies\default.html" />
     <Content Include="Apps\Movies\directives\alert.html" />
     <Content Include="Apps\Movies\directives\alert.js" />
     <Content Include="Apps\Movies\services\movieDataService.js" />
     <Content Include="Apps\Movies\templates\createMovie.html" />
+    <Content Include="Apps\Movies\templates\movieList.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -230,12 +232,15 @@
     <Content Include="jsTests.html" />
     <Content Include="notes.txt" />
     <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular-route.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\boot.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\angular-route.min.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jasmine-html.js" />
     <Content Include="Scripts\jasmine.css" />

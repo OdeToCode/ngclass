@@ -1,4 +1,4 @@
-﻿<div ng-show="vm.isCreatingMovie">
+﻿<div>
     <form name="vm.movieForm" ng-submit="vm.saveMovie()" novalidate>
         <input type="text" name="title" ng-model="vm.newMovie.title" required />
         <input type="number" name="length" ng-model="vm.newMovie.length" min="10" max="500" />

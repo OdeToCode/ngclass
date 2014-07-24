@@ -13,7 +13,9 @@
 
     var module = angular.module("atTheMovies");
     
-    var MovieController = function (movieDataService, $log, $location, $anchorScroll) {
+    var MovieController = function (
+            movieDataService, $log,
+            $location) {
 
         var onMoviesComplete = function(data) {
             vm.movies = data;
@@ -54,30 +56,13 @@
         vm.decrement = function (movie) {
             movie.length -= 1;
         };
-        vm.saveMovie = function() {
-
-            if (this.movieForm.$valid) {
-                movieDataService
-                    .insert(vm.newMovie)
-                    .then(function(movie) {
-                        vm.movies.push(movie);
-                        vm.isCreatingMovie = false;
-                    })
-                    .catch(onMoviesError);
-            }
-        };
-
-        vm.cancel = function() {
-            vm.isCreatingMovie = false;
-        };
+      
 
         vm.add = function () {
 
-            vm.isCreatingMovie = true;
-            $location.hash("movieFormDiv");
-            vm.newMovie = {
-                
-            };
+            
+            $location.path("/editMovie");
+           
         }
     };
 

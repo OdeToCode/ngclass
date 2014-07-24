@@ -8,84 +8,18 @@
 <body class="container">
     
 
-    <h1>Movies</h1>
-    <div ng-controller="MovieController as vm">
-        {{ vm.error.data.message }}
-        <button ng-click="vm.add()">
-            Add new movie
-        </button>
-       
-        <hr/>
+    <h1>At The Movies!!</h1>
+    
+    <div ng-view>
         
-        <form name="alertForm" ng-submit="vm.createNewAlert()">
-            <select ng-model="vm.newAlert.type">
-                <option value="warning">Warning</option>
-                <option value="danger">Danger</option>
-                <option value="info">Info</option>
-            </select>
-            <label>Message</label>
-            <input type="text" ng-model="vm.newAlert.message"/>
-            <input type="submit" value="Create Alert" />
-        </form>
-        
-
-        <div ng-repeat="alert in vm.alerts">
-            <ds-alert type="{{alert.type}}" reason="alert.reason" close="vm.closeAlert($index)">
-                <h1>Alert!</h1>
-                {{ alert.message }}
-            </ds-alert>
-        </div>
-
-        <hr/>
-        
-        
-        <input type="search" placeholder="Search" ng-model="vm.searchTerm"/>
-        <select ng-model="vm.sortBy" ng-init="vm.sortBy='-length'">
-            <option value="+title">Title</option>
-            <option value="-length">Length</option>
-            <option value="-releaseDate">Release Date</option>
-        </select>
-
-        
-        <table class="table table-condensed table-striped" ng-cloak
-               ng-show="vm.movies">
-            <thead>
-                <tr>
-                    <td>Title</td>
-                    <td>Length</td>
-                    <td>Release Date</td>
-                    <td>Actions</td>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr ng-repeat="movie in vm.movies | filter:vm.searchTerm | orderBy:vm.sortBy">
-                    <td>
-                        {{movie.title}}
-
-                    </td>
-                    <td>{{movie.length}}</td>
-                    <td>{{movie.releaseDate | date:short}}</td>
-                    <td>
-                        <button class="glyphicon glyphicon-plus"
-                                ng-click="vm.increment(movie)"></button>
-                        <button class="glyphicon glyphicon-minus"
-                                ng-click="vm.decrement(movie)"></button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <div id="movieFormDiv" ng-include="'templates/createMovie.html'">
-
-        </div>
-
-
     </div>
 
+
     <script src="../../Scripts/angular.js"></script>
+    <script src="../../Scripts/angular-route.js"></script>
     <script src="app.js"></script>
     <script src="services/movieDataService.js"></script>
+    <script src="controllers/MovieEditController.js"></script>
     <script src="controllers/MovieController.js"></script>
     <script src="directives/alert.js"></script>
 </body>
