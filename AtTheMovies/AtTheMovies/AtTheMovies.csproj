@@ -222,6 +222,8 @@
     <Content Include="Apps\Movies\services\movieDataService.js" />
     <Content Include="Apps\Movies\templates\createMovie.html" />
     <Content Include="Apps\Movies\templates\movieList.html" />
+    <Content Include="Content\animate.css" />
+    <Content Include="Content\animate.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -231,6 +233,8 @@
     <Content Include="Gruntfile.js" />
     <Content Include="jsTests.html" />
     <Content Include="notes.txt" />
+    <Content Include="Scripts\angular-animate.js" />
+    <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
@@ -241,6 +245,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\angular-route.min.js.map" />
+    <Content Include="Scripts\angular-animate.min.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jasmine-html.js" />
     <Content Include="Scripts\jasmine.css" />

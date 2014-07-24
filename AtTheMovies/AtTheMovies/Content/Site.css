@@ -2,9 +2,23 @@
     display: none;
 }
 
-background-color: {
-  
+/*.ng-show {
+    -webkit-animation: fadeInRight 1s !important;
+    -moz-animation: fadeInRight 1s !important;
+    -ms-animation: fadeInRight 1s !important;
+    -o-animation: fadeInRight 1s !important;
+    animation: fadeInRight 1s !important
+}*/
+
+.ng-enter {
+    -webkit-animation: bounceInLeft 1s, pulse 2s;
+    -moz-animation: bounceInLeft 1s, pulse 2s;
+    -ms-animation: bounceInLeft 1s, pulse 2s;
+    -o-animation: bounceInLeft 1s, pulse 2s;
+    animation: bounceInLeft 1s, pulse 2s;
+
 }
+
 
 input.ng-invalid.ng-dirty {
     background-color: red;
