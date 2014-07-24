@@ -9,7 +9,7 @@
     
 
     <h1>Movies</h1>
-    <div ng-controller="MovieController as vm" ng-init="vm.reason2='none'">
+    <div ng-controller="MovieController as vm">
         {{ vm.error.data.message }}
         <button ng-click="vm.add()">
             Add new movie
@@ -17,16 +17,24 @@
        
         <hr/>
         
-        {{counter}}
-        <div ds-alert type="info">
-            Hi!
-        </div>f
+        <form name="alertForm" ng-submit="vm.createNewAlert()">
+            <select ng-model="vm.newAlert.type">
+                <option value="warning">Warning</option>
+                <option value="danger">Danger</option>
+                <option value="info">Info</option>
+            </select>
+            <label>Message</label>
+            <input type="text" ng-model="vm.newAlert.message"/>
+            <input type="submit" value="Create Alert" />
+        </form>
+        
 
-        <ds-alert type="warning" reason="vm.reason2">
-            <h3>Important!</h3>
-            <div>This is dangerous!</div>
-        </ds-alert>
-        {{vm.reason2}}
+        <div ng-repeat="alert in vm.alerts">
+            <ds-alert type="{{alert.type}}" reason="alert.reason" close="vm.closeAlert($index)">
+                <h1>Alert!</h1>
+                {{ alert.message }}
+            </ds-alert>
+        </div>
 
         <hr/>
         

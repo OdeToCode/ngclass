@@ -10,7 +10,8 @@
             replace: true,
             scope: {
                 type: "@",
-                reason: "="
+                reason: "=?",
+                close: "&"
             },
             transclude: true,
             link: function(scope, element, attributes) {

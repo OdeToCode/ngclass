@@ -33,9 +33,21 @@
             .then(onMoviesComplete)
             .catch(onMoviesError);
 
-        $log.info("I have movies!!");
+        vm.newAlert = { type: "info", message: "", reason: "" };
+        vm.createNewAlert = function() {
+            vm.alerts.push(vm.newAlert);
+            vm.newAlert = { type: "info", message: "", reason: "" };
+        };
 
-       // vm.sortBy = "-length";
+        vm.alerts = [
+            { type: "warning", message: "Cannot reach the server", reason: "none" },
+            { type: "info", message:"Record saved", reason:""}
+        ];
+
+        vm.closeAlert = function(index) {
+            vm.alerts.splice(index, 1);
+        };
+
         vm.increment = function (movie) {
             movie.length += 1;
         };
