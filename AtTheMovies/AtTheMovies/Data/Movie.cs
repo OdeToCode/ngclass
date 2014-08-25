@@ -11,7 +11,7 @@ namespace AtTheMovies.Data
 
         [Required(ErrorMessageResourceType = typeof(ErrorMessages),
                   ErrorMessageResourceName = "Required")]
-        [StringLength(255)]
+        [StringLength(100)]
         [DataType(DataType.Html)]
         [AllowHtml]
         public string Title { get; set; }
@@ -20,7 +20,8 @@ namespace AtTheMovies.Data
         [DisplayFormat(DataFormatString="{0:MMMM yyyy}")]
         [Required]
         public DateTime ReleaseDate { get; set; }
-        public int Length { get; set; }
 
+        [Range(1, 1000)]
+        public int Length { get; set; }
     }
 }

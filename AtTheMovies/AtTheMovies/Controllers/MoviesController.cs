@@ -15,6 +15,27 @@ namespace AtTheMovies.Controllers
         }
 
         [HttpGet]
+        public ActionResult Create()
+        {
+            return View(new Movie());
+        }
+
+        [HttpPost]
+        public ActionResult Create(Movie newMovie)
+        {
+            if (ModelState.IsValid)
+            {
+                var dataSource = new MovieDataSource();
+                dataSource.Add(newMovie);
+                return RedirectToAction("Details", new {id = newMovie.Id});
+            }
+            return View(newMovie);
+        }
+
+
+
+
+        [HttpGet]
         public ActionResult Edit(int id)
         {
             var dataSource = new MovieDataSource();
