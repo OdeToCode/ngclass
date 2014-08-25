@@ -29,6 +29,7 @@ namespace AtTheMovies.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(Movie updatedMovie)
         {
             if (ModelState.IsValid)
