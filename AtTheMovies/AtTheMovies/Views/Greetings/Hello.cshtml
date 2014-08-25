@@ -1,0 +1,24 @@
+﻿@using AtTheMovies.Models;
+@model GreetingModel
+
+@{
+    ViewBag.Title = "Hello";
+}
+
+<h2>Hello</h2>
+
+<div class="alert alert-danger">
+    @Model.Message
+</div>
+<div>
+    Time created: @Model.TimeStamp.ToLongTimeString()
+</div>
+<table class="table table-striped table-hover">
+    @foreach (var process in Model.Processes.OrderByDescending(p => p.Threads.Count))
+    {
+        <tr>
+            <td>@process.ProcessName</td>
+            <td>@process.Threads.Count</td>
+        </tr>
+    }
+</table>
