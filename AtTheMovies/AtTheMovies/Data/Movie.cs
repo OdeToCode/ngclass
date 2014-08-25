@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace AtTheMovies.Data
 {
@@ -6,7 +7,10 @@ namespace AtTheMovies.Data
     {
         public int Id { get; set; }
         public string Title { get; set; }
+
+        [Display(Name="Release On")]
         public DateTime ReleaseDate { get; set; }
         public int Length { get; set; }
+
     }
 }

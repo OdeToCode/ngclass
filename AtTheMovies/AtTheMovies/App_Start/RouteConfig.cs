@@ -13,11 +13,15 @@ namespace AtTheMovies
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+
+            routes.MapRoute(name:"Movies route",
+                             
+                url: "movies/{action}",
+                defaults: new {controller="Movies", action="List" }
+                );
+            
             routes.MapRoute(
                 name: "Default",
-
-                
-
                 // /greetings/hello/Scott
                 url: "{controller}/{action}/{id}",
                
