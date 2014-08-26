@@ -6,17 +6,148 @@
     <script src="Scripts/jasmine/jasmine.js"></script>
     <script src="Scripts/jasmine/jasmine-html.js"></script>
     <script src="Scripts/jasmine/boot.js"></script>
-    <script>
 
-        describe("jasmine", function() {
-            it("should pass", function() {
-                expect(true).toBe(true);
-            });
-        });
-
-    </script>
 </head>
 <body>
+    <div id="output">
+
+    </div>
+    <script>
+
+        describe("Jasmine asserts", function () {
+
+            it("should pass when true is true", function () {
+                var result = 3 + "5";
+                expect(result).toBe("35");
+
+            });
+
+        });
+
+        describe("closures", function() {
+
+            it("encapsulates state", function() {
+
+                var makeGreeting = function (name) {
+                    return function(saltutation) {
+                        return saltutation + ", " + name;
+                    }
+                };
+
+
+                var f1 = makeGreeting("Scott");
+                var f2 = makeGreeting("Alan");
+
+                var result1 = f1("Hello");
+                var result2 = f2("Bonjour");
+                
+                expect(result1).toBe("Hello, Scott");
+                expect(result2).toBe("Bonjour, Alan");
+
+
+            });
+
+
+        });
+
+        describe("revealing module pattern", function() {
+
+
+            it("it works", function() {
+                var output = function () {
+
+                    var writes = 0;
+
+                    var write = function() {
+                        writes += 1;
+                        // dom manip
+                    };
+
+                    var getTotal = function() {
+                        return writes;
+                    };
+
+                    return {
+                        write: write,
+                        getTotalWrites: getTotal
+                    };
+
+                }();
+
+
+                output.write("Hello");
+                output.write("World!");
+                expect(output.getTotalWrites()).toBe(2);
+            });
+
+        });
+
+
+        describe("how to build objects", function () {
+
+            var Employee = function (firstName, lastName) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+            };
+
+            Employee.prototype = {
+                format: function () {
+                    return this.firstName + " " + this.lastName;
+                }
+            };
+
+
+            // new
+            // var e1 = {};
+            // Employee.call(e1);
+            // e1.__proto__ = Employee.prototype;
+
+            it("should format the name", function () {
+                var e1 = new Employee("Alex", "Allen");
+                var result1 = e1.format();
+                expect(result1).toBe("Alex Allen");
+
+                var e2 = new Employee("Scott", "Allen");
+                var result2 = e2.format();
+                expect(result2).toBe("Scott Allen");
+
+                var result3 = e1.format.call(e2);
+                expect(result3).toBe("Scott Allen");
+
+                expect(Object.getPrototypeOf(e1)).toEqual(Object.getPrototypeOf(e2));
+
+
+            });
+
+
+        });
+
+        // immdieately invoked function expression  IIFE
+        (function(d, undefined) {
+            var write = function(message) {
+                var output = d.getElementById("output");
+                output.innerText = message;
+            }
+
+            var add = function(x, y) {
+                return x + y;
+            };
+
+            var writeBinaryOpResult = function(f, x, y) {
+                write(f(x, y));
+            };
+
+            var getBinaryOp = function() {
+                return function(x, y) {
+                    return x - y;
+                };
+            };
+      
+            writeBinaryOpResult(getBinaryOp(), 5, 10);
+        }(document));
+
+
+    </script>
 
 </body>
 </html>
