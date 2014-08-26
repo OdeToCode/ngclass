@@ -30,8 +30,7 @@ namespace AtTheMovies.Api
             {
                 var db = new MovieDataSource();
                 db.Add(newMovie);
-                
-                //return CreatedAtRoute("DefaultApi", new { id = newMovie.Id }, newMovie);
+                return CreatedAtRoute("DefaultApi", new { id = newMovie.Id }, newMovie);
             }
             return BadRequest(ModelState);
         }
