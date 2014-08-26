@@ -17,7 +17,7 @@ namespace AtTheMovies.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            return View(new Movie());
+            return View();
         }
 
         [HttpPost]
