@@ -204,6 +204,10 @@
     <Compile Include="Migrations\201408252325022_ChangeTitleLength.Designer.cs">
       <DependentUpon>201408252325022_ChangeTitleLength.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201408261644127_AddConcurrencyChecks.cs" />
+    <Compile Include="Migrations\201408261644127_AddConcurrencyChecks.Designer.cs">
+      <DependentUpon>201408261644127_AddConcurrencyChecks.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\GreetingModel.cs" />
@@ -300,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201408252325022_ChangeTitleLength.resx">
       <DependentUpon>201408252325022_ChangeTitleLength.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201408261644127_AddConcurrencyChecks.resx">
+      <DependentUpon>201408261644127_AddConcurrencyChecks.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

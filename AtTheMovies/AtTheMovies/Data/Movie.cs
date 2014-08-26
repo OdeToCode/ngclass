@@ -23,5 +23,9 @@ namespace AtTheMovies.Data
 
         [Range(1, 1000)]
         public int Length { get; set; }
+
+        [ConcurrencyCheck]
+        [Timestamp]
+        public byte[] Version { get; set; }
     }
 }
