@@ -64,7 +64,7 @@ namespace AtTheMovies.Tests.EfTests
             Assert.AreEqual(movie1.Length, movie2.Length);
         }
 
-
+        
         [TestMethod]
         [ExpectedException(typeof(DbUpdateConcurrencyException))]
         public void Optimisitc_Concurrency_Off_By_Default()
@@ -81,6 +81,21 @@ namespace AtTheMovies.Tests.EfTests
             db1.SaveChanges();
 
             
+        }
+
+
+        [TestMethod]
+        public void Queries()
+        {
+            var db1 = new MovieDataContext();
+
+
+            var query1 = db1.Movies.Where(m => m.Length > 100)
+                .OrderBy(m => m.ReleaseDate)
+                .GroupBy(m => m.ReleaseDate.Year)
+                .ToList();
+
+
         }
 
     }

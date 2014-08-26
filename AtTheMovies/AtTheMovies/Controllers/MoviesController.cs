@@ -56,6 +56,7 @@ namespace AtTheMovies.Controllers
             if (ModelState.IsValid)
             {
                 var dataSource = new MovieDataSource();
+            
                 var model = dataSource.Update(updatedMovie);
                 return RedirectToAction("Details", new {id = model.Id});
             }

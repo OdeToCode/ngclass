@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Data.Entity;
+using System.Linq;
 
 namespace AtTheMovies.Data
 {
@@ -18,7 +19,10 @@ namespace AtTheMovies.Data
 
         public Movie Update(Movie updatedMovie)
         {
-            return null;
+            var entry = _dc.Entry(updatedMovie);
+            entry.State = EntityState.Modified;
+            _dc.SaveChanges();
+            return updatedMovie;
         }
          
         public Movie GetById(int id)
