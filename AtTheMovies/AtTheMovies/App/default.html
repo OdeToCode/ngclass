@@ -12,36 +12,32 @@
         </div>
         
         
-        <div class="alert alert-warning" ng-show="main.reason">
-            {{ main.reason }}
-        </div>
+        <div class="container">
+            <div class="alert alert-warning" ng-show="main.reason">
+                {{ main.reason }}
+            </div>
 
-        <div>
-            <table class="table table-condensed">
-                <tr ng-repeat="movie in main.movies">
-                    <td>{{$index + 1}} of {{main.movies.length}}</td>
-                    <td>{{movie.title}}</td>
-                    <td>{{movie.length}}</td>
-                </tr>
-            </table>
-        </div>
-        
-        <div ng-controller="addMovieController as addMovie">
-            <form name="addMovie.form" ng-submit="addMovie.submit()">
-             
-                <label>Title</label>
-                <input type="text" placeholder="Title" required name="title" ng-model="addMovie.movie.title" />
-                
-                <label>Release Date</label>
-                <input type="datetime" placeholder="Release" name="releaseDate" ng-model="addMovie.movie.releaseDate"/>
-                
-                <label>Length</label>
-                <input type="number" min="10" max="300" name="length" placeholder="Length" ng-model="addMovie.movie.length"/>
-                
-                <input type="submit" value="Save!"/>         
+           <div ng-include="'movieTablePartial.html'"></div>
 
-            </form>
+            <div ng-controller="addMovieController as addMovie">
+                <form name="addMovie.form" ng-submit="addMovie.form.$valid && addMovie.submit()">
 
+                    <label>Title</label>
+                    <input type="text" placeholder="Title" required name="title" ng-model="addMovie.movie.title" />
+
+                    <label>Release Date</label>
+                    <input type="datetime" placeholder="Release" name="releaseDate" ng-model="addMovie.movie.releaseDate" />
+
+                    <label>Length</label>
+                    <input type="number" min="10" max="300" name="length" placeholder="Length" ng-model="addMovie.movie.length" />
+                    
+              
+                    <input class="btn btn-primary" type="submit" value="Save!" 
+                           ng-disabled="addMovie.form.$invalid" />
+
+                </form>
+
+            </div>
         </div>
        
         <script src="../Scripts/angular.js"></script>

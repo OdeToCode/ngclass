@@ -4,7 +4,9 @@ angular.module("app")
         var main = {
             greeting: "Movies!!",
             reason: "",
-            movies: []
+            movies: [],
+            searchTerm: null,
+            ordering: "+length"
         };
         init();
         return main;
