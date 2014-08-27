@@ -1,11 +1,11 @@
-﻿<html ng-app>
+﻿<html ng-app="app">
 <head>
     <title>At The Movies</title>
     <link href="../Content/bootstrap.css" rel="stylesheet" />
     <link href="../Content/Site.css" rel="stylesheet" />
 </head>
 
-    <body class="container" ng-controller="MainController as main" ng-cloak>
+    <body class="container" ng-controller="mainController as main" ng-cloak>
         <h3>{{ main.greeting }}</h3>
     
         <form name="main.editForm">
@@ -29,7 +29,9 @@
         </div>
 
         <script src="../Scripts/angular.js"></script>
-        <script src="MainController.js"></script>
+        <script src="app.js"></script>
+        <script src="movieService.js"></script>
+        <script src="mainController.js"></script>
     </body>
 
 </html>
