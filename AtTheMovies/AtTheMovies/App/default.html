@@ -5,10 +5,13 @@
     <link href="../Content/Site.css" rel="stylesheet" />
 </head>
 
-    <body class="container" ng-controller="mainController as main" ng-cloak>
-        <h3>{{ main.greeting }}</h3>
-        <h5>{{ main.counter }}</h5>
+    <body ng-controller="mainController as main" ng-cloak>
        
+        <div class="navbar navbar-inverse">
+            <div class="navbar-brand">{{ main.greeting }}</div>    
+        </div>
+        
+        
         <div class="alert alert-warning" ng-show="main.reason">
             {{ main.reason }}
         </div>
@@ -25,9 +28,7 @@
         
         <div ng-controller="addMovieController as addMovie">
             <form name="addMovie.form" ng-submit="addMovie.submit()">
-                
-                
-
+             
                 <label>Title</label>
                 <input type="text" placeholder="Title" required name="title" ng-model="addMovie.movie.title" />
                 
@@ -37,16 +38,12 @@
                 <label>Length</label>
                 <input type="number" min="10" max="300" name="length" placeholder="Length" ng-model="addMovie.movie.length"/>
                 
-                <input type="submit" value="Save!"/>
-                
-                <pre>{{ addMovie.form | allJson }}</pre>
-                
+                <input type="submit" value="Save!"/>         
 
             </form>
 
         </div>
-        
-
+       
         <script src="../Scripts/angular.js"></script>
         <script src="app.js"></script>
         <script src="allJsonFilter.js"></script>
