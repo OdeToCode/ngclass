@@ -4,16 +4,28 @@
     <link href="../Content/bootstrap.css" rel="stylesheet" />
     <link href="../Content/Site.css" rel="stylesheet" />
 </head>
-<body class="container" ng-controller="MainController as main" ng-cloak>
-    <h3>{{ main.greeting }}</h3>
-    
-    <form>
-        {{ main.firstName }}
-        <input type="text" ng-model="main.firstName"/>
-        <button ng-click="main.changeName()">Change name!</button>
-    </form>
 
-    <script src="../Scripts/angular.js"></script>
-    <script src="MainController.js"></script>
-</body>
+    <body class="container" ng-controller="MainController as main" ng-cloak>
+        <h3>{{ main.greeting }}</h3>
+    
+        <form name="main.editForm">
+            {{ main.firstName }}
+            <input required name="firstName" type="text" ng-model="main.firstName"/>
+            <button ng-click="main.changeName()">Change name!</button>
+        </form>
+        
+        <div>
+            <table class="table table-condensed">
+                <tr ng-repeat="movie in main.movies">
+                    <td>{{$index + 1}} of {{main.movies.length}}</td>
+                    <td>{{movie.title}}</td>
+                    <td>{{movie.length}}</td>
+                </tr>
+            </table>
+        </div>
+
+        <script src="../Scripts/angular.js"></script>
+        <script src="MainController.js"></script>
+    </body>
+
 </html>
