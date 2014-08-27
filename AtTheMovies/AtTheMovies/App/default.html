@@ -1,19 +1,14 @@
 ﻿<html ng-app="app">
 <head>
-    <title>At The Movies</title>
+    <title>At The Movies {{ version }} </title>
     <link href="../Content/bootstrap.css" rel="stylesheet" />
     <link href="../Content/Site.css" rel="stylesheet" />
 </head>
 
     <body class="container" ng-controller="mainController as main" ng-cloak>
         <h3>{{ main.greeting }}</h3>
-    
-        <form name="main.editForm">
-            {{ main.firstName }}
-            <input required name="firstName" type="text" ng-model="main.firstName"/>
-            <button ng-click="main.changeName()">Change name!</button>
-        </form>
-        
+        <h5>{{ main.counter }}</h5>
+       
         <div class="alert alert-warning" ng-show="main.reason">
             {{ main.reason }}
         </div>

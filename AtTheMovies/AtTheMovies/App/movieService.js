@@ -1,6 +1,6 @@
 ﻿(function() {
     var app = angular.module("app");
-    app.service("movieService", function($http) {
+    app.service("movieService", ["$http",function($h) {
 
         var movieService = {
             getAllMovies: getAllMovies
@@ -9,8 +9,8 @@
         return movieService;
 
         function getAllMovies() {
-            var promise = $http.get("http://localhost:1547/api/movies");
+            var promise = $h.get("/api/movies");
             return promise;
         }
-    });
+    }]);
 }());

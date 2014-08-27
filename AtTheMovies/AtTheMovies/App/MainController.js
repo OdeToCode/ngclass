@@ -1,19 +1,13 @@
 ﻿
 angular.module("app")
-    .controller("mainController", function(movieService) {
+    .controller("mainController", function(movieService, $interval, $scope) {
         var main = {
-            greeting: "Hello, World!",
-            firstName: "Alan",
-            changeName: updateGreeting,
+            greeting: "Movies!!",
             reason: "",
             movies: []
         };
         init();
         return main;
-
-        function updateGreeting() {
-            main.greeting = "Hello, " + main.firstName;
-        }
 
         function onMoviesReceived(response) {
             main.movies = response.data;
@@ -25,7 +19,8 @@ angular.module("app")
 
         function init() {
             var promise = movieService.getAllMovies();
-            promise.then(onMoviesReceived, onMoviesError);
+            promise.then(onMoviesReceived)
+                .catch(onMoviesError);
         };
     });
 
