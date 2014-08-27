@@ -14,6 +14,10 @@
             <button ng-click="main.changeName()">Change name!</button>
         </form>
         
+        <div class="alert alert-warning" ng-show="main.reason">
+            {{ main.reason }}
+        </div>
+
         <div>
             <table class="table table-condensed">
                 <tr ng-repeat="movie in main.movies">

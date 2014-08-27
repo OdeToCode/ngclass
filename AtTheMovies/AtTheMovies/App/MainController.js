@@ -1,18 +1,28 @@
-﻿var MainController = function () {
+﻿var MainController = function ($http) {
     var main = {
         greeting: "Hello, World!",
         firstName: "Alan",
         changeName: updateGreeting,
-        movies: [
-            { title: "Star Wars", length: 120 },
-            { title: "Star Wars 2", length: 100 },
-            { title: "Star Wars 3", length: 100 }
-        ]
+        reason: "",
+        movies: []
     };
-
+    init();
     return main;
 
     function updateGreeting() {
         main.greeting = "Hello, " + main.firstName;
     }
+
+    function onMoviesReceived(response) {
+        main.movies = response.data;
+    }
+
+    function onMoviesError(reason) {
+        main.reason = reason;
+    }
+
+    function init() {
+        var promise = $http.get("http://localhost:1547/api/movies");
+        promise.then(onMoviesReceived, onMoviesError);
+    };
 };
