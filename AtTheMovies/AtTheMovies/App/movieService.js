@@ -1,15 +1,20 @@
 ﻿(function() {
     var app = angular.module("app");
-    app.service("movieService", ["$http",function($h) {
+    app.service("movieService", ["$http",function($http) {
 
         var movieService = {
-            getAllMovies: getAllMovies
+            getAllMovies: getAllMovies,
+            addMovie: addMovie
         };
 
         return movieService;
 
+        function addMovie(movie) {
+            return $http.post("/api/movies", movie);
+        }
+
         function getAllMovies() {
-            var promise = $h.get("/api/movies");
+            var promise = $http.get("/api/movies");
             return promise;
         }
     }]);

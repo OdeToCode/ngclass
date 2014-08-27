@@ -231,6 +231,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\addMovieController.js" />
     <Content Include="App\app.js" />
     <Content Include="App\default.html" />
     <Content Include="App\mainController.js" />
