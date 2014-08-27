@@ -16,10 +16,7 @@
         return ctrl;
 
         function submit() {
-            movieService.addMovie(ctrl.movie)
-                .then(function() {
-
-                });
+            movieService.addMovie(ctrl.movie);
         }
     });
 

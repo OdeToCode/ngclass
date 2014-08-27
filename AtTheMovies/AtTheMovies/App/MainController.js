@@ -9,8 +9,8 @@ angular.module("app")
         init();
         return main;
 
-        function onMoviesReceived(response) {
-            main.movies = response.data;
+        function onMoviesReceived(movies) {
+            main.movies = movies;
         }
 
         function onMoviesError(reason) {
@@ -18,9 +18,9 @@ angular.module("app")
         }
 
         function init() {
-            var promise = movieService.getAllMovies();
-            promise.then(onMoviesReceived)
-                .catch(onMoviesError);
+            movieService.getAllMovies()
+                        .then(onMoviesReceived)
+                        .catch(onMoviesError);
         };
     });
 
