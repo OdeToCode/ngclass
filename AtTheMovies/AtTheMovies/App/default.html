@@ -1,0 +1,19 @@
+﻿<html ng-app>
+<head>
+    <title>At The Movies</title>
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/Site.css" rel="stylesheet" />
+</head>
+<body class="container" ng-controller="MainController as main" ng-cloak>
+    <h3>{{ main.greeting }}</h3>
+    
+    <form>
+        {{ main.firstName }}
+        <input type="text" ng-model="main.firstName"/>
+        <button ng-click="main.changeName()">Change name!</button>
+    </form>
+
+    <script src="../Scripts/angular.js"></script>
+    <script src="MainController.js"></script>
+</body>
+</html>

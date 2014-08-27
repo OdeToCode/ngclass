@@ -86,6 +86,8 @@
         describe("how to build objects", function () {
 
             var Employee = function (firstName, lastName) {
+
+  
                 this.firstName = firstName;
                 this.lastName = lastName;
             };
@@ -103,6 +105,9 @@
             // e1.__proto__ = Employee.prototype;
 
             it("should format the name", function () {
+
+                var e = Employee("", "");
+
                 var e1 = new Employee("Alex", "Allen");
                 var result1 = e1.format();
                 expect(result1).toBe("Alex Allen");
