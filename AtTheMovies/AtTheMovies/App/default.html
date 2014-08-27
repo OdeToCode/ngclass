@@ -25,6 +25,9 @@
         
         <div ng-controller="addMovieController as addMovie">
             <form name="addMovie.form" ng-submit="addMovie.submit()">
+                
+                
+
                 <label>Title</label>
                 <input type="text" placeholder="Title" required name="title" ng-model="addMovie.movie.title" />
                 
@@ -35,6 +38,10 @@
                 <input type="number" min="10" max="300" name="length" placeholder="Length" ng-model="addMovie.movie.length"/>
                 
                 <input type="submit" value="Save!"/>
+                
+                <pre>{{ addMovie.form | allJson }}</pre>
+                
+
             </form>
 
         </div>
@@ -42,6 +49,7 @@
 
         <script src="../Scripts/angular.js"></script>
         <script src="app.js"></script>
+        <script src="allJsonFilter.js"></script>
         <script src="movieService.js"></script>
         <script src="mainController.js"></script>
         <script src="addMovieController.js"></script>
