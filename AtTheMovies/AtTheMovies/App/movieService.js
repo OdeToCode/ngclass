@@ -1,6 +1,6 @@
 ﻿(function() {
     var app = angular.module("app");
-    app.service("movieService", ["$http",function($http) {
+    app.service("movieService", ["$http", "$q", "$log",function($http, $q, $log) {
 
         var movieService = {
             getAllMovies: getAllMovies,
@@ -18,7 +18,13 @@
                 });
         }
 
-        function getAllMovies() {
+        function getAllMovies(refresh) {
+            if (!refresh && movieService.movies.length > 0) {
+                $log.info("return from cache");
+                return $q.when(movieService.movies);
+            }
+
+            $log.info("calling API");
             return $http.get("/api/movies")
                 .then(function (response) {
                         movieService.movies.splice(0);

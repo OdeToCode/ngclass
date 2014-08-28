@@ -6,10 +6,17 @@ angular.module("app")
             reason: "",
             movies: [],
             searchTerm: null,
-            ordering: "+length"
+            ordering: "+length",
+            refreshMovies: refreshMovies
         };
         init();
         return main;
+
+        function refreshMovies(refresh) {
+            movieService.getAllMovies(refresh)
+                        .then(onMoviesReceived)
+                        .catch(onMoviesError);
+        }
 
         function onMoviesReceived(movies) {
             main.movies = movies;
@@ -20,9 +27,7 @@ angular.module("app")
         }
 
         function init() {
-            movieService.getAllMovies()
-                        .then(onMoviesReceived)
-                        .catch(onMoviesError);
+            refreshMovies(true);
         };
     });
 

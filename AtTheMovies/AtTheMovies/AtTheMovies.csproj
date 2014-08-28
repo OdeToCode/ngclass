@@ -235,6 +235,7 @@
     <Content Include="App\allJsonFilter.js" />
     <Content Include="App\app.js" />
     <Content Include="App\default.html" />
+    <Content Include="App\httpInterceptor.js" />
     <Content Include="App\mainController.js" />
     <Content Include="App\movieService.js" />
     <Content Include="App\movieTablePartial.html" />

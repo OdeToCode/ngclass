@@ -7,11 +7,16 @@
 
     <body ng-controller="mainController as main" ng-cloak>
        
+        
+  
+
         <div class="navbar navbar-inverse">
             <div class="navbar-brand">{{ main.greeting }}</div>    
         </div>
         
-        
+        <div class="alert alert-info" ng-show="outstandingRequests">
+            Please be patient!!
+        </div>      
         <div class="container">
             <div class="alert alert-warning" ng-show="main.reason">
                 {{ main.reason }}
@@ -46,6 +51,7 @@
         <script src="movieService.js"></script>
         <script src="mainController.js"></script>
         <script src="addMovieController.js"></script>
+        <script src="httpInterceptor.js"></script>
     </body>
 
 </html>

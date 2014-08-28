@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using System.Web.Http;
 using AtTheMovies.Data;
 
@@ -9,6 +10,8 @@ namespace AtTheMovies.Api
     {
         public IHttpActionResult GetAllMovies()
         {
+            Thread.Sleep(2000);
+
             var db = new MovieDataSource();
             return Ok(db.GetAll());
         }
