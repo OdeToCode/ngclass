@@ -238,9 +238,12 @@
     <Content Include="App\app.js" />
     <Content Include="App\default.html" />
     <Content Include="App\httpInterceptor.js" />
+    <Content Include="App\karma.conf.js" />
     <Content Include="App\mainController.js" />
     <Content Include="App\movieService.js" />
     <Content Include="App\movieTablePartial.html" />
+    <Content Include="App\Specs\allJsonFilter_Spec.js" />
+    <Content Include="App\Specs\mainController_Spec.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />

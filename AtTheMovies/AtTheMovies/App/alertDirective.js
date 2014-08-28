@@ -29,9 +29,6 @@
                 //$button.on("click", function() {
                 //    $element.close();
                 //});
-
-             
-
             }
         }
     });

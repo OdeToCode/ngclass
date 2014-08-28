@@ -1,6 +1,6 @@
 ﻿
 angular.module("app")
-    .controller("mainController", function(movieService, $interval, $scope) {
+    .controller("mainController", function(movieService) {
         var main = {
             greeting: "Movies!!",
             reason: "",
