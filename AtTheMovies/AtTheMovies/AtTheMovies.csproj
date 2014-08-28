@@ -236,10 +236,12 @@
     <Content Include="App\alertTemplate.html" />
     <Content Include="App\allJsonFilter.js" />
     <Content Include="App\app.js" />
+    <Content Include="App\movieCreateTemplate.html" />
     <Content Include="App\default.html" />
     <Content Include="App\httpInterceptor.js" />
     <Content Include="App\karma.conf.js" />
     <Content Include="App\mainController.js" />
+    <Content Include="App\movieListTemplate.html" />
     <Content Include="App\movieService.js" />
     <Content Include="App\movieTablePartial.html" />
     <Content Include="App\Specs\allJsonFilter_Spec.js" />
@@ -288,11 +290,14 @@
     <Content Include="jslab\support\qunit.js" />
     <Content Include="jsTests.html" />
     <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular-route.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\angular-route.min.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jasmine\boot.js" />
     <Content Include="Scripts\jasmine\jasmine-html.js" />

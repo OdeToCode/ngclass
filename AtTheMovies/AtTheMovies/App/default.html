@@ -5,50 +5,19 @@
     <link href="../Content/Site.css" rel="stylesheet" />
 </head>
 
-    <body ng-controller="mainController as main" ng-cloak>
-       
+    <body ng-cloak>
         <div class="navbar navbar-inverse">
             <div class="navbar-brand">{{ main.greeting }}</div>    
         </div>
-        
-        <!--<div ng-show="main.reason1">
-            <ds:alert type="warning" reason="main.reason1" close="main.close(1)">
-                <em>Alert!</em>
-                <div>This is some information!!!!</div>
-                {{ main.movies.length }}
-            </ds:alert>
-        </div>-->
-
         <ds:alert type="info" ng-show="outstandingRequests">
             Please be patient!!
-        </ds:alert>
-              
-        <div class="container">
-         
-           <div ng-include="'movieTablePartial.html'"></div>
-
-            <div ng-controller="addMovieController as addMovie">
-                <form name="addMovie.form" ng-submit="addMovie.form.$valid && addMovie.submit()">
-
-                    <label>Title</label>
-                    <input type="text" placeholder="Title" required name="title" ng-model="addMovie.movie.title" />
-
-                    <label>Release Date</label>
-                    <input type="datetime" placeholder="Release" name="releaseDate" ng-model="addMovie.movie.releaseDate" />
-
-                    <label>Length</label>
-                    <input type="number" min="10" max="300" name="length" placeholder="Length" ng-model="addMovie.movie.length" />
-                    
-              
-                    <input class="btn btn-primary" type="submit" value="Save!" 
-                           ng-disabled="addMovie.form.$invalid" />
-
-                </form>
-
-            </div>
-        </div>
-       
+        </ds:alert> 
+        
+        <ng-view></ng-view>
+          
+ 
         <script src="../Scripts/angular.js"></script>
+        <script src="../Scripts/angular-route.js"></script>
         <script src="app.js"></script>
         <script src="allJsonFilter.js"></script>
         <script src="movieService.js"></script>
