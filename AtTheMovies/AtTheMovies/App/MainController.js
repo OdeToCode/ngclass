@@ -7,10 +7,16 @@ angular.module("app")
             movies: [],
             searchTerm: null,
             ordering: "+length",
-            refreshMovies: refreshMovies
+            refreshMovies: refreshMovies,
+            reason1: "No reason",
+            close: close
         };
         init();
         return main;
+
+        function close() {
+            main.reason1 = null;
+        }
 
         function refreshMovies(refresh) {
             movieService.getAllMovies(refresh)
