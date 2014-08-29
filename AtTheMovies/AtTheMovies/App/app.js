@@ -21,6 +21,7 @@
     app.run(["$rootScope", function($rootScope) {
         $rootScope.version = angular.version;
         $rootScope.outstandingRequests = 0;
+        $rootScope.greeting = "At The Movies";
     }]);
 
 }());

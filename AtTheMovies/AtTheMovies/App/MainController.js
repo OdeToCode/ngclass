@@ -8,7 +8,6 @@ angular.module("app")
             searchTerm: null,
             ordering: "+length",
             refreshMovies: refreshMovies,
-            reason1: "No reason",
             close: close
         };
         init();
