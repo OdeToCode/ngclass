@@ -13,7 +13,11 @@
             <td>{{$index + 1}} of {{main.movies.length}}</td>
             <td>{{movie.title}}</td>
             <td>{{movie.length}}</td>
-            <td><a ng-href="#/edit/{{movie.id}}" class="btn btn-default">Edit</a></td>
+            <td>
+                <a ng-href="#/edit/{{movie.id}}" class="btn btn-default">Edit</a>
+                <a ng-click="main.remove(movie.id)" class="btn btn-danger">Delete</a>
+            </td>
+
         </tr>
     </table>
     <button class="btn btn-default" ng-click="main.refreshMovies(false)">Refresh</button>

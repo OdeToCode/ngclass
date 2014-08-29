@@ -8,13 +8,20 @@ angular.module("app")
             searchTerm: null,
             ordering: "+length",
             refreshMovies: refreshMovies,
-            close: close
+            close: close,
+            remove: remove
         };
         init();
         return main;
 
         function close() {
             main.reason1 = null;
+        }
+
+        function remove(id) {
+            movieService.remove(id)
+                .then(refreshMovies(true))
+                .catch(onMoviesError);
         }
 
         function refreshMovies(refresh) {

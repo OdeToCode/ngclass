@@ -7,10 +7,15 @@
             getById: getById,
             addMovie: addMovie,
             save: save,
+            remove: remove,
             movies: []
           
         };
         return movieService;
+
+        function remove(id) {
+            return $http.delete("/api/movies/" + id);
+        }
 
         function save(movie) {
             if (movie.id > 0) {

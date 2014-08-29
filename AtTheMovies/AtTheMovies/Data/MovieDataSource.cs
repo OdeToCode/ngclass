@@ -56,6 +56,16 @@ namespace AtTheMovies.Data
             _dc.SaveChanges();
         }
 
+        public void DeleteById(int id)
+        {
+            var movie = _dc.Movies.Find(id);
+            if (movie != null)
+            {
+                _dc.Movies.Remove(movie);
+                _dc.SaveChanges();
+            }
+        }
+
         public void Dispose()
         {
             if (_dc != null)

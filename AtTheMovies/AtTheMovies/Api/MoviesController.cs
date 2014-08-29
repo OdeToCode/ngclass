@@ -37,6 +37,13 @@ namespace AtTheMovies.Api
             return BadRequest(ModelState);
         }
 
+        public IHttpActionResult Delete(int id)
+        {
+            var db = new MovieDataSource();
+            db.DeleteById(id);
+            return Ok(id);
+        }
+
         public IHttpActionResult PutMovie(Movie updateMovie)
         {
             if (ModelState.IsValid)
