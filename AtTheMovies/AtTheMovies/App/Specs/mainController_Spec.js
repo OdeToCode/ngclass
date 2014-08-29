@@ -20,7 +20,7 @@
     });
 
 
-    it("when HTTP Call is complete should have 3 movies", function () {
+    it("should have 3 movies when HTTP call complete", function () {
         $httpBackend.flush();
         expect(main.movies.length).toBe(3);
     });
