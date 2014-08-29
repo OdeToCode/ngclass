@@ -236,11 +236,13 @@
     <Content Include="App\alertTemplate.html" />
     <Content Include="App\allJsonFilter.js" />
     <Content Include="App\app.js" />
+    <Content Include="App\editMovieController.js" />
     <Content Include="App\movieCreateTemplate.html" />
     <Content Include="App\default.html" />
     <Content Include="App\httpInterceptor.js" />
     <Content Include="App\karma.conf.js" />
     <Content Include="App\mainController.js" />
+    <Content Include="App\movieEditTemplate.html" />
     <Content Include="App\movieListTemplate.html" />
     <Content Include="App\movieService.js" />
     <Content Include="App\movieTablePartial.html" />

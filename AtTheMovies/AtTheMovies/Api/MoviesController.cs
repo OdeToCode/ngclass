@@ -10,8 +10,7 @@ namespace AtTheMovies.Api
     {
         public IHttpActionResult GetAllMovies()
         {
-            Thread.Sleep(2000);
-
+         
             var db = new MovieDataSource();
             return Ok(db.GetAll());
         }
@@ -34,6 +33,17 @@ namespace AtTheMovies.Api
                 var db = new MovieDataSource();
                 db.Add(newMovie);
                 return CreatedAtRoute("DefaultApi", new { id = newMovie.Id }, newMovie);
+            }
+            return BadRequest(ModelState);
+        }
+
+        public IHttpActionResult PutMovie(Movie updateMovie)
+        {
+            if (ModelState.IsValid)
+            {
+                var db = new MovieDataSource();
+                db.Update(updateMovie);
+                return Ok(updateMovie);
             }
             return BadRequest(ModelState);
         }

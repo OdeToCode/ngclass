@@ -1,6 +1,6 @@
 ﻿(function () {
 
-    var app = angular.module("app", ["ngRoute"]);
+    var app = angular.module("app", ["ngRoute", "ngAnimate"]);
 
     app.config(function($httpProvider, $routeProvider) {
         $httpProvider.defaults.headers.common["X-Custom"] = "foo";
@@ -9,7 +9,7 @@
             .when("/list", {
                 templateUrl: "movieListTemplate.html"
             })
-            .when("/create", { templateUrl: "movieCreateTemplate.html" })
+            .when("/create", { templateUrl: "movieEditTemplate.html" })
             .when("/edit/:id", { templateUrl: "movieEditTemplate.html" })
 
             //  /edit/7

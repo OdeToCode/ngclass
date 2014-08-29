@@ -4,12 +4,31 @@
 
         var movieService = {
             getAllMovies: getAllMovies,
+            getById: getById,
             addMovie: addMovie,
+            save: save,
             movies: []
           
         };
         return movieService;
 
+        function save(movie) {
+            if (movie.id > 0) {
+                return $http.put("/api/movies/" + movie.id, movie);
+            } else {
+                return $http.post("/api/movies", movie);
+            }
+            
+        }
+
+        function getById(id) {
+            var url = "/api/movies/" + id;
+
+            return $http.get(url)
+                .then(function (response) { 
+                    return response.data;
+                });
+        }
 
         function addMovie(movie) {
             return $http.post("/api/movies", movie)

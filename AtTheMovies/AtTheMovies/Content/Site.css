@@ -2,6 +2,28 @@
     visibility: hidden;
 }
 
+.ng-enter {
+    -webkit-animation: zoomInDown 2s;
+    -moz-animation: zoomInDown 2s;
+    -ms-animation: zoomInDown 2s;
+    -o-animation: zoomInDown 2s;
+    animation: zoomInDown 2s;
+}
+
+/*.ng-enter {
+    -webkit-transition: 1s linear all;
+    -moz-transition: 1s linear all;
+    -ms-transition: 1s linear all;
+    -o-transition: 1s linear all;
+    transition: 2s linear all;
+    -ms-opacity: 0;
+    opacity: 0;
+}
+
+.ng-enter-active {
+    -ms-opacity: 1;
+    opacity: 1;
+}*/
 
 
 body {
