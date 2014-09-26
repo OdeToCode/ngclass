@@ -1,11 +1,13 @@
 var express = require("express");
+var bodyParser = require('body-parser')
 var app = express();
 
-app.use(express.bodyParser());
-app.use("/", express.static(__dirname + "/../../clients"));
+app.use(bodyParser.json());
+app.use("/", express.static(__dirname + "/../../client"));
+app.use("/", express.static(__dirname + "/../../bower_components"));
 
-var routes = require("./routes")(app);
 
-app.listen(process.env.PORT || 3000);
-console.log("Started!!");
+require("./routes")(app);
 
+app.listen(8080);
+console.log("Started on port 8080!");
