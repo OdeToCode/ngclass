@@ -28,8 +28,15 @@ namespace AtTheMovies.Configuration
         {
             app.UseFileServer(new FileServerOptions
             {
-                FileSystem = new PhysicalFileSystem(@"..\..\..\..\clients"),
-                EnableDefaultFiles = true
+                FileSystem = new PhysicalFileSystem(@"..\..\..\..\client"),
+                EnableDefaultFiles = true,
+                EnableDirectoryBrowsing =true
+            });
+            app.UseFileServer(new FileServerOptions
+            {
+                FileSystem = new PhysicalFileSystem(@"..\..\..\..\bower_components"),
+                EnableDefaultFiles = true,
+                EnableDirectoryBrowsing=true
             });
         }
     }

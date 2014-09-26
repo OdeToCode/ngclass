@@ -1,28 +1,3 @@
-body{
-	padding:10px;
+body {
 	background-color: #ccccbb;
-}
-
-.ng-enter {
-    -webkit-animation: fadeInLeft 0.5s;
-    animation: fadeInRight 0.5s;
-}
-
-.ng-hide-remove {
-    -webkit-animation: bounceIn 0.5s;
-    animation: bounceIn 0.5s;
-}
- 
-.ng-hide-add {
-    -webkit-animation: bounceOut 0.5s;
-    animation: bounceOut 0.5s;
-    display: block !important;
-}
-
-input.ng-dirty.ng-invalid {
-    background-color:rgba(255,0,0,0.3);
-}
-
-body.ngCloak {
-	display: :none;
 }
