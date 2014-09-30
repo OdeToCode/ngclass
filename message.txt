@@ -1,0 +1,35 @@
+Scott Allen	
+scott@OdeToCode.com
+
+Now: Complete Lab 1 and Lab 2
+Next: 9:00 am tomorrow
+
+Getting started: 
+  1. npm install grunt-cli -g
+  2. npm install bower -g
+  3. npm install
+  4. grunt
+  5. Install http://git-scm.com/download/win
+  6. bower install angularjs#1.3.0-rc.3 --save
+  7. bower install
+
+Current Assignment: None
+
+Links:
+
+	Class material: http://tinyurl.com/p2fjy3p
+	GitHub Demo Repo: https://github.com/OdeToCode/ngclass
+
+Outline:
+ Intro AngularJS
+ Modules, Controllers
+ Views
+ Services
+ Directives
+ Testing Angular
+ Routing
+ UI animations
+ NodeJS
+ HTML 5 / CSS 3	
+
+Todos:
