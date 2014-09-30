@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using System.Threading;
+using System.Web.Http;
 using AtTheMovies.DataStore;
 using AtTheMovies.Models;
 
@@ -17,6 +18,7 @@ namespace AtTheMovies.Controllers
         [Route("")]
         public IHttpActionResult Get()
         {
+            Thread.Sleep(2000);
             var movies = _movieStore.FindAll();
             return Ok(movies);
         }

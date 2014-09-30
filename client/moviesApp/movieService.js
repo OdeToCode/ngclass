@@ -7,6 +7,7 @@
 		var endpoint = "/api/movies";
 
 		var getAllMovies = function() {
+			
 			return $http.get(endpoint)
 			            .then(function(response){
 			            	return response.data;

@@ -2,7 +2,7 @@
 
 	var app = angular.module("moviesApp");
 
-	app.controller("MainController", function(movieService) {
+	var MainController = function(a, $log) {
 		
 		var model = this;
 		model.movies = [];
@@ -34,9 +34,15 @@
 			model.error = response;
 		};
 
-		movieService.getAllMovies()
+		a.getAllMovies()
 		     .then(onMovies, onMoviesError);
-	});
+
+
+		$log.info("MainController initialization complete!");
+	};
+	MainController.$inject = ["movieService", "$log"];
+
+	app.controller("MainController", MainController);
 
 
 
