@@ -2,16 +2,17 @@
 
 	var app = angular.module("moviesApp");
 
-	app.controller("MainController", function() {
+	app.controller("MainController", function(movieService) {
 		
 		var model = this;
-		model.movies = 
-		[
-			{ title: "Star Wars", rating: 5 },
-			{ title: "Neighbors", rating: 3 },
-			{ title: "Star Trek", rating: 5 }
-		];
-		
+		model.movies = [];
+
+		model.getStyles = function(movie){
+			return {
+				goodTitle: movie.rating > 3
+			};
+		};
+
 		model.increaseRating = function(movie){
 			movie.rating += 1;
 		};
@@ -24,7 +25,23 @@
 			model.movies.push(model.newMovie);	
 			model.newMovie = null;	
 		}
+
+		var onMovies = function(movies) {
+			model.movies = movies;
+		};
+
+		var onMoviesError = function(response) {
+			model.error = response;
+		};
+
+		movieService.getAllMovies()
+		     .then(onMovies, onMoviesError);
 	});
+
+
 
 }()); // IIFE (Immediately Invoked Function Expression)
       // SEAF (self-executing anonymous function)
+
+
+

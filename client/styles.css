@@ -5,3 +5,8 @@ body {
 .ng-cloak {
 	display:none;
 }
+
+.goodTitle {
+	color: green;
+	font-size: larger;
+}

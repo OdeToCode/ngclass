@@ -17,11 +17,17 @@
     </nav>
     
     <h3>Movie List</h3>
+
     <div class="container" ng-controller="MainController as main">
-     
-      <table class="table table-striped">
+
+    <div class="alert alert-danger" ng-show="main.error">
+        {{ main.error.statusText }}
+    </div>
+
+    
+      <table class="table table-bordered">
           <tr ng-repeat="movie in main.movies">
-            <td>{{movie.title}}
+            <td ng-class="main.getStyles(movie)">{{movie.title}}
             </td>
             <td>{{movie.rating}}</td>
             <td>
@@ -42,6 +48,7 @@
     <script src="/angularjs/angular.js"></script>
     <script src="/moviesApp/app.js"></script>
     <script src="/moviesApp/mainController.js"></script>
+    <script src="/moviesApp/movieService.js"></script>
 
 </body>
 </html>
