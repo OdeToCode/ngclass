@@ -1,4 +1,4 @@
-<html>
+<html ng-app="moviesApp">
 
     <head>
         <title>At The Movies!</title>
@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="/styles.css">
     </head>
 
-<body>
+<body class="ng-cloak">
 
     <nav class="navbar navbar-default navbar-inverse" role="navigation">
         <div class="container-fluid">
@@ -16,9 +16,32 @@
         </div>
     </nav>
     
-    <div class="container">
-        
+    <h3>Movie List</h3>
+    <div class="container" ng-controller="MainController as main">
+     
+      <table class="table table-striped">
+          <tr ng-repeat="movie in main.movies">
+            <td>{{movie.title}}
+            </td>
+            <td>{{movie.rating}}</td>
+            <td>
+                <button ng-click="main.increaseRating(movie)">+</button>
+                <button ng-click="main.decreaseRating(movie)">-</button>
+            </td>
+          </tr>
+      </table>
+
+      <form ng-submit="main.saveNewMovie()">
+        <input type="text" ng-model="main.newMovie.title" placeholder="Title" >
+        <input type="text" ng-model="main.newMovie.rating" placeholder="Rating" >
+        <input type="submit" value="Save!"/>
+      </form>
+
     </div>
+    
+    <script src="/angularjs/angular.js"></script>
+    <script src="/moviesApp/app.js"></script>
+    <script src="/moviesApp/mainController.js"></script>
 
 </body>
 </html>
