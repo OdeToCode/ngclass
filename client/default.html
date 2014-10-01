@@ -1,66 +1,62 @@
 <html ng-app="moviesApp">
 
-    <head>
-        <title>At The Movies!</title>
-        <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
-        <link rel="stylesheet" href="/styles.css">
-    </head>
+<head>
+    <title>At The Movies!</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/styles.css">
+</head>
 
 <body class="ng-cloak">
 
-    <div ng-include="'moviesApp/nav.html'"></div>
-    
+    <div ng-include="navTemplate"></div>
+
     <h3>Movie List</h3>
-    
+
     <div class="container" ng-controller="MainController as main">
 
-    <div class="alert alert-danger" ng-show="main.error">
-        {{ main.error.statusText }}
-    </div>
-    
-        <input type="search" ng-model="main.searchTerm" placeholder="Search..."/>
+        <div class="alert alert-danger" ng-show="main.error">
+            {{ main.error.statusText }}
+        </div>
+
+        <input type="search" ng-model="main.searchTerm" placeholder="Search..." />
         <select ng-model="main.ordering">
             <option value="+title">Title</option>
             <option value="-rating">Rating (best)</option>
             <option value="+rating">Rating (worst)</option>
         </select>
-
+        <button ng-click="main.refreshMovies()">Refresh</button>
 
         <table class="table table-bordered">
             <tr ng-repeat="movie in main.movies | filter:main.searchTerm | orderBy:main.ordering">
-            <td ng-class="main.getStyles(movie)">{{movie.title}}
-            </td>
-            <td>{{movie.rating}}</td>
-            <td>
-                <button ng-click="main.increaseRating(movie)">+</button>
-                <button ng-click="main.decreaseRating(movie)">-</button>
-            </td>
-          </tr>
-      </table>
+                <td ng-class="main.getStyles(movie)">
+                    {{movie.title}}
+                </td>
+                <td>{{movie.rating}}</td>
+                <td>
+                    <button ng-click="main.increaseRating(movie)">+</button>
+                    <button ng-click="main.decreaseRating(movie)">-</button>
+                    <button ng-click="main.startEdit(movie)">Edit</button>
+                </td>
+            </tr>
+        </table>
+        
+        <input type="text" ng-model="main.htmltext"/>
+        <div ng-bind-html="main.getHtmlContent()"></div>
 
-      <form name="main.newForm" ng-submit="main.saveNewMovie(main.newForm.$valid)" novalidate>
-        <input name="title" type="text" ng-model="main.newMovie.title"
-               required minlength="3" maxlength="100"
-               placeholder="Title" >
 
-            <div ng-messages="main.newForm.title.$error">
-                <span ng-message="required">This is required</span>
-                <span ng-message="minlength">Not enough chars</span>
-                <span ng-message="minlength">Need less chars</span>
-            </div>
-
-        <input name="rating" type="number" min="1" max="5" ng-model="main.newMovie.rating" placeholder="Rating" >
-        <input type="submit" value="Save!"/>
-      </form>
+        <div ng-show="main.editableMovie"
+             ng-include="'moviesApp/editMovie.html'">
+            
+        </div>
 
     </div>
-    
+
     <script src="/angularjs/angular.js"></script>
     <script src="/angular-messages/angular-messages.js"></script>
+    <script src="/angular-sanitize/angular-sanitize.js"></script>
     <script src="/moviesApp/app.js"></script>
     <script src="/moviesApp/mainController.js"></script>
     <script src="/moviesApp/movieService.js"></script>
     <script src="/moviesApp/myJsonFilter.js"></script>
 </body>
 </html>
-    

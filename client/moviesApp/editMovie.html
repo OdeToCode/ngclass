@@ -1,0 +1,16 @@
+﻿<form name="main.editForm" ng-submit="main.saveEdit(main.editForm.$valid)" novalidate>
+    <input name="title" type="text" ng-model="main.editableMovie.title"
+           required minlength="3" maxlength="100"
+           placeholder="Title">
+
+    <div ng-messages="main.newForm.title.$error">
+        <span ng-message="required">This is required</span>
+        <span ng-message="minlength">Not enough chars</span>
+        <span ng-message="maxlength">Need less chars</span>
+    </div>
+
+    <input name="rating" type="number" min="1" max="5" ng-model="main.editableMovie.rating" placeholder="Rating">
+    
+    <input type="submit" value="Save!" />
+    <input ng-click="main.cancelEdit()" type="button" value="Cancel!"/>
+</form>

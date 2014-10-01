@@ -2,35 +2,38 @@
 
 	var app = angular.module("moviesApp");
 
-    app.factory("messageService", function() {
-
-        var message = {
-            text: "Hello from messageService"
-        };
-
-        return {
-            getMessage: function() {
-                return message;
-            },
-            setMessage: function(newMessage) {
-                message.text = newMessage;
-            }
-        };
-
-    });
-
-
- 
-
- 
-	var MainController = function(movieService, $scope, $timeout) {
+	var MainController = function(movieService, $scope, $timeout, $sce) {
 		
-		var model = this;
+	    var model = this;
+	    var savedMovie = null;
+
 		model.movies = [];
 		model.searchTerm = "";
 		model.ordering = "-rating";
 
 	    model.counter = 0;
+
+	    model.getHtmlContent = function() {
+	        return $sce.trustAsHtml(model.htmltext);
+	    };
+
+	    model.startEdit = function(movie) {
+	        savedMovie = angular.copy(movie);
+	        model.editableMovie = movie;
+	    };
+
+	    model.cancelEdit = function() {
+	        angular.extend(model.editableMovie, savedMovie);
+	        model.editableMovie = null;
+	    };
+
+	    model.saveEdit = function(isValid) {
+	        if (isValid) {
+	            model.editableMovie = null;
+
+	            // persist this to server
+	        }
+	    };
 
 		model.getStyles = function(movie){
 			return {
@@ -53,6 +56,11 @@
 			}	
 		}
 
+	    model.refreshMovies = function() {
+	        movieService.getAllMovies()
+		     .then(onMovies, onMoviesError);
+	    };
+
 		var onMovies = function(movies) {
 			model.movies = movies;
 		};
@@ -66,11 +74,12 @@
        		$timeout(incrementCounter, 1000);
 	    };
 
-	    var initialize = function() {
-	        movieService.getAllMovies()
-		     .then(onMovies, onMoviesError);
 
-            $timeout(incrementCounter, 1000);
+
+	    var initialize = function() {
+	        model.refreshMovies();
+
+	        throw "oops!";
 	    };
 
 

@@ -2,14 +2,23 @@
 
 	var app = angular.module("moviesApp");
 
-	var movieService = function($http) {
+	var movieService = function($http, $q, $log) {
 
+	    var movies = [];
 		var endpoint = "/api/movies";
 
-		var getAllMovies = function() {			
-			return  $http.get(endpoint)
-			            .then(function(response){
-			            	return response.data;
+		var getAllMovies = function() {
+
+		    $log.info("getting movies");
+            
+		    if (movies.length) {
+		        return $q.when(movies);
+		    }
+
+		    return $http.get(endpoint)
+			            .then(function(response) {
+		                    movies = response.data;
+			                return response.data;
 			            });
 		};
 
