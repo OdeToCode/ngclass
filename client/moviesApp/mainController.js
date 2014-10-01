@@ -2,11 +2,12 @@
 
 	var app = angular.module("moviesApp");
 
-	var MainController = function(movieService, $scope, $timeout, $sce) {
+	var MainController = function(movieService, $scope, $timeout, $sce, loadingService) {
 		
 	    var model = this;
 	    var savedMovie = null;
 
+	    model.loadTracker = loadingService;
 		model.movies = [];
 		model.searchTerm = "";
 		model.ordering = "-rating";
@@ -29,9 +30,11 @@
 
 	    model.saveEdit = function(isValid) {
 	        if (isValid) {
+
+	            movieService.updateMovie(model.editableMovie);
 	            model.editableMovie = null;
 
-	            // persist this to server
+	     
 	        }
 	    };
 
@@ -78,8 +81,6 @@
 
 	    var initialize = function() {
 	        model.refreshMovies();
-
-	        throw "oops!";
 	    };
 
 

@@ -9,10 +9,20 @@
 <body class="ng-cloak">
 
     <div ng-include="navTemplate"></div>
+    
 
     <h3>Movie List</h3>
 
     <div class="container" ng-controller="MainController as main">
+        
+        <div ng-show="main.loadTracker.getRequestCount()">
+            <img src="spinner.gif" />
+            Loading
+        </div>
+        
+        <alert type="danger">
+            
+        </alert>
 
         <div class="alert alert-danger" ng-show="main.error">
             {{ main.error.statusText }}
@@ -26,7 +36,7 @@
         </select>
         <button ng-click="main.refreshMovies()">Refresh</button>
 
-        <table class="table table-bordered">
+        <table class="table table-bordered table-striped table-hover">
             <tr ng-repeat="movie in main.movies | filter:main.searchTerm | orderBy:main.ordering">
                 <td ng-class="main.getStyles(movie)">
                     {{movie.title}}
@@ -40,10 +50,6 @@
             </tr>
         </table>
         
-        <input type="text" ng-model="main.htmltext"/>
-        <div ng-bind-html="main.getHtmlContent()"></div>
-
-
         <div ng-show="main.editableMovie"
              ng-include="'moviesApp/editMovie.html'">
             
@@ -58,5 +64,6 @@
     <script src="/moviesApp/mainController.js"></script>
     <script src="/moviesApp/movieService.js"></script>
     <script src="/moviesApp/myJsonFilter.js"></script>
+    <script src="/moviesApp/loading.js"></script>
 </body>
 </html>
