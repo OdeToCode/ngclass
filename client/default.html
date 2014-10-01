@@ -17,6 +17,18 @@
     </nav>
     
     <h3>Movie List</h3>
+    
+    <div ng-controller="TestController as test">
+        {{ test.message.text }}
+        <div ng-controller="NestedController as nest">
+            {{ test.message.text }}
+            <input type="text" ng-model="nest.message"/>
+            <button ng-click="nest.changeMessage(nest.message)">
+                Publish message
+            </button>
+        </div>
+    </div>
+    
 
     <div class="container" ng-controller="MainController as main">
 

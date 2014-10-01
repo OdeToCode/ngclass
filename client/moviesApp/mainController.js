@@ -2,7 +2,44 @@
 
 	var app = angular.module("moviesApp");
 
-	var MainController = function(a, $log) {
+    app.factory("messageService", function() {
+
+        var message = {
+            text: "Hello from messageService"
+        };
+
+        return {
+            getMessage: function() {
+                return message;
+            },
+            setMessage: function(newMessage) {
+                message.text = newMessage;
+            }
+        };
+
+    });
+
+
+    var TestController = function (messageService) {
+
+        //$scope.message = "Hello from Test Controller";
+        this.message = messageService.getMessage();
+    };
+
+    var NestedController = function (messageService) {
+
+        this.changeMessage = function(newValue) {
+            messageService.setMessage(newValue);
+        };
+
+    };
+
+    app.controller("NestedController", NestedController);
+    app.controller("TestController", TestController);
+
+
+
+	var MainController = function(movieService) {
 		
 		var model = this;
 		model.movies = [];
@@ -34,17 +71,15 @@
 			model.error = response;
 		};
 
-		a.getAllMovies()
+	    var initialize = function() {
+	        movieService.getAllMovies()
 		     .then(onMovies, onMoviesError);
+	    };
 
-
-		$log.info("MainController initialization complete!");
+	    initialize();
 	};
-	MainController.$inject = ["movieService", "$log"];
 
 	app.controller("MainController", MainController);
-
-
 
 }()); // IIFE (Immediately Invoked Function Expression)
       // SEAF (self-executing anonymous function)

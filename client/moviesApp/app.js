@@ -1,6 +1,4 @@
-﻿
-
-var app = angular.module("moviesApp", []);
+﻿var app = angular.module("moviesApp", []);
 
 app.run(function($rootScope){
 

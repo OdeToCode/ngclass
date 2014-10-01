@@ -2,7 +2,14 @@ Scott Allen
 scott@OdeToCode.com
 
 Now: Complete Lab 1 and Lab 2
-Next: 9:00 am tomorrow
+Next: 9:00 am 
+
+
+Links:
+
+	Class material: http://tinyurl.com/p2fjy3p
+	GitHub Demo Repo: https://github.com/OdeToCode/ngclass
+
 
 Getting started: 
   1. npm install grunt-cli -g
@@ -15,14 +22,9 @@ Getting started:
 
 Current Assignment: None
 
-Links:
 
-	Class material: http://tinyurl.com/p2fjy3p
-	GitHub Demo Repo: https://github.com/OdeToCode/ngclass
 
 Outline:
- Intro AngularJS
- Modules, Controllers
  Views
  Services
  Directives
