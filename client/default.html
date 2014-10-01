@@ -8,37 +8,26 @@
 
 <body class="ng-cloak">
 
-    <nav class="navbar navbar-default navbar-inverse" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">At The Movies!</a>
-            </div>
-        </div>
-    </nav>
+    <div ng-include="'moviesApp/nav.html'"></div>
     
     <h3>Movie List</h3>
     
-    <div ng-controller="TestController as test">
-        {{ test.message.text }}
-        <div ng-controller="NestedController as nest">
-            {{ test.message.text }}
-            <input type="text" ng-model="nest.message"/>
-            <button ng-click="nest.changeMessage(nest.message)">
-                Publish message
-            </button>
-        </div>
-    </div>
-    
-
     <div class="container" ng-controller="MainController as main">
 
     <div class="alert alert-danger" ng-show="main.error">
         {{ main.error.statusText }}
     </div>
-
     
-      <table class="table table-bordered">
-          <tr ng-repeat="movie in main.movies">
+        <input type="search" ng-model="main.searchTerm" placeholder="Search..."/>
+        <select ng-model="main.ordering">
+            <option value="+title">Title</option>
+            <option value="-rating">Rating (best)</option>
+            <option value="+rating">Rating (worst)</option>
+        </select>
+
+
+        <table class="table table-bordered">
+            <tr ng-repeat="movie in main.movies | filter:main.searchTerm | orderBy:main.ordering">
             <td ng-class="main.getStyles(movie)">{{movie.title}}
             </td>
             <td>{{movie.rating}}</td>
@@ -49,18 +38,29 @@
           </tr>
       </table>
 
-      <form ng-submit="main.saveNewMovie()">
-        <input type="text" ng-model="main.newMovie.title" placeholder="Title" >
-        <input type="text" ng-model="main.newMovie.rating" placeholder="Rating" >
+      <form name="main.newForm" ng-submit="main.saveNewMovie(main.newForm.$valid)" novalidate>
+        <input name="title" type="text" ng-model="main.newMovie.title"
+               required minlength="3" maxlength="100"
+               placeholder="Title" >
+
+            <div ng-messages="main.newForm.title.$error">
+                <span ng-message="required">This is required</span>
+                <span ng-message="minlength">Not enough chars</span>
+                <span ng-message="minlength">Need less chars</span>
+            </div>
+
+        <input name="rating" type="number" min="1" max="5" ng-model="main.newMovie.rating" placeholder="Rating" >
         <input type="submit" value="Save!"/>
       </form>
 
     </div>
     
     <script src="/angularjs/angular.js"></script>
+    <script src="/angular-messages/angular-messages.js"></script>
     <script src="/moviesApp/app.js"></script>
     <script src="/moviesApp/mainController.js"></script>
     <script src="/moviesApp/movieService.js"></script>
-
+    <script src="/moviesApp/myJsonFilter.js"></script>
 </body>
 </html>
+    

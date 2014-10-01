@@ -20,29 +20,17 @@
     });
 
 
-    var TestController = function (messageService) {
+ 
 
-        //$scope.message = "Hello from Test Controller";
-        this.message = messageService.getMessage();
-    };
-
-    var NestedController = function (messageService) {
-
-        this.changeMessage = function(newValue) {
-            messageService.setMessage(newValue);
-        };
-
-    };
-
-    app.controller("NestedController", NestedController);
-    app.controller("TestController", TestController);
-
-
-
-	var MainController = function(movieService) {
+ 
+	var MainController = function(movieService, $scope, $timeout) {
 		
 		var model = this;
 		model.movies = [];
+		model.searchTerm = "";
+		model.ordering = "-rating";
+
+	    model.counter = 0;
 
 		model.getStyles = function(movie){
 			return {
@@ -58,9 +46,11 @@
 			movie.rating -= 1;
 		};
 
-		model.saveNewMovie = function(){
-			model.movies.push(model.newMovie);	
-			model.newMovie = null;	
+		model.saveNewMovie = function(isValid){
+			if(isValid) {
+				model.movies.push(model.newMovie);	
+				model.newMovie = null;
+			}	
 		}
 
 		var onMovies = function(movies) {
@@ -71,10 +61,19 @@
 			model.error = response;
 		};
 
+	    var incrementCounter = function() {
+	        model.counter += 1;
+       		$timeout(incrementCounter, 1000);
+	    };
+
 	    var initialize = function() {
 	        movieService.getAllMovies()
 		     .then(onMovies, onMoviesError);
+
+            $timeout(incrementCounter, 1000);
 	    };
+
+
 
 	    initialize();
 	};

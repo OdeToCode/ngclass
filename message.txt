@@ -1,8 +1,8 @@
 Scott Allen	
 scott@OdeToCode.com
 
-Now: Complete Lab 1 and Lab 2
-Next: 9:00 am 
+Now: Lab 03, Lunch 
+Next: 12:45
 
 
 Links:
@@ -22,7 +22,7 @@ Getting started:
 
 Current Assignment: None
 
-
+	bower instal angular-messages#1.3.0-rc.3 --save
 
 Outline:
  Views
@@ -35,3 +35,4 @@ Outline:
  HTML 5 / CSS 3	
 
 Todos:
+  filter - how to do strict search
