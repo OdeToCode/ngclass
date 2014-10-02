@@ -6,7 +6,13 @@ body {
 	display:none;
 }
 
-.filledIn {
+
+.filledStar {
+    color: yellow;
+}
+
+.starHover{
+    opacity: 0.5;
     color: yellow;
 }
 

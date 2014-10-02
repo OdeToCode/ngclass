@@ -5,29 +5,43 @@
     app.directive("rating", function() {
         return {
             restrict: "AE",
-            template: "<div></div>",
+            templateUrl: "moviesApp/rating.html",
             scope: {
-                value: "=",
-                click: "&"
+                value: "="
             },
             link: function(scope, element) {
 
-                element.on("click", function() {
-                    scope.$apply(function() {
-                        scope.click();
-                    });
-                 });
+                var getChildren = function() {
+                    return element.children().children();
+                };
 
+                scope.clicked = function(number) {
+                    scope.value = number;
+                };
+
+                scope.preview = function(index) {
+                    var children = getChildren();
+                    for (var i = 0; i < index; i++) {
+                        angular.element(children[i]).addClass("starHover");
+                    }
+                };
+
+                scope.unpreview = function() {
+                    var children = getChildren();
+                    children.removeClass("starHover");
+                };
+               
                 scope.$watch("value", function () {
-                    element.empty();
-                    for (var i = 1; i <= 5; i++) {
-                        var star = angular.element("<span class='glyphicon'></span>");                      
-                        if (i <= scope.value) {
-                            star.addClass("glyphicon-star filledIn");
+                    var children = getChildren();
+                    for (var i = 0; i < children.length; i++) {
+                        var child = angular.element(children[i]);
+                        child.removeClass("glyphicon-star glyphicon-star-empty filledIn");
+
+                        if (i < scope.value) {
+                            child.addClass("glyphicon-star filledStar");
                         } else {
-                            star.addClass("glyphicon-star-empty");
+                            child.addClass("glyphicon-star-empty");
                         }
-                        element.append(star);
                     }
                 });
             }
