@@ -3,5 +3,11 @@
      <h4>Alert {{count}}</h4>
     <div>This is from an html file</div>
     <div ng-transclude></div>
-    <input type="text" ng-model="reason"/>
+    <form name="edit">
+        <input name="reason" type="text" ng-model="reason" required startwiths />
+        <div ng-messages="edit.reason.$error">
+            <div ng-message="required">This is a required input</div>
+            <div ng-message="startwiths">You must start with an S</div>
+        </div>
+    </form>
 </div>

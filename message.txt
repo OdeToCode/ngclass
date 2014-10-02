@@ -1,13 +1,10 @@
 Scott Allen	
 scott@OdeToCode.com
 
-Now: break
-Next: 10:20am
-
-  directive names
+Now: lab 05, lunch
+Next: 12:45pm
 
 Today:
-    directives
     testing
     routing
 

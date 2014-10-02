@@ -22,6 +22,9 @@
             </tr>
         </table>
         
+        <div contenteditable ng-model="text">This is something I can modify!!</div>
+        {{text}}
+
         <div ng-repeat="alert in alertArea.alerts">
             <pu-alert type="alert.type" close="alertArea.closeAlert(alert)" reason="alert.reason">
                 {{ alert.text }}
