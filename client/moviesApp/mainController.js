@@ -2,8 +2,8 @@
 
 	var app = angular.module("moviesApp");
 
-	var MainController = function(movieService, $scope, $timeout, $sce, loadingService) {
-		
+	var MainController = function(movieService, $timeout, $sce, loadingService) {
+
 	    var model = this;
 	    var savedMovie = null;
 

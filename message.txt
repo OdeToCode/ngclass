@@ -2,11 +2,13 @@ Scott Allen
 scott@OdeToCode.com
 
 Now: break
-Next: 14:10
+Next: 15:30
 
-Today:
-    testing
-    routing
+ Routing
+ UI animations
+ NodeJS
+ HTML 5 / CSS 3	
+
 
 Links:
 
@@ -28,15 +30,7 @@ Current Assignment: None
 	bower instal angular-messages#1.3.0-rc.3 --save
 
 Outline:
- Directives
- Testing Angular
- Routing
-	/default.html#/list
-        /default.html#/edit/3
-       
- UI animations
- NodeJS
- HTML 5 / CSS 3	
+ 
 
 Todos:
   filter - how to do strict search

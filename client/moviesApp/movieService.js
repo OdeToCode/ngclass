@@ -22,7 +22,8 @@
 		    }
 
 		    return $http.get(endpoint)
-			            .then(function(response) {
+			            .then(function (response) {
+		                    $log.info(response);
 		                    movies = response.data;
 			                return response.data;
 			            });
