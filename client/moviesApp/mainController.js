@@ -2,21 +2,6 @@
 
 	var app = angular.module("moviesApp");
 
-    app.controller("alertAreaController", function() {
-
-        var model = this;
-
-        model.closeAlert = function(index) {
-            model.alerts.splice(index, 1);
-        };
-
-        model.alerts = [
-            { type: "warning", text: "This is a warning!", reason: "Unknown" },
-            { type: "danger", text: "This is dangerous!", reason: "" }
-        ];
-    });
-
-
 	var MainController = function(movieService, $scope, $timeout, $sce, loadingService) {
 		
 	    var model = this;
@@ -60,7 +45,10 @@
 		};
 
 		model.increaseRating = function(movie){
-			movie.rating += 1;
+		    movie.rating += 1;
+            if (movie.rating > 5) {
+                movie.rating = 1;
+            }
 		};
 
 		model.decreaseRating = function(movie){

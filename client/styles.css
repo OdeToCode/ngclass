@@ -6,6 +6,10 @@ body {
 	display:none;
 }
 
+.filledIn {
+    color: yellow;
+}
+
 .goodTitle {
 	color: green;
 	font-size: larger;
