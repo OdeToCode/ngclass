@@ -11,7 +11,10 @@
             },
             link: function(scope, element) {
 
+                scope.stars = [1, 2, 3, 4, 5];
+
                 var getChildren = function() {
+
                     return element.children().children();
                 };
 
@@ -35,7 +38,7 @@
                     var children = getChildren();
                     for (var i = 0; i < children.length; i++) {
                         var child = angular.element(children[i]);
-                        child.removeClass("glyphicon-star glyphicon-star-empty filledIn");
+                        child.removeClass("glyphicon-star glyphicon-star-empty filledStar");
 
                         if (i < scope.value) {
                             child.addClass("glyphicon-star filledStar");
