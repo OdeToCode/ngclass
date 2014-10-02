@@ -1,9 +1,15 @@
 Scott Allen	
 scott@OdeToCode.com
 
-Now: 
-Next: 9:00am
+Now: break
+Next: 10:20am
 
+  directive names
+
+Today:
+    directives
+    testing
+    routing
 
 Links:
 

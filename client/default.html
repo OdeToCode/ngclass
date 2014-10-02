@@ -9,13 +9,36 @@
 <body class="ng-cloak">
 
     <div ng-include="navTemplate"></div>
-    
 
     <h3>Movie List</h3>
+    
+    
+
+    <div ng-controller="alertAreaController as alertArea">
+       
+        <table>
+            <tr ng-repeat="alert in alertArea.alerts">
+                <td>{{alert.reason}}</td>
+            </tr>
+        </table>
+        
+        <div ng-repeat="alert in alertArea.alerts">
+            <pu-alert type="alert.type" close="alertArea.closeAlert(alert)" reason="alert.reason">
+                {{ alert.text }}
+            </pu-alert>
+        </div>
+    </div>
+    
 
     <div class="container" ng-controller="MainController as main">
         
-        <div ng-show="main.loadTracker.getRequestCount()">
+        <div class="alert alert-warning">
+            This is a warning  (Bootstrap)
+        </div>
+        
+        
+
+        <!--<div ng-show="main.loadTracker.getRequestCount()">
             <img src="spinner.gif" />
             Loading
         </div>
@@ -53,7 +76,7 @@
         <div ng-show="main.editableMovie"
              ng-include="'moviesApp/editMovie.html'">
             
-        </div>
+        </div>-->
 
     </div>
 
@@ -65,5 +88,6 @@
     <script src="/moviesApp/movieService.js"></script>
     <script src="/moviesApp/myJsonFilter.js"></script>
     <script src="/moviesApp/loading.js"></script>
+    <script src="/moviesApp/alertDirective.js"></script>
 </body>
 </html>
