@@ -3,7 +3,7 @@
 
 app.config(function($routeProvider) {
 
-    $routeProvider
+     $routeProvider
         .when("/list", {
             templateUrl: "/moviesApp/list.html",
             controller: "MainController as main",

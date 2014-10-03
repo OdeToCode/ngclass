@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>My tests</title>
+    <link href="/jasmine/lib/jasmine-core/jasmine.css" rel="stylesheet" />
+    <script src="/jasmine/lib/jasmine-core/jasmine.js"></script>
+    <script src="/jasmine/lib/jasmine-core/jasmine-html.js"></script>
+    <script src="/jasmine/lib/jasmine-core/boot.js"></script>
+
+
+    <script>
+        describe("how objects work", function() {
+
+            it("should be able to crete objects", function () {
+                var movie = { title: "Star Wars", rating: 4 };
+                expect(movie.rating).toBe(4);
+
+            });
+
+
+            it("should be able to factory", function () {
+                var factory = function(title, rating) {
+                    return {
+                        title: title,
+                        rating: rating
+                    }
+                };
+                var movie = factory("STar Wars", 4);
+                expect(movie.rating).toBe(4);
+
+            });
+
+
+            it("should be able to construct objects with a closure", function() {
+
+          
+                var output = function() {
+
+                    var count = 0;
+                    var writeImpl = function() {
+                        count += 1;
+                    };
+
+                    return {
+                        write: function(message) {
+                            writeImpl();
+                        },
+                        getWriteCount: function() {
+                            return count;
+                        }
+                    };
+
+                }();
+
+
+                output.write("Hello");
+                output.write("World!");
+                output.count = 44;
+                
+                expect(output.getWriteCount()).toBe(2);
+
+
+
+
+
+
+                var makeGetGreeting = function(name) {
+                    return function() {
+                        return "Hello " + name;
+                    }
+                };
+
+                var f1 = makeGetGreeting("Scott");
+                var f2 = makeGetGreeting("Allen");
+                expect(f1()).toBe("Hello Scott");
+                expect(f2()).toBe("Hello Allen");
+
+            });
+
+            it("should be able to use ctor function", function () {
+                var Movie = function (title, rating) {
+
+                    if (!(this instanceof Movie)) {
+                        return new Movie(title, rating);
+                    }
+
+                    this.title = title;
+                    this.rating = rating;       
+                };
+
+                Movie.prototype = {
+                    increaseRating: function() {
+                        this.rating += 2;
+                    },
+                    decreaseRating: function() {
+                        this.rating -= 2;
+                    }
+                    
+                };
+
+                var movie = new Movie("STar Wars", 4);
+                movie.increaseRating();
+                expect(movie.rating).toBe(6);
+
+                movie.decreaseRating();
+                expect(movie.rating).toBe(4);
+
+                var movie2 = Movie("Star Wars", 1);
+
+
+                // new Movie
+                // -> var movie = {};
+                // -> Movie.call(movie, "Star Wars", 4);
+                // -> movie.__proto__ = Movie.prototype;
+
+
+            });
+        });
+    </script>
+
+
+</head>
+<body>
+
+</body>
+</html>
