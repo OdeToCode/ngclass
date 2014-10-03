@@ -3,6 +3,7 @@
 <head>
     <title>At The Movies!</title>
     <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/animate.css/animate.css" />
     <link rel="stylesheet" href="/styles.css">
 </head>
 
@@ -10,8 +11,19 @@
 
     <div ng-include="navTemplate"></div>
     
-    <div ng-view></div>
-    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <ng-view></ng-view>         
+            </div>
+            <div class="col-md-2">
+                Right hand side bar thing.....
+            </div>
+        </div>
+    </div>
+
+
+        
     <footer>
         At The Movies is copyright PU 2014
     </footer>
@@ -20,6 +32,7 @@
     <script src="/angular-messages/angular-messages.js"></script>
     <script src="/angular-sanitize/angular-sanitize.js"></script>
     <script src="/angular-route/angular-route.js"></script>
+    <script src="/angular-animate/angular-animate.js"></script>
     <script src="/moviesApp/app.js"></script>    
     <script src="/moviesApp/mainController.js"></script>
     <script src="/moviesApp/EditMovieController.js"></script>

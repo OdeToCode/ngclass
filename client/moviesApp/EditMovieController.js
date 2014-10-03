@@ -12,7 +12,7 @@
                 movieService.updateMovie(model.movie);
                 $location.path("/list");
             }
-        }
+        };
 
         model.cancelEdit = function() {
             $location.path("/list");

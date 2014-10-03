@@ -1,10 +1,20 @@
 ﻿var app = angular.module("moviesApp",
-    ["ngMessages", "ngSanitize", "ngRoute"]);
+    ["ngMessages", "ngSanitize", "ngRoute", "ngAnimate"]);
 
 app.config(function($routeProvider) {
 
     $routeProvider
-        .when("/list", { templateUrl: "/moviesApp/list.html" })
+        .when("/list", {
+            templateUrl: "/moviesApp/list.html",
+            controller: "MainController as main",
+            resolve: {
+                movies: [
+                    "movieService", function(movieService) {
+                        return movieService.getAllMovies();
+                    }
+                ]
+            }
+        })
         .when("/detail/:id", { templateUrl: "/moviesApp/details.html" })
         .when("/edit/:id", { templateUrl: "/moviesApp/edit.html" })
         .otherwise({ redirectTo: "/list" });

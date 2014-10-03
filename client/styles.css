@@ -2,6 +2,15 @@ body {
 	background-color: #ccccbb;
 }
 
+.ng-enter {
+    -webkit-animation: fadeInUp 0.5s;
+    animation: bounceInRight 1s;   
+}
+
+.ng-enter-active {
+      
+}
+
 .ng-cloak {
 	display:none;
 }

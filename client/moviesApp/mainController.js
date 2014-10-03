@@ -2,7 +2,7 @@
 
 	var app = angular.module("moviesApp");
 
-	var MainController = function (movieService, $timeout,
+	var MainController = function (movieService, movies, $timeout,
                                     $location, $sce, loadingService) {
 
 	    var model = this;
@@ -19,7 +19,8 @@
 	    };
 
 	    model.goToEdit = function(movie) {
-	        $location.path("/edit/" + movie.id);
+	          $location.path("/edit/" + movie.id);
+	        
 	    };
 
 		model.getStyles = function(movie){
@@ -41,7 +42,8 @@
 
 	    model.refreshMovies = function() {
 	        movieService.getAllMovies()
-		     .then(onMovies, onMoviesError);
+	            .then(onMovies)
+	            .catch(onMoviesError);
 	    };
 
 		var onMovies = function(movies) {
@@ -60,7 +62,7 @@
 
 
 	    var initialize = function() {
-	        model.refreshMovies();
+	        model.movies = movies;
 	    };
 
 

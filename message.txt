@@ -1,12 +1,16 @@
 Scott Allen	
 scott@OdeToCode.com
 
-Now: 
-Next: 
+Now: lunch, animations
+Next: 12:15 pm
 
- Routing
- UI animations
- Tips 
+1. bower install angular-route#1.3.0-rc.3
+2. added angular-route.js to default.html
+3. added "ngRoute" as a dependency in app.js
+4. app.config $routeProvider
+5. <div ng-view></div>
+
+ Build Apps Tips 
  NodeJS
  HTML 5 / CSS 3	
 
