@@ -15,11 +15,18 @@
 	        });
 	    };
 
+	    var getMovieById = function(id) {
+	        return $http.get(appConfig.moviesEndpoint + "/" + id)
+	                    .then(function(response) {
+	                        return response.data;
+	                    });
+	    };
+
 		var getAllMovies = function() {
 
-		    if (movies.length) {
-		        return $q.when(movies);
-		    }
+		    //if (movies.length) {
+		    //    return $q.when(movies);
+		    //}
 
 		    return $http.get(endpoint)
 			            .then(function (response) {
@@ -31,8 +38,9 @@
 
 	    return {
 	        getAllMovies: getAllMovies,
-	        updateMovie: updateMovie
-	};
+	        updateMovie: updateMovie,
+	        getMovieById: getMovieById
+	    };
 	};
 
 

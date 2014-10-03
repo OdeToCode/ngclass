@@ -1,11 +1,12 @@
 Scott Allen	
 scott@OdeToCode.com
 
-Now: break
-Next: 15:30
+Now: 
+Next: 
 
  Routing
  UI animations
+ Tips 
  NodeJS
  HTML 5 / CSS 3	
 

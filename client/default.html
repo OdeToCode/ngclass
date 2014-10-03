@@ -10,63 +10,19 @@
 
     <div ng-include="navTemplate"></div>
     
-   
+    <div ng-view></div>
     
+    <footer>
+        At The Movies is copyright PU 2014
+    </footer>
 
-    <h3>Movie List</h3>
-    
-    <div class="container" ng-controller="MainController as main">
-        
-        <div ng-show="main.loadTracker.getRequestCount()">
-            <img src="spinner.gif" />
-            Loading
-        </div>
-        
-        <alert type="danger">
-            
-        </alert>
-
-        <div class="alert alert-danger" ng-show="main.error">
-            {{ main.error.statusText }}
-        </div>
-
-        <input type="search" ng-model="main.searchTerm" placeholder="Search..." />
-        <select ng-model="main.ordering">
-            <option value="+title">Title</option>
-            <option value="-rating">Rating (best)</option>
-            <option value="+rating">Rating (worst)</option>
-        </select>
-        <button ng-click="main.refreshMovies()">Refresh</button>
-
-        <table class="table table-bordered">
-            <tr ng-repeat="movie in main.movies | filter:main.searchTerm | orderBy:main.ordering">
-                <td ng-class="main.getStyles(movie)">
-                    {{movie.title}}
-                </td>
-                <td>
-                    <rating value="movie.rating" click="main.increaseRating(movie)">
-                    </rating>
-                </td>
-                <td>
-                    <button ng-click="main.increaseRating(movie)">+</button>
-                    <button ng-click="main.decreaseRating(movie)">-</button>
-                    <button ng-click="main.startEdit(movie)">Edit</button>
-                </td>
-            </tr>
-        </table>
-        
-        <div ng-show="main.editableMovie"
-             ng-include="'moviesApp/editMovie.html'">
-            
-        </div>
-
-    </div>
-       
     <script src="/angularjs/angular.js"></script>
     <script src="/angular-messages/angular-messages.js"></script>
     <script src="/angular-sanitize/angular-sanitize.js"></script>
-    <script src="/moviesApp/app.js"></script>
+    <script src="/angular-route/angular-route.js"></script>
+    <script src="/moviesApp/app.js"></script>    
     <script src="/moviesApp/mainController.js"></script>
+    <script src="/moviesApp/EditMovieController.js"></script>
     <script src="/moviesApp/movieService.js"></script>
     <script src="/moviesApp/myJsonFilter.js"></script>
     <script src="/moviesApp/loading.js"></script>

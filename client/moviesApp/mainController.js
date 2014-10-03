@@ -2,10 +2,10 @@
 
 	var app = angular.module("moviesApp");
 
-	var MainController = function(movieService, $timeout, $sce, loadingService) {
+	var MainController = function (movieService, $timeout,
+                                    $location, $sce, loadingService) {
 
 	    var model = this;
-	    var savedMovie = null;
 
 	    model.loadTracker = loadingService;
 		model.movies = [];
@@ -18,24 +18,8 @@
 	        return $sce.trustAsHtml(model.htmltext);
 	    };
 
-	    model.startEdit = function(movie) {
-	        savedMovie = angular.copy(movie);
-	        model.editableMovie = movie;
-	    };
-
-	    model.cancelEdit = function() {
-	        angular.extend(model.editableMovie, savedMovie);
-	        model.editableMovie = null;
-	    };
-
-	    model.saveEdit = function(isValid) {
-	        if (isValid) {
-
-	            movieService.updateMovie(model.editableMovie);
-	            model.editableMovie = null;
-
-	     
-	        }
+	    model.goToEdit = function(movie) {
+	        $location.path("/edit/" + movie.id);
 	    };
 
 		model.getStyles = function(movie){
@@ -54,13 +38,6 @@
 		model.decreaseRating = function(movie){
 			movie.rating -= 1;
 		};
-
-		model.saveNewMovie = function(isValid){
-			if(isValid) {
-				model.movies.push(model.newMovie);	
-				model.newMovie = null;
-			}	
-		}
 
 	    model.refreshMovies = function() {
 	        movieService.getAllMovies()

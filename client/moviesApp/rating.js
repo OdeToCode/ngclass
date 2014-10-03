@@ -36,6 +36,7 @@
                
                 scope.$watch("value", function () {
                     var children = getChildren();
+
                     for (var i = 0; i < children.length; i++) {
                         var child = angular.element(children[i]);
                         child.removeClass("glyphicon-star glyphicon-star-empty filledStar");
