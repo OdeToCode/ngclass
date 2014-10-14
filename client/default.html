@@ -1,13 +1,12 @@
-<html>
+<html ng-app="moviesApp">
 
 <head>
-    <title>At The Movies!!</title>
+    <title>At The Movies! {{ appVersion }}</title>
     <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="/animate.css/animate.css" />
     <link rel="stylesheet" href="/styles.css">
 </head>
 
-<body>
+<body class="ng-cloak">
 
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -19,11 +18,32 @@
    
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12" ng-controller="MoviesController as list">
                 
-            </div>
+                <div ng-show="list.error" class="alert alert-warning">
+                    {{ list.error }}
+                </div>
+               
+                <table class="table">
+                    <tr ng-repeat="movie in list.movies">
+                        <td>{{$index + 1}} of {{ list.movies.length }}
+                        </td>
+                        <td>{{movie.title}}</td>
+                        <td>{{movie.rating}}</td>
+                                              
+                    </tr>
+                </table>
+               
+            </div>  
         </div>
     </div>
 
+    <script src="Scripts/angular.js"></script>
+    <script src="ngApps/common/module.js"></script>
+    <script src="ngApps/common/services/movieService.js"></script>
+
+    <script src="ngApps/moviesApp/module.js"></script>
+    <script src="ngApps/moviesApp/controllers/MovieController.js"></script>
+   
 </body>
 </html>

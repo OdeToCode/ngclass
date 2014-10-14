@@ -1,9 +1,29 @@
 Scott Allen	
 scott@OdeToCode.com
 
-Now: lunch and lab
-Next: 1:45 pm
+Now: Lab 01
+  
+  1. add angular.js script
+  2. create an "app" module
+  3. create a controller
+  4. use ng-repeat to show
+     controller movies on web page.      5. use ng-click on buttons to 
+     change movie ratings
+
+Next: 2:30 pm
+      Continue with modules
     
+Setting Up Bower:
+   
+   npm install bower -g  
+   bower install
+   npm install grunt-cli -g
+   npm install
+   grunt
+
+
+
+   
 
 Material:
 https://dl.dropboxusercontent.com/u/79231895/ngclass.zip
