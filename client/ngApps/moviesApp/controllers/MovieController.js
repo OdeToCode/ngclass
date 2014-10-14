@@ -1,33 +1,33 @@
-﻿(function(module) {
+﻿// 1. ng-annotate (does #2 for you)
+// 2. register using an array describing dependencies
+// 3. add an $inject property
 
-    module.controller("MoviesController", function() {
+(function(module) {
+
+    var MoviesController = function(movieService, $log) {
         var model = this;
 
         model.message = "Hello World!";
 
-        model.messageStyle = {
-            red: true,
-            large: true,
+        var onMovies = function(response) {
+            model.movies = response.data;
         };
 
-        model.changeMessage = function() {
-            model.editMessage = true;
-            model.messageStyle.red = false;
+        var onMoviesError = function(response) {
+            model.error = "Sorry, could not get movies!";
         };
 
-        model.saveMessage = function(isValid, newMessage) {
-            if (isValid) {
-                model.message = newMessage;
-                model.editMessage = false;
-                model.messageStyle.red = true;
-            }
+        var activate = function () {
+            $log.info("activate MoviesController");
+
+            movieService.getAllMovies()
+                        .then(onMovies, onMoviesError);
         };
 
-        model.movies = [
-            { title: "Star Wars", rating: 5 },
-            { title: "Star Trek", rating: 4 },
-            { title: "Gravity", rating: 3   }
-        ];
-    });
+        activate();
+    };
+    MoviesController.$inject = ["movieService", "$log"];
+
+    module.controller("MoviesController", MoviesController);
 
 }(angular.module("moviesApp")));

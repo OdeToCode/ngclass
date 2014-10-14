@@ -1,7 +1,15 @@
-﻿/// <reference path="module.js" />
-(function() { 
+﻿(function() { 
 
-    angular.module("moviesApp", []);
+    var module = angular.module("moviesApp", ["common"]);
+
+    module.config(function($httpProvider) {
+        $httpProvider.defaults.headers.common["X-Custom"] = "foo";
+    });
+
+    module.run(function($rootScope, $log) {
+        $rootScope.appVersion = "1.0";
+       
+    });
 
 }());
 
