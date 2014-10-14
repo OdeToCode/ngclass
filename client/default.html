@@ -3,46 +3,28 @@
 <head>
     <title>At The Movies!</title>
     <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="/animate.css/animate.css" />
     <link rel="stylesheet" href="/styles.css">
 </head>
 
-<body class="ng-cloak">
-
-    <div ng-include="navTemplate"></div>
+<body>
     
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">At The Movies!</a>
+            </div>
+          </div>
+    </nav>
+
+   
     <div class="container">
         <div class="row">
-            <div class="col-md-10">
-                <ng-view></ng-view>         
-            </div>
-            <div class="col-md-2">
-                Right hand side bar thing.....
-            </div>
+            <div class="col-md-12">
+            </div>  
         </div>
     </div>
 
 
-        
-    <footer>
-        At The Movies is copyright PU 2014
-    </footer>
-
-    <script src="/angularjs/angular.js"></script>
-    <script src="/angular-messages/angular-messages.js"></script>
-    <script src="/angular-sanitize/angular-sanitize.js"></script>
-    <script src="/angular-route/angular-route.js"></script>
-    <script src="/angular-animate/angular-animate.js"></script>
-    <script src="/moviesApp/app.js"></script>    
-    <script src="/moviesApp/mainController.js"></script>
-    <script src="/moviesApp/EditMovieController.js"></script>
-    <script src="/moviesApp/movieService.js"></script>
-    <script src="/moviesApp/myJsonFilter.js"></script>
-    <script src="/moviesApp/loading.js"></script>
-    <script src="/moviesApp/alertDirective.js"></script>
-    <script src="/moviesApp/rating.js"></script>
-    <script>
-
-    </script>
+   
 </body>
 </html>
