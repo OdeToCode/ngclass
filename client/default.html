@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="/styles.css">
 </head>
 
-<body>
-    
+<body class="ng-cloak">
+
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -15,16 +15,40 @@
             </div>
           </div>
     </nav>
-
    
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12" ng-controller="MoviesController as list">
+            
+                <span ng-class="list.messageStyle">{{ list.message }}</span>
+                <div ng-show="list.editMessage">
+                    
+                    <form name="list.messageForm" novalidate
+                          ng-submit="list.saveMessage(messageForm.$valid, list.tempMessage)">
+                        <input name="tempMessage" type="text" required
+                               ng-model="list.tempMessage" />
+                        <input type="submit" value="Save!" />
+                    </form>
+                </div>
+                
+
+                <button ng-click="list.changeMessage()">Change the message!</button>
+
+                <table class="table">
+                    <tr ng-repeat="movie in list.movies">
+                        <td>{{$index + 1}} of {{ list.movies.length }}
+                        </td>
+                        <td>{{movie.title}}</td>
+                        <td>{{movie.rating}}</td>                        
+                    </tr>
+                </table>
+               
             </div>  
         </div>
     </div>
 
-
-   
+    <script src="Scripts/angular.js"></script>
+    <script src="ngApps/moviesApp/module.js"></script>
+    <script src="ngApps/moviesApp/controllers/MovieController.js"></script>
 </body>
 </html>

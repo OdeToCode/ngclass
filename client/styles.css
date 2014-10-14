@@ -2,34 +2,14 @@ body {
 	background-color: #ccccbb;
 }
 
-.ng-enter {
-    -webkit-animation: fadeInUp 0.5s;
-    animation: bounceInRight 1s;   
-}
-
-.ng-enter-active {
-      
-}
-
 .ng-cloak {
 	display:none;
 }
 
-
-.filledStar {
-    color: yellow;
+.red {
+    color: red;
 }
 
-.starHover{
-    opacity: 0.5;
-    color: yellow;
+.large {
+    font-size: larger;
 }
-
-.goodTitle {
-	color: green;
-	font-size: larger;
-}
-
-input.ng-invalid.ng-dirty {
-	background-color:red;
-};
