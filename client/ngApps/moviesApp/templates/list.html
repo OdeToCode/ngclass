@@ -1,0 +1,24 @@
+﻿<div class="col-md-12" ng-controller="MoviesController as list">
+    <div ng-show="list.error" class="alert alert-warning">
+        {{ list.error }}
+    </div>
+
+    <table class="table">
+        <tr ng-repeat="movie in list.movies">
+            <td>
+                {{$index + 1}} of {{ list.movies.length }}
+            </td>
+            <td>
+                <a ng-href="#/details/{{movie.id}}">
+                          {{movie.title}}
+                </a>
+            </td>
+            <td>{{movie.rating}}</td>
+            <td>
+                <button ng-click="list.gotoDetails(movie)" class="btn">Details</button>
+                <button ng-click="list.increaseRating(movie)" class="btn">+</button>
+                <button ng-click="list.decreaseRating(movie)" class="btn">-</button>
+            </td>
+        </tr>
+    </table>
+</div>  

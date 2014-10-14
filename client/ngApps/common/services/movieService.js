@@ -1,16 +1,31 @@
 ﻿(function(module) {
 
-    var moviesService = function($http) {
+    var movieService = function($http, $q) {
+
+        var movies = [];
+        var rootUrl = "/api/movies/";
 
         var getAllMovies = function () {
-            return $http.get("/api/movies");
+            if (movies.length > 0) {
+                return $q.when({ data: movies });
+            }
+            return $http.get(rootUrl)
+                        .then(function(response) {
+                            movies = response.data;
+                            return response;
+                        });
+        };
+
+        var getMovieById = function(id) {
+            return $http.get(rootUrl + id);
         };
 
         return {
-            getAllMovies: getAllMovies
+            getAllMovies: getAllMovies,
+            getMovieById: getMovieById
         };
     };
 
-    module.factory("movieService", moviesService);
+    module.factory("movieService", movieService);
 
 }(angular.module("common")));

@@ -1,17 +1,10 @@
 Scott Allen	
 scott@OdeToCode.com
 
-Now: Lab 01
+Now: break Lab 02 / Add routing
   
-  1. add angular.js script
-  2. create an "app" module
-  3. create a controller
-  4. use ng-repeat to show
-     controller movies on web page.      5. use ng-click on buttons to 
-     change movie ratings
-
-Next: 2:30 pm
-      Continue with modules
+Next: 9:00am
+      
     
 Setting Up Bower:
    
@@ -20,7 +13,6 @@ Setting Up Bower:
    npm install grunt-cli -g
    npm install
    grunt
-
 
 
    
@@ -35,10 +27,8 @@ https://github.com/OdeToCode/ngclass
 Meeting Room WiFi: 12345aaaaa 
 Amaad - 1103
 
-1. Intro
-2. Modules & Controllers
 3. Views and Forms
-4. Routing
+   (resolve)  
 5. Services
 6. Directives
 7. Testing

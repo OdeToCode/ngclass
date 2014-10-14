@@ -1,0 +1,14 @@
+﻿<div ng-controller="DetailsController as details">
+    <h1>{{details.movie.title}}</h1>
+    
+    <div class="alert alert-danger" ng-show="details.error">
+        {{details.error }}
+    </div>
+    
+    <div>
+        Rating: {{details.movie.rating}}
+    </div>
+    <div>
+        Year: {{ details.movie.year }}
+    </div>
+</div>
