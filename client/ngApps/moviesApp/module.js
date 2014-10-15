@@ -27,7 +27,7 @@
     module.run(function($rootScope, $log) {
         $rootScope.appVersion = "1.0";
         $rootScope.validationErrors = "/ngapps/moviesApp/templates/validationErrors.html";
-        $rootScope.toptemplate = "/ngapps/moviesApp/templates/toplight.html";
+        $rootScope.toptemplate = "/ngapps/moviesApp/templates/topdark.html";
 
         $rootScope.$on("$routeChangeError", function() {
             $rootScope.error = "Could not load this route";
@@ -36,14 +36,3 @@
     });
 
 }());
-
-
-
-//-moviesApp
-//module.js
-// - directives
-// - controllers
-// - services
-
-//- salesApp
-//  module.js

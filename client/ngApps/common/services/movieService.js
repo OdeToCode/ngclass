@@ -1,14 +1,7 @@
 ﻿(function(module) {
 
-    var testService = function($log) {
-        $log.info("test service instantiate");
-    };
-    module.factory("testService", testService);
-
 
     var movieService = function($http, $log) {
-
-        $log.info("movieService instaiatnet");
 
         var rootUrl = "/api/movies/";
 

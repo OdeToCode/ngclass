@@ -1,25 +1,12 @@
 ﻿(function (module) {
 
-    var MoviesController = function (movieService, $log, $location, $timeout, $scope) {
+    var MoviesController = function (movieService, $log, $location) {
         var model = this;
 
         model.counter = 0;
-
         model.searchTerm = "";
         model.orderTerm = "-rating";
-        $scope.$watch("list.counter", function () {
-            $log.info("counter changed to " + model.counter);
-        });
-
-
-        var incrementCounter = function () {
-            model.counter += 1;
-            $timeout(incrementCounter, 1000);
-        };
-        $timeout(incrementCounter, 1000);
-
-        model.message = "Hello World!";
-
+  
         model.increaseRating = function (movie) {
             movie.rating += 1;
         };
