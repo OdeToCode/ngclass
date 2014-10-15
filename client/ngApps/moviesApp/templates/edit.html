@@ -1,0 +1,42 @@
+﻿<div ng-controller="EditController as edit">
+    <h2>Editing: {{edit.movie.title}}</h2>
+    
+    <form ng-submit="edit.saveMovie(editForm.$valid)"
+          class="form" name="editForm" novalidate>
+        <div class="form-group">
+            <label>Title</label>
+            <input name="title" type="text" ng-model="edit.movie.title"
+                   required minlength="2" 
+                   maxlength="40" class="form-control"/>
+            <div ng-messages="editForm.title.$error" 
+                 ng-messages-include="{{validationErrors}}"
+                 class="form-errors">
+              
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>Rating</label>
+            <input name="rating" type="number" ng-model="edit.movie.rating"
+                   required min="1" max="5" class="form-control" />
+            <div ng-messages="editForm.rating.$error"
+                 ng-messages-include="  {{validationErrors}}"
+                 class="form-errors">
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>Year</label>
+            <input type="number" ng-model="edit.movie.year"
+                   required min="1900"
+                   max="2030" class="form-control" />
+        </div>
+
+        <input type="submit" class="btn btn-primary" value="Save!"/>
+        <input type="button" ng-click="edit.cancel()"class="btn btn-default" value="Cancel" />
+    </form>
+    <pre>
+{{ editForm | json }}
+</pre>
+
+</div>

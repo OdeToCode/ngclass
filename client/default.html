@@ -8,16 +8,8 @@
 
 <body class="ng-cloak">
 
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">At The Movies!</a>
-            </div>
-          </div>
-    </nav>
-   
-    {{ error }}
-
+   <div ng-include="toptemplate"></div>
+ 
     <div class="container">
         <div class="row">
          
@@ -30,12 +22,14 @@
 
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/angular-messages.js"></script>
     <script src="ngApps/common/module.js"></script>
     <script src="ngApps/common/services/movieService.js"></script>
     
     <script src="ngApps/moviesApp/module.js"></script>
+    <script src="ngApps/moviesApp/filters/checkmark.js"></script>
     <script src="ngApps/moviesApp/controllers/DetailsController.js"></script>
     <script src="ngApps/moviesApp/controllers/MovieController.js"></script>
-   
+    <script src="ngApps/moviesApp/controllers/EditController.js"></script>
 </body>
 </html>

@@ -2,6 +2,21 @@ body {
 	background-color: #ccccbb;
 }
 
+form.ng-submitted .ng-invalid {
+    border-color: red;
+    border-width: 3px;
+}
+
+.form-errors {
+    color: red;
+    font-size: smaller;
+}
+
+.ng-valid {
+    border-color: green;
+    border-width: 1px;
+}
+
 .ng-cloak {
 	display:none;
 }

@@ -20,9 +20,16 @@
             return $http.get(rootUrl + id);
         };
 
+   
+        var saveMovie = function(movie) {
+            return $http.put(rootUrl, movie);
+
+        };
+
         return {
             getAllMovies: getAllMovies,
-            getMovieById: getMovieById
+            getMovieById: getMovieById,
+            saveMovie: saveMovie
         };
     };
 

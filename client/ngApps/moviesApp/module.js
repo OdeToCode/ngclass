@@ -1,16 +1,15 @@
 ﻿(function() { 
 
-    var module = angular.module("moviesApp", ["common", "ngRoute"]);
+    var module = angular.module("moviesApp", ["common", "ngRoute", "ngMessages"]);
 
     module.config(function($routeProvider) {
-
-       
        
         // #/edit/2 -> edit movie 2
 
         var routes = [
             { url: "/list", settings: { templateUrl: "list.html" } },
-            { url: "/details/:id", settings: { templateUrl: "details.html" } }
+            { url: "/details/:id", settings: { templateUrl: "details.html" } },
+            { url: "/edit/:id", settings: {templateUrl: "edit.html "}}
         ];
 
         angular.forEach(routes, function(route) {
@@ -27,6 +26,8 @@
 
     module.run(function($rootScope, $log) {
         $rootScope.appVersion = "1.0";
+        $rootScope.validationErrors = "/ngapps/moviesApp/templates/validationErrors.html";
+        $rootScope.toptemplate = "/ngapps/moviesApp/templates/toplight.html";
 
         $rootScope.$on("$routeChangeError", function() {
             $rootScope.error = "Could not load this route";

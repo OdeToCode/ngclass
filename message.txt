@@ -1,22 +1,12 @@
 Scott Allen	
 scott@OdeToCode.com
 
-Now: break Lab 02 / Add routing
-  
-Next: 9:00am
+{{ model.booleanProperty | checkmark }}
+
+Now: break lab 03
+Next: 3:00pm
       
     
-Setting Up Bower:
-   
-   npm install bower -g  
-   bower install
-   npm install grunt-cli -g
-   npm install
-   grunt
-
-
-   
-
 Material:
 https://dl.dropboxusercontent.com/u/79231895/ngclass.zip
 
