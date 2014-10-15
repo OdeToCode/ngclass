@@ -32,9 +32,8 @@
             $location.path("/details/" + movie.id);
         };
 
-        var onMovies = function (response) {
-            model.movies = response.data;
-
+        var onMovies = function (movies) {
+            model.movies = movies;
         };
 
         var onMoviesError = function (response) {

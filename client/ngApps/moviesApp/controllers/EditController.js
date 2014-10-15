@@ -8,7 +8,6 @@
            if (isValid) {
                movieService.saveMovie(model.movie)
                    .then(saveSuccess);
-
            } 
         };
 
@@ -20,8 +19,8 @@
             $location.path("/details/" + model.movie.id);
         };
 
-        var onMovie = function(response) {
-            model.movie = response.data;
+        var onMovie = function(movie) {
+            model.movie = movie;
         };
 
         var initialize = function() {

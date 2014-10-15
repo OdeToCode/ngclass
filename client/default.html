@@ -10,7 +10,16 @@
 
    <div ng-include="toptemplate"></div>
  
-    <div class="container">
+    <div class="container" ng-controller="ShellController as shell">
+        
+        <div ng-repeat="alert in shell.alerts">
+            <div class="alert alert-danger">
+                {{ alert.message }}
+            </div>
+        </div>
+        
+        <button ng-click="shell.makeError()">Make error!</button>
+
         <div class="row">
          
             <div ng-view>
@@ -23,13 +32,16 @@
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/angular-route.js"></script>
     <script src="Scripts/angular-messages.js"></script>
+
     <script src="ngApps/common/module.js"></script>
     <script src="ngApps/common/services/movieService.js"></script>
-    
+    <script src="ngApps/common/services/alertService.js"></script>
+
     <script src="ngApps/moviesApp/module.js"></script>
     <script src="ngApps/moviesApp/filters/checkmark.js"></script>
     <script src="ngApps/moviesApp/controllers/DetailsController.js"></script>
     <script src="ngApps/moviesApp/controllers/MovieController.js"></script>
     <script src="ngApps/moviesApp/controllers/EditController.js"></script>
+    <script src="ngApps/moviesApp/controllers/ShellController.js"></script>
 </body>
 </html>

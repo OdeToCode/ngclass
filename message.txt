@@ -1,7 +1,15 @@
 Scott Allen	
 scott@OdeToCode.com
 
-{{ model.booleanProperty | checkmark }}
+button ng-click="goToNotes()"
+...
+...
+....
+...
+
+<div id="notes"></div>
+
+
 
 Now: break lab 03
 Next: 3:00pm
@@ -17,9 +25,10 @@ https://github.com/OdeToCode/ngclass
 Meeting Room WiFi: 12345aaaaa 
 Amaad - 1103
 
-3. Views and Forms
-   (resolve)  
 5. Services
+   (resolve)  
+   (santizie)
+   (service providers)
 6. Directives
 7. Testing
 8. UI

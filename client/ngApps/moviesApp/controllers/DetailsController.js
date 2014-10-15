@@ -4,8 +4,8 @@
 
         var model = this;
 
-        var onMovie = function(response) {
-            model.movie = response.data;
+        var onMovie = function(movie) {
+            model.movie = movie;
         };
 
         var onError = function(response) {
