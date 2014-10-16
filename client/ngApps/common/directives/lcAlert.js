@@ -7,7 +7,6 @@
             transclude: true,
 
             templateUrl: "/ngapps/common/directives/lcalert.html",
-
             scope: {
                 //type: "@type" // <lc-alert type="something"
                 type: "=type",

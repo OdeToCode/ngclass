@@ -1,9 +1,9 @@
 Scott Allen	
 scott@OdeToCode.com
 
-Now: lab 02, 03, 04
-Next: 9:00am
-       
+Now: break
+Next: 14:25 
+
 Material:
 https://dl.dropboxusercontent.com/u/79231895/ngclass.zip
 
@@ -11,16 +11,15 @@ GitHub Repo:
 https://github.com/OdeToCode/ngclass
   (download or clone)
 
-Meeting Room WiFi: 12345aaaaa 
-Amaad - 1103
-
-5. Services
-   (resolve)  
-   (santizie)
-   (service providers)
+ 
 6. Directives
+
 7. Testing
+
 8. UI
+
 9. Practices
+
 10. Node Tools for JavaScript and Angular
+
 11. ES6 (JavaScript v.Next)

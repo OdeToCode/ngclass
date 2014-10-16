@@ -14,7 +14,7 @@
 
     <table class="table table-bordered">
         <tr ng-repeat="movie in list.movies | filter:{title: list.searchTerm} | orderBy:list.orderTerm">
-            <td>
+            <td contenteditable ng-model="foo">
                 {{$index + 1}} of {{ list.movies.length }}
             </td>
             <td>

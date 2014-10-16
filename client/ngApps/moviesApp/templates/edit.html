@@ -1,7 +1,11 @@
 ﻿<div ng-controller="EditController as edit">
     <h2>Editing: {{edit.movie.title}}</h2>
     
-    <form ng-submit="edit.saveMovie(editForm.$valid)"
+    <form>
+        <input type="text" value="test" />
+    </form>
+
+    <form autofocus ng-submit="edit.saveMovie(editForm.$valid)"
           class="form" name="editForm" novalidate>
         <div class="form-group">
             <label>Title</label>
@@ -27,9 +31,12 @@
         
         <div class="form-group">
             <label>Year</label>
-            <input name="year" type="number" ng-model="edit.movie.year"
-                   required min="1900"
+            <input name="year" type="number" 
+                   ng-model="edit.movie.year"
+                   ng-model-options="{ debounce:250 }"
+                   required min="1900" odd
                    max="2030" class="form-control" />
+            <div ng-if="editForm.year.$pending">Calculating....</div>
             <div ng-messages="editForm.year.$error"
                  ng-messages-include="  {{validationErrors}}"
                  class="form-errors">

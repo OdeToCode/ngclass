@@ -3,10 +3,7 @@
     var alertsService = function($injector) {
 
         var id = 1;
-        var alerts = [
-            { id: -2, message: "This is a problem!", type: "danger" },
-            { id: -1, message: "Save successful!", type:"info"}
-        ];
+        var alerts = [];
 
 
         var removeAlert = function(alert) {
