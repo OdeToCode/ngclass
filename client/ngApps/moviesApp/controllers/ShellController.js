@@ -1,11 +1,15 @@
 ﻿(function(module) {
 
-    var ShellController = function(alerts) {
+    var ShellController = function(alerts, httpRequestCount) {
         var model = this;
         model.alerts = alerts.currentAlerts;
 
         model.makeError = function() {
             throw "Opps!";
+        };
+
+        model.getRequestCount = function() {
+            return httpRequestCount.getRequestCount();
         };
     };
 

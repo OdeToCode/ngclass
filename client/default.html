@@ -12,6 +12,10 @@
  
     <div class="container" ng-controller="ShellController as shell">
         
+        <span ng-show="shell.getRequestCount()">
+            <img src="ajax-loader.gif" />
+        </span>
+
         <div ng-repeat="alert in shell.alerts">
             <div class="alert alert-danger">
                 {{ alert.message }}
@@ -34,6 +38,8 @@
     <script src="ngApps/common/module.js"></script>
     <script src="ngApps/common/services/movieService.js"></script>
     <script src="ngApps/common/services/alertService.js"></script>
+    <script src="ngApps/common/services/loadingInterceptor.js"></script>
+    <script src="ngApps/common/services/httpRequestCount.js"></script>
 
     <script src="ngApps/moviesApp/module.js"></script>
     <script src="ngApps/moviesApp/filters/checkmark.js"></script>

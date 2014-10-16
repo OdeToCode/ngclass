@@ -4,7 +4,7 @@
 
         var id = 1;
         var alerts = [];
-        
+
         var addException = function(exception) {
 
             var message = "";

@@ -27,9 +27,13 @@
         
         <div class="form-group">
             <label>Year</label>
-            <input type="number" ng-model="edit.movie.year"
+            <input name="year" type="number" ng-model="edit.movie.year"
                    required min="1900"
                    max="2030" class="form-control" />
+            <div ng-messages="editForm.year.$error"
+                 ng-messages-include="  {{validationErrors}}"
+                 class="form-errors">
+            </div>
         </div>
 
         <input type="submit" class="btn btn-primary" value="Save!"/>

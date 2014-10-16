@@ -1,20 +1,9 @@
 Scott Allen	
 scott@OdeToCode.com
 
-button ng-click="goToNotes()"
-...
-...
-....
-...
-
-<div id="notes"></div>
-
-
-
-Now: break lab 03
-Next: 3:00pm
-      
-    
+Now: lab 02, 03, 04
+Next: 9:00am
+       
 Material:
 https://dl.dropboxusercontent.com/u/79231895/ngclass.zip
 
