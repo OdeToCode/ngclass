@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Thu Oct 02 2014 09:07:22 GMT-0400 (Eastern Daylight Time)
+// Generated on Thu Oct 16 2014 09:49:20 GMT-0400 (Eastern Daylight Time)
 
 module.exports = function(config) {
   config.set({
@@ -15,12 +15,15 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'bower_components/angularjs/angular.js',
-      'bower_components/angular-messages/angular-messages.js',
-      'bower_components/angular-sanitize/angular-sanitize.js',
-      'bower_components/angular-mocks/angular-mocks.js',
-      'client/moviesApp/app.js',
-      'client/moviesApp/**/*.js',
+        "client/Scripts/angular.js",
+        "client/Scripts/angular-route.js",
+        "client/Scripts/angular-sanitize.js",
+        "client/Scripts/angular-messages.js",
+        "client/Scripts/angular-mocks.js",
+
+        "client/ngapps/common/module.js",
+        "client/ngapps/moviesApp/module.js",
+        "client/ngapps/**/*.js"
     ],
 
 
@@ -60,7 +63,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome', 'FireFox'],
 
 
     // Continuous Integration mode

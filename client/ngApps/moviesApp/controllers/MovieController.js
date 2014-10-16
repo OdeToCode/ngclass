@@ -9,7 +9,9 @@
         model.movies = movies;
   
         model.increaseRating = function (movie) {
-            movie.rating += 1;
+            if (movie.rating < 5) {
+                movie.rating += 1;
+            }
         };
 
         model.decreaseRating = function (movie) {
