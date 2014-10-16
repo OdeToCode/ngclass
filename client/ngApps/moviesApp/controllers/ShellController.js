@@ -11,6 +11,10 @@
         model.getRequestCount = function() {
             return httpRequestCount.getRequestCount();
         };
+
+        model.closeAlert = function(alert) {
+            alerts.removeAlert(alert);
+        };
     };
 
 

@@ -7,7 +7,7 @@
             <label>Title</label>
             <input name="title" type="text" ng-model="edit.movie.title"
                    required minlength="2" 
-                   maxlength="40" class="form-control"/>
+                   maxlength="140" class="form-control"/>
             <div ng-messages="editForm.title.$error" 
                  ng-messages-include="{{validationErrors}}"
                  class="form-errors">

@@ -1,11 +1,12 @@
 ﻿(function (module) {
 
-    var MoviesController = function (movieService, $log, $location) {
+    var MoviesController = function (movies, $log, $location) {
         var model = this;
 
         model.counter = 0;
         model.searchTerm = "";
         model.orderTerm = "-rating";
+        model.movies = movies;
   
         model.increaseRating = function (movie) {
             movie.rating += 1;
@@ -19,21 +20,21 @@
             $location.path("/details/" + movie.id);
         };
 
-        var onMovies = function (movies) {
-            model.movies = movies;
-        };
+        //var onMovies = function (movies) {
+        //    model.movies = movies;
+        //};
 
-        var onMoviesError = function (response) {
-            model.error = "Sorry, could not get movies!";
-        };
+        //var onMoviesError = function (response) {
+        //    model.error = "Sorry, could not get movies!";
+        //};
 
-        var activate = function () {
+        //var activate = function () {
 
-            movieService.getAllMovies()
-                        .then(onMovies, onMoviesError);
-        };
+        //    movieService.getAllMovies()
+        //                .then(onMovies, onMoviesError);
+        //};
 
-        activate();
+        //activate();
     };
 
     module.controller("MoviesController", MoviesController);

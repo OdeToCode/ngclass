@@ -1,10 +1,20 @@
 ﻿(function() { 
 
-    var module = angular.module("moviesApp", ["common", "ngRoute", "ngMessages"]);
+    var module = angular.module("moviesApp", ["common", "ngRoute", "ngMessages", "ngSanitize"]);
 
     module.config(function($routeProvider) {
         var routes = [
-            { url: "/list", settings: { templateUrl: "list.html" } },
+            {
+                url: "/list", settings: {
+                    templateUrl: "list.html",
+                    controller: "MoviesController as list",
+                    resolve: {
+                        movies: function (movieService) {
+                            return movieService.getAllMovies();
+                        }
+                    }
+                }
+            },
             { url: "/details/:id", settings: { templateUrl: "details.html" } },
             { url: "/edit/:id", settings: {templateUrl: "edit.html "}}
         ];

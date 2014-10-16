@@ -1,4 +1,4 @@
-﻿<div class="col-md-12" ng-controller="MoviesController as list">
+﻿<div class="col-md-12">
 
     <div ng-show="list.error" class="alert alert-warning">
         {{ list.error }}
@@ -12,7 +12,7 @@
         <option value="-rating">Best Movies</option>
     </select>
 
-    <table class="table">
+    <table class="table table-bordered">
         <tr ng-repeat="movie in list.movies | filter:{title: list.searchTerm} | orderBy:list.orderTerm">
             <td>
                 {{$index + 1}} of {{ list.movies.length }}

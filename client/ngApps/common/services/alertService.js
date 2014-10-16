@@ -3,7 +3,19 @@
     var alertsService = function($injector) {
 
         var id = 1;
-        var alerts = [];
+        var alerts = [
+            { id: -2, message: "This is a problem!", type: "danger" },
+            { id: -1, message: "Save successful!", type:"info"}
+        ];
+
+
+        var removeAlert = function(alert) {
+            for (var i = 0; i < alerts.length; i++) {
+                if (alerts[i].id == alert.id) {
+                    alerts.splice(i, 1);
+                }
+            }
+        };
 
         var addException = function(exception) {
 
@@ -17,25 +29,23 @@
             
             var alert = {
                 id: id++,
-                message: message
+                message: message,
+                type: "danger"
             };
 
             alerts.push(alert);
 
             var $timeout = $injector.get("$timeout");
             $timeout(function() {
-                for (var i = 0; i < alerts.length; i++) {
-                    if (alerts[i].id == alert.id) {
-                        alerts.splice(i, 1);
-                    }
-                }
+                removeAlert(alert);
             }, 5000);
 
         };
 
         return {
             addException: addException,
-            currentAlerts: alerts
+            currentAlerts: alerts,
+            removeAlert: removeAlert
         };
     };
 
