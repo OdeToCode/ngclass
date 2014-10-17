@@ -4,34 +4,34 @@
     <title>At The Movies! {{ appVersion }}</title>
     <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
     <link href="Content/animate.css" rel="stylesheet" />
-     <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body class="ng-cloak">
 
-   <div ng-include="toptemplate"></div>
- 
+    <div ng-include="toptemplate"></div>
+
     <div class="container" ng-controller="ShellController as shell">
-        
-        <div class="spinner">
-            <span ng-show="shell.getRequestCount()">
-                <img src="ajax-loader.gif" />
-            </span>
-        </div>
- 
-        <lc-alert ng-repeat="alert in shell.alerts" 
-                  reason="alert.reason" 
+
+
+        <span class="spinner" ng-show="shell.getRequestCount()">
+            <img src="ajax-loader.gif" />
+        </span>
+
+
+        <lc-alert ng-repeat="alert in shell.alerts"
+                  reason="alert.reason"
                   type="alert.type"
                   close="shell.closeAlert(alert)">
             <div>Alert!</div>
             {{ alert.message}}
         </lc-alert>
 
-        
+
         <div class="row">
-         
+
             <div ng-view>
-                
+
             </div>
 
         </div>

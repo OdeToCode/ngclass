@@ -4,7 +4,10 @@ body {
 
 
 .spinner {
-    height: 20px;    
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    z-index: 1;
 }
 
 form.ng-submitted .ng-invalid {
