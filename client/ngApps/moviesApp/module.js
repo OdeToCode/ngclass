@@ -1,6 +1,8 @@
 ﻿(function() { 
 
-    var module = angular.module("moviesApp", ["common", "ngRoute", "ngMessages", "ngSanitize"]);
+    var module = angular.module("moviesApp",
+        ["common", "ngRoute", "ngMessages",
+            "ngSanitize", "ngAnimate"]);
 
     module.config(function($routeProvider) {
         var routes = [

@@ -1,10 +1,6 @@
 ﻿<div ng-controller="EditController as edit">
-    <h2>Editing: {{edit.movie.title}}</h2>
+    <h2>Editing: {{::edit.movie.title}}</h2>
     
-    <form>
-        <input type="text" value="test" />
-    </form>
-
     <form autofocus ng-submit="edit.saveMovie(editForm.$valid)"
           class="form" name="editForm" novalidate>
         <div class="form-group">

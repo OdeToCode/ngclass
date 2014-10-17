@@ -3,7 +3,7 @@
     var ShellController = function(alerts, httpRequestCount) {
         var model = this;
         model.alerts = alerts.currentAlerts;
-
+    
         model.makeError = function() {
             throw "Opps!";
         };

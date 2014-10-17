@@ -1,8 +1,8 @@
 Scott Allen	
 scott@OdeToCode.com
 
-Now: break
-Next: 14:25 
+Now: lab 08 animation
+Next: 10:40 am
 
 Material:
 https://dl.dropboxusercontent.com/u/79231895/ngclass.zip
@@ -12,12 +12,6 @@ https://github.com/OdeToCode/ngclass
   (download or clone)
 
  
-6. Directives
-
-7. Testing
-
-8. UI
-
 9. Practices
 
 10. Node Tools for JavaScript and Angular
