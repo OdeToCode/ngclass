@@ -1,4 +1,5 @@
 ﻿(function (module) {
+    "use strict";
 
     var MoviesController = function (movies, $log, $location) {
         var model = this;

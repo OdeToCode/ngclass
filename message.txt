@@ -1,8 +1,6 @@
-Scott Allen	
+Scott Allen
+	
 scott@OdeToCode.com
-
-Now: lab 08 animation
-Next: 10:40 am
 
 Material:
 https://dl.dropboxusercontent.com/u/79231895/ngclass.zip
@@ -12,8 +10,3 @@ https://github.com/OdeToCode/ngclass
   (download or clone)
 
  
-9. Practices
-
-10. Node Tools for JavaScript and Angular
-
-11. ES6 (JavaScript v.Next)
