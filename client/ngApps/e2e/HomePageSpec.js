@@ -1,4 +1,5 @@
-﻿describe("The Home Page", function() {
+﻿
+describe("The Home Page", function() {
 
     var HomePage = function() {
         this.name = "Home";
