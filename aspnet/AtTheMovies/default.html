@@ -1,0 +1,62 @@
+<html ng-app="moviesApp">
+
+<head>
+    <title>At The Movies! {{ appVersion }}</title>
+    <link rel="stylesheet" href="/Content/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/Content/animate.css" />
+    <link rel="stylesheet" href="/Content/styles.css">
+</head>
+
+<body class="ng-cloak">
+
+    <div ng-include="toptemplate"></div>
+
+    <div class="container" ng-controller="ShellController as shell">
+
+
+        <span class="spinner" ng-show="shell.getRequestCount()">
+           
+        </span>
+
+
+        <lc-alert ng-repeat="alert in shell.alerts"
+                  reason="alert.reason"
+                  type="alert.type"
+                  close="shell.closeAlert(alert)">
+            <div>Alert!</div>
+            {{ alert.message}}
+        </lc-alert>
+
+
+        <div class="row">
+
+            <div ng-view>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/angular-messages.js"></script>
+    <script src="Scripts/angular-sanitize.js"></script>
+    <script src="Scripts/angular-animate.js"></script>
+
+    <script src="/Apps/common/module.js"></script>
+    <script src="/Apps/common/services/movieService.js"></script>
+    <script src="/Apps/common/services/alertService.js"></script>
+    <script src="/Apps/common/services/loadingInterceptor.js"></script>
+    <script src="/Apps/common/services/httpRequestCount.js"></script>
+    <script src="/Apps/common/directives/lcAlert.js"></script>
+    <script src="/Apps/common/directives/odd.js"></script>
+    <script src="/Apps/common/directives/autofocus.js"></script>
+
+    <script src="/Apps/moviesApp/module.js"></script>
+    <script src="/Apps/moviesApp/filters/checkmark.js"></script>
+    <script src="/Apps/moviesApp/controllers/DetailsController.js"></script>
+    <script src="/Apps/moviesApp/controllers/MovieController.js"></script>
+    <script src="/Apps/moviesApp/controllers/EditController.js"></script>
+    <script src="/Apps/moviesApp/controllers/ShellController.js"></script>
+</body>
+</html>

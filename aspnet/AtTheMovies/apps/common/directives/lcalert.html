@@ -1,0 +1,5 @@
+﻿<div class="alert alert-{{type}}">
+    <div ng-transclude></div>
+    <input type="text" placeholder="Reason" ng-model="reason"/>
+    <button ng-if="close" ng-click="close()" class="btn btn-close">Close</button>
+</div>
