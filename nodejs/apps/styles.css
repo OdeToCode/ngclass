@@ -1,0 +1,72 @@
+body {
+	background-color: #ccccbb;
+}
+
+
+.spinner {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    z-index: 1;
+}
+
+form.ng-submitted .ng-invalid {
+    border-color: red;
+    border-width: 3px;
+}
+
+.ng-enter {
+    -webkit-animation: 1s fadeInDown;
+    animation: 1s fadeInDown;
+}
+
+.ng-hide-add {
+    -webkit-animation: fadeOut 0.5s;
+    -moz-animation: fadeOut 0.5s;
+    -ms-animation: fadeOut 0.5s;
+    -o-animation: fadeOut 0.5s;
+    animation: fadeOut 0.5s;
+    display: block !important;
+}
+
+.ng-hide-remove {
+    -webkit-animation: fadeIn 0.5s;
+    -moz-animation: fadeIn 0.5s;
+    -ms-animation: fadeIn 0.5s;
+    -o-animation: fadeIn 0.5s;
+    animation: fadeIn 0.5s;    
+    display: block !important;
+}
+
+
+./*ng-enter {
+    opacity: 0;
+    -webkit-transition: 1s linear all;
+    transition: 1s linear all;
+}
+
+.ng-enter.ng-enter-active {
+    opacity: 1;
+}*/
+
+.form-errors {
+    color: red;
+    font-size: smaller;
+}
+
+.ng-valid {
+    border-color: green;
+    border-width: 1px;
+}
+
+.ng-cloak {
+	display:none;
+}
+
+.red {
+    color: red;
+}
+
+.large {
+    font-size: larger;
+}

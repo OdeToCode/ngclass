@@ -3,7 +3,6 @@ Scott Allen
 scott@OdeToCode.com
 
 Material:
-https://dl.dropboxusercontent.com/u/79231895/ngclass.zip
 
 GitHub Repo:
 https://github.com/OdeToCode/ngclass

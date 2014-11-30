@@ -5,13 +5,13 @@ module.exports = function(grunt) {
         express: {
             dev: {
                 options: {
-                    script: "servers/node/app.js"
+                    script: "app.js"
                 }
             }
         },
 
         jshint: {
-            files: ["gruntfile.js", "/client/**/*.js", "/servers/node/**/*.js"]
+            files: ["gruntfile.js", "./controllers/*.js", "./data/*.js", "./models/*.js", "./routes/*.js", "./apps/**/*.js"]
         },
 
         watch: {
@@ -21,12 +21,12 @@ module.exports = function(grunt) {
             },
 
             jshint: {
-                files:  ["gruntfile.js", "/client/**/*.js", "/servers/node/**/*.js"],
+                files:  ["gruntfile.js", "./controllers/*.js", "./data/*.js", "./models/*.js", "./routes/*.js", "./apps/**/*.js"],
                 tasks: ["jshint"]
             },
 
             express: {
-                files: "servers/node/**/*.js",
+                files: ["gruntfile.js", "./controllers/*.js", "./data/*.js", "./models/*.js", "./routes/*.js"],
                 tasks: ["express:dev"],
                 options: {
                     spawn: false
