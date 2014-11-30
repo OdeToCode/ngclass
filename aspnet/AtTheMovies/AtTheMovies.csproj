@@ -102,30 +102,6 @@
     <Content Include="Content\styles.css" />
     <Content Include="default.html" />
     <Content Include="Global.asax" />
-    <Content Include="apps\common\directives\autofocus.js" />
-    <Content Include="apps\common\directives\lcalert.html" />
-    <Content Include="apps\common\directives\lcAlert.js" />
-    <Content Include="apps\common\directives\odd.js" />
-    <Content Include="apps\common\module.js" />
-    <Content Include="apps\common\services\alertService.js" />
-    <Content Include="apps\common\services\httpRequestCount.js" />
-    <Content Include="apps\common\services\loadingInterceptor.js" />
-    <Content Include="apps\common\services\movieService.js" />
-    <Content Include="apps\e2e\HomePageSpec.js" />
-    <Content Include="apps\moviesApp\controllers\DetailsController.js" />
-    <Content Include="apps\moviesApp\controllers\EditController.js" />
-    <Content Include="apps\moviesApp\controllers\MovieController.js" />
-    <Content Include="apps\moviesApp\controllers\ShellController.js" />
-    <Content Include="apps\moviesApp\filters\checkmark.js" />
-    <Content Include="apps\moviesApp\module.js" />
-    <Content Include="apps\moviesApp\specs\EditControllerSpecs.js" />
-    <Content Include="apps\moviesApp\specs\MovieControllerSpecs.js" />
-    <Content Include="apps\moviesApp\templates\details.html" />
-    <Content Include="apps\moviesApp\templates\edit.html" />
-    <Content Include="apps\moviesApp\templates\list.html" />
-    <Content Include="apps\moviesApp\templates\topdark.html" />
-    <Content Include="apps\moviesApp\templates\toplight.html" />
-    <Content Include="apps\moviesApp\templates\validationErrors.html" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-aria.js" />
     <Content Include="Scripts\angular-cookies.js" />
@@ -170,8 +146,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="apps\moviesApp\directives\" />
-    <Folder Include="apps\moviesApp\services\" />
+    <Folder Include="apps\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
