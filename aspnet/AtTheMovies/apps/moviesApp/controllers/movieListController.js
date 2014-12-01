@@ -3,14 +3,21 @@
     var module = angular.module("moviesApp");
 
    
-    module.controller("MoviesListController", function (movieData, $log) {
+    module.controller("MoviesListController", function ($scope, $timeout, movieData, $log) {
 
         var model = this;
 
         $log.info("creating movie list controller");
 
         var onMovies = function(movies) {
-                model.movies = movies;
+            model.movies = movies;
+            angular.forEach(movies, function(movie) {
+                if (movie.rating > 4) {
+                    movie.good = true;
+                }else if (movie.rating < 3) {
+                    movie.bad = true;
+                }
+            });
         };
 
         var onError = function(response) {

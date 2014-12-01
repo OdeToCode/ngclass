@@ -2,8 +2,8 @@ Scott Allen
 AngularJS Workshop	
 scott@OdeToCode.com
 
-now: 14:20
-next: 14:35
+now: 15:30
+next: 15:45
 
 Material:
 https://dl.dropboxusercontent.com/u/79231895/ngslides.zip
@@ -14,6 +14,7 @@ http://goo.gl/QYJSzZ (case sensitive)
 
 GitHub Repo:
 https://github.com/OdeToCode/ngclass
+https://github.com/OdeToCode/ngplaybook
   (download or clone)
 
  

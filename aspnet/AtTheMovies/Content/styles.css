@@ -6,3 +6,13 @@ body {
 	display:none;
 }
 
+
+.goodRating {
+    color: green;
+    font-size: larger;
+}
+
+.badRating {
+    color: red;
+    font-size: smaller;
+}

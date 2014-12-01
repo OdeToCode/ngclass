@@ -93,10 +93,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="apps\moviesApp\controllers\AddMovieController.js" />
     <Content Include="apps\moviesApp\controllers\DetailsController.js" />
     <Content Include="apps\moviesApp\controllers\movieListController.js" />
     <Content Include="apps\moviesApp\module.js" />
     <Content Include="apps\moviesApp\services\movieDataService.js" />
+    <Content Include="apps\moviesApp\templates\add.html" />
     <Content Include="apps\moviesApp\templates\detail.html" />
     <Content Include="apps\moviesApp\templates\list.html" />
     <Content Include="Content\animate.css" />

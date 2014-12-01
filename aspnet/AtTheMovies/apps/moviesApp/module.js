@@ -13,6 +13,9 @@
                 templateUrl: "/apps/moviesApp/templates/detail.html" //,
                 //can also do controller: "DetailsController as detail"
             })
+            .when("/add", {
+                templateUrl: "/apps/moviesApp/templates/add.html"
+            })
             .otherwise({
                 redirectTo: "/list"
             });
