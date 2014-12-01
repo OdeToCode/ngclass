@@ -1,4 +1,4 @@
-<html>
+<html ng-app="moviesApp">
 
 <head>
     <title>At The Movies!</title>
@@ -6,19 +6,33 @@
     <link rel="stylesheet" href="/Content/styles.css">
 </head>
 
-    <body>
+<body class="ng-cloak">
 
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">At The Movies!</a>
-                </div>
+   
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">At The Movies!</a>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-        <div class="container">
+    <div class="container" ng-controller="MoviesListController as list">
+        
+        <table class="table">
+            <tr ng-repeat="movie in list.movies">
+                <td>{{$index + 1}} of {{list.movies.length}}</td>
+                <td>{{movie.title}}</td>
+                <td>{{movie.year}}</td>
+            </tr>    
+        </table>
+        
 
     </div>
 
+    <script src="Scripts/angular.js"></script>
+    <script src="apps/moviesApp/module.js"></script>
+    <script src="apps/moviesApp/controllers/movieListController.js"></script>
 </body>
 </html>
