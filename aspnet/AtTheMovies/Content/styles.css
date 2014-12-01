@@ -12,7 +12,16 @@ body {
     font-size: larger;
 }
 
+input.ng-invalid.ng-dirty {
+    border: 2px solid red;
+}
+
 .badRating {
     color: red;
     font-size: smaller;
+}
+
+.validation {
+    color: red;
+
 }

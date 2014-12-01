@@ -32,7 +32,15 @@
                         });
         };
 
+        var addMovie = function(movie) {
+            return $http.post("/api/movies", movie)
+                .then(function(response) {
+                return response.data;
+            });
+        };
+
         return {
+            addMovie: addMovie,
             getMovie: getMovie, 
             getMovies: getMovies,
             updateMovie: updateMovie
