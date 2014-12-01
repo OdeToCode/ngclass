@@ -3,9 +3,11 @@
     var module = angular.module("moviesApp");
 
    
-    module.controller("MoviesListController", function (movieData) {
+    module.controller("MoviesListController", function (movieData, $log) {
 
         var model = this;
+
+        $log.info("creating movie list controller");
 
         var onMovies = function(movies) {
                 model.movies = movies;
@@ -15,16 +17,20 @@
             model.error = response.data.message;
         };
 
-        model.editMovie = function(movie) {
+        var initialize = function(){
+            movieData.getMovies().then(onMovies, onError);
+        };
+
+        model.editMovie = function (movie) {
             movie.editing = true;
         };
 
-        model.saveEdit = function(movie) {
+        model.saveEdit = function (movie) {
             delete movie.editing;
             movieData.updateMovie(movie).catch(onError);
         };
 
-        model.increaseRating = function(movie) {
+        model.increaseRating = function (movie) {
             movie.rating += 1;
             movieData.updateMovie(movie).catch(onError);
         };
@@ -34,7 +40,7 @@
             movieData.updateMovie(movie).catch(onError);
         };
 
-        movieData.getMovies().then(onMovies, onError);
+        initialize();
     });
 
 

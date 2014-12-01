@@ -1,0 +1,7 @@
+﻿<div class="container" ng-controller="DetailsController as detail">
+    <h1>{{detail.movie.title}}</h1>
+    <div>Rating: {{detail.movie.rating}}</div>
+    <div>Released in: {{detail.movie.year}}</div>
+    <a href="#/list">Back to the list</a>
+    <button ng-click="detail.goToList()">Back to list</button>
+</div>
