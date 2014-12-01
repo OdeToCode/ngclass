@@ -5,6 +5,9 @@ scott@OdeToCode.com
 now: break
 next: 10:28am
 
+ng-annotate
+
+
 Material:
 https://dl.dropboxusercontent.com/u/79231895/ngslides.zip
   or

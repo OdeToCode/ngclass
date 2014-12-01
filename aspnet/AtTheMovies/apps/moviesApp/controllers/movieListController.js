@@ -2,35 +2,39 @@
 
     var module = angular.module("moviesApp");
 
-    // ng-controller="MvoieListController"
-    // var controller = new MovieListController();
-    // {
-    //    changeMessage: function() { ... },
-    //    greeting: "hello!",
-    //    movie: { ... },
-    // }
-    //
-
-    module.controller("MoviesListController", function () {
+   
+    module.controller("MoviesListController", function (movieData) {
 
         var model = this;
-        var movies = [
-            {
-                title: "Star Wars",
-                year: 1979
-            },
-            {
-                title: "Kill Bill",
-                year: 2003
-            },
-            {
-                title: "2001",
-                year: 1969
-            }
-        ];
 
-        model.movies = movies;
+        var onMovies = function(movies) {
+                model.movies = movies;
+        };
 
+        var onError = function(response) {
+            model.error = response.data.message;
+        };
+
+        model.editMovie = function(movie) {
+            movie.editing = true;
+        };
+
+        model.saveEdit = function(movie) {
+            delete movie.editing;
+            movieData.updateMovie(movie).catch(onError);
+        };
+
+        model.increaseRating = function(movie) {
+            movie.rating += 1;
+            movieData.updateMovie(movie).catch(onError);
+        };
+
+        model.decreaseRating = function (movie) {
+            movie.rating -= 1;
+            movieData.updateMovie(movie).catch(onError);
+        };
+
+        movieData.getMovies().then(onMovies, onError);
     });
 
 
