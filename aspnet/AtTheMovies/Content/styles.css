@@ -6,6 +6,16 @@ body {
 	display:none;
 }
 
+.ng-enter {
+    animation: fadeInDown 2s;
+    -webkit-animation: fadeInDown 2s;
+}
+
+.ng-leave {
+    animation: flipOutX 2s;
+    -webkit-animation: flipOutX 2s;
+}
+
 
 .goodRating {
     color: green;

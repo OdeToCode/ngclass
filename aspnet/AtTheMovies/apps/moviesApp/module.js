@@ -1,6 +1,6 @@
 ﻿(function() {
 
-    var module = angular.module("moviesApp", ["ng", "ngRoute", "ngMessages", "common"]);
+    var module = angular.module("moviesApp", ["ng", "ngRoute","ngAnimate", "ngMessages", "common"]);
 
    
     module.config(function ($provide, movieDataProvider, $httpProvider) {

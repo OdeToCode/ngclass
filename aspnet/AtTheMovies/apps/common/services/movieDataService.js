@@ -37,7 +37,7 @@
                 };
 
                 var getMovie = function (id) {
-                    return $http.get(baseUrl + id)
+                    return $http.get(baseUrl + "/" + id)
                                 .then(function (response) {
                                     return response.data;
                                 });

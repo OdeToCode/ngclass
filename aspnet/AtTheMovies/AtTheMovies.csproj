@@ -95,6 +95,7 @@
   <ItemGroup>
     <Content Include="apps\common\module.js" />
     <Content Include="apps\common\services\requestCountInterceptor.js" />
+    <Content Include="apps\karma.conf.js" />
     <Content Include="apps\moviesApp\controllers\ShellController.js" />
     <Content Include="apps\moviesApp\directives\alert.js" />
     <Content Include="apps\moviesApp\directives\startWith.js" />
@@ -105,6 +106,7 @@
     <Content Include="apps\moviesApp\filters\checkmark.js" />
     <Content Include="apps\moviesApp\module.js" />
     <Content Include="apps\common\services\movieDataService.js" />
+    <Content Include="apps\moviesApp\specs\alertServiceSpec.js" />
     <Content Include="apps\moviesApp\templates\add.html" />
     <Content Include="apps\moviesApp\templates\alert.html" />
     <Content Include="apps\moviesApp\templates\detail.html" />

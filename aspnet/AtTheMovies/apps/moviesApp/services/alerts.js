@@ -16,8 +16,7 @@
             };
 
             currentAlerts.push(alert);
-            
-    
+   
         };
 
         var getAlerts = function() {
