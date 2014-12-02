@@ -19,7 +19,14 @@
     
     <div ng-controller="ShellController as shell">
         
+        <div ng-show="shell.isOutstandingRequest()">
+            <h4>Loading....!</h4>
+        </div>
        
+        <alert ng-repeat="alert in shell.alerts">
+            {{ alert.message }}
+        </alert>
+
         <div ng-repeat="alert in shell.alerts" class="alert alert-{{alert.type}}">
             {{ alert.message }}
         </div>
@@ -40,6 +47,7 @@
     
     <script src="apps/common/module.js"></script>
     <script src="apps/common/services/movieDataService.js"></script>
+    <script src="apps/common/services/requestCountInterceptor.js"></script>
 
     <script src="apps/moviesApp/module.js"></script>
     <script src="apps/moviesApp/controllers/movieListController.js"></script>

@@ -94,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="apps\common\module.js" />
+    <Content Include="apps\common\services\requestCountInterceptor.js" />
     <Content Include="apps\moviesApp\controllers\ShellController.js" />
     <Content Include="apps\moviesApp\services\alerts.js" />
     <Content Include="apps\moviesApp\controllers\AddMovieController.js" />
@@ -158,7 +159,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="apps\moviesApp\directives\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

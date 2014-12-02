@@ -30,24 +30,6 @@
 
     };
 
-    
-    module.constant("")
-
-    module.value("userProfile", { name: "Scott", loggedIn: false });
-
-    module.service("alerts", alerts);
-    var service = new alerts();
-
-    // var alerts = function(){
-    //   this.addAlert= function() { ... }
-    // }
-
-
     module.factory("alerts", alerts);
-    var service = alerts();
-
-    // var alerts= function() {
-    //    return { addAlert: function() { } };
-    // }
 
 }());

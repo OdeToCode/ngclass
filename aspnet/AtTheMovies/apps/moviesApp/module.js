@@ -3,7 +3,10 @@
     var module = angular.module("moviesApp", ["ng", "ngRoute", "ngMessages", "common"]);
 
    
-    module.config(function ($provide, movieDataProvider) {
+    module.config(function ($provide, movieDataProvider, $httpProvider) {
+
+
+        $httpProvider.interceptors.push("requestCountInterceptor");
 
         movieDataProvider.setBaseUrl("/api/movies");
 
