@@ -1,7 +1,5 @@
 ﻿<div class="container" ng-controller="MoviesListController as list">
     
-    <h1>Counter value: {{list.count }}</h1>
-    
     <div class="alert alert-danger" ng-show="list.error">
         {{ list.error }}
     </div>
@@ -20,11 +18,13 @@
        
         <tr ng-repeat="movie in list.movies | filter:list.searchTerm | orderBy:list.orderTerm">
      
+           
             <td>{{$index + 1}} of {{list.movies.length}}</td>
             <td>
                 <span ng-show="!movie.editing">
                     <a ng-href="#/details/{{movie.id}}">
-                        {{movie.title}}    
+                        {{movie.title}} 
+                        {{ movie.good | checkmark}} {{ movie.bad | checkmark}}   
                     </a>
                 </span>
                 <span ng-show="movie.editing"><input type="text" ng-model="movie.title" /></span>

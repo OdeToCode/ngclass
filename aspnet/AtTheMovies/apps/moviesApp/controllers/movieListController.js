@@ -6,7 +6,7 @@
     module.controller("MoviesListController", function ($scope, $timeout, movieData, $log) {
 
         var model = this;
-
+      
         $log.info("creating movie list controller");
 
         var onMovies = function(movies) {

@@ -17,10 +17,19 @@
         </div>
     </nav>
     
-    {{ routeError }}
-
-    <div ng-view>
+    <div ng-controller="ShellController as shell">
         
+       
+        <div ng-repeat="alert in shell.alerts" class="alert alert-{{alert.type}}">
+            {{ alert.message }}
+        </div>
+        
+     
+        {{ routeError }}
+
+        <div ng-view>
+
+        </div>
     </div>
     
 
@@ -28,12 +37,18 @@
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/angular-route.js"></script>
     <script src="Scripts/angular-messages.js"></script>
+    
+    <script src="apps/common/module.js"></script>
+    <script src="apps/common/services/movieDataService.js"></script>
 
     <script src="apps/moviesApp/module.js"></script>
     <script src="apps/moviesApp/controllers/movieListController.js"></script>
     <script src="apps/moviesApp/controllers/DetailsController.js"></script>
-    <script src="apps/moviesApp/services/movieDataService.js"></script>
+
     <script src="apps/moviesApp/controllers/AddMovieController.js"></script>
-      
+    <script src="apps/moviesApp/filters/checkmark.js"></script>
+    <script src="apps/moviesApp/services/alerts.js"></script>   
+    <script src="apps/moviesApp/controllers/ShellController.js"></script>
+   
 </body>
 </html>

@@ -1,6 +1,20 @@
 ﻿(function() {
 
-    var module = angular.module("moviesApp", ["ng", "ngRoute", "ngMessages"]);
+    var module = angular.module("moviesApp", ["ng", "ngRoute", "ngMessages", "common"]);
+
+   
+    module.config(function ($provide, movieDataProvider) {
+
+        movieDataProvider.setBaseUrl("/api/movies");
+
+
+        $provide.decorator("$exceptionHandler", function($delegate, alerts) {
+            return function (error, reason) {
+                $delegate(error, reason);
+                alerts.addError(error.message);
+            };
+        });
+    });
 
 
     module.config(function ($routeProvider) {
