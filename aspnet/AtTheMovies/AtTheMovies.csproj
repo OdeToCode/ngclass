@@ -96,6 +96,7 @@
     <Content Include="apps\common\module.js" />
     <Content Include="apps\common\services\requestCountInterceptor.js" />
     <Content Include="apps\moviesApp\controllers\ShellController.js" />
+    <Content Include="apps\moviesApp\directives\alert.js" />
     <Content Include="apps\moviesApp\services\alerts.js" />
     <Content Include="apps\moviesApp\controllers\AddMovieController.js" />
     <Content Include="apps\moviesApp\controllers\DetailsController.js" />
@@ -104,6 +105,7 @@
     <Content Include="apps\moviesApp\module.js" />
     <Content Include="apps\common\services\movieDataService.js" />
     <Content Include="apps\moviesApp\templates\add.html" />
+    <Content Include="apps\moviesApp\templates\alert.html" />
     <Content Include="apps\moviesApp\templates\detail.html" />
     <Content Include="apps\moviesApp\templates\list.html" />
     <Content Include="apps\moviesApp\templates\validationsError.html" />
@@ -159,9 +161,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="apps\moviesApp\directives\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -23,13 +23,15 @@
             <h4>Loading....!</h4>
         </div>
        
+        <alert type="danger" message="foo">
+            There is a problem!
+        </alert>
+
         <alert ng-repeat="alert in shell.alerts">
             {{ alert.message }}
         </alert>
 
-        <div ng-repeat="alert in shell.alerts" class="alert alert-{{alert.type}}">
-            {{ alert.message }}
-        </div>
+        <button ng-click="shell.createError()">Create errror</button>
         
      
         {{ routeError }}
@@ -45,6 +47,7 @@
     <script src="Scripts/angular-route.js"></script>
     <script src="Scripts/angular-messages.js"></script>
     
+
     <script src="apps/common/module.js"></script>
     <script src="apps/common/services/movieDataService.js"></script>
     <script src="apps/common/services/requestCountInterceptor.js"></script>
@@ -52,9 +55,9 @@
     <script src="apps/moviesApp/module.js"></script>
     <script src="apps/moviesApp/controllers/movieListController.js"></script>
     <script src="apps/moviesApp/controllers/DetailsController.js"></script>
-
     <script src="apps/moviesApp/controllers/AddMovieController.js"></script>
     <script src="apps/moviesApp/filters/checkmark.js"></script>
+    <script src="apps/moviesApp/directives/alert.js"></script>
     <script src="apps/moviesApp/services/alerts.js"></script>   
     <script src="apps/moviesApp/controllers/ShellController.js"></script>
    
