@@ -2,8 +2,8 @@ Scott Allen
 AngularJS Workshop	
 scott@OdeToCode.com
 
-now: 10:20am
-next: 10:35am
+now: 14:00
+next: 14:15
 
 Material:
 https://dl.dropboxusercontent.com/u/79231895/ngslides.zip

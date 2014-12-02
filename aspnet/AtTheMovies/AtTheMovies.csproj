@@ -97,6 +97,7 @@
     <Content Include="apps\common\services\requestCountInterceptor.js" />
     <Content Include="apps\moviesApp\controllers\ShellController.js" />
     <Content Include="apps\moviesApp\directives\alert.js" />
+    <Content Include="apps\moviesApp\directives\startWith.js" />
     <Content Include="apps\moviesApp\services\alerts.js" />
     <Content Include="apps\moviesApp\controllers\AddMovieController.js" />
     <Content Include="apps\moviesApp\controllers\DetailsController.js" />

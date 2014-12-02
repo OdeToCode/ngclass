@@ -6,15 +6,15 @@
 
     model.showAlert = true;
     model.reason = "Unknown";
-    model.closeAlert = function() {
-        model.showAlert = false;
+    model.closeAlert = function (index) {
+        alerts.removeAlert(model.alerts[index]);
     };
 
-    model.isOutstandingRequest = function() {
+    model.isOutstandingRequest = function () {
         return requestCountInterceptor.getRequestCount();
     };
 
-    model.createError = function() {
+    model.createError = function () {
         throw new Error("Something went wrong!");
     };
 

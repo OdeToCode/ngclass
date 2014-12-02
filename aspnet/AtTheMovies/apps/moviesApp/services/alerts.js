@@ -24,9 +24,18 @@
             return currentAlerts;
         };
 
+        var closeAlert = function(alert) {
+            for (var i = 0; i < currentAlerts.length; i++) {
+                if (currentAlerts[i] == alert) {
+                    currentAlerts.splice(i, 1);
+                }
+            }
+        };
+
         return {
             addError: addError,
-            getAlerts: getAlerts
+            getAlerts: getAlerts,
+            removeAlert: closeAlert
         };
 
     };

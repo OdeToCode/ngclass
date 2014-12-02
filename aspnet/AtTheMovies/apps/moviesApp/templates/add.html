@@ -11,9 +11,10 @@
              ng-messages-include="/apps/moviesApp/templates/validationsError.html">
         </div>
         
+ 
         <label>Year</label>
         <input type="number" name="year" 
-               min="1920" max="2020"
+               min="1920" max="2020" odd
                ng-model="add.movie.year"/>
         <div class="validation"
              ng-messages="addMovieForm.year.$error"

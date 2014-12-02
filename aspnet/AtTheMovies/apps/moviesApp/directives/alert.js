@@ -12,7 +12,7 @@
                 reason: "=",
                 close: "&"
             },
-            link: function(scope, element, attributes) {
+            link: function(scope, element, attributes, controllers, translcusionFn) {
                 //var div = element.children("div");
 
                 //var type = attributes.type || "info";
@@ -26,7 +26,7 @@
         };
     };
 
-    module.directive("alert", alert);
+    module.directive("otcAlert", alert);
 
 
 }());
