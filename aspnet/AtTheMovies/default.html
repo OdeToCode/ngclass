@@ -23,11 +23,15 @@
             <h4>Loading....!</h4>
         </div>
        
-        <alert type="danger" message="foo">
+        {{ shell.reason }}
+        <alert ng-show="shell.showAlert"
+               type="danger" reason="shell.reason"
+               close="shell.closeAlert()">
             There is a problem!
-        </alert>
+        </alert>        
 
-        <alert ng-repeat="alert in shell.alerts">
+        <alert ng-repeat="alert in shell.alerts" type="{{alert.type}}"
+               reason ="alert.reason">
             {{ alert.message }}
         </alert>
 

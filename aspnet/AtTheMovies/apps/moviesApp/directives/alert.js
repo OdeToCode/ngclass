@@ -9,12 +9,13 @@
             transclude: true,
             scope: {
                 type: "@",
-                message: "&"
+                reason: "=",
+                close: "&"
             },
             link: function(scope, element, attributes) {
                 //var div = element.children("div");
 
-                var type = attributes.type || "info";
+                //var type = attributes.type || "info";
                 //div.addClass("alert alert-" + type);
 
                 //var input = element.children("input");

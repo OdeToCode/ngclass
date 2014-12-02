@@ -11,7 +11,8 @@
 
             var alert = {
                 type: "warning",
-                message: error
+                message: error,
+                reason: ""
             };
 
             currentAlerts.push(alert);
