@@ -1,37 +1,3 @@
 body {
 	background-color: #ccccbb;
 }
-
-.ng-cloak {
-	display:none;
-}
-
-.ng-enter {
-    animation: fadeInDown 2s;
-    -webkit-animation: fadeInDown 2s;
-}
-
-.ng-leave {
-    animation: flipOutX 2s;
-    -webkit-animation: flipOutX 2s;
-}
-
-
-.goodRating {
-    color: green;
-    font-size: larger;
-}
-
-input.ng-invalid.ng-dirty {
-    border: 2px solid red;
-}
-
-.badRating {
-    color: red;
-    font-size: smaller;
-}
-
-.validation {
-    color: red;
-
-}
