@@ -1,7 +1,7 @@
 <html ng-app="moviesApp">
 
 <head>
-    <title>At The Movies! {{ 2 + 2 }}</title>
+    <title>At The Movies!</title>
     <link rel="stylesheet" href="/Content/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="/Content/styles.css">
 </head>
@@ -18,7 +18,7 @@
     
   
         <div class="container" ng-controller="movieListController as list">
-            
+            {{version.full}}
             <div class="alert alert-danger" ng-if="list.errorMessage">
                 {{list.errorMessage}}
             </div>
@@ -55,10 +55,9 @@
             </button>
         </div>
    
-  
-    <script src="Scripts/angular.js"></script>
-    <script src="Apps/moviesApp/module.js"></script>
 
+    <script src="Scripts/angular.js"></script>    
+    <script src="Apps/moviesApp/module.js"></script>
     <script src="Apps/moviesApp/js/services/movieData.js"></script> 
     <script src="Apps/moviesApp/js/controllers/movieListController.js"></script>
     

@@ -6,9 +6,19 @@ Scott Allen
 AngularJS
 scott@OdeToCode.com
 
-Now: break
-Next: 14:15
+Now: 
+   Your app loads movies from 
+     /api/movies
+
+   Do that from movieData that
+     encapsulates $http
+ 
+
+
+Next: 15:15
 	
+
+
 
 For ASPNET:
   Open AtTheMovies.sln
