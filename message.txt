@@ -1,7 +1,3 @@
-<input type="button"
-     onclick="onClickHandler()" />
-
-
 Scott Allen
 AngularJS
 scott@OdeToCode.com
@@ -10,8 +6,11 @@ Now:
    Your app loads movies from 
      /api/movies
 
-   Do that from movieData that
-     encapsulates $http
+   Load ngRoute, use ng-view
+       configure $routeProvider for
+    1. /list
+    2. /add
+    3. /details/:id
  
 
 
