@@ -1,14 +1,37 @@
-﻿(function() {
+﻿(function(module) {
 
-    var module = angular.module("moviesApp");
-
-    var movieListController = function() {
+    var movieListController = function(movieData, $log) {
         var model = this;
         var initialMessage = "Hello, World!";
 
+        var onMovies = function(movies) {
+            model.movies = movies;
+            $log.info("Got movies: ", movies);
+        };
+
+        var onError = function (error) {
+            model.errorMessage = error.data.message;
+        };
+
+        var onMovieSaved = function() {
+            model.saveMessage = "Saved the movie!";
+        };
+
+        var saveMovie = function(movie) {
+            movieData.saveMovie(movie)
+                     .then(onMovieSaved, onError);
+        };
+
+        var initialize = function() {
+            movieData.getAllMovies()
+                     .then(onMovies, onError);
+        };
+
+       
         model.increaseRating = function(movie) {
             if (movie.rating < 5) {
                 movie.rating += 1;
+                saveMovie(movie);
             }
         };
 
@@ -17,29 +40,30 @@
                 good: movie.rating >= 4,
                 bad: movie.rating <= 2
             };
-            console.log(result);
             return result;
         };
 
         model.decreaseRating = function (movie) {
             if (movie.rating > 0) {
                 movie.rating -= 1;
+                saveMovie(movie);
             }
         };
-
-        model.movies = [
-            { title: "Star Wars", length: 120, rating: 5, year: 1979 },
-            { title: "The Hobbit", length: 580, rating: 4, year: 2012 },
-            { title: "Interstellar", length: 100, rating: 4, year: 2014 }
-        ];
 
         model.message = initialMessage;
 
         model.resetMessage = function() {
             model.message = initialMessage;
         };
+
+        initialize();
     };
 
-    module.controller("movieListController", movieListController);
+    //movieListController.$inject = ["movieData", "$log"];
 
-}());
+    module.controller("movieListController",
+        [ "movieData", 
+          "$log",
+        movieListController]);
+
+}(angular.module("moviesApp")));

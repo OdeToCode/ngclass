@@ -19,6 +19,10 @@
   
         <div class="container" ng-controller="movieListController as list">
             
+            <div class="alert alert-danger" ng-if="list.errorMessage">
+                {{list.errorMessage}}
+            </div>
+
             <table class="table">
                 <tr>
                     <th>Title</th>
@@ -54,6 +58,8 @@
   
     <script src="Scripts/angular.js"></script>
     <script src="Apps/moviesApp/module.js"></script>
+
+    <script src="Apps/moviesApp/js/services/movieData.js"></script> 
     <script src="Apps/moviesApp/js/controllers/movieListController.js"></script>
     
 

@@ -1,11 +1,23 @@
+<input type="button"
+     onclick="onClickHandler()" />
+
 
 Scott Allen
 AngularJS
 scott@OdeToCode.com
 
-Now: Coffee break
-Next: 10:20 am
+Now: break
+Next: 14:15
+	
 
+For ASPNET:
+  Open AtTheMovies.sln
+
+For Node:
+  Go to nodejs folder
+  	npm install
+  	bower install
+  	grunt
 
 Material:
 http://goo.gl/QYJSzZ (case sensitive)
