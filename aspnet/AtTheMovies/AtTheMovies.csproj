@@ -95,6 +95,7 @@
   <ItemGroup>
     <Content Include="Apps\moviesApp\js\controllers\movieListController.js" />
     <Content Include="Apps\moviesApp\js\services\movieData.js" />
+    <Content Include="Apps\moviesApp\js\specs\js_tests.html" />
     <Content Include="Apps\moviesApp\module.js" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap\css\bootstrap-theme.css" />
@@ -118,6 +119,11 @@
     <Content Include="Scripts\angular-scenario.js" />
     <Content Include="Scripts\angular-touch.js" />
     <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\jasmine\boot.js" />
+    <Content Include="Scripts\jasmine\jasmine-html.js" />
+    <Content Include="Scripts\jasmine\jasmine.css" />
+    <Content Include="Scripts\jasmine\jasmine.js" />
+    <Content Include="Scripts\jasmine\jasmine_favicon.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
