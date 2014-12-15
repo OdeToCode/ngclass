@@ -3,6 +3,10 @@ Scott Allen
 AngularJS
 scott@OdeToCode.com
 
+Now: Coffee break
+Next: 10:20 am
+
+
 Material:
 http://goo.gl/QYJSzZ (case sensitive)
 

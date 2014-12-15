@@ -1,13 +1,12 @@
-<html>
+<html ng-app="moviesApp">
 
 <head>
-    <title>At The Movies!</title>
+    <title>At The Movies! {{ 2 + 2 }}</title>
     <link rel="stylesheet" href="/Content/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="/Content/styles.css">
 </head>
 
-<body>
-
+<body class="ng-cloak">
 
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -16,6 +15,47 @@
             </div>
         </div>
     </nav>
-      
+    
+  
+        <div class="container" ng-controller="movieListController as list">
+            
+            <table class="table">
+                <tr>
+                    <th>Title</th>
+                    <th>Length</th>
+                    <th>Release Year</th>
+                    <th>Rating</th>
+                    <th></th>
+                </tr>
+                <tr ng-repeat="movie in list.movies"
+                    ng-class="list.grade(movie)">
+                    
+                    <td>{{movie.title}}</td>
+                    <td>{{movie.length}}</td>
+                    <td>{{movie.year}}</td>
+                    <td>{{movie.rating}} of 5</td>
+                    <td>
+                        <button ng-click="list.increaseRating(movie)"
+                                class="btn btn-default">Better</button>
+                        <button ng-click="list.decreaseRating(movie)" 
+                                class="btn btn-default">Worse</button>
+                    </td>
+                </tr>
+            </table>
+            
+
+            <span>{{ list.message }}</span>
+            <input type="text" ng-model="list.message" />
+            <button class="btn btn-default" ng-click="list.resetMessage()">
+                Reset
+            </button>
+        </div>
+   
+  
+    <script src="Scripts/angular.js"></script>
+    <script src="Apps/moviesApp/module.js"></script>
+    <script src="Apps/moviesApp/js/controllers/movieListController.js"></script>
+    
+
 </body>
 </html>

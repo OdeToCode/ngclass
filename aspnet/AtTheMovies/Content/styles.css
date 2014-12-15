@@ -1,3 +1,16 @@
 body {
 	background-color: #ccccbb;
 }
+
+
+.good {
+    background-color: green;
+}
+
+.bad {
+    background-color: red;
+}
+
+.ng-cloak {
+    display: none;
+}
