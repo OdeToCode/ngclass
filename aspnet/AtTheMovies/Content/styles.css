@@ -4,11 +4,11 @@ body {
 
 
 .good {
-    background-color: green;
+    background-color: rgba(0, 255, 0, 0.4);
 }
 
 .bad {
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.4);
 }
 
 .ng-cloak {
