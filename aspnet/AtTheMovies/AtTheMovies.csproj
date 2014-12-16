@@ -97,6 +97,7 @@
     <Content Include="Apps\moviesApp\js\controllers\movieDetailsController.js" />
     <Content Include="Apps\moviesApp\js\controllers\movieListController.js" />
     <Content Include="Apps\moviesApp\js\filters\checkmark.js" />
+    <Content Include="Apps\moviesApp\js\services\alerting.js" />
     <Content Include="Apps\moviesApp\js\services\movieData.js" />
     <Content Include="Apps\moviesApp\js\specs\js_tests.html" />
     <Content Include="Apps\moviesApp\module.js" />

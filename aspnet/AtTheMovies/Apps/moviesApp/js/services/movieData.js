@@ -28,10 +28,10 @@
 
         var getAllMovies = function () {
             if (movies.length > 0) {
-                $log.info("Got movies from cache")
+                $log.info("Got movies from cache");
                 return $q.when(movies);
             } else {
-                return $http.get("/api/movies")
+                return $http.get("/api/moviesssssssssssss")
                     .then(function (response) {
                         $log.info("Got movies from API");
                         movies = response.data;

@@ -1,19 +1,22 @@
 ﻿(function (module) {
     "use strict";
 
-    var movieListController = function (movieData, $log, $scope, $timeout) {
+    var movieListController = function (movieData, $log, $scope,
+                                        $timeout, alerting) {
         var model = this;
         var initialMessage = "Hello, World!";
+
+        alerting.addInfo("This is the movie list loading...");
+        model.currentAlerts = alerting.currentAlerts;
+        model.removeAlert = function(alert) {
+            alerting.removeAlert(alert);
+        };
 
         $log.info("Creating movieListController");
 
         var onMovies = function (movies) {
             model.movies = movies;
             $log.info("Got movies: ", movies);
-        };
-
-        var onError = function (error) {
-            model.errorMessage = error.data.message;
         };
 
         var onMovieSaved = function () {
@@ -27,7 +30,8 @@
 
         var initialize = function () {
             movieData.getAllMovies()
-                     .then(onMovies, onError);
+                     .then(onMovies)
+                     .catch(alerting.errorHandler("Failed to load movies"));
         };
 
 
@@ -74,6 +78,9 @@
 
 
         model.resetMessage = function () {
+
+            throw new Error("Opps!!!");
+
             model.message = initialMessage;
         };
 
@@ -84,7 +91,7 @@
 
     module.controller("movieListController",
         ["movieData",
-          "$log", "$scope", "$timeout",
+          "$log", "$scope", "$timeout", "alerting",
         movieListController]);
 
 }(angular.module("moviesApp")));

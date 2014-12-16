@@ -1,11 +1,10 @@
 ﻿<div class="container" ng-controller="movieListController as list">
 
-    <div class="alert alert-danger" ng-if="list.errorMessage">
-        {{list.errorMessage}}        
+    <div ng-repeat="alert in list.currentAlerts" class="alert alert-{{alert.type}}">
+        {{alert.message}}  
+        <span ng-click="list.removeAlert(alert)" class="close">X</span>      
     </div>
-    <div>
-        <a class="btn btn-default" href="#/add">Add Movie</a>
-    </div>
+    
     
     <label>Search:</label> <input type="search" ng-model="list.searchTerm"/>
     <select ng-model="list.orderTerm">
@@ -43,7 +42,13 @@
             </td>
         </tr>
     </table>
+    
+    <div>
+        <a class="btn btn-default" href="#/add">Add Movie</a>
 
+    </div>
+    
+    <hr/>
 
     <span>{{ list.message }}</span>
     <input type="text" ng-model="list.message" />

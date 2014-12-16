@@ -3,6 +3,16 @@
     var module = angular.module("moviesApp",
         ["ng", "ngRoute", "ngMessages"]);
 
+    module.config(function($provide) {
+        $provide.decorator("$exceptionHandler", function($delegate, $injector) {
+            return function(exception, cause) {
+                var alerting = $injector.get("alerting");
+                $delegate(exception, cause);
+                alerting.addDanger(exception.message);
+            };
+        });
+    });
+
     module.config(function($routeProvider) {
 
         $routeProvider
