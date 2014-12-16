@@ -1,5 +1,5 @@
 var _ = require("lodash");
-var Movie = require("../models/Movie");
+var Movie = require("../models/movie");
 
 var id = 4;
 var movies = [];
