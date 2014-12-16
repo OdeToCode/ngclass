@@ -64,6 +64,10 @@
         };
         $timeout(incrementCounter, 1000);
 
+        $scope.$watch("list.counter", function(newVal, oldVal) {
+           // model.counter += 1;
+        });
+
 
         model.resetMessage = function () {
             model.message = initialMessage;
