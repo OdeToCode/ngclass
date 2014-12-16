@@ -5,6 +5,8 @@
         var model = this;
         var initialMessage = "Hello, World!";
 
+        $log.info("Creating movieListController");
+
         var onMovies = function(movies) {
             model.movies = movies;
             $log.info("Got movies: ", movies);
