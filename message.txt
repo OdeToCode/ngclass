@@ -2,23 +2,14 @@ Scott Allen
 AngularJS
 scott@OdeToCode.com
 
-Now: 
-   Your app loads movies from 
-     /api/movies
+Now: Break
+Next: 10:15am
 
-   Load ngRoute, use ng-view
-       configure $routeProvider for
-    1. /list
-    2. /add
-    3. /details/:id
- 
+ 1. Route to list movies, add movie
+ 2. Implement add a movie form with -> 
+    reirects to the details view
 
-
-Next: 15:15
 	
-
-
-
 For ASPNET:
   Open AtTheMovies.sln
 

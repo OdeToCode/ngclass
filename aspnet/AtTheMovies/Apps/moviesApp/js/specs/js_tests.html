@@ -97,7 +97,6 @@
             it("it should have methods and properties", function() {
 
                 var Employee = function(fn, ln) {
-
                     this.firstName = fn;
                     this.lastName = ln;
                     this.doWork = function() {
@@ -109,9 +108,13 @@
                 var employee = new Employee("Scott", "Allen");
                 expect(employee.firstName).toBe("Scott");
                 expect(employee.doWork()).toBe("Scott is working");
-
-                //setTimeout(employee.doWork, 500);
-
+                
+                // this will fail...
+                //var doAssert = function(workFn) {
+                //    var result = workFn();
+                //    expect(result).toBe("Scott is working");
+                //}
+                //doAssert(employee.doWork);
 
             });
         });
