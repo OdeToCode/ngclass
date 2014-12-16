@@ -11,6 +11,28 @@
     
     <script>
 
+        describe("reflection", function() {
+            it("should be able to retrieve keys", function() {
+
+                var o = {};
+                var classNames = "";
+                o.someProperty = false;
+                o["some other property"] = true;
+                o["foo"] = true;
+                o.bar = false;
+
+                for (var p in o) {
+                  if (o[p] === true) {
+                      classNames += p + " ";
+                  }
+                }
+                classNames = classNames.trim();
+                expect(classNames).toBe("some other property foo");
+
+            });
+        });
+
+
         describe("Jasmine", function() {
 
             it("should have asserts that work", function() {
