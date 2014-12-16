@@ -1,9 +1,9 @@
 ﻿<div class="container" ng-controller="movieListController as list">
-    {{version.full}}
+
     <div class="alert alert-danger" ng-if="list.errorMessage">
         {{list.errorMessage}}
     </div>
-       
+       <h1>{{ list.counter }}</h1>
     <table class="table">
         <tr>
             <th>Title</th>  
