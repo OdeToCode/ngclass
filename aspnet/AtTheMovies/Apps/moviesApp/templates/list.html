@@ -1,10 +1,19 @@
 ﻿<div class="container" ng-controller="movieListController as list">
 
     <div class="alert alert-danger" ng-if="list.errorMessage">
-        {{list.errorMessage}}
-        
+        {{list.errorMessage}}        
     </div>
-       <h1>{{ list.counter }}</h1>
+    <div>
+        <a class="btn btn-default" href="#/add">Add Movie</a>
+    </div>
+    
+    <label>Search:</label> <input type="search" ng-model="list.searchTerm"/>
+    <select ng-model="list.orderTerm">
+        <option value="+title">Title</option>
+        <option value="+rating">Worst rating</option>
+        <option value="-rating">Best rating</option>
+    </select>
+
     <table class="table">
         <tr>
             <th>Title</th>  
@@ -12,16 +21,20 @@
             <th>Rating</th>
             <th></th>
         </tr>
-        <tr ng-repeat="movie in list.movies"
+        <tr ng-repeat="movie in list.movies | filter:{title: list.searchTerm} | orderBy:list.orderTerm"
             ng-class="list.grade(movie)">
             <td><a ng-href="#/details/{{movie.id}}">{{movie.title}}</a>
             </td>
             <td>{{movie.year}}</td>
-            <td>{{movie.rating}} of 5</td>
+            
+            <td>
+                {{movie.rating}} of 5
+                {{ list.isGood(movie) | checkmark }}
+            </td>
             <td>
                 <button ng-click="list.increaseRating(movie)"
                         class="btn btn-default">
-                    Better?
+                    Better
                 </button>
                 <button ng-click="list.decreaseRating(movie)"
                         class="btn btn-default">

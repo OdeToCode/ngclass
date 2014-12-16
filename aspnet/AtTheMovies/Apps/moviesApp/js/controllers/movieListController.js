@@ -38,6 +38,10 @@
             }
         };
 
+        model.isGood = function(movie) {
+            return movie.rating > 3;
+        };
+
         model.grade = function (movie) {
             var result = {
                 good: movie.rating >= 4,
@@ -54,9 +58,9 @@
         };
 
         model.message = initialMessage;
-
+        model.orderTerm = "+title";
         model.counter = 0;
-
+        model.searchTerm = "";
 
         var incrementCounter = function () {
             model.counter += 1;

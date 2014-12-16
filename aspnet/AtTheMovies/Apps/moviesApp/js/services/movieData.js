@@ -5,8 +5,16 @@
         var movies = [];
         $log.info("Creating movies service");
 
+        var createMovie = function (movie) {
+            movies = [];
+            return $http.post("/api/movies", movie)
+                        .then(function(response) {
+                            return response.data;
+                        });
+        };
 
-        var saveMovie = function(movie) {
+        var saveMovie = function (movie) {
+            movies = [];
             return $http.put("/api/movies", movie);
         };
 
@@ -36,7 +44,8 @@
         return {
             getAllMovies: getAllMovies,
             saveMovie: saveMovie,
-            getMovieById: getMovieById
+            getMovieById: getMovieById,
+            createMovie: createMovie
         };
     };
 
