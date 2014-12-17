@@ -9,17 +9,27 @@
                 increase: "&"
             },
             link: function (scope, element, attributes) {
-                scope.$watch("value", function (newValue) {
-                    element.empty();
+
+                scope.$watch("value", function() {
+                    scope.stars = [];
                     for (var i = 0; i < scope.value; i++) {
-                        element.append("*");
+                        scope.stars.push(i);
                     }
                 });
-                element.on("click", function() {
-                    scope.$apply(function() {
-                        scope.increase();
-                    });
-                });
+                
+                
+
+                //scope.$watch("value", function (newValue) {
+                //    element.empty();
+                //    for (var i = 0; i < scope.value; i++) {
+                //        element.append("*");
+                //    }
+                //});
+                //element.on("click", function() {
+                //    scope.$apply(function() {
+                //        scope.increase();
+                //    });
+                //});
             }
         };
     };
