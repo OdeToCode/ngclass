@@ -9,7 +9,6 @@ Next: 9:00am
  2. Implement add a movie form with -> 
     reirects to the details view
 
-	
 For ASPNET:
   Open AtTheMovies.sln
 

@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/Content/styles.css">
 </head>
 
-<body class="ng-cloak">
+<body class="ng-cloak" ng-controller="shellController as shell">
 
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -16,14 +16,35 @@
         </div>
     </nav>
     
-    <div ng-view></div>
- 
+    <div class="text-center" ng-show="shell.getRequestCounter()">
+        <img src="Content/ajax-loader.gif" />
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <div ng-view></div>
+            </div>
+            <div class="col-md-2">
+                <div ng-repeat="alert in shell.currentAlerts" class="alert alert-{{alert.type}}">
+                    {{alert.message}}
+                    <span ng-click="shell.removeAlert(alert)" class="close">X</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script src="Scripts/angular.js"></script>
-    <script src="Scripts/angular-route.js"></script>   
+    <script src="Scripts/angular-route.js"></script>
     <script src="Scripts/angular-messages.js"></script>
+    
+    <script src="Apps/common/module.js"></script>
+    <script src="Apps/common/js/services/movieData.js"></script>
+    <script src="Apps/common/js/services/requestCounter.js"></script>
 
     <script src="Apps/moviesApp/module.js"></script>
-    <script src="Apps/moviesApp/js/services/movieData.js"></script> 
+    <script src="/Apps/moviesApp/js/controllers/ShellController.js"></script>
     <script src="Apps/moviesApp/js/controllers/addMovieController.js"></script>
     <script src="/Apps/moviesApp/js/services/alerting.js"></script>
     <script src="Apps/moviesApp/js/controllers/movieListController.js"></script>

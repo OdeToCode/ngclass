@@ -1,11 +1,5 @@
-﻿<div class="container" ng-controller="movieListController as list">
+﻿<div ng-controller="movieListController as list">
 
-    <div ng-repeat="alert in list.currentAlerts" class="alert alert-{{alert.type}}">
-        {{alert.message}}  
-        <span ng-click="list.removeAlert(alert)" class="close">X</span>      
-    </div>
-    
-    
     <label>Search:</label> <input type="search" ng-model="list.searchTerm"/>
     <select ng-model="list.orderTerm">
         <option value="+title">Title</option>
@@ -48,11 +42,4 @@
 
     </div>
     
-    <hr/>
-
-    <span>{{ list.message }}</span>
-    <input type="text" ng-model="list.message" />
-    <button class="btn btn-default" ng-click="list.resetMessage()">
-        Reset
-    </button>
 </div>
