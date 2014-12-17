@@ -2,8 +2,8 @@ Scott Allen
 AngularJS
 scott@OdeToCode.com
 
-Now: Lab
-Next: 9:00am
+Now: Break
+Next: 10:15am
 
  1. Route to list movies, add movie
  2. Implement add a movie form with -> 

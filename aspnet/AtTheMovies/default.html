@@ -16,7 +16,8 @@
         </div>
     </nav>
     
-    <div class="text-center" ng-show="shell.getRequestCounter()">
+    <div class="text-center" 
+         ng-show="shell.getRequestCounter()">
         <img src="Content/ajax-loader.gif" />
     </div>
 
@@ -26,9 +27,21 @@
                 <div ng-view></div>
             </div>
             <div class="col-md-2">
-                <div ng-repeat="alert in shell.currentAlerts" class="alert alert-{{alert.type}}">
+                
+                <alert type="warning">
+                    This is a problem!
+                </alert>
+
+                <alert ng-repeat="alert in shell.currentAlerts" type="alert.type">
+                    {{ alert.message}}
+                </alert>
+                
+
+                <div ng-repeat="alert in shell.currentAlerts" 
+                     class="alert alert-{{alert.type}}">
                     {{alert.message}}
-                    <span ng-click="shell.removeAlert(alert)" class="close">X</span>
+                    <span ng-click="shell.removeAlert(alert)" 
+                          class="close">X</span>
                 </div>
             </div>
         </div>
@@ -50,5 +63,6 @@
     <script src="Apps/moviesApp/js/controllers/movieListController.js"></script>
     <script src="Apps/moviesApp/js/controllers/movieDetailsController.js"></script>
     <script src="Apps/moviesApp/js/filters/checkmark.js"></script>
+    <script src="Apps/moviesApp/js/directives/alert.js"></script>
 </body>
 </html>
