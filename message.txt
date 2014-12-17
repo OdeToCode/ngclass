@@ -4,13 +4,12 @@ scott@OdeToCode.com
 
 Now: Lab
 
-    <rating value="movie.rating" increment="incrementRating(movie)"></rating>
+    <rating value="movie.rating"></rating>
 
 	return {
            templateUrl: "rating.html",
            scope: {
-              value: "=",
-              increment: "&"
+              value: "="
            },
 	};
 
@@ -21,10 +20,6 @@ Now: Lab
         </div>
 
 Next: 14:15
-
- 1. Route to list movies, add movie
- 2. Implement add a movie form with -> 
-    reirects to the details view
 
 For ASPNET:
   Open AtTheMovies.sln

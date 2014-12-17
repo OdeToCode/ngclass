@@ -20,8 +20,8 @@
             </td>
             <td>{{movie.year}}</td>
             
-            <td>
-                {{movie.rating}} of 5
+            <td> {{ movie.rating }}
+                <div rating value="movie.rating"></div>
                 {{ list.isGood(movie) | checkmark }}
             </td>
             <td>

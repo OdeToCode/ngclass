@@ -17,7 +17,7 @@
 
         var saveMovie = function (movie) {
             movieData.saveMovie(movie)
-                     .then(onMovieSaved, onError);
+                     .then(onMovieSaved, alerting.errorHandler("Could not save movie"));
         };
 
         var initialize = function () {

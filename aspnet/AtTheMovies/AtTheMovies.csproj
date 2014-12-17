@@ -100,6 +100,7 @@
     <Content Include="Apps\moviesApp\js\controllers\movieListController.js" />
     <Content Include="Apps\moviesApp\js\controllers\ShellController.js" />
     <Content Include="Apps\moviesApp\js\directives\alert.js" />
+    <Content Include="Apps\moviesApp\js\directives\rating.js" />
     <Content Include="Apps\moviesApp\js\directives\startWith.js" />
     <Content Include="Apps\moviesApp\js\directives\workSpinner.js" />
     <Content Include="Apps\moviesApp\js\filters\checkmark.js" />
@@ -111,6 +112,7 @@
     <Content Include="Apps\moviesApp\templates\alert.html" />
     <Content Include="Apps\moviesApp\templates\details.html" />
     <Content Include="Apps\moviesApp\templates\list.html" />
+    <Content Include="Apps\moviesApp\templates\rating.html" />
     <Content Include="Apps\moviesApp\templates\validationMessages.html" />
     <Content Include="Content\ajax-loader.gif" />
     <Content Include="Content\animate.css" />
