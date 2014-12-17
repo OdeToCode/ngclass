@@ -7,11 +7,13 @@
             <label>Title</label>
             
             <input type="text" class="form-control" 
-                   name="title" required minlength="3" maxlength="255"
+                   name="title" required minlength="3" 
+                   maxlength="255" start-with="S"
                    ng-model="add.movie.title" />
             <div class="errorMessages" 
                  ng-messages="addMovieForm.title.$error"
                  ng-messages-include="/apps/moviesApp/templates/validationMessages.html">
+                <div ng-message="startWith">You must start with an S</div>
             </div>
 
         </div>

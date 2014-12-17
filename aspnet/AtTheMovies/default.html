@@ -16,33 +16,20 @@
         </div>
     </nav>
     
-    <div class="text-center" 
-         ng-show="shell.getRequestCounter()">
-        <img src="Content/ajax-loader.gif" />
-    </div>
-
+    <div work-spinner ></div>
+    
     <div class="container">
         <div class="row">
             <div class="col-md-10">
                 <div ng-view></div>
             </div>
             <div class="col-md-2">
-                
-                <alert type="warning">
-                    This is a problem!
-                </alert>
-
-                <alert ng-repeat="alert in shell.currentAlerts" type="alert.type">
+                <alert 
+                    ng-repeat="alert in shell.currentAlerts" 
+                    type="{{alert.type}}"
+                    close="shell.removeAlert(alert)">
                     {{ alert.message}}
                 </alert>
-                
-
-                <div ng-repeat="alert in shell.currentAlerts" 
-                     class="alert alert-{{alert.type}}">
-                    {{alert.message}}
-                    <span ng-click="shell.removeAlert(alert)" 
-                          class="close">X</span>
-                </div>
             </div>
         </div>
     </div>
@@ -57,9 +44,11 @@
     <script src="Apps/common/js/services/requestCounter.js"></script>
 
     <script src="Apps/moviesApp/module.js"></script>
+    <script src="/Apps/moviesApp/js/directives/workSpinner.js"></script>
     <script src="/Apps/moviesApp/js/controllers/ShellController.js"></script>
     <script src="Apps/moviesApp/js/controllers/addMovieController.js"></script>
     <script src="/Apps/moviesApp/js/services/alerting.js"></script>
+    <script src="Apps/moviesApp/js/directives/startWith.js"></script>
     <script src="Apps/moviesApp/js/controllers/movieListController.js"></script>
     <script src="Apps/moviesApp/js/controllers/movieDetailsController.js"></script>
     <script src="Apps/moviesApp/js/filters/checkmark.js"></script>

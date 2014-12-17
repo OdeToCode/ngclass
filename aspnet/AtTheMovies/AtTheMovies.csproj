@@ -100,6 +100,8 @@
     <Content Include="Apps\moviesApp\js\controllers\movieListController.js" />
     <Content Include="Apps\moviesApp\js\controllers\ShellController.js" />
     <Content Include="Apps\moviesApp\js\directives\alert.js" />
+    <Content Include="Apps\moviesApp\js\directives\startWith.js" />
+    <Content Include="Apps\moviesApp\js\directives\workSpinner.js" />
     <Content Include="Apps\moviesApp\js\filters\checkmark.js" />
     <Content Include="Apps\moviesApp\js\services\alerting.js" />
     <Content Include="Apps\common\js\services\movieData.js" />

@@ -2,8 +2,25 @@ Scott Allen
 AngularJS
 scott@OdeToCode.com
 
-Now: Break
-Next: 10:15am
+Now: Lab
+
+    <rating value="movie.rating" increment="incrementRating(movie)"></rating>
+
+	return {
+           templateUrl: "rating.html",
+           scope: {
+              value: "=",
+              increment: "&"
+           },
+	};
+
+	module.directive("rating", rating);
+
+	<div>
+            <span ng-repeat="..." ng-click="increment()">*</span>
+        </div>
+
+Next: 14:15
 
  1. Route to list movies, add movie
  2. Implement add a movie form with -> 
