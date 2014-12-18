@@ -1,7 +1,7 @@
 ﻿(function (module) {
     "use strict";
 
-    var movieListController = function (movieData, $log, $scope,
+    var movieListController = function (movieData, $log,
                                         $timeout, alerting) {
         var model = this;
         $log.info("Creating movieListController");

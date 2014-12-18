@@ -106,7 +106,8 @@
     <Content Include="Apps\moviesApp\js\filters\checkmark.js" />
     <Content Include="Apps\moviesApp\js\services\alerting.js" />
     <Content Include="Apps\common\js\services\movieData.js" />
-    <Content Include="Apps\moviesApp\js\specs\js_tests.html" />
+    <Content Include="Apps\specs\js_tests.html" />
+    <Content Include="Apps\specs\moveListControllerSpecs.js" />
     <Content Include="Apps\moviesApp\module.js" />
     <Content Include="Apps\moviesApp\templates\add.html" />
     <Content Include="Apps\moviesApp\templates\alert.html" />
