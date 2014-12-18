@@ -2,14 +2,16 @@ Scott Allen
 AngularJS
 scott@OdeToCode.com
 
-Now: break
-Next: 10:25am
+Now: lunch
+Next: 12:30
 
 npm install karma-cli -g
 npm install karma
 karma init
 
-
+npm install protractor -g
+webdriver-manager update
+webdriver-manager start
 
 tommorow
 3. testing => 

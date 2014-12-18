@@ -13,7 +13,6 @@
         alerting = _alerting_;
     }));
 
-
     it("has an empty movies array at the start", function() {
 
         var listController = $controller("movieListController");
