@@ -26,7 +26,13 @@
 
         $routeProvider
             .when("/list", {
-                templateUrl: "/apps/moviesApp/templates/list.html"
+                templateUrl: "/apps/moviesApp/templates/list.html",
+                controller: "movieListController as list",
+                resolve: {
+                    movies: function(movieData) {
+                        return movieData.getAllMovies();
+                    }
+                }
             })
             .when("/add", {
                 templateUrl: "/apps/moviesApp/templates/add.html"

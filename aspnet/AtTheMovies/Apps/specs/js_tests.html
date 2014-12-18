@@ -2,10 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
-    <link href="../../../../Scripts/jasmine/jasmine.css" rel="stylesheet" />
-    <script src="../../../../Scripts/jasmine/jasmine.js"></script>
-    <script src="../../../../Scripts/jasmine/jasmine-html.js"></script>
-    <script src="../../../../Scripts/jasmine/boot.js"></script>
+    <link href="../../Scripts/jasmine/jasmine.css" rel="stylesheet" />
+    <script src="../../Scripts/jasmine/jasmine.js"></script>
+    <script src="../../Scripts/jasmine/jasmine-html.js"></script>
+    <script src="../../Scripts/jasmine/boot.js"></script>
 </head>
 <body>
     
@@ -118,11 +118,19 @@
         describe("create objects with constructor", function() {
             it("it should have methods and properties", function() {
 
+                var numbers = [1, 2, 3];
+                for (var i in numbers) {
+                    summary += numbers[i];
+                }
+                
+
                 var Employee = function(fn, ln) {
-                    this.firstName = fn;
-                    this.lastName = ln;
-                    this.doWork = function() {
-                        return this.firstName + " is working";
+
+                    var self = this;
+                    self.firstName = fn;
+                    self.lastName = ln;
+                    self.doWork = function() {
+                        return self.firstName + " is working";
                     };
 
                 };
@@ -131,12 +139,12 @@
                 expect(employee.firstName).toBe("Scott");
                 expect(employee.doWork()).toBe("Scott is working");
                 
-                // this will fail...
-                //var doAssert = function(workFn) {
-                //    var result = workFn();
-                //    expect(result).toBe("Scott is working");
-                //}
-                //doAssert(employee.doWork);
+               
+                var doAssert = function(workFn) {
+                    var result = workFn();
+                    expect(result).toBe("Scott is working");
+                }
+                doAssert(employee.doWork);
 
             });
         });

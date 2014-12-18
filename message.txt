@@ -2,8 +2,8 @@ Scott Allen
 AngularJS
 scott@OdeToCode.com
 
-Now: lunch
-Next: 12:30
+Now: 13:36
+Next: 13:50
 
 npm install karma-cli -g
 npm install karma
@@ -19,6 +19,10 @@ tommorow
 5. ES6 and Angular 2.0
 6. best pracitces
 
+
+Todo:
+
+chrome extension for too many tabs ONETAB
 
 Now: 
 

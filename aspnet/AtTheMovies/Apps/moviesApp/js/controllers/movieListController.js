@@ -1,16 +1,12 @@
 ﻿(function (module) {
     "use strict";
 
-    var movieListController = function (movieData, $log,
+    var movieListController = function (movies, movieData, $log,
                                         $timeout, alerting) {
         var model = this;
         $log.info("Creating movieListController");
 
-        var onMovies = function (movies) {
-            model.movies = movies;
-            $log.info("Got movies: ", movies);
-        };
-
+      
         var onMovieSaved = function () {
             model.saveMessage = "Saved the movie!";
         };
@@ -21,9 +17,7 @@
         };
 
         var initialize = function () {
-            movieData.getAllMovies()
-                     .then(onMovies)
-                     .catch(alerting.errorHandler("Failed to load movies"));
+            model.movies = movies;
         };
 
         model.orderTerm = "+title";
