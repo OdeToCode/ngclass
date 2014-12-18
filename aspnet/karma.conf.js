@@ -18,6 +18,7 @@ module.exports = function(config) {
         "AtTheMovies/Scripts/angular-route.js",
         "AtTheMovies/Scripts/angular-messages.js",
         "AtTheMovies/Scripts/angular-mocks.js",
+        "AtTheMovies/Scripts/angular-animate.js",
 
         "AtTheMovies/Apps/Common/module.js",
         "AtTheMovies/Apps/common/js/**/*.js",

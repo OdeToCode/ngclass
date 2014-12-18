@@ -29,9 +29,9 @@
                 templateUrl: "/apps/moviesApp/templates/list.html",
                 controller: "movieListController as list",
                 resolve: {
-                    movies: function(movieData) {
-                        return movieData.getAllMovies();
-                    }
+                    movies: ["movieData", function(m) {
+                        return m.getAllMovies();
+                    }]
                 }
             })
             .when("/add", {

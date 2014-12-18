@@ -6,34 +6,18 @@
     });
 
     // inject is from angular mocks
-    var $controller, $httpBackend, alerting;
+    var $controller, $httpBackend, alerting, movies;
     beforeEach(inject(function(_$controller_, _$httpBackend_, _alerting_) {
         $controller = _$controller_;
         $httpBackend = _$httpBackend_;
         alerting = _alerting_;
+        movies = [{}, {}, {}];
     }));
 
-    it("has an empty movies array at the start", function() {
+    it("it has three movies if we start with three movies", function () {
 
-        var listController = $controller("movieListController");
-        expect(listController.movies.length).toBe(0);
-
-    });
-
-    it("it has three movies if server returns three movies", function () {
-
-        $httpBackend.when("GET", "/api/movies").respond([{}, {}, {}]);
-        var listController = $controller("movieListController");
-        $httpBackend.flush();
+        var listController = $controller("movieListController", {movies: movies});
         expect(listController.movies.length).toBe(3);
     });
-
-    it("an alert is shown if server call fails", function () {
-
-        $httpBackend.when("GET", "/api/movies").respond(500);
-        var listController = $controller("movieListController");
-        $httpBackend.flush();
-        expect(listController.movies.length).toBe(0);
-        expect(alerting.currentAlerts.length).toBe(1);
-    });
+  
 });
