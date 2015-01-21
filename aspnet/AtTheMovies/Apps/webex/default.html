@@ -1,0 +1,65 @@
+<html>
+<head>
+    <title>At The Movies!</title>
+    <link rel="stylesheet" href="/Content/bootstrap/css/bootstrap.css">
+    <link href="/Content/animate.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/Content/styles.css">
+</head>
+
+<body ng-app="moviesApp" class="ng-cloak">
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    At The Movies!
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+   
+
+    <div class="container" ng-controller="mainController as main">
+        <div class="row">
+            <div class="col-md-12">
+                
+                {{ anotherMessage }}
+
+                <div ng-if="main.error" class="alert alert-danger">
+                    {{ $parent.foo.bar }}
+                    {{ main.error }}
+                </div>
+
+                <table class="table"> 
+                    <tr>
+                        <th>Title</th>
+                        <th>Year</th>
+                        <th>Rating</th>
+                    </tr>
+                    <tr ng-repeat="movie in main.movies" ng-class="main.rateMovie(movie)">
+                        <td>{{movie.title}}</td>
+                        <td>{{movie.year}}</td>
+                        <td>{{movie.rating}}
+                            <input type="number" min="1" max="5" ng-model="movie.rating" />
+                        </td>
+                    </tr>
+                </table>
+                
+                
+
+                {{ main.message }}
+                <input type="text" ng-model="main.message" />
+                <input type="button" ng-click="main.changeMessage()" value="Change" />
+
+            </div>
+            
+        </div>
+    </div>
+
+
+    <script src="../../Scripts/angular.js"></script>
+    <script src="module.js"></script>
+    <script src="js/controllers/mainController.js"></script>
+</body>
+</html>

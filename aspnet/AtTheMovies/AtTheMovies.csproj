@@ -95,6 +95,10 @@
   <ItemGroup>
     <Content Include="Apps\common\js\services\requestCounter.js" />
     <Content Include="Apps\common\module.js" />
+    <Content Include="Apps\webex\default.html" />
+    <Content Include="Apps\webex\js\controllers\mainController.js" />
+    <Content Include="Apps\webex\js\services\movieData.js" />
+    <Content Include="Apps\webex\module.js" />
     <Content Include="Apps\moviesApp\js\controllers\addMovieController.js" />
     <Content Include="Apps\moviesApp\js\controllers\movieDetailsController.js" />
     <Content Include="Apps\moviesApp\js\controllers\movieListController.js" />
@@ -175,7 +179,11 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Apps\webex\js\directives\" />
+    <Folder Include="Apps\webex\js\filters\" />
+    <Folder Include="Apps\webex\templates\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -191,7 +199,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>1346</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:1346/</IISUrl>
+          <IISUrl>http://localhost:13467</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

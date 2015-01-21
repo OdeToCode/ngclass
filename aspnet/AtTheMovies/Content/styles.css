@@ -3,8 +3,8 @@ body {
 }
 
 .ng-enter {
-    -webkit-animation: fadeInRight 1s;
-    animation: fadeInRight 1s;
+    -webkit-animation: bounce 1s;
+    animation: bounce 1s;
 }
 
 .errorMessages {
