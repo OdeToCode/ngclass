@@ -1,4 +1,4 @@
-<html ng-app="moviesApp">
+<html>
 
 <head>
     <title>At The Movies!</title>
@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/Content/styles.css">
 </head>
 
-<body class="ng-cloak" ng-controller="shellController as shell">
+<body>
 
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -16,44 +16,15 @@
             </div>
         </div>
     </nav>
-      
+
     <div class="container">
         <div class="row">
             <div class="col-md-10">
-                <div class="view" ng-view></div>
             </div>
             <div class="col-md-2">
-                <div work-spinner></div>
-                <alert 
-                    ng-repeat="alert in shell.currentAlerts" 
-                    type="{{alert.type}}"
-                    close="shell.removeAlert(alert)">
-                    {{ alert.message}}
-                </alert>
             </div>
         </div>
     </div>
 
-
-    <script src="Scripts/angular.js"></script>
-    <script src="Scripts/angular-route.js"></script>
-    <script src="Scripts/angular-messages.js"></script>
-    <script src="Scripts/angular-animate.js"></script>
-    
-    <script src="Apps/common/module.js"></script>
-    <script src="Apps/common/js/services/movieData.js"></script>
-    <script src="Apps/common/js/services/requestCounter.js"></script>
-
-    <script src="Apps/moviesApp/module.js"></script>
-    <script src="/Apps/moviesApp/js/directives/workSpinner.js"></script>
-    <script src="/Apps/moviesApp/js/controllers/ShellController.js"></script>
-    <script src="Apps/moviesApp/js/controllers/addMovieController.js"></script>
-    <script src="/Apps/moviesApp/js/services/alerting.js"></script>
-    <script src="Apps/moviesApp/js/directives/startWith.js"></script>
-    <script src="/Apps/moviesApp/js/directives/rating.js"></script>
-    <script src="Apps/moviesApp/js/controllers/movieListController.js"></script>
-    <script src="Apps/moviesApp/js/controllers/movieDetailsController.js"></script>
-    <script src="Apps/moviesApp/js/filters/checkmark.js"></script>
-    <script src="Apps/moviesApp/js/directives/alert.js"></script>
 </body>
 </html>
