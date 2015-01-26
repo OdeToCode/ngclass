@@ -2,12 +2,11 @@ Scott Allen
 JavaScript + AngularJS
 scott@OdeToCode.com
 
-
-
-
 Now: break
-Next: 11:35
-Lunch: 12:30
+Next: 14:45
+
+Lab: Have a page that uses $http to show movie data. 
+
 
 Mon: 
  Modern JavaScript

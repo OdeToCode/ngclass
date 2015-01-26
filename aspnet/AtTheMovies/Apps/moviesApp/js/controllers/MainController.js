@@ -4,6 +4,18 @@
 
         var self = this;
 
+        var array = [1, 2, 3, 4];
+
+
+        $log.info("Controller created");
+        var onMovies = function(movies) {
+            self.movies = movies;
+        };
+
+        var onError = function(response) {
+            self.error = response.statusText;
+        };
+
         self.rateMovie = function(movie) {
             return {
                 good: movie.rating > 3,
@@ -12,11 +24,7 @@
         };
 
         movieData.getAll()
-            .then(function (response) {
-
-                self.movies = response.data;
-                $log.info(self);
-            });
+            .then(onMovies, onError);
 
 
         self.changeMessage = function() {
@@ -30,6 +38,7 @@
         };
 
     };
+    //MainController.$inject = ["movieData", "$log"];
 
     var app = angular.module("moviesApp");
     app.controller("MainController", MainController);
