@@ -93,6 +93,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Apps\moviesApp\js\controllers\MainController.js" />
+    <Content Include="Apps\moviesApp\module.js" />
     <Content Include="Content\ajax-loader.gif" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap\css\bootstrap-theme.css" />
@@ -103,6 +105,7 @@
     <Content Include="Content\styles.css" />
     <Content Include="default.html" />
     <Content Include="Global.asax" />
+    <Content Include="javascript.html" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-aria.js" />
     <Content Include="Scripts\angular-cookies.js" />
@@ -152,7 +155,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Apps\" />
+    <Folder Include="Apps\common\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

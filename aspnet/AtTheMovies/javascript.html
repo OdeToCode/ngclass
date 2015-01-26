@@ -1,0 +1,195 @@
+﻿<html>
+<head>
+    <title></title>
+    <link href="Scripts/jasmine/jasmine.css" rel="stylesheet" />
+    <script src="Scripts/jasmine/jasmine.js"></script>
+    <script src="Scripts/jasmine/jasmine-html.js"></script>
+    <script src="Scripts/jasmine/boot.js"></script>
+</head>
+<body>
+    
+    <script>
+
+        describe("How scope works in JavaScript", function() {
+
+            it("equality checking", function() {
+
+                expect("2" == 2).toBeTruthy();
+                expect("2" === 2).toBeFalsy();
+
+            });
+
+            it("Creates a global variable if you don't use var", function() {
+                var doWork = function() {
+                    // ....
+                    x = 3;
+                };
+
+                doWork();
+                expect(x).toBe(3);
+            });
+        });
+
+        describe("Closures", function() {
+
+            it("lexically bind variables", function() {
+
+                var makeGreeting = function(name) {
+                    return function () {
+                        return "Hello, " + name;
+                    }
+                };
+
+                var f1 = makeGreeting("Scott");
+                var f2 = makeGreeting("Alex");
+
+                expect(f1()).toBe("Hello, Scott");
+                expect(f2()).toBe("Hello, Alex");
+
+            });
+
+        });
+
+        describe("How to create objects", function () { 
+            it("is easy to create objects with object literals", function() {
+
+                var createEmployee = function(firstName, lastName) {
+                    return {
+                        firstName: firstName,
+                        lastName: lastName,
+                        formatName: function() {
+                            return this.firstName + " " + this.lastName;
+                        }
+                    };
+                }
+
+                var e1 = createEmployee("Scott", "Allen");
+                var e2 = createEmployee("John", "Smith");
+                expect(e1.formatName.call(e2)).toBe("John Smith");
+
+            });
+
+
+            it("is easy to create objects with constructor and prototype", function () {
+
+                var Employee = function(firstName, lastName) {
+                    // this.firstName = firstName;
+
+                    this.setFirstName = function(value) {
+                        if (value) {
+                            firstName = value;
+                        }
+                    };
+                    this.getFirstName = function() {
+                        return firstName;
+                    }
+                    this.lastName = lastName;
+                };
+
+                Employee.prototype = {
+                    formatName: function() {
+                        return this.getFirstName() + " " + this.lastName;
+                    },
+                    giveRaise: function() {
+                        
+                    },
+                    grantHoliday: function() {
+                        
+                    }
+                };
+
+                var e1 = new Employee("Scott", "Allen");
+                // e1 = {};
+                // Employee.call(e1);
+                // e1.__proto__ = Employee.prototype;
+
+                expect(e1.formatName()).toBe("Scott Allen");
+                expect(e1.giveRaise).toBeDefined();
+
+            });
+
+            describe("revealing module pattern", function() {
+
+                it("should be able to create objects", function() {
+                    var output = function () {
+
+                        var totalWrites = 0;
+
+                        var incrementCount = function() {
+                            totalWrites += 1;
+                        };
+
+                        var write = function() {
+                            // ...
+                            incrementCount();
+                        };
+
+                        var getTotal = function() {
+                            return totalWrites;
+                        };
+
+
+                        return {
+                            write: write,
+                            getTotalWrites: getTotal
+                        };
+
+                    }();
+
+                    output.write("Hello");
+                    output.write("World!");
+
+                    expect(output.getTotalWrites()).toBe(2);
+                });
+
+
+            });
+
+        });
+
+    </script>
+    
+
+    <script>
+
+
+        // IIFE (immed invoked function expression)
+        // SEAF (self executing anon function)
+        (function() {
+
+        }());
+
+        (function (document, undefined) {
+
+            var write = function(message) {
+
+                if (message !== undefined) {
+                    document.write(message);
+                }
+            };
+
+            var add = function(x, y) {
+                return x + y;
+            };
+
+            var getBinaryOperator = function() {
+                return function(x, y) {
+                    return x * y;
+                };
+
+            };
+
+            var computeBinaryOperator = function(op, x, y) {
+                return op(x, y);
+            };
+
+            write(computeBinaryOperator(getBinaryOperator(), 3, 10));
+
+        }(document));
+
+
+    </script>
+    
+
+</body>
+</html>
