@@ -2,6 +2,9 @@ Scott Allen
 JavaScript + AngularJS
 scott@OdeToCode.com
 
+
+
+
 Now: break
 Next: 11:35
 Lunch: 12:30
@@ -9,8 +12,6 @@ Lunch: 12:30
 Mon: 
  Modern JavaScript
  Angular JS 
-
-WiFi: D4-Guests - password on whiteboard
 
 Slides:
 http://goo.gl/QYJSzZ (case sensitive)

@@ -1,13 +1,30 @@
 ﻿(function() {
 
-    var MainController = function() {
+    var MainController = function(movieData, $log) {
 
-        this.changeMessage = function() {
-            this.message.greeting = "Hello, Switzerland";
-            this.message.currentWeather = "Warming up";
+        var self = this;
+
+        self.rateMovie = function(movie) {
+            return {
+                good: movie.rating > 3,
+                bad: movie.rating < 3
+            };
         };
 
-        this.message = {
+        movieData.getAll()
+            .then(function (response) {
+
+                self.movies = response.data;
+                $log.info(self);
+            });
+
+
+        self.changeMessage = function() {
+            self.message.greeting = "Hello, Switzerland";
+            self.message.currentWeather = "Warming up";
+        };
+
+        self.message = {
             greeting: "Hello, World",
             currentWeather: "Cold"
         };
