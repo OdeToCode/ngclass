@@ -1,0 +1,31 @@
+﻿<div ng-controller="MainController as main">
+    <div ng-if="main.error" class="alert alert-danger">{{main.error}}</div>
+    <table class="table">
+        <tr>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Rating</th>
+            <th>Actions</th>
+        </tr>
+        <tr ng-repeat="movie in main.movies" ng-class="main.rateMovie(movie)">
+            <td>
+                <a ng-href="#/details/{{movie.id}}">{{movie.title}}</a>
+            </td>
+            <td>{{movie.year}}</td>
+            <td>
+                {{movie.rating}}
+
+            </td>
+            <td></td>
+        </tr>
+    </table>
+
+
+    <hr />
+    <h1>{{ main.message.greeting }}</h1>
+    <div>Today's forecast: {{ main.message.currentWeather}}</div>
+
+    <input type="text" ng-model="main.message.currentWeather" />
+    <input type="button" value="Change Message" ng-click="main.changeMessage()" />
+
+</div>

@@ -1,7 +1,7 @@
 <html ng-app="moviesApp">
 
 <head>
-    <title>At The Movies!</title>
+    <title>At The Movies! {{ version }}</title>
     <link rel="stylesheet" href="/Content/bootstrap/css/bootstrap.css">
     <link href="Content/animate.css" rel="stylesheet" />
     <link rel="stylesheet" href="/Content/styles.css">
@@ -17,43 +17,25 @@
         </div>
     </nav>
 
-    <div class="container" ng-controller="MainController as main">
+    <div class="container">
         <div class="row">
             <div class="col-md-10">
          
-                <table class="table">
-                    <tr>
-                        <th>Title</th>
-                        <th>Year</th>
-                        <th>Rating</th>
-                        <th>Actions</th>
-                    </tr>
-                    <tr ng-repeat="movie in main.movies" ng-class="main.rateMovie(movie)">
-                        <td>{{movie.title}}</td>
-                        <td>{{movie.year}}</td>
-                        <td>{{movie.rating}}
-                            <input type="number" ng-model="movie.rating"/>
-                        </td>
-                        <td></td>
-                    </tr>
-                </table>
-
-                
-                <hr/>
-                <h1>{{ main.message.greeting }}</h1>
-                <div>Today's forecast: {{ main.message.currentWeather}}</div>
-                
-                <input type="text" ng-model="main.message.currentWeather" />
-                <input type="button" value="Change Message" ng-click="main.changeMessage()"/>
-
+                <div ng-view>
+                    
+                </div>
+              
             </div>
             <div class="col-md-2">
+                {{ error }}
             </div>
         </div>
     </div>
     <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
     <script src="Apps/moviesApp/module.js"></script>
     <script src="Apps/moviesApp/js/controllers/MainController.js"></script>
     <script src="Apps/moviesApp/js/services/movieData.js"></script>
+    <script src="Apps/moviesApp/js/controllers/DetailsController.js"></script>
 </body>
 </html>

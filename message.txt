@@ -2,12 +2,12 @@ Scott Allen
 JavaScript + AngularJS
 scott@OdeToCode.com
 
-
-
-
 Now: break
-Next: 11:35
-Lunch: 12:30
+Next: 15:55
+Lab: Use routing to :
+        - list movies
+        - detail a specific movie 
+
 
 Mon: 
  Modern JavaScript
