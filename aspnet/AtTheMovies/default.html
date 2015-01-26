@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/Content/styles.css">
 </head>
 
-<body>
+<body class="ng-cloak">
 
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -20,7 +20,26 @@
     <div class="container" ng-controller="MainController as main">
         <div class="row">
             <div class="col-md-10">
+         
+                <table class="table">
+                    <tr>
+                        <th>Title</th>
+                        <th>Year</th>
+                        <th>Rating</th>
+                        <th>Actions</th>
+                    </tr>
+                    <tr ng-repeat="movie in main.movies" ng-class="main.rateMovie(movie)">
+                        <td>{{movie.title}}</td>
+                        <td>{{movie.year}}</td>
+                        <td>{{movie.rating}}
+                            <input type="number" ng-model="movie.rating"/>
+                        </td>
+                        <td></td>
+                    </tr>
+                </table>
 
+                
+                <hr/>
                 <h1>{{ main.message.greeting }}</h1>
                 <div>Today's forecast: {{ main.message.currentWeather}}</div>
                 
