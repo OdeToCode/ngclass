@@ -1,28 +1,30 @@
 ﻿(function() {
 
-    var MainController = function() {
+    var MainController = function(movieData, $log) {
 
+        var self = this;
 
-        this.rateMovie = function(movie) {
+        self.rateMovie = function(movie) {
             return {
                 good: movie.rating > 3,
                 bad: movie.rating < 3
             };
         };
 
-        this.movies = [
-            { title: "Star Wars", year: 1979, rating: 5 },
-            { title: "Star Trek", year: 1989, rating: 4 },
-            { title: "Borat", year: 2011, rating: 3 }
-        ];
+        movieData.getAll()
+            .then(function (response) {
+
+                self.movies = response.data;
+                $log.info(self);
+            });
 
 
-        this.changeMessage = function() {
-            this.message.greeting = "Hello, Switzerland";
-            this.message.currentWeather = "Warming up";
+        self.changeMessage = function() {
+            self.message.greeting = "Hello, Switzerland";
+            self.message.currentWeather = "Warming up";
         };
 
-        this.message = {
+        self.message = {
             greeting: "Hello, World",
             currentWeather: "Cold"
         };
