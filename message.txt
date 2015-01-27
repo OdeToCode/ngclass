@@ -2,14 +2,17 @@ Scott Allen
 JavaScript + AngularJS
 scott@OdeToCode.com
 
-Now: lunch / work on adding a movie
-Next: 13:30
+Now: 
+Next: 09:00
 
-WAT
-ng-bind-html
+Lab: "Add movie" feature
+     "Work in progress" animation
+
 Services
 
-todo: manually trigger update?
+todo: 
+   manually trigger update?
+   produxtion logging, instrucmentation
 
 Lab: Use routing to :
         - list movies
@@ -21,3 +24,4 @@ http://goo.gl/QYJSzZ (case sensitive)
 GitHub Repo:
 https://github.com/OdeToCode/ngclass
 (ASP.NET or NodeJS)
+

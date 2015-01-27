@@ -11,7 +11,7 @@
             { name: "Best", option: "-rating" },
             {name: "Worst", option:"+rating"}
         ];
-       // self.orderTerm = self.orderOptions[2];
+        self.orderTerm = "-rating";
         self.movies = movies;
 
         self.gotoMovie = function (index) {

@@ -93,11 +93,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Apps\common\module.js" />
     <Content Include="Apps\moviesApp\js\controllers\DetailsController.js" />
     <Content Include="Apps\moviesApp\js\controllers\EditController.js" />
     <Content Include="Apps\moviesApp\js\controllers\MainController.js" />
+    <Content Include="Apps\moviesApp\js\controllers\ShellController.js" />
     <Content Include="Apps\moviesApp\js\filters\stars.js" />
-    <Content Include="Apps\moviesApp\js\services\movieData.js" />
+    <Content Include="Apps\moviesApp\js\services\errors.js" />
+    <Content Include="Apps\moviesApp\js\services\exceptionHandlerDecorator.js" />
+    <Content Include="Apps\common\js\services\movieData.js" />
+    <Content Include="Apps\moviesApp\js\services\requestCounter.js" />
     <Content Include="Apps\moviesApp\module.js" />
     <Content Include="Apps\moviesApp\templates\details.html" />
     <Content Include="Apps\moviesApp\templates\edit.html" />
@@ -162,9 +167,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Apps\common\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
