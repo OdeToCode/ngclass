@@ -1,29 +1,23 @@
-﻿(function() {
+﻿(function () {
 
-    var MainController = function(movieData, $log) {
+    var MainController = function ($scope, $timeout, movies, $location) {
 
-        var self = this;
+        var self = this
 
-        var onMovies = function(movies) {
-            self.movies = movies;
+        self.movies = movies;
+
+        self.gotoMovie = function (index) {
+            var id = self.movies[index].id;
+            $location.path("/details/" + id);
         };
 
-        var onError = function(response) {
-            self.error = response.statusText;
-        };
-
-        self.rateMovie = function(movie) {
+        self.rateMovie = function (movie) {
             return {
                 good: movie.rating > 3,
                 bad: movie.rating < 3
             };
         };
-
-        movieData.getAll()
-            .then(onMovies, onError);
-
     };
-    //MainController.$inject = ["movieData", "$log"];
 
     var app = angular.module("moviesApp");
     app.controller("MainController", MainController);

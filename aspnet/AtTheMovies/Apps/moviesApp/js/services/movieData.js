@@ -3,7 +3,9 @@
 
     var movieData = function ($http, $q) {
 
-        var movies = [];
+        var save = function(movie) {
+            return $http.put("/api/movies", movie);
+        };
 
         var getById = function (id) {
 
@@ -15,20 +17,17 @@
 
         var getAll = function() {
 
-            if (movies.length > 0) {
-                return $q.when(movies);
-            }
-
             return $http.get("/api/movies")
                         .then(function (response) {
-                                movies = response.data;
-                                return movies;
+                           
+                                return response.data;
                          });
         };
 
         return {
             getAll: getAll,
-            getById: getById
+            getById: getById,
+            save: save
         };
     };
 

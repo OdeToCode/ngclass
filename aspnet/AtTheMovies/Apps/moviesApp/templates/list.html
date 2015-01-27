@@ -1,4 +1,5 @@
-﻿<div ng-controller="MainController as main">
+﻿<div>
+ 
     <div ng-if="main.error" class="alert alert-danger">{{main.error}}</div>
     <table class="table">
         <tr>
@@ -9,13 +10,16 @@
         </tr>
         <tr ng-repeat="movie in main.movies" ng-class="main.rateMovie(movie)">
             <td>
-                <a ng-href="#/details/{{movie.id}}">{{movie.title}}</a>
+                {{movie.title}}
             </td>
             <td>{{movie.year}}</td>
             <td>
                 {{movie.rating}}
             </td>
-            <td></td>
+            <td>
+                <a href="#/edit/{{movie.id}}" class="btn btn-default">Edit</a>
+                <input type="button" value="Details" class="btn btn-default" ng-click="main.gotoMovie($index)"/>
+            </td>
         </tr>
     </table>
 </div>
