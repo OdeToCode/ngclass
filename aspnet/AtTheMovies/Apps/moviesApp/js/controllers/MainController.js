@@ -1,44 +1,31 @@
-﻿(function() {
+﻿(function () {
 
-    var MainController = function(movieData, $log) {
+    var MainController = function ($scope, $timeout, movies, $location) {
 
         var self = this;
 
-        var array = [1, 2, 3, 4];
+        self.searchTerm = "";
+        self.orderOptions = [
+            { name: "Title", option: "+title" },
+            { name: "Year", option: "+year" },
+            { name: "Best", option: "-rating" },
+            {name: "Worst", option:"+rating"}
+        ];
+       // self.orderTerm = self.orderOptions[2];
+        self.movies = movies;
 
-
-        $log.info("Controller created");
-        var onMovies = function(movies) {
-            self.movies = movies;
+        self.gotoMovie = function (index) {
+            var id = self.movies[index].id;
+            $location.path("/details/" + id);
         };
 
-        var onError = function(response) {
-            self.error = response.statusText;
-        };
-
-        self.rateMovie = function(movie) {
+        self.rateMovie = function (movie) {
             return {
                 good: movie.rating > 3,
                 bad: movie.rating < 3
             };
         };
-
-        movieData.getAll()
-            .then(onMovies, onError);
-
-
-        self.changeMessage = function() {
-            self.message.greeting = "Hello, Switzerland";
-            self.message.currentWeather = "Warming up";
-        };
-
-        self.message = {
-            greeting: "Hello, World",
-            currentWeather: "Cold"
-        };
-
     };
-    //MainController.$inject = ["movieData", "$log"];
 
     var app = angular.module("moviesApp");
     app.controller("MainController", MainController);

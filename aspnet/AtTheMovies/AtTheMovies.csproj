@@ -94,11 +94,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Apps\moviesApp\js\controllers\DetailsController.js" />
+    <Content Include="Apps\moviesApp\js\controllers\EditController.js" />
     <Content Include="Apps\moviesApp\js\controllers\MainController.js" />
+    <Content Include="Apps\moviesApp\js\filters\stars.js" />
     <Content Include="Apps\moviesApp\js\services\movieData.js" />
     <Content Include="Apps\moviesApp\module.js" />
     <Content Include="Apps\moviesApp\templates\details.html" />
+    <Content Include="Apps\moviesApp\templates\edit.html" />
     <Content Include="Apps\moviesApp\templates\list.html" />
+    <Content Include="Apps\moviesApp\templates\messages.html" />
     <Content Include="Content\ajax-loader.gif" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap\css\bootstrap-theme.css" />

@@ -2,16 +2,18 @@ Scott Allen
 JavaScript + AngularJS
 scott@OdeToCode.com
 
-Now: break
-Next: 15:55
+Now: lunch / work on adding a movie
+Next: 13:30
+
+WAT
+ng-bind-html
+Services
+
+todo: manually trigger update?
+
 Lab: Use routing to :
         - list movies
         - detail a specific movie 
-
-
-Mon: 
- Modern JavaScript
- Angular JS 
 
 Slides:
 http://goo.gl/QYJSzZ (case sensitive)
