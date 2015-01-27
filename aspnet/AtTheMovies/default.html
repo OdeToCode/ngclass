@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/Content/styles.css">
 </head>
 
-<body class="ng-cloak">
+<body class="ng-cloak" ng-controller="ShellController as shell">
     
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -27,17 +27,27 @@
               
             </div>
             <div class="col-md-2">
-                {{ error }}
+                <div class="alert alert-danger" 
+                     ng-repeat="error in shell.currentErrors">
+                    {{ error }}
+                </div>
             </div>
         </div>
     </div>
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/angular-route.js"></script>
     <script src="Scripts/angular-messages.js"></script>
+    <script src="Scripts/angular-sanitize.js"></script>
+    
     <script src="Apps/moviesApp/module.js"></script>
     <script src="Apps/moviesApp/js/controllers/MainController.js"></script>
+    <script src="Apps/moviesApp/js/controllers/ShellController.js"></script>
     <script src="Apps/moviesApp/js/services/movieData.js"></script>
     <script src="Apps/moviesApp/js/filters/stars.js"></script>
+
+    <script src="Apps/moviesApp/js/services/errors.js"></script>
+    <script src="Apps/moviesApp/js/services/exceptionHandlerDecorator.js"></script>
+
     <script src="Apps/moviesApp/js/controllers/DetailsController.js"></script>
     <script src="Apps/moviesApp/js/controllers/EditController.js"></script>
 </body>

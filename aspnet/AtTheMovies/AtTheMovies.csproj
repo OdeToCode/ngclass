@@ -96,7 +96,10 @@
     <Content Include="Apps\moviesApp\js\controllers\DetailsController.js" />
     <Content Include="Apps\moviesApp\js\controllers\EditController.js" />
     <Content Include="Apps\moviesApp\js\controllers\MainController.js" />
+    <Content Include="Apps\moviesApp\js\controllers\ShellController.js" />
     <Content Include="Apps\moviesApp\js\filters\stars.js" />
+    <Content Include="Apps\moviesApp\js\services\errors.js" />
+    <Content Include="Apps\moviesApp\js\services\exceptionHandlerDecorator.js" />
     <Content Include="Apps\moviesApp\js\services\movieData.js" />
     <Content Include="Apps\moviesApp\module.js" />
     <Content Include="Apps\moviesApp\templates\details.html" />

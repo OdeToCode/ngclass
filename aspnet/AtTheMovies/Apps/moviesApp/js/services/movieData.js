@@ -3,25 +3,26 @@
 
     var movieData = function ($http, $q) {
 
-        var save = function(movie) {
+        var save = function (movie) {
             return $http.put("/api/movies", movie);
         };
 
         var getById = function (id) {
 
             return $http.get("/api/movies/" + id)
-                        .then(function(response) {
+                        .then(function (response) {
                             return response.data;
-                        }); 
+                        });
         };
 
-        var getAll = function() {
 
+        var getAll = function () {
             return $http.get("/api/movies")
-                        .then(function (response) {
-                           
-                                return response.data;
-                         });
+                .then(function (response) {
+
+                    return response.data;
+                });
+
         };
 
         return {
