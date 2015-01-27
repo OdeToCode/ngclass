@@ -18,9 +18,9 @@
         };
 
 
-        self.getTrustedTitle = function() {
-            return $sce.getTrustedHtml(self.movie.title);
-        };
+        //self.getTrustedTitle = function() {
+        //    return $sce.getTrustedHtml(self.movie.title);
+        //};
 
         movieData.getById(id)
                  .then(onMovie);
