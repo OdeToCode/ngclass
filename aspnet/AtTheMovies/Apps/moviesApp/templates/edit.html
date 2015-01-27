@@ -21,9 +21,7 @@
                    class="form-control" name="year" />
             <div ng-messages="editForm.year.$error"
                  ng-messages-include="/apps/moviesApp/templates/messages.html">
-             
             </div>
-
         </div>
         
         <div class="form-group">
@@ -39,6 +37,7 @@
         </div>
 
         <input class="btn btn-primary" type="submit" value="Save!" />
+        <input class="btn btn-warning" type="button" value="Reset" ng-click="edit.reset()" />
     </form>
     
     <hr/>

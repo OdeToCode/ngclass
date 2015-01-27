@@ -2,11 +2,10 @@ Scott Allen
 JavaScript + AngularJS
 scott@OdeToCode.com
 
-Now: break
-Next: 10:12
+Now: lunch / work on adding a movie
+Next: 13:30
 
-
-Views
+WAT
 ng-bind-html
 Services
 

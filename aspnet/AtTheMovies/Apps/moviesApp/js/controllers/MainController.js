@@ -2,8 +2,16 @@
 
     var MainController = function ($scope, $timeout, movies, $location) {
 
-        var self = this
+        var self = this;
 
+        self.searchTerm = "";
+        self.orderOptions = [
+            { name: "Title", option: "+title" },
+            { name: "Year", option: "+year" },
+            { name: "Best", option: "-rating" },
+            {name: "Worst", option:"+rating"}
+        ];
+       // self.orderTerm = self.orderOptions[2];
         self.movies = movies;
 
         self.gotoMovie = function (index) {
