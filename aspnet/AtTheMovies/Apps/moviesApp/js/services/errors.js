@@ -30,10 +30,6 @@
             }
         }
 
-        addError("Error number 1");
-        addError("Error number 2");
-        addError("A third error, can you belive it?");
-
         return {
             addError: addError,
             removeError: removeError,

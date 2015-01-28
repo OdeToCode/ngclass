@@ -99,6 +99,7 @@
     <Content Include="Apps\moviesApp\js\controllers\MainController.js" />
     <Content Include="Apps\moviesApp\js\controllers\ShellController.js" />
     <Content Include="Apps\moviesApp\js\directives\alert.js" />
+    <Content Include="Apps\moviesApp\js\directives\startsWith.js" />
     <Content Include="Apps\moviesApp\js\filters\stars.js" />
     <Content Include="Apps\moviesApp\js\services\errors.js" />
     <Content Include="Apps\moviesApp\js\services\exceptionHandlerDecorator.js" />

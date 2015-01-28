@@ -19,14 +19,14 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-10">
          
                 <div ng-view>
                     
                 </div>
               
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <div ng-show="shell.getRequestCount()">
                     <img src="Content/ajax-loader.gif" />
                 </div>
@@ -62,6 +62,7 @@
     <script src="Apps/moviesApp/js/filters/stars.js"></script>
     <script src="Apps/moviesApp/js/directives/alert.js"></script>
     <script src="Apps/moviesApp/js/services/errors.js"></script>
+    <script src="Apps/moviesApp/js/directives/startsWith.js"></script>
     <script src="Apps/moviesApp/js/services/exceptionHandlerDecorator.js"></script>
     <script src="Apps/moviesApp/js/services/requestCounter.js"></script>
     <script src="Apps/moviesApp/js/controllers/DetailsController.js"></script>
