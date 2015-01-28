@@ -1,3 +1,8 @@
 ﻿<div>
-    
+   
+    <span ng-repeat="star in stars track by $index"
+          ng-class="applyClasses($index)"
+          ng-mouseover="preview($index)"
+          ng-click="setRating($index)"
+          ng-mouseout="unpreview()"></span>
 </div>
