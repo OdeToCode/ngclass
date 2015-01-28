@@ -2,17 +2,22 @@ Scott Allen
 JavaScript + AngularJS
 scott@OdeToCode.com
 
-Now: 
-Next: 09:00
+Now:  break
+Next: 11:12
 
 Lab: "Add movie" feature
      "Work in progress" animation
+      Build a <rating value="movie.rating"> directive
+        User can click a star to change the rating
 
-Services
+
+Tomorrow:
+  Directives,
+  NodeJS
 
 todo: 
    manually trigger update?
-   produxtion logging, instrucmentation
+   production logging, instrumentation
 
 Lab: Use routing to :
         - list movies

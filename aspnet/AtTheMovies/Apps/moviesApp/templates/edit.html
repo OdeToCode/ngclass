@@ -1,17 +1,19 @@
 ﻿<div ng-controller="EditController as edit">
     
     <h1>Editing {{edit.movie.title}}</h1>
-    
+
     <form name="editForm" ng-submit="edit.save(editForm.$valid)" novalidate>
         <div class="form-group">
             <label class="control-label">Title</label>
             <input required maxlength="200"
+                   starts-with="S"
                    type="text" ng-model="edit.movie.title"
                    ng-model-options="{ updateOn: 'blur' }"
                    class="form-control" name="title" />
             <div ng-messages="editForm.title.$error"
                  ng-messages-include="/apps/moviesApp/templates/messages.html"> 
                 <div ng-message="required">Title is required</div>
+                <div ng-message="startsWith">You have to start with S</div>
             </div>
         </div>
         <div class="form-group">
