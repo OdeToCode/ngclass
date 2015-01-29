@@ -2,22 +2,19 @@ Scott Allen
 JavaScript + AngularJS
 scott@OdeToCode.com
 
-Now:  --
-Next: 9:00am
+Now:  coffee
+Next: 10:20
 
+Lab: Setup a test runner page. 
 
 
   Testing
   UI
 
 
-Lab: "Add movie" feature
-     "Work in progress" animation
-      Build a <rating value="movie.rating"> directive
-        User can click a star to change the rating
-		
-	<span class='glyphicon glyphicon-star'>
-        <span class='glyphicon glyphicon-star-empty'>
+
+
+
 
 
 
