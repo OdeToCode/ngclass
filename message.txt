@@ -2,28 +2,22 @@ Scott Allen
 JavaScript + AngularJS
 scott@OdeToCode.com
 
-Now:  coffee
-Next: 10:20
+Now:  lab / lunch
+Next: 13:00
 
-Lab: Setup a test runner page. 
+Lab: 
+   Setup a test runner page. 
+   Use Jasmine to test EditController
+     - Save a movie correctly (HTTP PUT to correct location). 
 
-
-  Testing
   UI
-
-
-
-
-
-
-
-
 
 
 todo: 
    manually trigger update?
    production logging, instrumentation
    npm private repo
+   unit testing breezejs
 
 Lab: Use routing to :
         - list movies
