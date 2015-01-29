@@ -2,26 +2,22 @@ Scott Allen
 JavaScript + AngularJS
 scott@OdeToCode.com
 
-Now:  --
-Next: 9:00am
+Now:  break
+Next: 14:05
 
-Testing
-UI
+Lab: 
+   Setup a test runner page. 
+   Use Jasmine to test EditController
+     - Save a movie correctly (HTTP PUT to correct location). 
 
-Lab: "Add movie" feature
-     "Work in progress" animation
-      Build a <rating value="movie.rating"> directive
-        User can click a star to change the rating
-		
-	<span class='glyphicon glyphicon-star'>
-        <span class='glyphicon glyphicon-star-empty'>
-
+  UI
 
 
 todo: 
    manually trigger update?
    production logging, instrumentation
    npm private repo
+   unit testing breezejs
 
 Lab: Use routing to :
         - list movies

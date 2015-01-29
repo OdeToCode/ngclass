@@ -4,6 +4,7 @@
     <title>At The Movies! {{ version }}</title>
     <link rel="stylesheet" href="/Content/bootstrap/css/bootstrap.css">
     <link href="Content/animate.css" rel="stylesheet" />
+    <link href="Content/animate.css" rel="stylesheet" />
     <link rel="stylesheet" href="/Content/styles.css">
 </head>
 
@@ -17,16 +18,18 @@
         </div>
     </nav>
 
+
     <div class="container">
         <div class="row">
-            <div class="col-md-10">
-
+            <div class="col-md-9">
+               
                 <div ng-view>
                     
                 </div>
               
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
+                This is in the right column
                 <div ng-show="shell.getRequestCount()">
                     <img src="Content/ajax-loader.gif" />
                 </div>
@@ -41,7 +44,7 @@
 
                 <div ng-repeat="error in shell.currentErrors">
                     <input type="text" ng-model="error.reason"/>
-                        {{ error.reason}}
+                    {{ error.reason}}
                 </div>
            
             </div>
@@ -51,6 +54,8 @@
     <script src="Scripts/angular-route.js"></script>
     <script src="Scripts/angular-messages.js"></script>
     <script src="Scripts/angular-sanitize.js"></script>
+    <script src="Scripts/angular-animate.js"></script>
+    <script src="Scripts/ui-bootstrap-tpls-0.12.0.js"></script>
     
 
     <script src="Apps/common/module.js"></script>
@@ -68,5 +73,6 @@
     <script src="Apps/moviesApp/js/services/requestCounter.js"></script>
     <script src="Apps/moviesApp/js/controllers/DetailsController.js"></script>
     <script src="Apps/moviesApp/js/controllers/EditController.js"></script>
+    <script src="Apps/moviesApp/js/services/confirmDeletion.js"></script>
 </body>
 </html>
