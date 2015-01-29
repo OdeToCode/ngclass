@@ -20,6 +20,7 @@ module.exports = function(config) {
         "./AtTheMovies/scripts/angular-messages.js",
         "./AtTheMovies/scripts/angular-sanitize.js",
         "./AtTheMovies/scripts/angular-mocks.js",
+        "./AtTheMovies/scripts/angular-animate.js",
         "./AtTheMovies/apps/common/module.js",
         "./AtTheMovies/apps/common/**/*.js",
         "./AtTheMovies/apps/moviesApp/module.js",

@@ -9,7 +9,9 @@
             ng-options="o.option as o.name for o in main.orderOptions">
       
     </select>
-    <table class="table">
+   
+
+    <table class="table table-hover table-condensed">
         <tr>
             <th>Title</th>
             <th>Year</th>
@@ -28,6 +30,9 @@
             <td>
                 <a href="#/edit/{{movie.id}}" class="btn btn-default">Edit</a>
                 <input type="button" value="Details" class="btn btn-default" ng-click="main.gotoMovie($index)"/>
+                <input type="button" class="btn btn-danger" 
+                       ng-click="main.delete(movie)"
+                       value="Delete"/>
             </td>
         </tr>
     </table>
