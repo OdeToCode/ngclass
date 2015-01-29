@@ -22,7 +22,8 @@
             </td>
             <td>{{movie.year}}</td>
             <td>
-                {{movie.rating | stars}}
+                <m-rating value="movie.rating"></m-rating>
+               
             </td>
             <td>
                 <a href="#/edit/{{movie.id}}" class="btn btn-default">Edit</a>
