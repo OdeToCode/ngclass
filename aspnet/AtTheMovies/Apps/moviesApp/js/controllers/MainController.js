@@ -1,6 +1,6 @@
 ﻿(function () {
 
-    var MainController = function ($scope, $timeout, movies, $location) {
+    var MainController = function ($timeout, movies, $location) {
 
         var self = this;
 

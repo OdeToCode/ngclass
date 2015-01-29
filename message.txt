@@ -5,8 +5,11 @@ scott@OdeToCode.com
 Now:  --
 Next: 9:00am
 
-Testing
-UI
+
+
+  Testing
+  UI
+
 
 Lab: "Add movie" feature
      "Work in progress" animation
@@ -15,6 +18,8 @@ Lab: "Add movie" feature
 		
 	<span class='glyphicon glyphicon-star'>
         <span class='glyphicon glyphicon-star-empty'>
+
+
 
 
 
