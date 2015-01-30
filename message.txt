@@ -2,15 +2,13 @@ Scott Allen
 JavaScript + AngularJS
 scott@OdeToCode.com
 
-Now:  break
-Next: 14:05
+Now:  lunch / hacking
+Next: 
 
 Lab: 
    Setup a test runner page. 
    Use Jasmine to test EditController
      - Save a movie correctly (HTTP PUT to correct location). 
-
-  UI
 
 
 todo: 
