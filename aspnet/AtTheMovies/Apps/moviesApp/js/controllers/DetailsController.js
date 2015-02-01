@@ -2,10 +2,6 @@
 
     var module = angular.module("moviesApp");
 
-
-   
-
-
     var DetailsController = function($routeParams, movieData, errors, $sce) {
 
     
@@ -26,7 +22,6 @@
             .then(onMovie)
             .catch(errors.handle("Could not fetch the movie!"));
     };
-
     
     module.controller("DetailsController", DetailsController);
 
