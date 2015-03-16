@@ -2,14 +2,12 @@ Scott Allen
 AngularJS
 scott@OdeToCode.com
 
-Todo:
-
-chrome extension for too many tabs ONETAB
-
-Now: 
+Now: Break / Sandwiches
+Next: 10:17am 
 
 Material:
 http://goo.gl/QYJSzZ (case sensitive)
 
 GitHub Repo:
 https://github.com/OdeToCode/ngclass
+

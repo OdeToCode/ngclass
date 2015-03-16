@@ -2,3 +2,7 @@ body {
 	background-color: #ccccbb;
 }
 
+.ng-cloak {
+    display: none;
+}
+

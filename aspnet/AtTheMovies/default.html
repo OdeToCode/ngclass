@@ -1,4 +1,4 @@
-<html>
+<html ng-app="moviesApp">
 
 <head>
     <title>At The Movies!</title>
@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/Content/styles.css">
 </head>
 
-<body>
+<body class="ng-cloak">
 
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -20,11 +20,23 @@
     <div class="container">
         <div class="row">
             <div class="col-md-10">
+
+                <div ng-controller="ListController as list">
+                    {{ list.message }}
+                    <input type="text" ng-model="list.message"/>
+                    <input type="button" class="btn btn-default" value="Reset" ng-click="list.resetMessage('')"/>
+                </div>
+
             </div>
             <div class="col-md-2">
             </div>
         </div>
     </div>
+    <script src="Scripts/angular.js"></script>
+    <script src="Apps/AtTheMovies/module.js"></script>
+    <script src="Apps/AtTheMovies/js/controllers/ListController.js"></script>
+
+
 
 </body>
 </html>
