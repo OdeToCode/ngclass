@@ -1,4 +1,4 @@
-<html ng-app="moviesApp">
+<html>
 
 <head>
     <title>At The Movies!</title>
@@ -17,23 +17,14 @@
         </div>
     </nav>
 
-    <div class="container" ng-controller="MainController as main">
+    <div class="container">
         <div class="row">
             <div class="col-md-10">
-
-                <h1>{{ main.message.greeting }}</h1>
-                <div>Today's forecast: {{ main.message.currentWeather}}</div>
-                
-                <input type="text" ng-model="main.message.currentWeather" />
-                <input type="button" value="Change Message" ng-click="main.changeMessage()"/>
-
             </div>
             <div class="col-md-2">
             </div>
         </div>
     </div>
-    <script src="Scripts/angular.js"></script>
-    <script src="Apps/moviesApp/module.js"></script>
-    <script src="Apps/moviesApp/js/controllers/MainController.js"></script>
+
 </body>
 </html>

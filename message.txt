@@ -1,20 +1,15 @@
 Scott Allen
-JavaScript + AngularJS
+AngularJS
 scott@OdeToCode.com
 
-Now: break
-Next: 11:35
-Lunch: 12:30
+Todo:
 
-Mon: 
- Modern JavaScript
- Angular JS 
+chrome extension for too many tabs ONETAB
 
-WiFi: D4-Guests - password on whiteboard
+Now: 
 
-Slides:
+Material:
 http://goo.gl/QYJSzZ (case sensitive)
 
 GitHub Repo:
 https://github.com/OdeToCode/ngclass
-(ASP.NET or NodeJS)
