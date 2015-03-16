@@ -127,8 +127,6 @@
     <Content Include="default.html" />
     <Content Include="Global.asax" />
     <Content Include="javascript.html" />
-    <Content Include="protractor\protractor.conf.js" />
-    <Content Include="protractor\specs\HomePageSpec.js" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-aria.js" />
     <Content Include="Scripts\angular-cookies.js" />
@@ -177,9 +175,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="protractor\pages\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
