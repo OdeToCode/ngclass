@@ -2,11 +2,11 @@ Scott Allen
 JavaScript + AngularJS
 scott@OdeToCode.com
 
-Now: break
-Next: 14:45
+Now: lunch / work on adding a movie
+Next: 13:30
 
 WAT
-
+ng-bind-html
 Services
 
 todo: manually trigger update?
@@ -21,4 +21,3 @@ http://goo.gl/QYJSzZ (case sensitive)
 GitHub Repo:
 https://github.com/OdeToCode/ngclass
 (ASP.NET or NodeJS)
-

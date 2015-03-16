@@ -5,7 +5,7 @@
     <form name="editForm" ng-submit="edit.save(editForm.$valid)" novalidate>
         <div class="form-group">
             <label class="control-label">Title</label>
-            <input required maxlength="200"
+            <input required maxlength="20"
                    type="text" ng-model="edit.movie.title"
                    ng-model-options="{ updateOn: 'blur' }"
                    class="form-control" name="title" />
