@@ -6,7 +6,7 @@
    
 
 
-    var DetailsController = function($routeParams, movieData, errors, $sce) {
+    var DetailsController = function($routeParams, movieData, $sce) {
 
     
         var self = this;
@@ -23,8 +23,7 @@
         //};
 
         movieData.getById(id)
-            .then(onMovie)
-            .catch(errors.handle("Could not fetch the movie!"));
+                 .then(onMovie);
     };
 
     

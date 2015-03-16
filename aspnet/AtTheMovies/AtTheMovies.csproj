@@ -107,9 +107,6 @@
     <Content Include="Apps\common\js\services\movieData.js" />
     <Content Include="Apps\moviesApp\js\services\requestCounter.js" />
     <Content Include="Apps\moviesApp\module.js" />
-    <Content Include="Apps\moviesApp\specs\DetailsControllerSpec.js" />
-    <Content Include="Apps\moviesApp\specs\MainControllerSpecs.js" />
-    <Content Include="Apps\moviesApp\specs\runner.html" />
     <Content Include="Apps\moviesApp\templates\alert.html" />
     <Content Include="Apps\moviesApp\templates\details.html" />
     <Content Include="Apps\moviesApp\templates\edit.html" />
