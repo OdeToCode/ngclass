@@ -7,15 +7,10 @@
 
         var onMovie = function(movie) {
             self.movie = movie;
-            self.originalMovie = angular.copy(self.movie);
         }
 
         var goToDetails = function() {
             $location.path("/details/" + self.movie.id);
-        };
-
-        self.reset = function() {
-            self.movie = angular.copy(self.originalMovie);
         };
 
         self.save = function(isValid) {
