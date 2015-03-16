@@ -10,10 +10,6 @@
             return $http.put(baseUrl, movie);
         };
 
-        var remove = function(movie) {
-            return $http.delete(baseUrl + movie.id);
-        };
-
         var getById = function (id) {
 
             return $http.get(baseUrl + id)
@@ -35,8 +31,7 @@
         return {
             getAll: getAll,
             getById: getById,
-            save: save,
-            remove: remove
+            save: save
         };
     };
 

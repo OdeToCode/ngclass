@@ -102,7 +102,6 @@
     <Content Include="Apps\moviesApp\js\directives\rating.js" />
     <Content Include="Apps\moviesApp\js\directives\startsWith.js" />
     <Content Include="Apps\moviesApp\js\filters\stars.js" />
-    <Content Include="Apps\moviesApp\js\services\confirmDeletion.js" />
     <Content Include="Apps\moviesApp\js\services\errors.js" />
     <Content Include="Apps\moviesApp\js\services\exceptionHandlerDecorator.js" />
     <Content Include="Apps\common\js\services\movieData.js" />
@@ -112,7 +111,6 @@
     <Content Include="Apps\moviesApp\specs\MainControllerSpecs.js" />
     <Content Include="Apps\moviesApp\specs\runner.html" />
     <Content Include="Apps\moviesApp\templates\alert.html" />
-    <Content Include="Apps\moviesApp\templates\delete.html" />
     <Content Include="Apps\moviesApp\templates\details.html" />
     <Content Include="Apps\moviesApp\templates\edit.html" />
     <Content Include="Apps\moviesApp\templates\list.html" />
@@ -149,7 +147,6 @@
     <Content Include="Scripts\jasmine\jasmine.css" />
     <Content Include="Scripts\jasmine\jasmine.js" />
     <Content Include="Scripts\jasmine\jasmine_favicon.png" />
-    <Content Include="Scripts\ui-bootstrap-tpls-0.12.0.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

@@ -1,8 +1,7 @@
 ﻿(function() {
 
     var module = angular.module("moviesApp",
-        ["ng", "common", "ngRoute", "ngMessages",
-            "ngSanitize", "ngAnimate", "ui.bootstrap"]);
+        ["ng", "common", "ngRoute", "ngMessages", "ngSanitize"]);
 
     module.config(function(movieDataProvider) {
         movieDataProvider.setBaseUrl("/api/movies/");

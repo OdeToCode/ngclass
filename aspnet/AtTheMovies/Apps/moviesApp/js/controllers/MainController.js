@@ -1,20 +1,8 @@
 ﻿(function () {
 
-    var MainController = function (confirmDeletion, $timeout, movies,
-                                   movieData, $location, $modal, errors) {
+    var MainController = function ($timeout, movies, $location) {
 
         var self = this;
-
-        var deleteMovie = function(movie) {
-            return movieData.remove(movie)
-                            .catch(errors.handle("Could not delete!"));
-        };
-
-        var refreshMovies = function() {
-            movieData.getAll()
-                .then(function(newMovies) { self.movies = newMovies })
-                .catch(errors.handle("Could not fetch movies"));
-        };
 
         self.searchTerm = "";
         self.orderOptions = [
@@ -29,12 +17,6 @@
         self.gotoMovie = function (index) {
             var id = self.movies[index].id;
             $location.path("/details/" + id);
-        };
-
-        self.delete = function(movie) {
-            confirmDeletion(movie)
-                .then(deleteMovie)
-                .then(refreshMovies);
         };
 
         self.rateMovie = function (movie) {

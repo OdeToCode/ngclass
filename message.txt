@@ -2,8 +2,8 @@ Scott Allen
 JavaScript + AngularJS
 scott@OdeToCode.com
 
-Now:  break
-Next: 14:05
+Now:  lab / lunch
+Next: 13:00
 
 Lab: 
    Setup a test runner page. 
