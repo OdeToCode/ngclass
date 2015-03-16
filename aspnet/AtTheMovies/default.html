@@ -22,9 +22,23 @@
             <div class="col-md-10">
 
                 <div ng-controller="ListController as list">
-                    {{ list.message }}
-                    <input type="text" ng-model="list.message"/>
-                    <input type="button" class="btn btn-default" value="Reset" ng-click="list.resetMessage('')"/>
+                    <h1 ng-if="list.movies.length">Movies! ({{list.movies.length}})</h1>
+                    <table class="table">
+                        <tr ng-repeat="movie in list.movies" ng-class="list.rateMovie(movie)">
+                            <td>{{movie.title}}</td>
+                            <td>{{movie.rating}}</td>
+                            <td>{{movie.year}}</td>
+                            <td>
+                                <button ng-click="list.increaseRating(movie)">+</button>
+                                <button ng-click="list.decreaseRating(movie)">-</button>
+                            </td>
+                            <!--<td>
+                                Index: {{$index}}
+                                First: {{$first}}
+                                Odd: {{$odd}}
+                            </td>-->
+                        </tr>
+                    </table>
                 </div>
 
             </div>

@@ -5,10 +5,36 @@
 
         var model = this;
 
-        model.message = "Hello, from ListController using 'controller as' syntax";
-        model.resetMessage = function (newMessage) {
-            model.message = newMessage;
+        model.increaseRating = function(movie) {
+            if (movie.rating < 5) {
+                movie.rating += 1;
+            } else {
+                movie.rating = 1;
+            }
+        };
+
+        model.decreaseRating = function(movie) {
+            if (movie.rating > 1) {
+                movie.rating -= 1;
+            } else {
+                movie.rating = 5;
+            }
         }
+
+        model.rateMovie = function(movie) {
+
+            return {
+                good: movie.rating > 4,
+                bad: movie.rating < 2
+            };
+
+        };
+
+        model.movies = [
+            { title: "Star Wars", rating: 5, year: 1979 },
+            { title: "Imitation Game", rating: 3, year: 2014 },
+            { title: "Hottub Time Machine", rating: 1, year: 2013 }
+        ];
 
     };
 
