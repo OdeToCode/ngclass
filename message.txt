@@ -2,17 +2,14 @@ Scott Allen
 JavaScript + AngularJS
 scott@OdeToCode.com
 
-Now: 
-Next: 09:00
+Now: break
+Next: 14:45
 
-Lab: "Add movie" feature
-     "Work in progress" animation
+WAT
 
 Services
 
-todo: 
-   manually trigger update?
-   produxtion logging, instrucmentation
+todo: manually trigger update?
 
 Lab: Use routing to :
         - list movies

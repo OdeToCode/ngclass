@@ -1,18 +1,15 @@
 ﻿
 (function () {
 
-    var baseUrl = "";
-    var module = angular.module("common");
-
     var movieData = function ($http, $q) {
 
         var save = function (movie) {
-            return $http.put(baseUrl, movie);
+            return $http.put("/api/movies", movie);
         };
 
         var getById = function (id) {
 
-            return $http.get(baseUrl + id)
+            return $http.get("/api/movies/" + id)
                         .then(function (response) {
                             return response.data;
                         });
@@ -20,7 +17,7 @@
 
 
         var getAll = function () {
-            return $http.get(baseUrl)
+            return $http.get("/api/movies")
                 .then(function (response) {
 
                     return response.data;
@@ -35,16 +32,7 @@
         };
     };
 
-    module.config(function ($provide) {
-
-        $provide.provider("movieData", function () {
-
-            this.setBaseUrl = function (newUrl) {
-                baseUrl = newUrl;
-            };
-            this.$get = movieData;
-        });
-
-    });
+    var app = angular.module("moviesApp");
+    app.factory("movieData", movieData);
 
 }());

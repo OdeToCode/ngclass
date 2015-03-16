@@ -2,6 +2,9 @@
 
     var MainController = function ($scope, $timeout, movies, $location) {
 
+
+        throw new Error("This failed!!");
+
         var self = this;
 
         self.searchTerm = "";

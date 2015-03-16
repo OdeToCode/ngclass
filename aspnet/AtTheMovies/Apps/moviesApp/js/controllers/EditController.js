@@ -1,6 +1,6 @@
 ﻿(function(module) {
 
-    var EditController = function(movieData, $routeParams, $location,errors) {
+    var EditController = function(movieData, $routeParams, $location) {
 
         var self = this;
         var id = $routeParams.id;
@@ -22,8 +22,7 @@
 
             if (isValid) {
                 movieData.save(self.movie)
-                    .then(goToDetails)
-                    .catch(errors.handle("We could not save your movie!"));
+                         .then(goToDetails);
             }
         };
 

@@ -1,12 +1,9 @@
 ﻿(function(module) {
 
-    var ShellController = function(errors, requestCounter) {
+    var ShellController = function(errors) {
         var self = this;
 
         self.currentErrors = errors.getCurrentErrors();
-        self.getRequestCount = function() {
-            return requestCounter.getCurrentRequestCount();
-        };
     };
 
     module.controller("ShellController", ShellController);

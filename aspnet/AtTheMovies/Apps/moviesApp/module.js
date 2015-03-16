@@ -1,12 +1,6 @@
 ﻿(function() {
 
-    var module = angular.module("moviesApp",
-        ["ng", "common", "ngRoute", "ngMessages", "ngSanitize"]);
-
-    module.config(function(movieDataProvider) {
-        movieDataProvider.setBaseUrl("/api/movies/");
-    });
-
+    var module = angular.module("moviesApp", ["ng", "ngRoute", "ngMessages","ngSanitize"]);
 
     module.config(function ($routeProvider) {
 

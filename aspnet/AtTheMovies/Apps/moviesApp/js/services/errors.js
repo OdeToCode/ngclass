@@ -25,16 +25,9 @@
             return currentErrors;
         };
 
-        var handle = function(message) {
-            return function(reason) {
-                addError(message);  
-            }
-        }
-
         return {
             addError: addError,
-            getCurrentErrors: getCurrentErrors,
-            handle: handle
+            getCurrentErrors: getCurrentErrors
         };
     };
 

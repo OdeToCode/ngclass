@@ -27,9 +27,6 @@
               
             </div>
             <div class="col-md-2">
-                <div ng-show="shell.getRequestCount()">
-                    <img src="Content/ajax-loader.gif" />
-                </div>
                 <div class="alert alert-danger" 
                      ng-repeat="error in shell.currentErrors">
                     {{ error }}
@@ -42,18 +39,15 @@
     <script src="Scripts/angular-messages.js"></script>
     <script src="Scripts/angular-sanitize.js"></script>
     
-
-    <script src="Apps/common/module.js"></script>
-    <script src="Apps/common/js/services/movieData.js"></script>
-
     <script src="Apps/moviesApp/module.js"></script>
     <script src="Apps/moviesApp/js/controllers/MainController.js"></script>
     <script src="Apps/moviesApp/js/controllers/ShellController.js"></script>
+    <script src="Apps/moviesApp/js/services/movieData.js"></script>
     <script src="Apps/moviesApp/js/filters/stars.js"></script>
 
     <script src="Apps/moviesApp/js/services/errors.js"></script>
     <script src="Apps/moviesApp/js/services/exceptionHandlerDecorator.js"></script>
-    <script src="Apps/moviesApp/js/services/requestCounter.js"></script>
+
     <script src="Apps/moviesApp/js/controllers/DetailsController.js"></script>
     <script src="Apps/moviesApp/js/controllers/EditController.js"></script>
 </body>
