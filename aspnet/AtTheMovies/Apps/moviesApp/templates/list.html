@@ -22,8 +22,7 @@
             </td>
             <td>{{movie.year}}</td>
             <td>
-                <m-rating value="movie.rating"></m-rating>
-                <input type="number" ng-model="movie.rating"/>
+                {{movie.rating | stars}}
             </td>
             <td>
                 <a href="#/edit/{{movie.id}}" class="btn btn-default">Edit</a>

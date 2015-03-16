@@ -2,23 +2,18 @@ Scott Allen
 JavaScript + AngularJS
 scott@OdeToCode.com
 
-Now:  lunch & lab
-Next: 1:30PM
+Now:  break
+Next: 11:12
 
 Lab: "Add movie" feature
      "Work in progress" animation
       Build a <rating value="movie.rating"> directive
         User can click a star to change the rating
-		
-	<span class="glyphicon glyphicon-star">
-        <span class="glyphicon glyphicon-star-empty">
 
 
-More custom directives
-Build add movie feature
-Build rating
-Node JS
-
+Tomorrow:
+  Directives,
+  NodeJS
 
 todo: 
    manually trigger update?
