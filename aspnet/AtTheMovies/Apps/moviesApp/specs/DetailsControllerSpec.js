@@ -4,6 +4,7 @@
         module("moviesApp");
     });
 
+
     var $controller;
     var $httpBackend;
     var errors;
@@ -19,8 +20,7 @@
         var controller = $controller(
             "DetailsController", {
             $routeParams: routeParams
-            });
-
+        });
         $httpBackend.flush();
         expect(controller.movie).toBeDefined();
     });

@@ -1,12 +1,11 @@
 // Karma configuration
-// Generated on Thu Jan 29 2015 04:26:29 GMT-0500 (Eastern Standard Time)
+// Generated on Thu Dec 18 2014 03:26:19 GMT-0500 (Eastern Standard Time)
 
 module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
-
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
@@ -15,16 +14,19 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        "./AtTheMovies/scripts/angular.js",
-        "./AtTheMovies/scripts/angular-route.js",
-        "./AtTheMovies/scripts/angular-messages.js",
-        "./AtTheMovies/scripts/angular-sanitize.js",
-        "./AtTheMovies/scripts/angular-mocks.js",
-        "./AtTheMovies/apps/common/module.js",
-        "./AtTheMovies/apps/common/**/*.js",
-        "./AtTheMovies/apps/moviesApp/module.js",
-        "./AtTheMovies/apps/moviesApp/js/**/*.js",
-        "./AtTheMovies/apps/moviesApp/specs/**/*.js",
+        "AtTheMovies/Scripts/angular.js",
+        "AtTheMovies/Scripts/angular-route.js",
+        "AtTheMovies/Scripts/angular-messages.js",
+        "AtTheMovies/Scripts/angular-mocks.js",
+        "AtTheMovies/Scripts/angular-animate.js",
+
+        "AtTheMovies/Apps/Common/module.js",
+        "AtTheMovies/Apps/common/js/**/*.js",
+
+        "AtTheMovies/Apps/moviesApp/module.js",
+        "AtTheMovies/Apps/moviesApp/js/**/*.js",
+
+        "AtTheMovies/Apps/specs/*.js"
     ],
 
 
@@ -65,6 +67,7 @@ module.exports = function(config) {
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: ['Chrome', 'PhantomJS'],
+    //browsers: ['PhantomJS'],
 
 
     // Continuous Integration mode
