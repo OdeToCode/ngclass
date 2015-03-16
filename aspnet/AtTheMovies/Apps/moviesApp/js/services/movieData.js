@@ -5,11 +5,7 @@
 
         var getAll = function() {
 
-            return $http.get("/api/movies")
-                .then(function(response) {
-                    return response.data;
-                });
-
+            return $http.get("/api/movies");
 
         };
 

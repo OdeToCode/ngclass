@@ -7,10 +7,10 @@ body {
 }
 
 .good {
-    background-color: rgba(0,255,0,0.2);
+    background-color: green;
 }
 
 .bad {
-    background-color: rgba(255,0,0,0.2);
+    background-color: red;
 }
 
