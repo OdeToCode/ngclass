@@ -12,7 +12,7 @@
 
         var refreshMovies = function() {
             movieData.getAll()
-                .then(function(newMovies) { self.movies = newMovies; })
+                .then(function(newMovies) { self.movies = newMovies })
                 .catch(errors.handle("Could not fetch movies"));
         };
 
