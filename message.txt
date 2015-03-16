@@ -2,15 +2,13 @@ Scott Allen
 JavaScript + AngularJS
 scott@OdeToCode.com
 
-Now: break
-Next: 10:12
+Now: ---
+Next: 9:00am
 
-
+*Resolve*
 Views
-ng-bind-html
 Services
 
-todo: manually trigger update?
 
 Lab: Use routing to :
         - list movies

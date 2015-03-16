@@ -2,11 +2,6 @@ body {
 	background-color: #ccccbb;
 }
 
-
-input.ng-invalid {
-    border: 2px red solid;   
-}
-
 .ng-cloak {
     display: none;
 }
