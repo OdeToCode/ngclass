@@ -1,7 +1,6 @@
-﻿
-(function () {
+﻿(function () {
 
-    var ListController = function () {
+    var ListController = function (n) {
 
         var model = this;
 
@@ -30,16 +29,21 @@
 
         };
 
-        model.movies = [
-            { title: "Star Wars", rating: 5, year: 1979 },
-            { title: "Imitation Game", rating: 3, year: 2014 },
-            { title: "Hottub Time Machine", rating: 1, year: 2013 }
-        ];
+        var onMovieData = function(movies) {
+            model.movies = movies;
+        };
+
+        var onError = function(response) {
+            model.error = "The error code from the server was " + response.status;
+        };
+
+        n.getAllMovies()
+                    .then(onMovieData, onError);
 
     };
 
     var module = angular.module("moviesApp");
-    module.controller("ListController", ListController);
+    module.controller("ListController", ["movieService", ListController]);
 
 
 }());

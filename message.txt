@@ -2,12 +2,29 @@ Scott Allen
 AngularJS
 scott@OdeToCode.com
 
-Now: Break / Sandwiches
-Next: 10:17am 
+Now: Break
+     Lab - movieService fetch movies from /api/movies
+
+Next: 14:10     
 
 Material:
 http://goo.gl/QYJSzZ (case sensitive)
 
 GitHub Repo:
 https://github.com/OdeToCode/ngclass
+https://github.com/OdeToCode/ngclass.git
+
+For Visual Studio:
+1. Open aspnet/AtTheMovies.sln
+
+For NodeJS:
+1. Make sure AppData folder exists
+   (mkdir on error message)
+
+2. npm install bower -g
+3. npm install grunt-cli -g
+4. npm install
+5. bower install
+6. grunt
+7. Browse to http://localhost:8080/default.html
 

@@ -94,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Apps\AtTheMovies\js\controllers\ListController.js" />
+    <Content Include="Apps\AtTheMovies\js\services\movieService.js" />
     <Content Include="Apps\AtTheMovies\module.js" />
     <Content Include="Content\ajax-loader.gif" />
     <Content Include="Content\animate.css" />
