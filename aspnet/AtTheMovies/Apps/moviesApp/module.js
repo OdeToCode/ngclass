@@ -1,6 +1,6 @@
 ﻿(function() {
 
-    angular.module("moviesApp", ["ng"]);
+    angular.module("moviesApp", []);
 
 }());
 

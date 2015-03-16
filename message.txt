@@ -2,9 +2,6 @@ Scott Allen
 JavaScript + AngularJS
 scott@OdeToCode.com
 
-
-
-
 Now: break
 Next: 11:35
 Lunch: 12:30
