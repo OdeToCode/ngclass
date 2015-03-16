@@ -10,6 +10,8 @@ Mon:
  Modern JavaScript
  Angular JS 
 
+WiFi: D4-Guests - password on whiteboard
+
 Slides:
 http://goo.gl/QYJSzZ (case sensitive)
 

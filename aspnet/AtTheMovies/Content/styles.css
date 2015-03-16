@@ -2,15 +2,3 @@ body {
 	background-color: #ccccbb;
 }
 
-.ng-cloak {
-    display: none;
-}
-
-.good {
-    background-color: green;
-}
-
-.bad {
-    background-color: red;
-}
-
