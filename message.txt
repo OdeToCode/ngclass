@@ -2,12 +2,16 @@ Scott Allen
 JavaScript + AngularJS
 scott@OdeToCode.com
 
-Now: ---
-Next: 9:00am
-
+Now: break
+Next: 15:55
 Lab: Use routing to :
         - list movies
         - detail a specific movie 
+
+
+Mon: 
+ Modern JavaScript
+ Angular JS 
 
 Slides:
 http://goo.gl/QYJSzZ (case sensitive)
