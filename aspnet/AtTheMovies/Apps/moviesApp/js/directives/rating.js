@@ -17,35 +17,19 @@
             return {
                 restrict: "EA",
                 scope: {
-                    value: "=",
+                    value:"=",
                 },
                 templateUrl:"apps/moviesapp/templates/rating.html",
                 link: function (scope, element) {
 
-                    scope.previewIndex = -1;
-                    scope.stars = [1, 1, 1, 1, 1];
-                    scope.applyClasses = function(index) {
-                        return {
-                            "glyphicon": true,
-                            "preview": index <= scope.previewIndex,
-                            "glyphicon-star": index < scope.value,
-                            "glyphicon-star-empty": index >= scope.value
-                        };
-                    };
-                    scope.setRating = function(index) {
-                        scope.value = index + 1;
-                    };
-
-                    scope.preview = function(index) {
-                        console.log("preview", index);
-                        scope.previewIndex = index;
-                        console.log(scope.previewIndex);
-                    };
-
-                    scope.unpreview = function() {
-                        scope.previewIndex = -1;
-                        console.log("unpreview");
-                    };
+                    //element.on("click", function(event) {
+                    //    scope.$apply(function() {
+                    //        var value = parseInt(angular.element(event.srcElement).attr("data-index"));
+                    //        console.log(value);
+                    //        scope.value = value + 1;
+                    //    });
+                    //});
+                    //scope.$watch("value", updateStars(element));
                 }
             }
         };

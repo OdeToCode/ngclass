@@ -2,26 +2,27 @@ Scott Allen
 JavaScript + AngularJS
 scott@OdeToCode.com
 
-Now:  --
-Next: 9:00am
-
-Testing
-UI
+Now:  lunch & lab
+Next: 1:30PM
 
 Lab: "Add movie" feature
      "Work in progress" animation
       Build a <rating value="movie.rating"> directive
         User can click a star to change the rating
 		
-	<span class='glyphicon glyphicon-star'>
-        <span class='glyphicon glyphicon-star-empty'>
+	<span class="glyphicon glyphicon-star">
+        <span class="glyphicon glyphicon-star-empty">
 
+
+More custom directives
+Build add movie feature
+Build rating
+Node JS
 
 
 todo: 
    manually trigger update?
    production logging, instrumentation
-   npm private repo
 
 Lab: Use routing to :
         - list movies

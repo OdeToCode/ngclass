@@ -2,9 +2,6 @@ body {
 	background-color: #ccccbb;
 }
 
-.preview {
-    color: yellow;   
-}
 
 input.ng-invalid {
     border: 2px red solid;   
