@@ -4,6 +4,10 @@
 
         var self = this;
 
+        var array = [1, 2, 3, 4];
+
+
+        $log.info("Controller created");
         var onMovies = function(movies) {
             self.movies = movies;
         };
@@ -21,6 +25,17 @@
 
         movieData.getAll()
             .then(onMovies, onError);
+
+
+        self.changeMessage = function() {
+            self.message.greeting = "Hello, Switzerland";
+            self.message.currentWeather = "Warming up";
+        };
+
+        self.message = {
+            greeting: "Hello, World",
+            currentWeather: "Cold"
+        };
 
     };
     //MainController.$inject = ["movieData", "$log"];

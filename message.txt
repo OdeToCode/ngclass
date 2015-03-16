@@ -5,11 +5,6 @@ scott@OdeToCode.com
 Now: ---
 Next: 9:00am
 
-*Resolve*
-Views
-Services
-
-
 Lab: Use routing to :
         - list movies
         - detail a specific movie 

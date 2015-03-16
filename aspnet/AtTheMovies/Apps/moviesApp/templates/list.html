@@ -14,8 +14,18 @@
             <td>{{movie.year}}</td>
             <td>
                 {{movie.rating}}
+
             </td>
             <td></td>
         </tr>
     </table>
+
+
+    <hr />
+    <h1>{{ main.message.greeting }}</h1>
+    <div>Today's forecast: {{ main.message.currentWeather}}</div>
+
+    <input type="text" ng-model="main.message.currentWeather" />
+    <input type="button" value="Change Message" ng-click="main.changeMessage()" />
+
 </div>
