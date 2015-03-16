@@ -3,9 +3,10 @@ AngularJS
 scott@OdeToCode.com
 
 Now: Break
-     Lab - movieService fetch movies from /api/movies
+     
 
-Next: 14:10     
+Next: 15:25 
+      Routing    
 
 Material:
 http://goo.gl/QYJSzZ (case sensitive)

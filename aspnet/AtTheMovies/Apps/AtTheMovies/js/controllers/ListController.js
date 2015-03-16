@@ -1,6 +1,6 @@
 ﻿(function () {
 
-    var ListController = function (n) {
+    var ListController = function (movieService) {
 
         var model = this;
 
@@ -37,7 +37,7 @@
             model.error = "The error code from the server was " + response.status;
         };
 
-        n.getAllMovies()
+        movieService.getAllMovies()
                     .then(onMovieData, onError);
 
     };

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/Content/styles.css">
 </head>
 
-<body class="ng-cloak">
+<body class="ng-cloak" ng-controller="ShellController as shell">
 
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -17,44 +17,32 @@
         </div>
     </nav>
 
+
+
     <div class="container">
         <div class="row">
             <div class="col-md-10">
 
-                <div ng-controller="ListController as list">
-                    <div ng-if="list.error" class="alert alert-danger">
-                        {{ list.error }}
-                    </div>
-                    <h1 ng-if="list.movies.length">Movies! ({{list.movies.length}})</h1>
-                    <table class="table">
-                        <tr ng-repeat="movie in list.movies" ng-class="list.rateMovie(movie)">
-                            <td>{{movie.title}}</td>
-                            <td>{{movie.rating}}</td>
-                            <td>{{movie.year}}</td>
-                            <td>
-                                <button ng-click="list.increaseRating(movie)">+</button>
-                                <button ng-click="list.decreaseRating(movie)">-</button>
-                            </td>
-                            <!--<td>
-                                Index: {{$index}}
-                                First: {{$first}}
-                                Odd: {{$odd}}
-                            </td>-->
-                        </tr>
-                    </table>
-                </div>
+                <ng-view></ng-view>
 
             </div>
             <div class="col-md-2">
                 {{ version }}
+                <div ng-repeat="error in shell.errors">
+                    <div class="alert alert-danger">
+                        {{ error.message }}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+
     <script src="Apps/AtTheMovies/module.js"></script>
     <script src="Apps/AtTheMovies/js/controllers/ListController.js"></script>
     <script src="Apps/AtTheMovies/js/services/movieService.js"></script>
-
-
+    <script src="Apps/AtTheMovies/js/controllers/DetailsController.js"></script>
+    <script src="Apps/AtTheMovies/js/controllers/ShellController.js"></script>
 </body>
 </html>

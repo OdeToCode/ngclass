@@ -1,0 +1,24 @@
+﻿<div>
+    <div ng-if="list.error" class="alert alert-danger">
+        {{ list.error }}
+    </div>
+    <h1 ng-if="list.movies.length">Movies! ({{list.movies.length}})</h1>
+    <table class="table">
+        <tr ng-repeat="movie in list.movies" ng-class="list.rateMovie(movie)">
+            <td>
+                <a ng-href="#/details/{{movie.id}}">{{movie.title}}</a>
+            </td>
+            <td>{{movie.rating}}</td>
+            <td>{{movie.year}}</td>
+            <td>
+                <button class="btn btn-sm" ng-click="list.increaseRating(movie)">+</button>
+                <button class="btn btn-sm" ng-click="list.decreaseRating(movie)">-</button>
+            </td>
+            <!--<td>
+                Index: {{$index}}
+                First: {{$first}}
+                Odd: {{$odd}}
+            </td>-->
+        </tr>
+    </table>
+</div>
