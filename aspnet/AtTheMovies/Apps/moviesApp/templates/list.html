@@ -8,9 +8,7 @@
             <th>Actions</th>
         </tr>
         <tr ng-repeat="movie in main.movies" ng-class="main.rateMovie(movie)">
-            <td>
-                <a ng-href="#/details/{{movie.id}}">{{movie.title}}</a>
-            </td>
+            <td>{{movie.title}}</td>
             <td>{{movie.year}}</td>
             <td>
                 {{movie.rating}}

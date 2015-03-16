@@ -3,10 +3,9 @@ JavaScript + AngularJS
 scott@OdeToCode.com
 
 Now: break
-Next: 15:55
-Lab: Use routing to :
-        - list movies
-        - detail a specific movie 
+Next: 14:45
+
+Lab: Have a page that uses $http to show movie data. 
 
 
 Mon: 
