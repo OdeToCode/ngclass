@@ -19,31 +19,21 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-10">
          
                 <div ng-view>
                     
                 </div>
               
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <div ng-show="shell.getRequestCount()">
                     <img src="Content/ajax-loader.gif" />
                 </div>
-                
-                <m-alert ng-repeat="error in shell.currentErrors" 
-                         type="{{error.type}}"
-                         reason="error.reason"
-                         close="shell.closeError(error)">
-                    {{ error.message }}
-                </m-alert>
-                
-
-                <div ng-repeat="error in shell.currentErrors">
-                    <input type="text" ng-model="error.reason"/>
-                        {{ error.reason}}
+                <div class="alert alert-danger" 
+                     ng-repeat="error in shell.currentErrors">
+                    {{ error }}
                 </div>
-           
             </div>
         </div>
     </div>
@@ -60,7 +50,7 @@
     <script src="Apps/moviesApp/js/controllers/MainController.js"></script>
     <script src="Apps/moviesApp/js/controllers/ShellController.js"></script>
     <script src="Apps/moviesApp/js/filters/stars.js"></script>
-    <script src="Apps/moviesApp/js/directives/alert.js"></script>
+
     <script src="Apps/moviesApp/js/services/errors.js"></script>
     <script src="Apps/moviesApp/js/services/exceptionHandlerDecorator.js"></script>
     <script src="Apps/moviesApp/js/services/requestCounter.js"></script>

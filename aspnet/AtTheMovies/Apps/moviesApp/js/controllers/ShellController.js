@@ -7,9 +7,6 @@
         self.getRequestCount = function() {
             return requestCounter.getCurrentRequestCount();
         };
-        self.closeError = function(error) {
-            errors.removeError(error);
-        };
     };
 
     module.controller("ShellController", ShellController);
