@@ -4,6 +4,9 @@
 
         var model = this;
 
+        model.orderTerm = "-rating";
+        model.searchTerm = "";
+
         model.increaseRating = function(movie) {
             if (movie.rating < 5) {
                 movie.rating += 1;

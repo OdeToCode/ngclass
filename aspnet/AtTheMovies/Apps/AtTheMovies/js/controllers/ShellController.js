@@ -6,6 +6,8 @@
         model.errors = [];
         model.counter = 0;
 
+        model.navbar = "/apps/AtTheMovies/templates/navbardark.html";
+
         var incrementCounter = function() {
 
             //$rootScope.$apply(function() {

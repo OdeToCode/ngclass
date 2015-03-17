@@ -9,17 +9,9 @@
 
 <body class="ng-cloak" ng-controller="ShellController as shell">
 
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">At The Movies!</a>
-            </div>
-        </div>
-    </nav>
+    <div ng-include="shell.navbar"></div>
 
-
-
-    <div class="container">
+<div class="container">
         <div class="row">
             <div class="col-md-10">
                 
@@ -38,12 +30,14 @@
     </div>
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/angular-messages.js"></script>
 
     <script src="Apps/AtTheMovies/module.js"></script>
     <script src="Apps/AtTheMovies/js/controllers/ListController.js"></script>
     <script src="Apps/AtTheMovies/js/services/movieService.js"></script>
     <script src="Apps/AtTheMovies/js/controllers/DetailsController.js"></script>
     <script src="Apps/AtTheMovies/js/controllers/ShellController.js"></script>
-    <script src="Apps/AtTheMovies/js/controllers/EditController.js"></script>
+<script src="Apps/AtTheMovies/js/controllers/EditController.js"></script>
+    <script src="Apps/AtTheMovies/js/filters/letters.js"></script>
 </body>
 </html>

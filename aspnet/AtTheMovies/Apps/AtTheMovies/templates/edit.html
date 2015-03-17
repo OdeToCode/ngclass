@@ -1,14 +1,29 @@
 ﻿<div>
-    <form ng-submit="edit.save()">
+    <form name="editForm" novalidate ng-submit="edit.save(editForm.$valid)">
 
-        <label>Title</label>
-        <input type="text" ng-model="edit.movie.title" placeholder="Title"/>
+        <div class="form-group">
+            <label>Title</label>
+            <input name="title" type="text" ng-model="edit.movie.title" placeholder="Title"
+                   class="form-control" required  />
+            <div ng-messages="editForm.title.$error"
+                 ng-messages-include="/apps/AtTheMovies/templates/validationMessages.html">
+                <div ng-message="pattern">Must be 4 charcters and start with a capital S</div>
+            </div>
+        </div>
 
+        <div class="form-group">
+            <label>Year</label>
+            <input name="year" min="1920" max="2020" step="1" type="number" ng-model="edit.movie.year" placeholder="Year" class="form-control"/>
+        </div>
 
-        <label>Year</label>
-        <input type="number" ng-model="edit.movie.year" placeholder="Year"/>
-
-        <input class="btn btn-primary" type="submit" value="Save!"/>
+        <div class="form-group">
+            <input class="btn btn-primary" type="submit" value="Save!"/>
+        </div>
 
     </form>
+
+    <pre>
+        {{ editForm | json }}
+</pre>
+
 </div>

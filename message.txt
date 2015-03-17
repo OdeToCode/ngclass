@@ -2,14 +2,16 @@ Scott Allen
 AngularJS
 scott@OdeToCode.com
 
-Now: Break
-     
+Now:Break 10:20am
 
-Next: 15:25 
-      Routing    
+Next: Forms
 
 Material:
 http://goo.gl/QYJSzZ (case sensitive)
+
+Todo:
+Localization of numbers/dates
+
 
 GitHub Repo:
 https://github.com/OdeToCode/ngclass

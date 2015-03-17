@@ -12,9 +12,11 @@
             $location.path("#/list");
         };
 
-        model.save = function() {
-            movieService.save(model.movie)
-                        .then(saveComplete);
+        model.save = function (isValid) {
+            if (isValid) {
+                movieService.save(model.movie)
+                    .then(saveComplete);
+            }
         };
 
 
