@@ -26,9 +26,9 @@
             controller: "EditController as edit"
         });
 
-        $routeProvider.otherwise({
-            redirectTo: "/list"
-        });
+        //$routeProvider.otherwise({
+        //    redirectTo: "/list"
+        //});
 
     });
 

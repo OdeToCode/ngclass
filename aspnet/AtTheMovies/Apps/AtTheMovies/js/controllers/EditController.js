@@ -12,7 +12,7 @@
 
         var saveComplete = function () {
             alerting.addInfo("Movie is saved!");
-            $location.path("#/list");
+            $location.path("/list");
         };
 
         var init = function () {
@@ -29,9 +29,7 @@
                     .then(saveComplete);
             }
             if (isValid && angular.equals(originalMovie, model.movie)) {
-                var path = "#/details/" + model.movie.id;
-                console.log(model.movie);
-                console.log(path);
+                var path = "/details/" + model.movie.id;                
                 $location.path(path);
             }
         };
