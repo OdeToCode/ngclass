@@ -1,14 +1,17 @@
 ﻿(function(module) {
 
-    var EditController = function($routeParams, movieService, $location) {
+    var EditController = function($routeParams, movieService, $location, alerting) {
 
         var model = this;
+        var originalMovie = {};
 
         var onMovie = function(movie) {
             model.movie = movie;
+            originalMovie = angular.copy(model.movie);
         };
 
-        var saveComplete = function() {
+        var saveComplete = function () {
+            alerting.addInfo("Movie is saved!");
             $location.path("#/list");
         };
 
@@ -21,9 +24,15 @@
 
         model.movie = {};
         model.save = function (isValid) {
-            if (isValid) {
+            if (isValid && !angular.equals(originalMovie, model.movie)) {
                 movieService.save(model.movie)
                     .then(saveComplete);
+            }
+            if (isValid && angular.equals(originalMovie, model.movie)) {
+                var path = "#/details/" + model.movie.id;
+                console.log(model.movie);
+                console.log(path);
+                $location.path(path);
             }
         };
 

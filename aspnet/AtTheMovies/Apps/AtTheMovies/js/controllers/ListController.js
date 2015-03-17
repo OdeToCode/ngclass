@@ -38,9 +38,6 @@
 
         var onMovieData = function(movies) {
             model.movies = movies;
-
-            throw new Error("Ack! Something went terribly wrong!");
-
         };
 
         var onError = function(response) {

@@ -13,13 +13,16 @@
 
 <div class="container">
         <div class="row">
-            <div class="col-md-10">
+            <div class="col-md-8">
                 
                 <ng-view></ng-view>
 
             </div>
-            <div class="col-md-2">
+            <div class="col-md-4">
                 {{ version }}
+                <div ng-show="shell.getRequestCount()">
+                    <img src="Content/ajax-loader.gif" />
+                </div>
                 <div ng-repeat="alert in shell.currentAlerts">
                     <div class="alert alert-{{alert.type}}">
                         {{ alert.message }}
@@ -33,14 +36,17 @@
     <script src="Scripts/angular-messages.js"></script>
     <script src="Scripts/angular-sanitize.js"></script>
 
-    <script src="Apps/AtTheMovies/module.js"></script>
+    <script src="Apps/Common/module.js"></script>
+    <script src="Apps/Common/js/services/alerting.js"></script>
+    <script src="Apps/Common/js/services/requestCounter.js"></script>
+
+<script src="Apps/AtTheMovies/module.js"></script>
     <script src="Apps/AtTheMovies/js/controllers/ListController.js"></script>
     <script src="Apps/AtTheMovies/js/services/movieService.js"></script>
     <script src="Apps/AtTheMovies/js/controllers/DetailsController.js"></script>
     <script src="Apps/AtTheMovies/js/controllers/ShellController.js"></script>
     <script src="Apps/AtTheMovies/js/controllers/EditController.js"></script>
     <script src="Apps/AtTheMovies/js/filters/letters.js"></script>
-<script src="Apps/AtTheMovies/js/services/alerting.js"></script>
 <script src="Apps/AtTheMovies/js/services/exceptionHandlerDecorator.js"></script>
 
 </body>

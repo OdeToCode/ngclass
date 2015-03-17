@@ -98,7 +98,7 @@
     <Content Include="Apps\AtTheMovies\js\controllers\ListController.js" />
     <Content Include="Apps\AtTheMovies\js\controllers\ShellController.js" />
     <Content Include="Apps\AtTheMovies\js\filters\letters.js" />
-    <Content Include="Apps\AtTheMovies\js\services\alerting.js" />
+    <Content Include="Apps\Common\js\services\alerting.js" />
     <Content Include="Apps\AtTheMovies\js\services\exceptionHandlerDecorator.js" />
     <Content Include="Apps\AtTheMovies\js\services\movieService.js" />
     <Content Include="Apps\AtTheMovies\module.js" />
@@ -108,6 +108,8 @@
     <Content Include="Apps\AtTheMovies\templates\navbarlight.html" />
     <Content Include="Apps\AtTheMovies\templates\navbardark.html" />
     <Content Include="Apps\AtTheMovies\templates\validationMessages.html" />
+    <Content Include="Apps\Common\js\services\requestCounter.js" />
+    <Content Include="Apps\Common\module.js" />
     <Content Include="Content\ajax-loader.gif" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap\css\bootstrap-theme.css" />

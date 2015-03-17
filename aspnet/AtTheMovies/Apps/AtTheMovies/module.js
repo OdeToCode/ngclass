@@ -1,6 +1,14 @@
 ﻿(function() {
 
-    var module = angular.module("moviesApp", ["ng", "ngRoute", "ngMessages", "ngSanitize"]);
+    var module = angular.module("moviesApp", [
+        "ng", "ngRoute", "ngMessages", "ngSanitize", "common"
+    ]);
+
+
+    module.config(function(alertingProvider) {
+        alertingProvider.setTimeout(7000);
+    });
+
 
     module.config(function($routeProvider) {
 
@@ -8,7 +16,7 @@
             templateUrl: "/apps/AtTheMovies/templates/list.html",
             controller: "ListController as list"
         }).when("/details/:id", {
-            templateUrl: "/apps/AtTheMovies/templates/detailss.html",
+            templateUrl: "/apps/AtTheMovies/templates/details.html",
             controller: "DetailsController as details"
         }).when("/edit/:id", {
             templateUrl: "/apps/AtTheMovies/templates/edit.html",
