@@ -94,11 +94,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Apps\AtTheMovies\js\controllers\DetailsController.js" />
+    <Content Include="Apps\AtTheMovies\js\controllers\EditController.js" />
     <Content Include="Apps\AtTheMovies\js\controllers\ListController.js" />
     <Content Include="Apps\AtTheMovies\js\controllers\ShellController.js" />
     <Content Include="Apps\AtTheMovies\js\services\movieService.js" />
     <Content Include="Apps\AtTheMovies\module.js" />
     <Content Include="Apps\AtTheMovies\templates\details.html" />
+    <Content Include="Apps\AtTheMovies\templates\edit.html" />
     <Content Include="Apps\AtTheMovies\templates\list.html" />
     <Content Include="Content\ajax-loader.gif" />
     <Content Include="Content\animate.css" />

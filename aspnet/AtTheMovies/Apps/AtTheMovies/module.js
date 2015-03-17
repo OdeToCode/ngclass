@@ -7,9 +7,12 @@
         $routeProvider.when("/list", {
             templateUrl: "/apps/AtTheMovies/templates/list.html",
             controller: "ListController as list"
-        }).when("/details/:id?", {
+        }).when("/details/:id", {
             templateUrl: "/apps/AtTheMovies/templates/details.html",
             controller: "DetailsController as details"
+        }).when("/edit/:id", {
+            templateUrl: "/apps/AtTheMovies/templates/edit.html",
+            controller: "EditController as edit"
         });
 
         $routeProvider.otherwise({

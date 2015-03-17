@@ -1,4 +1,5 @@
 ﻿<div>
+
     <div ng-if="list.error" class="alert alert-danger">
         {{ list.error }}
     </div>
@@ -13,12 +14,8 @@
             <td>
                 <button class="btn btn-sm" ng-click="list.increaseRating(movie)">+</button>
                 <button class="btn btn-sm" ng-click="list.decreaseRating(movie)">-</button>
+                <a class="btn btn-default" ng-href="#/edit/{{movie.id}}">Edit</a>
             </td>
-            <!--<td>
-                Index: {{$index}}
-                First: {{$first}}
-                Odd: {{$odd}}
-            </td>-->
         </tr>
     </table>
 </div>

@@ -7,16 +7,21 @@
         var movies = [];
 
         var getAll = function () {
-            if (movies.length) {
-                return $q.when(movies);
-            } else {
+            //if (movies.length) {
+            //    return $q.when(movies);
+            //} else {
                 return $http.get(baseUrl)
                     .then(function(response) {
                         movies = response.data;
                         return movies;
                     });
-            }
+            //}
         };
+
+        var save = function(movie) {
+            return $http.put(baseUrl, movie);
+        };
+
 
         var getById = function(id) {
             return $http.get(baseUrl + "/" + id)
@@ -27,7 +32,8 @@
 
         return {
             getAllMovies: getAll,
-            getById: getById
+            getById: getById,
+            save: save
         };
     };
 
