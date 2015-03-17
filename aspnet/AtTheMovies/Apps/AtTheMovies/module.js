@@ -13,6 +13,9 @@
         }).when("/edit/:id", {
             templateUrl: "/apps/AtTheMovies/templates/edit.html",
             controller: "EditController as edit"
+        }).when("/create", {
+            templateUrl: "/apps/AtTheMovies/templates/edit.html",
+            controller: "EditController as edit"
         });
 
         $routeProvider.otherwise({

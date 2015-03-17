@@ -7,11 +7,15 @@ body {
 }
 
 input.ng-invalid {
-    background-color: red;
+    border-color: red;
+}
+
+div[ng-messages] {
+    color: red;
 }
 
 .good {
-    background-color: green;
+    background-color: rgba(00, 200, 00, 50);
 }
 
 .bad {

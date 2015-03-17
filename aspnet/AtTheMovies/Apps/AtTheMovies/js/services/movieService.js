@@ -18,12 +18,17 @@
             //}
         };
 
-        var save = function(movie) {
-            return $http.put(baseUrl, movie);
+        var save = function (movie) {
+
+            if (movie.id) {
+                return $http.put(baseUrl, movie);
+            } else {
+                return $http.post(baseUrl, movie);
+            }
         };
 
 
-        var getById = function(id) {
+        var getById = function (id) {
             return $http.get(baseUrl + "/" + id)
                 .then(function(response) {
                     return response.data;

@@ -12,6 +12,14 @@
             $location.path("#/list");
         };
 
+        var init = function () {
+            if ($routeParams.id) {
+                movieService.getById($routeParams.id)
+                    .then(onMovie);
+            }
+        };
+
+        model.movie = {};
         model.save = function (isValid) {
             if (isValid) {
                 movieService.save(model.movie)
@@ -19,11 +27,7 @@
             }
         };
 
-
-        movieService.getById($routeParams.id)
-            .then(onMovie);
-
-
+        init();
     };
 
     module.controller("EditController", EditController);
