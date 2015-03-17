@@ -1,28 +1,18 @@
 ﻿(function(module) {
 
-    var ShellController = function($rootScope, $log, $timeout) {
+    var ShellController = function($rootScope, alerting) {
 
         var model = this;
-        model.errors = [];
-        model.counter = 0;
 
+        model.currentAlerts = alerting.currentAlerts;
+        model.counter = 0;
         model.navbar = "/apps/AtTheMovies/templates/navbardark.html";
 
-        var incrementCounter = function() {
 
-            //$rootScope.$apply(function() {
-                model.counter += 1;
-                $timeout(incrementCounter, 1000);
 
-            //});
-
-        };
-
-        $timeout(incrementCounter, 1000);
-
+        alerting.addInfo("Starting up!");
         $rootScope.$on("$routeChangeError", function (event, route1, route2, error) {
-            $log.info(arguments);
-            model.errors.push(error);
+            alerting.addError(error.message);
         });
 
     };

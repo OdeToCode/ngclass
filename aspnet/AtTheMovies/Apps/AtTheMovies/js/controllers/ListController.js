@@ -1,11 +1,15 @@
 ﻿(function () {
 
-    var ListController = function (movieService) {
+    var ListController = function (movieService, $sce) {
 
         var model = this;
 
         model.orderTerm = "-rating";
         model.searchTerm = "";
+
+        model.getTitle = function(movie) {
+            return $sce.getTrustedHtml(movie.title);
+        };
 
         model.increaseRating = function(movie) {
             if (movie.rating < 5) {
@@ -34,6 +38,9 @@
 
         var onMovieData = function(movies) {
             model.movies = movies;
+
+            throw new Error("Ack! Something went terribly wrong!");
+
         };
 
         var onError = function(response) {
@@ -46,7 +53,7 @@
     };
 
     var module = angular.module("moviesApp");
-    module.controller("ListController", ["movieService", ListController]);
+    module.controller("ListController", ["movieService", "$sce", ListController]);
 
 
 }());

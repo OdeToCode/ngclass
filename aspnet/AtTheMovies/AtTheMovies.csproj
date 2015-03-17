@@ -98,6 +98,8 @@
     <Content Include="Apps\AtTheMovies\js\controllers\ListController.js" />
     <Content Include="Apps\AtTheMovies\js\controllers\ShellController.js" />
     <Content Include="Apps\AtTheMovies\js\filters\letters.js" />
+    <Content Include="Apps\AtTheMovies\js\services\alerting.js" />
+    <Content Include="Apps\AtTheMovies\js\services\exceptionHandlerDecorator.js" />
     <Content Include="Apps\AtTheMovies\js\services\movieService.js" />
     <Content Include="Apps\AtTheMovies\module.js" />
     <Content Include="Apps\AtTheMovies\templates\details.html" />

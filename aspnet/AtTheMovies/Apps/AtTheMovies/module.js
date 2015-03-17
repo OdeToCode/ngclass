@@ -1,6 +1,6 @@
 ﻿(function() {
 
-    var module = angular.module("moviesApp", ["ng", "ngRoute", "ngMessages"]);
+    var module = angular.module("moviesApp", ["ng", "ngRoute", "ngMessages", "ngSanitize"]);
 
     module.config(function($routeProvider) {
 
@@ -8,7 +8,7 @@
             templateUrl: "/apps/AtTheMovies/templates/list.html",
             controller: "ListController as list"
         }).when("/details/:id", {
-            templateUrl: "/apps/AtTheMovies/templates/details.html",
+            templateUrl: "/apps/AtTheMovies/templates/detailss.html",
             controller: "DetailsController as details"
         }).when("/edit/:id", {
             templateUrl: "/apps/AtTheMovies/templates/edit.html",
