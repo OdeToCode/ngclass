@@ -98,6 +98,7 @@
     <Content Include="Apps\AtTheMovies\js\controllers\ListController.js" />
     <Content Include="Apps\AtTheMovies\js\controllers\ShellController.js" />
     <Content Include="Apps\AtTheMovies\js\directives\puAlert.js" />
+    <Content Include="Apps\AtTheMovies\js\directives\puRating.js" />
     <Content Include="Apps\AtTheMovies\js\directives\puRequestSpinner.js" />
     <Content Include="Apps\AtTheMovies\js\directives\startsWith.js" />
     <Content Include="Apps\AtTheMovies\js\filters\letters.js" />
