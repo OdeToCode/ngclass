@@ -1,11 +1,12 @@
 ﻿(function () {
 
-    var ListController = function (movieService, $sce) {
+    var ListController = function (movies, $sce) {
 
         var model = this;
 
         model.orderTerm = "-rating";
         model.searchTerm = "";
+        model.movies = movies;
 
         model.getTitle = function(movie) {
             return $sce.getTrustedHtml(movie.title);
@@ -44,13 +45,13 @@
             model.error = "The error code from the server was " + response.status;
         };
 
-        movieService.getAllMovies()
-                    .then(onMovieData, onError);
+        
+                    
 
     };
 
     var module = angular.module("moviesApp");
-    module.controller("ListController", ["movieService", "$sce", ListController]);
+    module.controller("ListController", ["movies", "$sce", ListController]);
 
 
 }());

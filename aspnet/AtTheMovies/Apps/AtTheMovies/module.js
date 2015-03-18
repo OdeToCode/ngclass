@@ -9,12 +9,16 @@
         alertingProvider.setTimeout(7000);
     });
 
-
     module.config(function($routeProvider) {
 
         $routeProvider.when("/list", {
             templateUrl: "/apps/AtTheMovies/templates/list.html",
-            controller: "ListController as list"
+            controller: "ListController as list",
+            resolve: {
+                movies: function(movieService) {
+                    return movieService.getAllMovies();
+                }
+            }
         }).when("/details/:id", {
             templateUrl: "/apps/AtTheMovies/templates/details.html",
             controller: "DetailsController as details"
@@ -26,9 +30,9 @@
             controller: "EditController as edit"
         });
 
-        //$routeProvider.otherwise({
-        //    redirectTo: "/list"
-        //});
+        $routeProvider.otherwise({
+            redirectTo: "/list"
+        });
 
     });
 
