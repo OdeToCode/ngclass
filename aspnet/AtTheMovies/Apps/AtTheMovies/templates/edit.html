@@ -5,21 +5,23 @@
             <label>Title</label>
             <input name="title" type="text" ng-model="edit.movie.title" placeholder="Title"
                    ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"
-                   class="form-control" required starts-with="S" />
+                   class="form-control" required starts-with="S" unique />
+            <span ng-show="editForm.title.$pending">TRying to validate...</span>
             <div ng-messages="editForm.title.$error"
                  ng-messages-include="/apps/AtTheMovies/templates/validationMessages.html">
                 <div ng-message="pattern">Must be 4 charcters and start with a capital S</div>
                 <div ng-message="startsWith">You must start with the letter S</div>
+                <div ng-message="unique">This name is not unique</div>
             </div>
         </div>
 
         <div class="form-group">
             <label>Year</label>
-            <input name="year" min="1920" max="2020" step="1" type="number" ng-model="edit.movie.year" placeholder="Year" class="form-control"/>
+            <input name="year" min="1920" max="2020" step="1" type="number" ng-model="edit.movie.year" placeholder="Year" class="form-control" />
         </div>
 
         <div class="form-group">
-            <input class="btn btn-primary" type="submit" value="Save!"/>
+            <input class="btn btn-primary" type="submit" value="Save!" />
         </div>
 
     </form>

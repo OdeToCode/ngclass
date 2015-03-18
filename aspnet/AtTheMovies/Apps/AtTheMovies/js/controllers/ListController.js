@@ -1,12 +1,19 @@
 ﻿(function () {
 
-    var ListController = function (movies, $sce) {
+    var ListController = function (movies, $sce, movieService, alerting) {
 
         var model = this;
 
         model.orderTerm = "-rating";
         model.searchTerm = "";
         model.movies = movies;
+
+        model.saveMovie = function(movie) {
+            movieService.save(movie)
+                .then(function() {
+                alerting.addInfo("Saved " + movie.title);
+            });
+        };
 
         model.getTitle = function(movie) {
             return $sce.getTrustedHtml(movie.title);
@@ -36,22 +43,10 @@
             };
 
         };
-
-        var onMovieData = function(movies) {
-            model.movies = movies;
-        };
-
-        var onError = function(response) {
-            model.error = "The error code from the server was " + response.status;
-        };
-
-        
-                    
-
     };
 
     var module = angular.module("moviesApp");
-    module.controller("ListController", ["movies", "$sce", ListController]);
+    module.controller("ListController", ["movies", "$sce", "movieService", "alerting", ListController]);
 
 
 }());

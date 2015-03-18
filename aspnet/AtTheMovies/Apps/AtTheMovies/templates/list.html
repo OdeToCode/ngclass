@@ -21,7 +21,8 @@
                 <a ng-href="#/details/{{movie.id}}" ng-bind-html="list.getTitle(movie)"></a>
             </td>
             <td>
-                <pu-rating value="movie.rating"></pu-rating>
+                <pu-rating value="movie.rating" changed="list.saveMovie(movie)"></pu-rating>
+                
             </td>
             <td contenteditable>{{movie.year}}</td>
             <td>

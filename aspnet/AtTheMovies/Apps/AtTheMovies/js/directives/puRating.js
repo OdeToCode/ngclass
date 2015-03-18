@@ -6,13 +6,17 @@
             restrict: "EA",
             templateUrl: "/apps/AtTheMovies/templates/puRating.html",
             scope: {
-                value: "="
+                value: "=",
+                changed: "&"
             },
             link: function(scope) {
                 scope.stars = [1, 2, 3, 4, 5];
 
                 scope.setValue = function(newValue) {
                     scope.value = newValue;
+                    scope.$evalAsync(function() {
+                        scope.changed();
+                    });              
                 };
 
                 scope.getStars = function(value) {
