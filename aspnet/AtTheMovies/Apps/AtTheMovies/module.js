@@ -6,7 +6,7 @@
 
 
     module.config(function(alertingProvider) {
-        alertingProvider.setTimeout(7000);
+        alertingProvider.setTimeout(27000);
     });
 
     module.config(function($routeProvider) {

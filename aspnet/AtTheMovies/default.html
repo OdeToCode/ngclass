@@ -11,23 +11,37 @@
 
     <div ng-include="shell.navbar"></div>
 
-<div class="container">
+    <div class="container">
         <div class="row">
             <div class="col-md-8">
-                
+
                 <ng-view></ng-view>
 
             </div>
             <div class="col-md-4">
                 {{ version }}
-                <div ng-show="shell.getRequestCount()">
-                    <img src="Content/ajax-loader.gif" />
-                </div>
-                <div ng-repeat="alert in shell.currentAlerts">
-                    <div class="alert alert-{{alert.type}}">
-                        {{ alert.message }}
-                    </div>
-                </div>
+                <pu-request-spinner></pu-request-spinner>
+
+                <pu-alert ng-repeat="alert in shell.currentAlerts"
+                          type="alert.type"
+                          reason="alert.reason"
+                          close="shell.closeAlert(alert)"
+                          >
+                    {{ alert.message }}
+                </pu-alert>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label>Create an alert!</label>
+                <select ng-model="shell.newAlert.type">
+                    <option value="danger">Danger</option>
+                    <option value="warning">Warning</option>
+                    <option value="info">Informational</option>
+                </select>
+                <input type="text" ng-model="shell.newAlert.message"/>
+                <input type="button" class="btn btn-default" ng-click="shell.createAlert()" value="Create" />
             </div>
         </div>
     </div>
@@ -40,14 +54,17 @@
     <script src="Apps/Common/js/services/alerting.js"></script>
     <script src="Apps/Common/js/services/requestCounter.js"></script>
 
-<script src="Apps/AtTheMovies/module.js"></script>
+    <script src="Apps/AtTheMovies/module.js"></script>
     <script src="Apps/AtTheMovies/js/controllers/ListController.js"></script>
     <script src="Apps/AtTheMovies/js/services/movieService.js"></script>
     <script src="Apps/AtTheMovies/js/controllers/DetailsController.js"></script>
     <script src="Apps/AtTheMovies/js/controllers/ShellController.js"></script>
     <script src="Apps/AtTheMovies/js/controllers/EditController.js"></script>
     <script src="Apps/AtTheMovies/js/filters/letters.js"></script>
-<script src="Apps/AtTheMovies/js/services/exceptionHandlerDecorator.js"></script>
+    <script src="Apps/AtTheMovies/js/services/exceptionHandlerDecorator.js"></script>
+<script src="apps/AtTheMovies/js/directives/puAlert.js"></script>
+<script src="Apps/AtTheMovies/js/directives/puRequestSpinner.js"></script>
+    <script src="Apps/AtTheMovies/js/directives/startsWith.js"></script>
 
 </body>
 </html>

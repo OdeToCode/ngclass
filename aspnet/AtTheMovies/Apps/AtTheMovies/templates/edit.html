@@ -4,10 +4,12 @@
         <div class="form-group">
             <label>Title</label>
             <input name="title" type="text" ng-model="edit.movie.title" placeholder="Title"
-                   class="form-control" required  />
+                   ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"
+                   class="form-control" required starts-with="S" />
             <div ng-messages="editForm.title.$error"
                  ng-messages-include="/apps/AtTheMovies/templates/validationMessages.html">
                 <div ng-message="pattern">Must be 4 charcters and start with a capital S</div>
+                <div ng-message="startsWith">You must start with the letter S</div>
             </div>
         </div>
 

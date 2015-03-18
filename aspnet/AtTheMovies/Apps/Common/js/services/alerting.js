@@ -14,21 +14,20 @@
 
                 var currentAlerts = [];
 
-
-                var removeAlert = function (alertToRemove) {
-                    return function () {
-                        for (var i = 0; i < currentAlerts.length; i++) {
-                            if (currentAlerts[i] === alertToRemove) {
-                                currentAlerts.splice(i, 1);
-                            }
+                var removeAlert = function(alert) {
+                    for (var i = 0; i < currentAlerts.length; i++) {
+                        if (currentAlerts[i] === alert) {
+                            currentAlerts.splice(i, 1);
                         }
-                    };
+                    }
                 };
 
                 var addAlert = function (type, message) {
                     var newAlert = { type: type, message: message };
                     currentAlerts.push(newAlert);
-                    $timeout(removeAlert(newAlert), timeout);
+                    $timeout(function() {
+                        removeAlert(newAlert);
+                    }, timeout);
                 };
 
                 var addWarning = function (message) {
@@ -47,6 +46,8 @@
                     addWarning: addWarning,
                     addInfo: addInfo,
                     addError: addError,
+                    addAlert: addAlert,
+                    removeAlert: removeAlert,
                     currentAlerts: currentAlerts
                 };
             };

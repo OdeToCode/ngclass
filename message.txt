@@ -2,33 +2,13 @@ Scott Allen
 AngularJS
 scott@OdeToCode.com
 
-Now: Break / snack
+Now:  break
 
-
-Next: 14:15
+Next: 10:25
 
 Material:
 http://goo.gl/QYJSzZ (case sensitive)
 
-Todo:
-Localization of numbers/dates/messages
-
-
 GitHub Repo:
 https://github.com/OdeToCode/ngclass
 https://github.com/OdeToCode/ngclass.git
-
-For Visual Studio:
-1. Open aspnet/AtTheMovies.sln
-
-For NodeJS:
-1. Make sure AppData folder exists
-   (mkdir on error message)
-
-2. npm install bower -g
-3. npm install grunt-cli -g
-4. npm install
-5. bower install
-6. grunt
-7. Browse to http://localhost:8080/default.html
-

@@ -20,8 +20,11 @@
             <td>
                 <a ng-href="#/details/{{movie.id}}" ng-bind-html="list.getTitle(movie)"></a>
             </td>
-            <td>{{movie.rating}}</td>
-            <td>{{movie.year}}</td>
+            <td>
+                {{movie.rating}}
+
+            </td>
+            <td contenteditable>{{movie.year}}</td>
             <td>
                 <button class="btn btn-sm" ng-click="list.increaseRating(movie)">+</button>
                 <button class="btn btn-sm" ng-click="list.decreaseRating(movie)">-</button>

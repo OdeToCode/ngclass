@@ -1,14 +1,22 @@
 ﻿(function(module) {
 
-    var ShellController = function($rootScope, alerting, requestCounter) {
+    var ShellController = function($rootScope, alerting) {
 
         var model = this;
 
+        model.newAlert = {};
+        model.userReason = "Failure!";
         model.currentAlerts = alerting.currentAlerts;
         model.counter = 0;
         model.navbar = "/apps/AtTheMovies/templates/navbardark.html";
-        model.getRequestCount = function() {
-            return requestCounter.getRequestCount();
+
+        model.closeAlert = function(alert) {
+            alerting.removeAlert(alert);
+        };
+
+        model.createAlert = function () {
+            alerting.addAlert(model.newAlert.type, model.newAlert.message);
+            model.newAlert = {};
         };
 
 

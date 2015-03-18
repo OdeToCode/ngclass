@@ -97,7 +97,12 @@
     <Content Include="Apps\AtTheMovies\js\controllers\EditController.js" />
     <Content Include="Apps\AtTheMovies\js\controllers\ListController.js" />
     <Content Include="Apps\AtTheMovies\js\controllers\ShellController.js" />
+    <Content Include="Apps\AtTheMovies\js\directives\puAlert.js" />
+    <Content Include="Apps\AtTheMovies\js\directives\puRequestSpinner.js" />
+    <Content Include="Apps\AtTheMovies\js\directives\startsWith.js" />
     <Content Include="Apps\AtTheMovies\js\filters\letters.js" />
+    <Content Include="Apps\AtTheMovies\templates\puAlert.html" />
+    <Content Include="Apps\AtTheMovies\templates\puRequestSpinner.html" />
     <Content Include="Apps\Common\js\services\alerting.js" />
     <Content Include="Apps\AtTheMovies\js\services\exceptionHandlerDecorator.js" />
     <Content Include="Apps\AtTheMovies\js\services\movieService.js" />
