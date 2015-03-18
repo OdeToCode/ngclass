@@ -1,44 +1,27 @@
 ﻿(function(module) {
 
     var rating = function() {
+
         return {
             restrict: "EA",
-            
+            templateUrl: "/apps/AtTheMovies/templates/puRating.html",
             scope: {
                 value: "="
             },
-            link: function(scope, element, attributes) {
+            link: function(scope) {
+                scope.stars = [1, 2, 3, 4, 5];
 
-                var updateValue = function (value) {
-                    return function () {
-                        scope.value = value + 1;
-                        scope.$apply();
+                scope.setValue = function(newValue) {
+                    scope.value = newValue;
+                };
+
+                scope.getStars = function(value) {
+                    return {
+                        "glyphicon": true,
+                        "glyphicon-star": value <= scope.value,
+                        "glyphicon-star-empty": value > scope.value
                     };
                 };
-
-                var updateDom = function() {
-                    element.empty();
-                    var classes;
-                    for (var i = 0; i < 5; i++) {
-                        classes = "glyphicon ";
-                        if (i < scope.value) {
-                            classes += "glyphicon-star";
-                        } else {
-                            classes += "glyphicon-star-empty";
-                        }
-
-                        var star = angular.element("<span class='" + classes + "'></span>");
-                        element.append(star);
-
-                        
-                        star.on("click", updateValue(i));
-                    }
-                };
-
-               
-
-                scope.$watch("value", updateDom);
-               
             }
         }
     };

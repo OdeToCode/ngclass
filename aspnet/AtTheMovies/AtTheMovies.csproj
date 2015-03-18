@@ -103,6 +103,7 @@
     <Content Include="Apps\AtTheMovies\js\directives\startsWith.js" />
     <Content Include="Apps\AtTheMovies\js\filters\letters.js" />
     <Content Include="Apps\AtTheMovies\templates\puAlert.html" />
+    <Content Include="Apps\AtTheMovies\templates\puRating.html" />
     <Content Include="Apps\AtTheMovies\templates\puRequestSpinner.html" />
     <Content Include="Apps\Common\js\services\alerting.js" />
     <Content Include="Apps\AtTheMovies\js\services\exceptionHandlerDecorator.js" />
