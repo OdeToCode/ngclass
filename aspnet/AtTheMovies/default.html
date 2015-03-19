@@ -3,7 +3,7 @@
 <head>
     <title>At The Movies!</title>
     <link rel="stylesheet" href="/Content/bootstrap/css/bootstrap.css">
-    <link href="Content/animate.css" rel="stylesheet"/>
+    <link href="Content/animate.css" rel="stylesheet" />
     <link rel="stylesheet" href="/Content/styles.css">
 </head>
 
@@ -19,17 +19,17 @@
 
             </div>
             <div class="col-md-4">
-                {{ version }}
-                <pu-request-spinner></pu-request-spinner>
 
+                <pu-request-spinner></pu-request-spinner>
+                <hr />
                 <pu-alert ng-repeat="alert in shell.currentAlerts"
                           type="alert.type"
                           reason="alert.reason"
-                          close="shell.closeAlert(alert)"
-                          >
+                          close="shell.closeAlert(alert)">
                     {{ alert.message }}
                 </pu-alert>
-
+                <hr />
+                {{ version }}
             </div>
         </div>
         <div class="row">
@@ -40,7 +40,7 @@
                     <option value="warning">Warning</option>
                     <option value="info">Informational</option>
                 </select>
-                <input type="text" ng-model="shell.newAlert.message"/>
+                <input type="text" ng-model="shell.newAlert.message" />
                 <input type="button" class="btn btn-default" ng-click="shell.createAlert()" value="Create" />
             </div>
         </div>
@@ -49,6 +49,8 @@
     <script src="Scripts/angular-route.js"></script>
     <script src="Scripts/angular-messages.js"></script>
     <script src="Scripts/angular-sanitize.js"></script>
+<script src="Scripts/angular-animate.js"></script>
+    <script src="Scripts/ui-bootstrap-tpls-0.12.1.js"></script>
 
     <script src="Apps/Common/module.js"></script>
     <script src="Apps/Common/js/services/alerting.js"></script>
@@ -62,10 +64,11 @@
     <script src="Apps/AtTheMovies/js/controllers/EditController.js"></script>
     <script src="Apps/AtTheMovies/js/filters/letters.js"></script>
     <script src="Apps/AtTheMovies/js/services/exceptionHandlerDecorator.js"></script>
-<script src="apps/AtTheMovies/js/directives/puAlert.js"></script>
-<script src="Apps/AtTheMovies/js/directives/puRequestSpinner.js"></script>
-<script src="Apps/AtTheMovies/js/directives/startsWith.js"></script>
-    <script src="Apps/AtTheMovies/js/directives/puRating.js"></script>
+    <script src="apps/AtTheMovies/js/directives/puAlert.js"></script>
+    <script src="Apps/AtTheMovies/js/directives/puRequestSpinner.js"></script>
+    <script src="Apps/AtTheMovies/js/directives/startsWith.js"></script>
+<script src="Apps/AtTheMovies/js/directives/puRating.js"></script>
+    <script src="Apps/AtTheMovies/js/services/confirmDelete.js"></script>
 
 </body>
 </html>

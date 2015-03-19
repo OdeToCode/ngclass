@@ -102,6 +102,12 @@
     <Content Include="Apps\AtTheMovies\js\directives\puRequestSpinner.js" />
     <Content Include="Apps\AtTheMovies\js\directives\startsWith.js" />
     <Content Include="Apps\AtTheMovies\js\filters\letters.js" />
+    <Content Include="Apps\AtTheMovies\js\services\confirmDelete.js" />
+    <Content Include="Apps\AtTheMovies\specs\EditControllerSpecs.js" />
+    <Content Include="Apps\AtTheMovies\specs\learnJasmine.js" />
+    <Content Include="Apps\AtTheMovies\specs\ListControllerSpecs.js" />
+    <Content Include="Apps\AtTheMovies\specs\runner.html" />
+    <Content Include="Apps\AtTheMovies\templates\deleteMovie.html" />
     <Content Include="Apps\AtTheMovies\templates\puAlert.html" />
     <Content Include="Apps\AtTheMovies\templates\puRating.html" />
     <Content Include="Apps\AtTheMovies\templates\puRequestSpinner.html" />
@@ -145,6 +151,7 @@
     <Content Include="Scripts\jasmine\jasmine.css" />
     <Content Include="Scripts\jasmine\jasmine.js" />
     <Content Include="Scripts\jasmine\jasmine_favicon.png" />
+    <Content Include="Scripts\ui-bootstrap-tpls-0.12.1.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

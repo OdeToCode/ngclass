@@ -1,6 +1,6 @@
 ﻿(function(module) {
 
-    var rating = function() {
+    var rating = function($timeout) {
 
         return {
             restrict: "EA",
@@ -14,9 +14,10 @@
 
                 scope.setValue = function(newValue) {
                     scope.value = newValue;
-                    scope.$evalAsync(function() {
+
+                    $timeout(function () {
                         scope.changed();
-                    });              
+                    },0);              
                 };
 
                 scope.getStars = function(value) {

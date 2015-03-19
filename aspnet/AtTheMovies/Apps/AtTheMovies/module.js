@@ -1,12 +1,13 @@
 ﻿(function() {
 
     var module = angular.module("moviesApp", [
-        "ng", "ngRoute", "ngMessages", "ngSanitize", "common"
+        "ng", "ngRoute", "ngMessages", "ngSanitize", "ngAnimate", "common",
+        "ui.bootstrap"
     ]);
 
 
     module.config(function(alertingProvider) {
-        alertingProvider.setTimeout(27000);
+        alertingProvider.setTimeout(15000);
     });
 
     module.config(function($routeProvider) {
@@ -15,7 +16,7 @@
             templateUrl: "/apps/AtTheMovies/templates/list.html",
             controller: "ListController as list",
             resolve: {
-                movies: function(movieService) {
+                movies: function (movieService) {
                     return movieService.getAllMovies();
                 }
             }

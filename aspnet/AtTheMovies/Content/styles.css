@@ -1,6 +1,15 @@
 body {
-	background-color: #ccccbb;
+    background-color: #ccccbb;
 }
+
+table ng-enter {
+    -webkit-animation: zoomIn 0.5s;
+    -moz-animation: zoomIn 0.5s;
+    -ms-animation: zoomIn 0.5s;
+    -o-animation: zoomIn 0.5s;
+    animation: zoomIn 0.5s;
+}
+
 
 .ng-cloak {
     display: none;

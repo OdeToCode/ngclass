@@ -6,6 +6,10 @@
 
         var movies = [];
 
+        var remove = function(movie) {
+            return $http.delete(baseUrl + "/" + movie.id);
+        };
+
         var getAll = function () {
             //if (movies.length) {
             //    return $q.when(movies);
@@ -38,7 +42,8 @@
         return {
             getAllMovies: getAll,
             getById: getById,
-            save: save
+            save: save,
+            remove: remove
         };
     };
 

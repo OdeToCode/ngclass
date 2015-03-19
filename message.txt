@@ -2,9 +2,15 @@ Scott Allen
 AngularJS
 scott@OdeToCode.com
 
-Now:  break
+Now: lunch
+ 
+Next: 12:30pm
 
-Next: 10:25
+
+	Protractor
+	UI
+	Best Practices
+	Future
 
 Material:
 http://goo.gl/QYJSzZ (case sensitive)

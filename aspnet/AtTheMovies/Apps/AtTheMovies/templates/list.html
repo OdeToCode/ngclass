@@ -6,7 +6,7 @@
     <h1 ng-if="list.movies.length">Movies!</h1>
 
     <div class="form-inline">
-        <input class="form-control" type="search" ng-model="list.searchTerm" placeholder="Search Titles"/>
+        <input class="form-control" type="search" ng-model="list.searchTerm" placeholder="Search Titles" />
         <select ng-model="list.orderTerm">
             <option value="+title">Title</option>
             <option value="-year">Year</option>
@@ -24,11 +24,12 @@
                 <pu-rating value="movie.rating" changed="list.saveMovie(movie)"></pu-rating>
                 
             </td>
-            <td contenteditable>{{movie.year}}</td>
+            <td>{{::movie.year}}</td>
             <td>
                 <button class="btn btn-sm" ng-click="list.increaseRating(movie)">+</button>
                 <button class="btn btn-sm" ng-click="list.decreaseRating(movie)">-</button>
                 <a class="btn btn-default" ng-href="#/edit/{{movie.id}}">Edit</a>
+                <button class="btn btn-danger" ng-click="list.delete(movie)">Delete</button>
             </td>
         </tr>
     </table>
