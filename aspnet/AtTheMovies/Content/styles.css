@@ -2,7 +2,7 @@ body {
     background-color: #ccccbb;
 }
 
-table ng-enter {
+view.ng-enter {
     -webkit-animation: zoomIn 0.5s;
     -moz-animation: zoomIn 0.5s;
     -ms-animation: zoomIn 0.5s;
@@ -10,6 +10,21 @@ table ng-enter {
     animation: zoomIn 0.5s;
 }
 
+tr.ng-leave {
+    -webkit-animation: slideOutDown 1.0s;
+    -moz-animation: slideOutDown 1.0s;
+    -ms-animation: slideOutDown 1.0s;
+    -o-animation: slideOutDown 1.0s;
+    animation: slideOutDown 1.0s;
+}
+
+tr.ng-enter {
+    -webkit-animation: bounceInLeft 1.0s;
+    -moz-animation: bounceInLeft 1.0s;
+    -ms-animation: bounceInLeft 1.0s;
+    -o-animation: bounceInLeft 1.0s;
+    animation: bounceInLeft 1.0s;
+}
 
 .ng-cloak {
     display: none;
