@@ -1,0 +1,39 @@
+﻿<div class="col-md-8"
+     ng-controller="MovieListController as list">
+
+    <div ng-if="list.error" class="alert alert-warning">
+        {{list.error}}
+    </div>
+
+
+    <table class="table">
+
+        <tr>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Rating</th>
+            <th>Actions</th>
+        </tr>
+
+        <tr ng-repeat="movie in list.movies"
+            ng-class="list.rateMovie(movie)">
+            <td>
+                {{movie.title}}
+            </td>
+            <td>{{movie.year}}</td>
+            <td>{{movie.rating}}</td>
+            <td>
+                <a class="btn btn-default" ng-href="#/details/{{movie.id}}">Details</a>
+                <button ng-click="list.increaseRating(movie)" class="btn btn-default">
+                    +
+                </button>
+                <button ng-click="list.decreaseRating(movie)" class="btn btn-default">
+                    -
+                </button>
+
+            </td>
+        </tr>
+
+    </table>
+
+</div>

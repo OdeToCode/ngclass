@@ -4,15 +4,23 @@
 
         var baseUrl = "/api/movies/";
 
+        var processResponse = function(response) {
+            return response.data;
+        }
+
+        var getById = function(id) {
+            return n.get(baseUrl + id)
+                    .then(processResponse);
+        };
+
         var getAll = function () {
             $log.info("Fetching movies");
             return n.get(baseUrl)
-                        .then(function(response) {
-                            return response.data;
-                        });
+                        .then(processResponse);
         };
 
         return {
+            getById: getById,
             getAll: getAll
         };
     };
