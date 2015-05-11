@@ -2,11 +2,19 @@ Scott Allen
 AngularJS
 scott@OdeToCode.com
 
-
+Now: break
+Next: 1120am
 
 Material:
 http://goo.gl/QYJSzZ (case sensitive)
 
 GitHub Repo:
 https://github.com/OdeToCode/ngclass
-https://github.com/OdeToCode/ngclass.git
+
+Coffee Break: 11:00
+Lunch: 13:00
+
+
+ng-click ngClick
+ng-model ngModel
+ng-cloak ngCloak
