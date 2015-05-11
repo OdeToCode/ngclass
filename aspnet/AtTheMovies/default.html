@@ -21,6 +21,11 @@
             <div class="col-md-8" 
                  ng-controller="MovieListController as list">
 
+                <div ng-if="list.error" class="alert alert-warning">
+                    {{list.error}}
+                </div>
+
+
                 <table class="table">
 
                     <tr>

@@ -5,7 +5,16 @@
 
         var model = this;
 
-        model.movies = movieData.getAll();
+        var onMovies = function(movies) {
+            model.movies = movies;
+        };
+
+        var onError = function (response) {           
+            model.error = response.data.message;
+        };
+
+        model.movies = movieData.getAll()
+                                .then(onMovies, onError);
 
         model.increaseRating = function(movie) {
             if (movie.rating < 5) {

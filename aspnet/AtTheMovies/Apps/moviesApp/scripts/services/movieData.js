@@ -1,14 +1,15 @@
 ﻿(function (module) {
 
+    var movieData = function (n, $log) {
 
-    var movieData = function () {
+        var baseUrl = "/api/movies/";
 
         var getAll = function () {
-            return [
-                { title: "Star Wars", year: 1979, rating: 5 },
-                { title: "E.T.", year: 1982, rating: 4 },
-                { title: "Fast and Furious 7", year: 2015, rating: 2 }
-            ];
+            $log.info("Fetching movies");
+            return n.get(baseUrl)
+                        .then(function(response) {
+                            return response.data;
+                        });
         };
 
         return {
@@ -16,6 +17,8 @@
         };
     };
 
-    module.factory("movieData", movieData);
+    //movieData.$inject = ["$http", "$log"];
+
+    module.factory("movieData", ["$http", "$log", movieData]);
 
 }(angular.module("moviesApp")));
