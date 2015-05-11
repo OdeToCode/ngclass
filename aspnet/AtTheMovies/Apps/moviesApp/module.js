@@ -1,7 +1,8 @@
 ﻿
 (function () {
 
-    var module = angular.module("moviesApp", ["ng", "ngRoute"]);
+    var module = angular.module("moviesApp",
+        ["ng", "ngRoute", "ngMessages"]);
 
     module.config(function($routeProvider) {
 
@@ -10,6 +11,9 @@
             })
             .when("/details/:id", {
                 templateUrl: "/apps/moviesApp/templates/details.html"
+            })
+            .when("/edit/:id", {
+                templateUrl: "/apps/moviesApp/templates/edit.html"
             })
             .otherwise({
                 redirectTo: "/list"

@@ -13,6 +13,9 @@
             model.error = response.data.message;
         };
 
+
+        model.searchTerm = "";
+        model.orderTerm = "-rating";
         model.movies = movieData.getAll()
                                 .then(onMovies, onError);
 

@@ -3,18 +3,8 @@ AngularJS
 scott@OdeToCode.com
 
 
-http://server.com/movies/list
-http://server.com/movies/details/3
-
-routes.MapRoute(
-            name: "Default",
-            url: "app/{angular*}",
-            defaults: new { controller = "Ng", action = "Index", angular= UrlParameter.Optional }
-        );
-
-
-Now: lunch
-Next: 1400
+Now: break3:50
+Next: 
 
 Material:
 http://goo.gl/QYJSzZ (case sensitive)
@@ -22,10 +12,9 @@ http://goo.gl/QYJSzZ (case sensitive)
 GitHub Repo:
 https://github.com/OdeToCode/ngclass
 
-Coffee Break: 11:00
-Lunch: 13:00
 
+15:30 break
+15-16 directives
+16-17 testing / ui
+17-1730 future, performance, practices
 
-ng-click ngClick
-ng-model ngModel
-ng-cloak ngCloak

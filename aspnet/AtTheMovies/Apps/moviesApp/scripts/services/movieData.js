@@ -1,6 +1,6 @@
 ﻿(function (module) {
 
-    var movieData = function (n, $log) {
+    var movieData = function ($http, $log) {
 
         var baseUrl = "/api/movies/";
 
@@ -8,19 +8,25 @@
             return response.data;
         }
 
+        var save = function(movie) {
+            return $http.put(baseUrl, movie)
+                        .then(processResponse);
+        };
+
         var getById = function(id) {
-            return n.get(baseUrl + id)
+            return $http.get(baseUrl + id)
                     .then(processResponse);
         };
 
         var getAll = function () {
             $log.info("Fetching movies");
-            return n.get(baseUrl)
+            return $http.get(baseUrl)
                         .then(processResponse);
         };
 
         return {
             getById: getById,
+            save: save,
             getAll: getAll
         };
     };

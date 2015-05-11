@@ -32,6 +32,7 @@ tr.ng-enter {
 
 input.ng-invalid {
     border-color: red;
+    background-color: red;
 }
 
 div[ng-messages] {

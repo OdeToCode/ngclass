@@ -15,11 +15,17 @@
 
         var model = this;
 
-        model.message = "Hello, World!";
-
-        model.changeMessage = function () {
-            model.message = "Hello, SDD";
+        model.alert = {
+            type: "warning",
+            reason: "Unknown",
+            message: "Alert from the shell!"
         };
+
+        model.dismissAlert = function() {
+            model.alert = null;
+        };
+        model.alertReason = "Unknown!";
+        model.alertMessage = "Alert from the shell!";
 
     };
 
