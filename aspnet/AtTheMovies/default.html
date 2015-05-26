@@ -1,4 +1,4 @@
-<html ng-app="moviesApp">
+<html>
 
 <head>
     <title>At The Movies!</title>
@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/Content/styles.css">
 </head>
 
-<body class="ng-cloak">
+<body>
 
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -16,44 +16,12 @@
         </div>
     </nav>
 
-    <div class="container" ng-controller="ShellController as shell">
+    <div class="container">
         <div class="row">
-
             <div class="col-md-4">
-
-
-                <div contenteditable>Tjhis is text</div>
-
-                <div ng-show="shell.alert">
-                    {{ shell.alert.reason }}
-                    <div sdd-alert dismiss="shell.dismissAlert()" type="shell.alert.type" reason="shell.alert.reason">
-                        {{ shell.alert.message}}
-                    </div>
-                </div>
-
-            
-
-
-            </div>
-
-            <ng-view></ng-view>
-            
-
-           
+            </div>           
         </div>
     </div>
 
-    <script src="Scripts/angular.js"></script>
-    <script src="Scripts/angular-route.js"></script>
-<script src="Scripts/angular-messages.js"></script>
-
-    <script src="Apps/moviesApp/module.js"></script>
-    <script src="Apps/moviesApp/scripts/controllers/ShellController.js"></script>
-    <script src="Apps/moviesApp/scripts/controllers/MovieListController.js"></script>
-    <script src="Apps/moviesApp/scripts/services/movieData.js"></script>
-<script src="Apps/moviesApp/scripts/controllers/DetailsController.js"></script>
-
-    <script src="Apps/moviesApp/scripts/directives/sddAlert.js"></script>
-    <script src="Apps/moviesApp/scripts/controllers/EditController.js"></script>
 </body>
 </html>
