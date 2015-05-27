@@ -2,9 +2,10 @@ Scott Allen
 AngularJS
 scott@OdeToCode.com
 
+<form onsubmit="cearteMessage();"
 
-Now: --
-Next: 9am start
+Now: break
+Next: 10:20am
 Lunch: 12:30
 
 Material:
@@ -16,3 +17,7 @@ https://github.com/OdeToCode/ngclass
 WiFi:
 CS-Guest
 Energeni
+
+Desktop Login:
+Cornerstone
+Pa$$w0rd
