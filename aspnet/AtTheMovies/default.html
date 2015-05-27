@@ -18,38 +18,15 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-8" ng-controller="ListController as list">
-                {{ version }}
-                <div ng-show="list.errorMessage"
-                     class="alert alert-danger">
-                    {{ list.errorMessage }}
-                </div>
-
-                <table class="table">
-                    <tr>
-                        <th>Title</th>
-                        <th>Year</th>
-                        <th>Rating</th>
-                        <th></th>
-                    </tr>
-                    <tr ng-repeat="movie in list.movies" ng-class="list.rateMovie(movie)">
-                        <td>{{movie.title}}</td>
-                        <td>{{movie.year}}</td>
-                        <td>{{movie.rating}}</td>
-                        <td>
-                            <button ng-click="list.increaseRating(movie)" class="btn">+</button>
-                            <button ng-click="list.decreaseRating(movie)" class="btn">-</button>
-                        </td>
-                    </tr>
-                </table>
-
-            </div>
+            <ng-view></ng-view>
             <div class="col-md-4">
             </div>
         </div>
     </div>
     <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
     <script src="Apps/moviesApp/module.js"></script>
+    <script src="Apps/moviesApp/controllers/DetailsController.js"></script>
     <script src="Apps/moviesApp/controllers/ListController.js"></script>
     <script src="Apps/moviesApp/services/movieData.js"></script>
 
