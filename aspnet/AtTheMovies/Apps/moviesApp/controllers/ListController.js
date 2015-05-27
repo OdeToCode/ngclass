@@ -14,6 +14,11 @@
 
         model.searchTerm = "";
         model.orderTerm = "-rating";
+        model.showAlerts = true;
+        model.closeAlerts = function() {
+            model.showAlerts = false;
+        }
+
         model.rateMovie = function(movie) {
             return {
                 good: movie.rating >= 4,

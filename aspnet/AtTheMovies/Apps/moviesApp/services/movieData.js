@@ -2,8 +2,9 @@
 
     var module = angular.module("moviesApp");
 
-    var movieData = function ($http) {
+    var movieData = function ($http, $q) {
 
+        var movies = [];
         var baseUrl = "/api/movies/";
 
         var getById = function(id) {
@@ -18,9 +19,15 @@
         };
 
         var getAll = function () {
+
+            //if (movies.length) {
+            //    return $q.when(movies);
+            //}
+
             return $http.get(baseUrl)
                         .then(function(response) {
-                            return response.data;
+                            movies = response.data;
+                            return movies;
                         });
         };
 

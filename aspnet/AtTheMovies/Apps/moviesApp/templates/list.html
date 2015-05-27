@@ -3,6 +3,33 @@
          class="alert alert-danger">
         {{ list.errorMessage }}
     </div>
+
+    <div class="alert alert-danger">
+        This is a bootstrap alert
+    </div>
+
+    {{ list.reason1 }}
+    {{ list.reason2 }}
+    <input type="text" ng-model="list.alertType1" />
+    <input type="text" ng-model="list.reason3" />
+
+    <div ng-show="list.showAlerts">
+        <cs-alert type="list.alertType1"
+                  reason="list.reason1"
+                  close="list.closeAlerts()">
+            You have {{list.movies.length}} movies!
+        </cs-alert>
+    </div>
+    
+    <cs-alert type="'info'" reason="list.reason2">
+        1st alert
+    </cs-alert>
+    <cs-alert type="'info'" reason="list.reason3">
+        2nd alert
+    </cs-alert>
+
+
+
     <input type="search" placeholder="Search" ng-model="list.searchTerm"/>
     <select ng-model="list.orderTerm">
         <option value="+title">Title</option>
