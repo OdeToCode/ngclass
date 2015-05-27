@@ -1,6 +1,7 @@
 ﻿(function () {
 
-    var module = angular.module("moviesApp", ["ng", "ngRoute"]);
+    var module = angular.module("moviesApp",
+        ["ng", "ngRoute", "ngMessages"]);
 
     module.run(function($log, $rootScope) {
         $log.info("Up and running!");
@@ -9,9 +10,12 @@
 
     module.config(function($routeProvider) {
 
-        // /api/movies
+        // /api/movies/3
         // /app/movies -> MVC Movies
-        // /app/movies/#/list -> Angular ListController
+        // / 
+        // routes.MapRoute("spapage", 
+                // "/app/{controller}/{path*}", defaults=new { controller="Movies", action="Index"
+        // /app/movies/list -> Angular ListController
 
         $routeProvider.when("/list", {
             templateUrl: "/apps/moviesApp/templates/list.html"
@@ -19,7 +23,9 @@
             templateUrl: "/apps/moviesApp/templates/about.html"  
         }).when("/details/:id", {
                 templateUrl: "/apps/moviesApp/templates/details.html"
-        })
+        }).when("/edit/:id?", {
+                templateUrl: "/apps/moviesApp/templates/edit.html"
+            })
         .otherwise({
             redirectTo: "/list"
         });

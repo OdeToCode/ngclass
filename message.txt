@@ -2,11 +2,18 @@ Scott Allen
 AngularJS
 scott@OdeToCode.com
 
-<form onsubmit="cearteMessage();"
 
 Now: break
 Next: 11:37
 Lunch: 12:30
+       13:30 
+       14:15 forms
+       14:25 services 15:10
+       15:20 directives 16:20
+       16:30 -> Q&A animations, best practices, testing, 
+    
+
+
 
 Material:
 http://goo.gl/QYJSzZ (case sensitive)

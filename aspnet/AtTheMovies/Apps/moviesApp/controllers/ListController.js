@@ -1,6 +1,6 @@
 ﻿(function() {
 
-    var ListController = function($log, movieData) {
+    var ListController = function($log, movieData, $location) {
 
         var model = this;
 
@@ -12,6 +12,8 @@
             model.movies = movies;
         };
 
+        model.searchTerm = "";
+        model.orderTerm = "-rating";
         model.rateMovie = function(movie) {
             return {
                 good: movie.rating >= 4,
@@ -35,6 +37,10 @@
             }
         };
 
+        model.edit = function(id) {
+            $location.path("/edit/" + id);
+        };
+
         movieData.getAll()
                  .then(onMovies, onError);
 
@@ -43,6 +49,7 @@
     //ListController.$inject = ["movieData"];
 
     var module = angular.module("moviesApp");
-    module.controller("ListController", ["$log", "movieData", ListController]);
+    module.controller("ListController",
+        ["$log", "movieData", "$location", ListController]);
 
 }());

@@ -93,6 +93,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Apps\moviesApp\controllers\EditController.js" />
+    <Content Include="Apps\moviesApp\controllers\DetailsController.js" />
+    <Content Include="Apps\moviesApp\controllers\ListController.js" />
+    <Content Include="Apps\moviesApp\module.js" />
+    <Content Include="Apps\moviesApp\services\movieData.js" />
+    <Content Include="Apps\moviesApp\templates\about.html" />
+    <Content Include="Apps\moviesApp\templates\details.html" />
+    <Content Include="Apps\moviesApp\templates\edit.html" />
+    <Content Include="Apps\moviesApp\templates\list.html" />
     <Content Include="Content\ajax-loader.gif" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap\css\bootstrap-theme.css" />
@@ -152,9 +161,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Apps\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
