@@ -3,8 +3,9 @@ AngularJS
 scott@OdeToCode.com
 
 
-Now: break3:50
-Next: 
+Now: --
+Next: 9am start
+Lunch: 12:30
 
 Material:
 http://goo.gl/QYJSzZ (case sensitive)
@@ -12,9 +13,6 @@ http://goo.gl/QYJSzZ (case sensitive)
 GitHub Repo:
 https://github.com/OdeToCode/ngclass
 
-
-15:30 break
-15-16 directives
-16-17 testing / ui
-17-1730 future, performance, practices
-
+WiFi:
+CS-Guest
+Energeni

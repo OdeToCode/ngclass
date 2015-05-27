@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="/Content/styles.css">
 </head>
 
-<body>
+<body ng-app="moviesApp" class="ng-cloak">
 
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="#">At The Movies!</a>
@@ -18,10 +18,24 @@
 
     <div class="container">
         <div class="row">
+            <div class="col-md-8" ng-controller="MoviesController as movies">
+                {{ movies.message }}
+
+                <input type="text" ng-model="movies.message"/>
+
+                <button ng-click="movies.changeMessage()" class="btn">
+                    Change Message
+                </button>
+
+            </div>
             <div class="col-md-4">
-            </div>           
+            </div>
         </div>
     </div>
+    <script src="Scripts/angular.js"></script>
+    <script src="Apps/moviesApp/module.js"></script>
+    <script src="Apps/moviesApp/controllers/MoviesController.js"></script>
+
 
 </body>
 </html>
