@@ -1,8 +1,16 @@
 ﻿(function() {
 
-    var ListController = function() {
+    var ListController = function($log, movieData) {
 
         var model = this;
+
+        var onError = function(response) {
+            model.errorMessage = response.data.message;
+        };
+
+        var onMovies = function(movies) {
+            model.movies = movies;
+        };
 
         model.rateMovie = function(movie) {
             return {
@@ -27,15 +35,14 @@
             }
         };
 
-        model.movies = [
-            { title: "Star Wars", year: 1979, rating:5 },
-            { title: "The Gambler", year: 2014, rating:3 },
-            { title: "Mad Max", year: 2015, rating:4 }
-        ];
+        movieData.getAll()
+                 .then(onMovies, onError);
 
     };
 
+    //ListController.$inject = ["movieData"];
+
     var module = angular.module("moviesApp");
-    module.controller("ListController", ListController);
+    module.controller("ListController", ["$log", "movieData", ListController]);
 
 }());
