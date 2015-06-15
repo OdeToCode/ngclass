@@ -2,8 +2,8 @@ Scott Allen
 AngularJS
 scott@OdeToCode.com
 
-Now: 14:06
-Next: 14:16
+Now: 15:15
+Next: 15:25
 
 Material:
 http://goo.gl/QYJSzZ (case sensitive)
@@ -13,7 +13,6 @@ https://github.com/OdeToCode/ngclass
 (Node or Visual Studio ASP.NET)
 
 Outline:
-- Routing
 - Views
 - Services
 - Directives
