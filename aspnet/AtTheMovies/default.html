@@ -1,4 +1,4 @@
-<html>
+<html ng-app="moviesApp">
 
 <head>
     <title>At The Movies!</title>
@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/Content/styles.css">
 </head>
 
-<body>
+<body class="ng-cloak">
 
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -18,7 +18,33 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-8" ng-controller="ListController as list">
+
+                <table class="table">
+                    <tr>
+                        <th>Title</th>
+                        <th>Release</th>
+                        <th>Rating</th>
+                        <th>Actions</th>
+                    </tr>
+
+                    <tr ng-repeat="movie in list.movies"
+                        ng-class="list.rateMovie(movie)">
+                        
+                        <td>{{movie.title}}</td>
+                        <td>{{movie.releaseYear}}</td>
+                        <td>{{movie.rating}}</td>
+                        <td>
+                            <button class="btn btn-default" ng-click="list.increaseRating(movie)">
+                                +
+                            </button>
+                            <button class="btn btn-default" ng-click="list.decreaseRating(movie)">
+                                -
+                            </button>
+                        </td>
+                    </tr>
+
+                </table>
 
             </div>
 
@@ -27,6 +53,10 @@
             </div>
         </div>
     </div>
+    <script src="Scripts/angular.js"></script>
+    <script src="Apps/moviesApp/module.js"></script>
+    <script src="Apps/moviesApp/controllers/ListController.js"></script>
+
 
 </body>
 </html>

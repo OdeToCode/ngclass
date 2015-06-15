@@ -6,6 +6,14 @@ body {
     display: none;
 }
 
+.bad-movie {
+    background-color: red;
+}
+
+.good-movie {
+    background-color: green;
+}
+
 /*view.ng-enter {
     -webkit-animation: zoomIn 0.5s;
     -moz-animation: zoomIn 0.5s;
