@@ -2,7 +2,7 @@
 
     var movieData = function ($http, $log, $q) {
 
-        var baseUrl = "/api/movies/";
+        var baseUrl = "/api/movies2/";
         var movies = [];
         var parseResponse = function(response) {
             return response.data;

@@ -2,8 +2,8 @@ Scott Allen
 AngularJS
 scott@OdeToCode.com
 
-Now: 12:00
-Next: 13:00
+Now: 14:06
+Next: 14:16
 
 Material:
 http://goo.gl/QYJSzZ (case sensitive)

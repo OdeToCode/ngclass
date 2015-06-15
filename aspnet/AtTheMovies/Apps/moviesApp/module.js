@@ -15,7 +15,7 @@
                 }
             }
         }).when("/details/:id", {
-            templateUrl: templateUrl + "details.html"        
+            templateUrl: templateUrl + "details2.html"        
         }).otherwise({
             redirectTo: "/list"
         });
@@ -23,8 +23,16 @@
 
     });
 
-    module.run(function($rootScope) {
+    module.run(function($rootScope, alerting) {
         $rootScope.version = "0.0.1";
+
+        $rootScope.$on("$routeChangeError", function() {
+
+            alerting.addError("Could not change route");
+
+
+        });
+
     });
 
 
