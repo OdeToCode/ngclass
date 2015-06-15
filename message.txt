@@ -3,7 +3,17 @@ AngularJS
 scott@OdeToCode.com
 
 Now: break
-Next: 3:24
+Next: 4:30
+
+
+var html = "<cs-alert type='{{foo}}'>";
+var scope = { foo: "danger" };
+
+var link = $compile(html)
+var output = link(scope);
+output => <cs-alert type='alert alert-danger
+
+
 
 Material:
 http://goo.gl/QYJSzZ (case sensitive)

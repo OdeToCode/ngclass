@@ -1,4 +1,4 @@
-<html ng-app="moviesApp">
+<html>
 
 <head>
     <title>At The Movies!</title>
@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/Content/styles.css">
 </head>
 
-<body class="ng-cloak">
+<body>
 
     <nav class="navbar">
         <div class="container-fluid">
@@ -18,19 +18,15 @@
 
     <div class="container">
         <div class="row">
-            <ng-view></ng-view>
+            <div class="col-md-8">
+
+            </div>
+
             <div class="col-md-4">
+
             </div>
         </div>
     </div>
-    <script src="Scripts/angular.js"></script>
-    <script src="Scripts/angular-route.js"></script>
-    <script src="Scripts/angular-messages.js"></script>
-<script src="Apps/moviesApp/module.js"></script>
-    <script src="Apps/moviesApp/directives/csAlert.js"></script>
-    <script src="Apps/moviesApp/controllers/DetailsController.js"></script>
-    <script src="Apps/moviesApp/controllers/ListController.js"></script>
-    <script src="Apps/moviesApp/services/movieData.js"></script>
-    <script src="Apps/moviesApp/controllers/EditController.js"></script>
+
 </body>
 </html>
