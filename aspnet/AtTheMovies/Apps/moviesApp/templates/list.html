@@ -1,4 +1,4 @@
-﻿<div ng-controller="ListController as list">
+﻿<div>
 
     <div class="alert alert-danger" ng-if="list.error">
         {{ list.error }}
@@ -17,9 +17,12 @@
             ng-class="list.rateMovie(movie)">
 
             <td>{{movie.title}}</td>
-            <td>{{movie.releaseYear}}</td>
+            <td>{{movie.year}}</td>
             <td>{{movie.rating}}</td>
             <td>
+                <a class="btn btn-default" ng-href="#/details/{{movie.id}}">
+                    Details
+                </a>
                 <button class="btn btn-default" ng-click="list.increaseRating(movie)">
                     +
                 </button>

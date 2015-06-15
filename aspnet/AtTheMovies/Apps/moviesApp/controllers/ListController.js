@@ -1,6 +1,6 @@
 ﻿(function (module) {
 
-    var ListController = function(movieData, $log) {
+    var ListController = function(movies, $log) {
 
         var model = this;
 
@@ -14,9 +14,7 @@
         };
 
         var activate = function() {
-            movieData.getAllMovies()
-                     .then(onMovies)
-                     .catch(onError);
+            model.movies = movies;
         };
 
   
@@ -48,6 +46,6 @@
         activate();
     };
 
-    module.controller("ListController", ["movieData", "$log", ListController]);
+    module.controller("ListController", ["movies", "$log", ListController]);
 
 }(angular.module("moviesApp")));
