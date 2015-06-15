@@ -2,29 +2,28 @@ Scott Allen
 AngularJS
 scott@OdeToCode.com
 
-Now: break
-Next: 4:30
-
-
-var html = "<cs-alert type='{{foo}}'>";
-var scope = { foo: "danger" };
-
-var link = $compile(html)
-var output = link(scope);
-output => <cs-alert type='alert alert-danger
-
-
+Now: ---
+Next: 9:00 Intro
 
 Material:
 http://goo.gl/QYJSzZ (case sensitive)
 
 GitHub Repo:
 https://github.com/OdeToCode/ngclass
+(Node or Visual Studio ASP.NET)
 
-WiFi:
-CS-Guest
-Energeni
+Outline:
+- Introduction
+- Modules
+- Routing
+- Views
+- Services
+- Directives
+- Node Tools
+- Testing
+- UI
+- Best Practices
+- ES6 / ES2015 / Angular 2
 
-Desktop Login:
-Cornerstone
-Pa$$w0rd
+
+
