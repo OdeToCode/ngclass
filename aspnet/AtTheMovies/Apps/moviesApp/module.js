@@ -15,7 +15,7 @@
                 }
             }
         }).when("/details/:id", {
-            templateUrl: templateUrl + "details2.html"        
+            templateUrl: templateUrl + "details.html"        
         }).otherwise({
             redirectTo: "/list"
         });
