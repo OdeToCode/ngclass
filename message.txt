@@ -13,8 +13,6 @@ https://github.com/OdeToCode/ngclass
 (Node or Visual Studio ASP.NET)
 
 Outline:
-- Introduction
-- Modules
 - Routing
 - Views
 - Services
