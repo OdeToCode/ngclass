@@ -1,10 +1,12 @@
 ﻿<div>
 
-    <div class="alert alert-danger" ng-if="list.error">
-        {{ list.error }}
-    </div>
+    <input type="search" ng-model="list.searchTerm" placeholder="Search"/>
+    <select ng-model="list.orderTerm">
+        <option value="+rating">Worst movies</option>
+        <option value="-rating">Best movies</option>
+        <option value="+title">Alpha</option>
+    </select>
 
-   
     <table class="table">
         <tr>
             <th>Title</th>
@@ -13,14 +15,16 @@
             <th>Actions</th>
         </tr>
 
-        <tr ng-repeat="movie in list.movies"
+        <tr ng-repeat="movie in list.movies | filter:{title:list.searchTerm} | orderBy:list.orderTerm"
             ng-class="list.rateMovie(movie)">
 
             <td>{{movie.title}}</td>
             <td>{{movie.year}}</td>
             <td>{{movie.rating}}</td>
             <td>
-
+                <a class="btn btn-default" ng-href="#/edit/{{movie.id}}">
+                    Edit
+                </a>
                 <a class="btn btn-default" ng-href="#/details/{{movie.id}}">
                     Details
                 </a>

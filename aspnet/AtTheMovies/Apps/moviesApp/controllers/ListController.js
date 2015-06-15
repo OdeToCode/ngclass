@@ -17,7 +17,9 @@
             model.movies = movies;
         };
 
-  
+        model.searchTerm = "";
+        model.orderTerm = "-rating";
+
         model.rateMovie = function(movie) {
 
             return {

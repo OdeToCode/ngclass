@@ -6,46 +6,39 @@
     <link rel="stylesheet" href="/Content/styles.css">
 </head>
 
-<body class="ng-cloak">
+<body class="ng-cloak" ng-controller="ShellController as shell">
 
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">At The Movies!</a>
+    <div ng-include="shell.theme"></div>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-8">
+
+                <ng-view></ng-view>
+
             </div>
-        </div>
-    </nav>
 
-<div class="container" ng-controller="ShellController as shell">
-    <div class="row">
-
-        <div class="col-md-8">
-
-            <h3>{{shell.counter}}</h3>
-
-            <ng-view></ng-view>
-
-        </div>
-
-        <div class="col-md-4">
-            <div ng-repeat="alert in shell.currentAlerts" 
-                 class="alert alert-{{alert.type}}">
-                {{ alert.message }}
+            <div class="col-md-4">
+                <div ng-repeat="alert in shell.currentAlerts"
+                     class="alert alert-{{alert.type}}">
+                    {{ alert.message }}
+                </div>
             </div>
         </div>
     </div>
-</div>
 
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/angular-messages.js"></script>
 
-<script src="Apps/moviesApp/module.js"></script>
+    <script src="Apps/moviesApp/module.js"></script>
     <script src="/Apps/moviesApp/services/alerting.js"></script>
     <script src="Apps/moviesApp/controllers/DetailsController.js"></script>
     <script src="Apps/moviesApp/controllers/ListController.js"></script>
     <script src="Apps/moviesApp/services/movieData.js"></script>
     <script src="/Apps/moviesApp/controllers/ShellController.js"></script>
-
+    <script src="/Apps/moviesApp/controllers/EditController.js"></script>
 
 </body>
 </html>

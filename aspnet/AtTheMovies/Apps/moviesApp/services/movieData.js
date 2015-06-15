@@ -8,6 +8,11 @@
             return response.data;
         };
 
+        var save = function(movie) {
+            return $http.put(baseUrl, movie)
+                        .then(parseResponse);
+        };
+
         var getById = function(id) {
             return $http.get(baseUrl + id)
                         .then(parseResponse);
@@ -31,7 +36,8 @@
 
         return {
             getAllMovies: getAll,
-            getById: getById
+            getById: getById,
+            save: save
         };
     };
 
