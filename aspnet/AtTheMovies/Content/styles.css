@@ -2,9 +2,9 @@ body {
     background-color: #ffffff;
 }
 
-/*.ng-cloak {
+.ng-cloak {
     display: none;
-}*/
+}
 
 /*view.ng-enter {
     -webkit-animation: zoomIn 0.5s;
