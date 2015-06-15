@@ -2,8 +2,8 @@ Scott Allen
 AngularJS
 scott@OdeToCode.com
 
-Now: ---
-Next: 9:00 Intro
+Now: 10:15 am
+Next: 10:30am
 
 Material:
 http://goo.gl/QYJSzZ (case sensitive)
