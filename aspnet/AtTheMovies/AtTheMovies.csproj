@@ -95,6 +95,7 @@
   <ItemGroup>
     <Content Include="Apps\moviesApp\controllers\ListController.js" />
     <Content Include="Apps\moviesApp\module.js" />
+    <Content Include="Apps\moviesApp\services\movieData.js" />
     <Content Include="Content\ajax-loader.gif" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap\css\bootstrap-theme.css" />

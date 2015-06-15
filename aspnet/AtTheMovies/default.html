@@ -16,46 +16,54 @@
         </div>
     </nav>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8" ng-controller="ListController as list">
+<div class="container">
+    <div class="row">
 
-                <table class="table">
-                    <tr>
-                        <th>Title</th>
-                        <th>Release</th>
-                        <th>Rating</th>
-                        <th>Actions</th>
-                    </tr>
+        <div class="col-md-8" ng-controller="ListController as list">
 
-                    <tr ng-repeat="movie in list.movies"
-                        ng-class="list.rateMovie(movie)">
-                        
-                        <td>{{movie.title}}</td>
-                        <td>{{movie.releaseYear}}</td>
-                        <td>{{movie.rating}}</td>
-                        <td>
-                            <button class="btn btn-default" ng-click="list.increaseRating(movie)">
-                                +
-                            </button>
-                            <button class="btn btn-default" ng-click="list.decreaseRating(movie)">
-                                -
-                            </button>
-                        </td>
-                    </tr>
-
-                </table>
-
+            <div class="alert alert-danger" ng-if="list.error">
+                {{ list.error }}
             </div>
 
-            <div class="col-md-4">
 
-            </div>
+            <table class="table">
+                <tr>
+                    <th>Title</th>
+                    <th>Release</th>
+                    <th>Rating</th>
+                    <th>Actions</th>
+                </tr>
+
+                <tr ng-repeat="movie in list.movies"
+                    ng-class="list.rateMovie(movie)">
+
+                    <td>{{movie.title}}</td>
+                    <td>{{movie.releaseYear}}</td>
+                    <td>{{movie.rating}}</td>
+                    <td>
+                        <button class="btn btn-default" ng-click="list.increaseRating(movie)">
+                            +
+                        </button>
+                        <button class="btn btn-default" ng-click="list.decreaseRating(movie)">
+                            -
+                        </button>
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="col-md-4">
+
         </div>
     </div>
+</div>
+
     <script src="Scripts/angular.js"></script>
     <script src="Apps/moviesApp/module.js"></script>
     <script src="Apps/moviesApp/controllers/ListController.js"></script>
+    <script src="Apps/moviesApp/services/movieData.js"></script>
 
 
 </body>

@@ -1,16 +1,25 @@
-﻿(function() {
+﻿(function (module) {
 
-    // viewmodel
-    var ListController = function() {
+    var ListController = function(movieData, $log) {
 
         var model = this;
-        model.movies = [
 
-            { id: 1, title: "Star Wars", releaseYear: 1977, rating: 5 },
-            { id: 2, title: "Weekend At Bernie's", releaseYear:1990, rating: 3},            
-            { id: 3, title: "Home Alone", releaseYear: 1991, rating: 4 }
-        ];
+        var onMovies = function(movies) {
+            model.movies = movies;
+        };
 
+        var onError = function(response) {
+            $log.error(response);
+            model.error = response.data.message;
+        };
+
+        var activate = function() {
+            movieData.getAllMovies()
+                     .then(onMovies)
+                     .catch(onError);
+        };
+
+  
         model.rateMovie = function(movie) {
 
             return {
@@ -36,9 +45,9 @@
             }
         }
 
+        activate();
     };
 
-    var module = angular.module("moviesApp");
-    module.controller("ListController", ListController);
+    module.controller("ListController", ["movieData", "$log", ListController]);
 
-}());
+}(angular.module("moviesApp")));
