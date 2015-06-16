@@ -10,6 +10,10 @@
 
     <div ng-include="shell.theme"></div>
 
+    <div ng-show="shell.hasOutstandingRequest()">
+        <img src="Content/ajax-loader.gif" />
+    </div>
+
     <div class="container">
         <div class="row">
 
@@ -32,11 +36,15 @@
     <script src="Scripts/angular-route.js"></script>
     <script src="Scripts/angular-messages.js"></script>
 
+    <script src="Apps/common/module.js"></script>
+    <script src="Apps/common/services/movieData.js"></script>
+
     <script src="Apps/moviesApp/module.js"></script>
+<script src="Apps/moviesApp/services/exceptionHandler.js"></script>
+    <script src="Apps/moviesApp/services/requestCounter.js"></script>
     <script src="/Apps/moviesApp/services/alerting.js"></script>
     <script src="Apps/moviesApp/controllers/DetailsController.js"></script>
     <script src="Apps/moviesApp/controllers/ListController.js"></script>
-    <script src="Apps/moviesApp/services/movieData.js"></script>
     <script src="/Apps/moviesApp/controllers/ShellController.js"></script>
     <script src="/Apps/moviesApp/controllers/EditController.js"></script>
 

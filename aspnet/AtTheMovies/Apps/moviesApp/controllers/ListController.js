@@ -13,7 +13,7 @@
             model.error = response.data.message;
         };
 
-        var activate = function() {
+        var activate = function () {
             model.movies = movies;
         };
 

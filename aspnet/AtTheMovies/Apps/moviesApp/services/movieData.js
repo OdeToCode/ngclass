@@ -22,6 +22,7 @@
 
             //if (movies.length) {
             //    $log.info("returning movies from cache");
+
             //    return $q.when(movies);
             //}
 

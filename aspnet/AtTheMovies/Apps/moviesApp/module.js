@@ -1,6 +1,11 @@
 ﻿(function() {
 
-    var module = angular.module("moviesApp", ["ngRoute", "ngMessages"]);
+    var module = angular.module("moviesApp", ["ngRoute", "ngMessages", "common"]);
+
+    module.config(function(movieDataProvider) {
+        movieDataProvider.setBaseUrl("/api/movies");
+    });
+
 
     module.config(function($routeProvider) {
 
