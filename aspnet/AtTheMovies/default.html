@@ -3,7 +3,8 @@
 <head>
     <title>At The Movies!</title>
     <link rel="stylesheet" href="/Content/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="/Content/styles.css">
+    <link href="Content/animate.css" rel="stylesheet" />
+        <link rel="stylesheet" href="/Content/styles.css">
 </head>
 
 <body class="ng-cloak" ng-controller="ShellController as shell">
@@ -23,11 +24,13 @@
 
             </div>
 
-            <div class="col-md-4">
-                <div ng-repeat="alert in shell.currentAlerts"
-                     class="alert alert-{{alert.type}}">
+            <div class="col-md-4" ng-init="shell.reason1='this is a test'">
+
+                <ndc-alert ng-repeat="alert in shell.currentAlerts"
+                           type="{{alert.type}}" close="shell.closeAlert(alert)">
                     {{ alert.message }}
-                </div>
+                </ndc-alert>
+
             </div>
         </div>
     </div>
@@ -35,18 +38,21 @@
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/angular-route.js"></script>
     <script src="Scripts/angular-messages.js"></script>
+    <script src="Scripts/angular-animate.js"></script>
 
-    <script src="Apps/common/module.js"></script>
+<script src="Apps/common/module.js"></script>
     <script src="Apps/common/services/movieData.js"></script>
 
     <script src="Apps/moviesApp/module.js"></script>
-<script src="Apps/moviesApp/services/exceptionHandler.js"></script>
+    <script src="Apps/moviesApp/services/exceptionHandler.js"></script>
     <script src="Apps/moviesApp/services/requestCounter.js"></script>
     <script src="/Apps/moviesApp/services/alerting.js"></script>
     <script src="Apps/moviesApp/controllers/DetailsController.js"></script>
     <script src="Apps/moviesApp/controllers/ListController.js"></script>
     <script src="/Apps/moviesApp/controllers/ShellController.js"></script>
     <script src="/Apps/moviesApp/controllers/EditController.js"></script>
+<script src="Apps/moviesApp/directives/ndcAlert.js"></script>
+    <script src="Apps/moviesApp/directives/startsWith.js"></script>
 
 </body>
 </html>

@@ -4,6 +4,14 @@
 
         var currentAlerts = [];
 
+        var removeAlert = function(alert) {
+            for (var i = 0; i < currentAlerts.length; i++) {
+                if (currentAlerts[i] === alert) {
+                    currentAlerts.splice(i, 1);
+                }
+            }
+        };
+
         var addAlert = function (type, description) {
             var alert = {
                 type: type,
@@ -12,12 +20,8 @@
             currentAlerts.push(alert);
 
             $timeout(function() {
-                for (var i = 0; i < currentAlerts.length; i++) {
-                    if (currentAlerts[i] === alert) {
-                        currentAlerts.splice(i, 1);
-                    }
-                }
-            }, 5000);
+                removeAlert(alert);
+            }, 10000);
         };
 
         var addInfo = function(description) {
@@ -38,6 +42,7 @@
             addError: addError,
             addInfo: addInfo,
             handle: handle,
+            removeAlert: removeAlert,
             currentAlerts: currentAlerts
         };
 

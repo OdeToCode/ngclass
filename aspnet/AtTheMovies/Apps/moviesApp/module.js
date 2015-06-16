@@ -1,9 +1,10 @@
 ﻿(function() {
 
-    var module = angular.module("moviesApp", ["ngRoute", "ngMessages", "common"]);
+    var module = angular.module("moviesApp",
+        ["ngRoute", "ngMessages", "common", "ngAnimate"]);
 
     module.config(function(movieDataProvider) {
-        movieDataProvider.setBaseUrl("/api/movies");
+        movieDataProvider.setBaseUrl("/api/movies/");
     });
 
 
