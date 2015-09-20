@@ -6,21 +6,13 @@ input.ng-invalid {
     background-color: red;
 }
 
-.ng-enter {
-    opacity: 0;
-    -moz-transition: 1s linear all;
-    -o-transition: 1s linear all;
-    -webkit-transition: 1s linear all;
-    transition: 1s linear all;
-}
 
-.ng-enter.ng-enter-active {
-    opacity: 1;
-}
-
-
-/*.ng-cloak {
-    display: none;
+tr.ng-leave {
+    -webkit-animation: slideOutDown 1.0s;
+    -moz-animation: slideOutDown 1.0s;
+    -ms-animation: slideOutDown 1.0s;
+    -o-animation: slideOutDown 1.0s;
+    animation: slideOutDown 1.0s;
 }
 
 .bad-movie {
@@ -33,20 +25,12 @@ input.ng-invalid {
     background-color: rgba(0, 255, 0, 0.20);
 }
 
-.ng-enter {
-    -webkit-animation: zoomIn 0.5s;
-    -moz-animation: zoomIn 0.5s;
-    -ms-animation: zoomIn 0.5s;
-    -o-animation: zoomIn 0.5s;
-    animation: zoomIn 0.5s;
-}
-
-tr.ng-leave {
-    -webkit-animation: slideOutDown 1.0s;
-    -moz-animation: slideOutDown 1.0s;
-    -ms-animation: slideOutDown 1.0s;
-    -o-animation: slideOutDown 1.0s;
-    animation: slideOutDown 1.0s;
+[ng-view].ng-enter {
+    -webkit-animation: rotateIn 0.5s;
+    -moz-animation: rotateIn 0.5s;
+    -ms-animation: rotateIn 0.5s;
+    -o-animation: rotateIn 0.5s;
+    animation: rotateIn 0.5s;
 }
 
 tr.ng-enter {
@@ -64,5 +48,5 @@ input.ng-invalid {
 
 div[ng-messages] {
     color: red;
-}*/
+}
 
