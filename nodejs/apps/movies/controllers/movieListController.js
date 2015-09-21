@@ -2,10 +2,11 @@
 (function(){
     "use strict";
 
-    function MovieListController(n, movieData) {
+    function MovieListController($log, movies) {
         var model = this;
 
-        n.info("MainController starting");
+        $log.info("MainController starting");
+        $log.info(movies);
 
         function onMoviesReceived(movies) {
             model.movies = movies;
@@ -15,9 +16,7 @@
             model.errorMessage = response.data;
         }
 
-        movieData.getAllMovies()
-                 .then(onMoviesReceived)
-                 .catch(onError);
+        model.movies = movies;
 
         model.rateMovie = function(movie) {
             var result = {
@@ -51,6 +50,6 @@
 
     angular.module("movies-app")
            .controller("MovieListController",
-                ["$log", "movieData", MovieListController]);
+                ["$log", "movies", MovieListController]);
 
 }());

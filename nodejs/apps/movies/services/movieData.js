@@ -2,17 +2,23 @@
 
     var module = angular.module("movies-app");
 
-    var movieData = function($http) {
+    function processResponse(response){
+        return response.data;
+     }
+
+    function movieData($http) {
+
+        var baseUrl = "/api/movies/";
 
         var getById = function(id) {
-            return {};
+            var url = baseUrl + id;
+            return $http.get(url)
+                        .then(processResponse);
         };
 
         var getAll = function() {
-            return $http.get("/api/movies")
-                        .then(function(response){
-                            return response.data;
-                         });
+            return $http.get(baseUrl)
+                        .then(processResponse);
         };
 
         return {
@@ -20,7 +26,7 @@
             getAllMovies: getAll
         };
 
-    };
+    }
 
     module.factory("movieData", movieData);
 

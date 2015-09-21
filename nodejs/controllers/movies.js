@@ -1,8 +1,12 @@
 var dataSource = require("../data/movieDataSource");
 
 exports.getAllMovies = function(request, response) {
-    var movies = dataSource.getAll();
-    response.send(movies);
+
+    setTimeout(function() {
+        var movies = dataSource.getAll();
+        response.send(movies);
+    }, 2000);
+    
 };
 
 exports.getMovieById = function(request, response) {
@@ -33,4 +37,3 @@ exports.deleteMovie = function(request, response) {
     var removed = dataSource.delete(request.params.id);
     response.status(200).send(removed);
 };
-

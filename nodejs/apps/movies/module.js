@@ -5,7 +5,16 @@
     module.config(function($routeProvider) {
 
         $routeProvider.when("/list", {
-            templateUrl: "/movies/views/list.html"
+            templateUrl: "/movies/views/list.html",
+            controller: "MovieListController as list",
+            resolve: {
+                movies: function(movieData) {
+                    return movieData.getAllMovies();
+                }
+            }
+        }).when("/detail/:id", {
+            templateUrl: "/movies/views/detail.html",
+            controller: "MovieDetailController as detail"
         })
         .otherwise({
             redirectTo: "/list"

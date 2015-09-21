@@ -1,4 +1,4 @@
-<div ng-controller="MovieListController as list">
+<div>
 
     <div class="alert alert-danger" ng-show="list.errorMessage">
         {{ list.errorMessage}}
@@ -14,7 +14,9 @@
         </tr>
         <tr ng-repeat="movie in list.movies">
             <td>
+            <a ng-href="#/detail/{{movie.id}}">
                 {{ movie.title }}
+            </a>
             </td>
             <td>
                 {{ movie.year }}
