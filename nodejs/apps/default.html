@@ -1,7 +1,7 @@
 <html ng-app="movies-app">
 
 <head>
-    <title>At The Movies!</title>
+    <title>At The Movies! {{ version }}</title>
     <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="/styles.css">
 </head>
@@ -23,10 +23,14 @@
 
         <div ng-controller="MainController as main">
 
+            <div class="alert alert-danger" ng-show="main.errorMessage">
+                {{ main.errorMessage}}
+            </div>
+
+
             <table class="table">
                 <tr>
                     <th>Title</th>
-                    <th>Length</th>
                     <th>Year</th>
                     <th>Rating</th>
                     <th></th>
@@ -34,9 +38,6 @@
                 <tr ng-repeat="movie in main.movies">
                     <td>
                         {{ movie.title }}
-                    </td>
-                    <td>
-                        {{ movie.length}}
                     </td>
                     <td>
                         {{ movie.year }}
@@ -57,7 +58,8 @@
 
     <script src="/angular/angular.js"></script>
     <script src="/movies/app.js"></script>
-    <script src="/movies/MainController.js"></script>
+    <script src="/movies/mainController.js"></script>
+    <script src="/movies/movieData.js"></script>
 
 </body>
 </html>

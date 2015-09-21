@@ -1,22 +1,29 @@
+
 (function(){
-    var module = angular.module("movies-app");
+    "use strict";
 
-    module.controller("MainController", function() {
-
+    function MainController(n, movieData) {
         var model = this;
 
-        model.movies = [
-                { title: "Star Wars", length:90, year:1979, rating:5 },
-                { title: "Aliens", length: 120, year: 1977, rating:2 },
-                { title: "Mad Max", length: 115, year: 2015, rating:3 }
-        ];
+        n.info("MainController starting");
+
+        function onMoviesReceived(movies) {
+            model.movies = movies;
+        }
+
+        function onError(response) {
+            model.errorMessage = response.data;
+        }
+
+        movieData.getAllMovies()
+                 .then(onMoviesReceived)
+                 .catch(onError);
 
         model.rateMovie = function(movie) {
             var result = {
                 "good-movie": movie.rating >= 5,
                 "bad-movie": movie.rating < 2
             };
-            console.log(result);
             return result;
         };
 
@@ -38,5 +45,12 @@
             }
         };
 
-    });
+    }
+
+    // MainController.$inject = ["$log", "movieData"];
+
+    angular.module("movies-app")
+           .controller("MainController",
+                ["$log", "movieData", MainController]);
+
 }());
