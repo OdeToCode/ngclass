@@ -15,12 +15,20 @@
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container" ng-app="movies-app">
 
-    <h1>At The Movies!</h1>
+        <h1>At The Movies!</h1>
+
+        <div ng-controller="MainController">
+            {{ message }}
+            <input type="text" ng-model="message" />
+            <input type="button" value="Change the message" ng-click="changeMessage()">
+        </div>
 
     </div>
 
+    <script src="/angular/angular.js"></script>
+    <script src="/movies/app.js"></script>
 
 </body>
 </html>
