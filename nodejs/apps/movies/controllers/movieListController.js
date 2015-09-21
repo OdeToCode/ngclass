@@ -2,7 +2,7 @@
 (function(){
     "use strict";
 
-    function MainController(n, movieData) {
+    function MovieListController(n, movieData) {
         var model = this;
 
         n.info("MainController starting");
@@ -50,7 +50,7 @@
     // MainController.$inject = ["$log", "movieData"];
 
     angular.module("movies-app")
-           .controller("MainController",
-                ["$log", "movieData", MainController]);
+           .controller("MovieListController",
+                ["$log", "movieData", MovieListController]);
 
 }());

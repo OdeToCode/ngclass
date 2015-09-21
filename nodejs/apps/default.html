@@ -21,45 +21,20 @@
 
         <h1>At The Movies!</h1>
 
-        <div ng-controller="MainController as main">
-
-            <div class="alert alert-danger" ng-show="main.errorMessage">
-                {{ main.errorMessage}}
-            </div>
-
-
-            <table class="table">
-                <tr>
-                    <th>Title</th>
-                    <th>Year</th>
-                    <th>Rating</th>
-                    <th></th>
-                </tr>
-                <tr ng-repeat="movie in main.movies">
-                    <td>
-                        {{ movie.title }}
-                    </td>
-                    <td>
-                        {{ movie.year }}
-                    </td>
-                    <td ng-class="main.rateMovie(movie)">
-                        {{movie.rating}}
-                    </td>
-                    <td>
-                        <button ng-click="main.increaseRating(movie)">+</button>
-                        <button ng-click="main.decreaseRating(movie)">-</button>
-                    </td>
-                </tr>
-            </table>
+        <div class="col-md-10">
+            <div ng-view></div>
+        </div>
+        <div class="col-md-2">
 
         </div>
 
     </div>
 
     <script src="/angular/angular.js"></script>
-    <script src="/movies/app.js"></script>
-    <script src="/movies/mainController.js"></script>
-    <script src="/movies/movieData.js"></script>
+    <script src="/angular-route/angular-route.js"></script>
+    <script src="/movies/module.js"></script>
+    <script src="/movies/controllers/movieListController.js"></script>
+    <script src="/movies/services/movieData.js"></script>
 
 </body>
 </html>
