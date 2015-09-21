@@ -2,3 +2,14 @@ body {
 	background-color: #ccccbb;
 }
 
+.ng-cloak {
+	display: none;
+}
+
+.bad-movie {
+	background-color: red;
+}
+
+.good-movie {
+	background-color: green;
+}
