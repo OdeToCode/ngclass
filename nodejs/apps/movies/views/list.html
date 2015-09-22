@@ -4,6 +4,14 @@
         {{ list.errorMessage}}
     </div>
 
+    <input type="search" ng-model="list.searchTerm">
+    <select ng-model="list.orderByTerm">
+        <option value="+title">Alpha</option>
+        <option value="-year">Newest</option>
+        <option value="-rating">Best</option>
+        <option value="+rating">Worst</option>
+    </select>
+
     <table class="table">
         <tr>
             <th>Title</th>
@@ -11,7 +19,7 @@
             <th>Rating</th>
             <th></th>
         </tr>
-        <tr ng-repeat="movie in list.movies">
+        <tr ng-repeat="movie in list.movies | filter:{title:list.searchTerm} | orderBy:list.orderByTerm">
             <td>
             <a ng-href="#/detail/{{movie.id}}">
                 {{ movie.title }}

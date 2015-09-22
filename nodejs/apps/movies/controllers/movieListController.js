@@ -5,8 +5,6 @@
     function MovieListController($log, movies) {
         var model = this;
 
-        $log.info("MainController starting");
-        $log.info(movies);
 
         function onMoviesReceived(movies) {
             model.movies = movies;
@@ -17,6 +15,9 @@
         }
 
         model.movies = movies;
+
+        model.searchTerm = "";
+        model.orderByTerm = "-rating";
 
         model.rateMovie = function(movie) {
             var result = {

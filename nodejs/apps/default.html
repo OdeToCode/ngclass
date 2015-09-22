@@ -17,27 +17,6 @@
         </div>
     </nav>
 
-    <hr>
-
-        <div>Edit Things</div>
-        <div>
-            <button ng-click="shell.add()">Add New Thing</button>
-            <div ng-repeat="thing in shell.things">
-                <form>
-                    <input type="text" ng-model="thing.title" />
-                </form>
-            </div>
-            <div>
-                <table>
-                    <tr ng-repeat="thing in shell.things">
-                        <td>{{thing.title}}</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-
-    <hr>
-
     <div class="container">
 
         <h1>At The Movies!</h1>
