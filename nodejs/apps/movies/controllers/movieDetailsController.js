@@ -1,6 +1,6 @@
 (function(module) {
 
-    function MovieDetailController(movieData, $routeParams) {
+    function MovieDetailController(movieData, $routeParams, alerting) {
 
         var model = this;
         var id = $routeParams.id;
@@ -10,7 +10,8 @@
         }
 
         movieData.getMovieById(id)
-                 .then(onMovie);
+                 .then(onMovie)
+                 .catch(alerting.errorHandler("Could not fetch movie"));
     }
 
     module.controller("MovieDetailController", MovieDetailController);

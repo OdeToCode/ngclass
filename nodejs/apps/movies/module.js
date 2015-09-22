@@ -1,7 +1,13 @@
 // iife - keep variables out of global scope
 (function() {
     var module = angular.module("movies-app",
-        ["ng", "ngRoute", "ngMessages"]);
+        ["ng", "ngRoute", "ngMessages", "ngSanitize", "common"]);
+
+
+    module.config(function(movieDataProvider){
+        movieDataProvider.setBaseUrl("/api/movies/");
+    });
+
 
     module.config(function($routeProvider) {
 
@@ -9,8 +15,10 @@
             templateUrl: "/movies/views/list.html",
             controller: "MovieListController as list",
             resolve: {
-                movies: function(movieData) {
-                    return movieData.getAllMovies();
+                movies: function(movieData, alerting) {
+                    return movieData
+                            .getAllMovies()
+                            .catch(alerting.errorHandler("Could not fetch movies"))
                 }
             }
         }).when("/detail/:id", {

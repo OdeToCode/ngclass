@@ -19,13 +19,16 @@
 
     <div class="container">
 
-        <h1>At The Movies!</h1>
-
         <div class="col-md-10">
             <div ng-view></div>
         </div>
         <div class="col-md-2">
+            <div ng-repeat="alert in shell.alerts">
+                <div class="alert alert-{{alert.type}}">
+                    {{ alert.message }}
+                </div>
 
+            </div>
         </div>
 
     </div>
@@ -33,10 +36,16 @@
     <script src="/angular/angular.js"></script>
     <script src="/angular-route/angular-route.js"></script>
     <script src="/angular-messages/angular-messages.js"></script>
+    <script src="/angular-sanitize/angular-sanitize.js"></script>
+
+    <script src="/common/module.js"></script>
+    <script src="/common/services/movieData.js"></script>
+
 
     <script src="/movies/module.js"></script>
     <script src="/movies/controllers/movieListController.js"></script>
-    <script src="/movies/services/movieData.js"></script>
+    <script src="/movies/services/exceptionHandlerDecorator.js"></script>
+    <script src="/movies/services/alerting.js"></script>
     <script src="/movies/controllers/movieDetailsController.js"></script>
     <script src="/movies/controllers/shellController.js"></script>
     <script src="/movies/controllers/MovieEditController.js"></script>

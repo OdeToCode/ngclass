@@ -5,17 +5,7 @@
     function MovieListController($log, movies) {
         var model = this;
 
-
-        function onMoviesReceived(movies) {
-            model.movies = movies;
-        }
-
-        function onError(response) {
-            model.errorMessage = response.data;
-        }
-
         model.movies = movies;
-
         model.searchTerm = "";
         model.orderByTerm = "-rating";
 
@@ -46,8 +36,6 @@
         };
 
     }
-
-    // MainController.$inject = ["$log", "movieData"];
 
     angular.module("movies-app")
            .controller("MovieListController",

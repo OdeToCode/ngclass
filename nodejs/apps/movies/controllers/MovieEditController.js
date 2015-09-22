@@ -1,13 +1,15 @@
 (function(module) {
     'use strict';
 
-    function MovieEditController(movieData, $location, $routeParams) {
+    function MovieEditController(movieData, $location,
+                                $routeParams, alerting) {
         var edit = this;
 
         edit.movie = {};
         edit.saveMovie = saveMovie;
 
-        function movieSaved(movie) {
+        function movieSaved(movie) {            
+            alerting.addInfo("Your movie was saved!!! :)");
             $location.path("/detail/" + movie.id);
         }
 
@@ -15,6 +17,7 @@
             if(isValid) {
                 movieData.saveMovie(edit.movie)
                          .then(movieSaved)
+                         .catch(alerting.errorHandler("Could not save movie"));
             }
         }
 
@@ -26,7 +29,8 @@
             var id = $routeParams.id;
             if(id) {
                 movieData.getMovieById(id)
-                         .then(onMovie);
+                         .then(onMovie)
+                         .catch(alerting.errorHandler("Could not fetch movie"));
             }
         }
 
