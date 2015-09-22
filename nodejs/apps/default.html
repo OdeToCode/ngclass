@@ -21,6 +21,18 @@
 
         <h1>At The Movies!</h1>
 
+
+        <div ng-controller="TempController as outer">
+            <input type="text" ng-model="outer.firstName"/>
+
+            <div ng-controller="TempController as inner">
+                <input type="text" ng-model="outer.firstName"/>
+            </div>
+
+        </div>
+
+
+
         <div class="col-md-10">
             <div ng-view></div>
         </div>

@@ -22,6 +22,16 @@
 
     });
 
+/* temp
+*/
+    var TempController = function() {
+        var model = this;
+        // ...
+
+    };
+
+    module.controller("TempController", TempController);
+
     module.run(function($rootScope) {
         $rootScope.version = "1.0";
     });
