@@ -11,8 +11,15 @@
         var baseUrl = "/api/movies/";
 
         function saveMovie(movie) {
-            return $http.post(baseUrl, movie)
-                        .then(processResponse);
+
+            if(movie.id){
+                return $http.put(baseUrl, movie)
+                            .then(processResponse);
+            }
+            else {
+                return $http.post(baseUrl, movie)
+                            .then(processResponse);
+            }
         }
 
         function getById(id) {

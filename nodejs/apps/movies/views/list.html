@@ -24,8 +24,9 @@
                 {{movie.rating}}
             </td>
             <td>
-                <button ng-click="list.increaseRating(movie)">+</button>
-                <button ng-click="list.decreaseRating(movie)">-</button>
+                <button class="btn btn-default" ng-click="list.increaseRating(movie)">+</button>
+                <button class="btn btn-default" ng-click="list.decreaseRating(movie)">-</button>
+                <a ng-href="#/edit/{{movie.id}}" class="btn btn-default">Edit</a>
             </td>
         </tr>
     </table>

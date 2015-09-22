@@ -10,7 +10,15 @@
             $timeout(incrementCounter, 1000);
         }
 
-        
+        shell.things = [];
+
+        shell.add = function() {
+            var title = "Thing" + (shell.things.length + 1);
+            shell.things.push({
+                title: title
+            });
+        };
+
 
         incrementCounter();
     }

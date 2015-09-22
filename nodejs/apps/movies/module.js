@@ -1,6 +1,7 @@
 // iife - keep variables out of global scope
 (function() {
-    var module = angular.module("movies-app", ["ng", "ngRoute"]);
+    var module = angular.module("movies-app",
+        ["ng", "ngRoute", "ngMessages"]);
 
     module.config(function($routeProvider) {
 
@@ -15,7 +16,7 @@
         }).when("/detail/:id", {
             templateUrl: "/movies/views/detail.html",
             controller: "MovieDetailController as detail"
-        }).when("/edit", {
+        }).when("/edit/:id?", {
             templateUrl: "/movies/views/edit.html",
             controller: "MovieEditController as edit"
         })

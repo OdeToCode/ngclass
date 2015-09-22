@@ -1,7 +1,7 @@
 (function(module) {
     'use strict';
 
-    function MovieEditController(movieData, $location) {
+    function MovieEditController(movieData, $location, $routeParams) {
         var edit = this;
 
         edit.movie = {};
@@ -17,6 +17,20 @@
                          .then(movieSaved)
             }
         }
+
+        function onMovie(movie) {
+            edit.movie = movie;
+        }
+
+        function initialize() {
+            var id = $routeParams.id;
+            if(id) {
+                movieData.getMovieById(id)
+                         .then(onMovie);
+            }
+        }
+
+        initialize();
     }
 
     module.controller("MovieEditController", MovieEditController);

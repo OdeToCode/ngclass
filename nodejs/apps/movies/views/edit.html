@@ -3,24 +3,35 @@
           novalidate
           ng-submit="edit.saveMovie(editForm.$valid)">
 
-        <label for="title">Title</label>
-        <input name="title" type="text"
-                ng-model="edit.movie.title"
-                required>
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input name="title" type="text" class="form-control"
+                    ng-model="edit.movie.title"
+                    required minlength="3">
+            <div ng-show="editForm.$invalid" class="alert alert-warning"
+                    ng-messages="editForm.title.$error">
+                <div ng-message="required">
+                    The title is required</div>
+                <div ng-message="minlength">
+                        The title needs 3 characters</div>
+            </div>
 
-        <label>Year</label>
-        <input name="year" type="number" ng-model="edit.movie.year">
+        </div>
 
-        <label>Rating</label>
-        <input name="rating" type="number"
-        min="1" max="5" required ng-model="edit.movie.rating">
+        <div class="form-group">
+            <label>Year</label>
+            <input name="year" type="number" class="form-control"
+                    ng-model="edit.movie.year">
+        </div>
 
-        <input type="submit" value="Save It!">
+        <div class="form-group">
+            <label>Rating</label>
+            <input name="rating" type="number" class="form-control"
+                min="1" max="5" required ng-model="edit.movie.rating">
+        </div>
+        <input ng-disabled="editForm.$invalid"
+            type="submit"  class="btn btn-primary" value="Save It!">
 
     </form>
-
-<pre>
-    {{ editForm | json }}
-</pre>
 
 </div>
