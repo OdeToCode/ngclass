@@ -15,22 +15,15 @@
         }).when("/detail/:id", {
             templateUrl: "/movies/views/detail.html",
             controller: "MovieDetailController as detail"
+        }).when("/edit", {
+            templateUrl: "/movies/views/edit.html",
+            controller: "MovieEditController as edit"
         })
         .otherwise({
             redirectTo: "/list"
         });
 
     });
-
-/* temp
-*/
-    var TempController = function() {
-        var model = this;
-        // ...
-
-    };
-
-    module.controller("TempController", TempController);
 
     module.run(function($rootScope) {
         $rootScope.version = "1.0";

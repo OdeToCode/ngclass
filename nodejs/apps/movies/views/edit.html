@@ -1,0 +1,26 @@
+<div>
+    <form name="editForm"
+          novalidate
+          ng-submit="edit.saveMovie(editForm.$valid)">
+
+        <label for="title">Title</label>
+        <input name="title" type="text"
+                ng-model="edit.movie.title"
+                required>
+
+        <label>Year</label>
+        <input name="year" type="number" ng-model="edit.movie.year">
+
+        <label>Rating</label>
+        <input name="rating" type="number"
+        min="1" max="5" required ng-model="edit.movie.rating">
+
+        <input type="submit" value="Save It!">
+
+    </form>
+
+<pre>
+    {{ editForm | json }}
+</pre>
+
+</div>

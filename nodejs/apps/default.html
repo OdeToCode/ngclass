@@ -8,7 +8,7 @@
 
 
 
-<body class="ng-cloak">
+<body class="ng-cloak" ng-controller="ShellController as shell">
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -20,18 +20,6 @@
     <div class="container">
 
         <h1>At The Movies!</h1>
-
-
-        <div ng-controller="TempController as outer">
-            <input type="text" ng-model="outer.firstName"/>
-
-            <div ng-controller="TempController as inner">
-                <input type="text" ng-model="outer.firstName"/>
-            </div>
-
-        </div>
-
-
 
         <div class="col-md-10">
             <div ng-view></div>
@@ -47,7 +35,9 @@
     <script src="/movies/module.js"></script>
     <script src="/movies/controllers/movieListController.js"></script>
     <script src="/movies/services/movieData.js"></script>
-    <script src="/movies/controllers/MovieDetailsController.js"></script>
+    <script src="/movies/controllers/movieDetailsController.js"></script>
+    <script src="/movies/controllers/shellController.js"></script>
+    <script src="/movies/controllers/MovieEditController.js"></script>
 
 </body>
 </html>

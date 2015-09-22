@@ -10,20 +10,26 @@
 
         var baseUrl = "/api/movies/";
 
-        var getById = function(id) {
+        function saveMovie(movie) {
+            return $http.post(baseUrl, movie)
+                        .then(processResponse);
+        }
+
+        function getById(id) {
             var url = baseUrl + id;
             return $http.get(url)
                         .then(processResponse);
         };
 
-        var getAll = function() {
+        function getAll() {
             return $http.get(baseUrl)
                         .then(processResponse);
         };
 
         return {
             getMovieById: getById,
-            getAllMovies: getAll
+            getAllMovies: getAll,
+            saveMovie: saveMovie
         };
 
     }
