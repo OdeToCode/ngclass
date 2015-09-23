@@ -30,13 +30,12 @@
             </div>
 
             <pu-alert type="warning">
-                This is my alert!
+                This is my alert!!
             </pu-alert>
 
 
-
             <div ng-repeat="alert in shell.alerts">
-                <pu-alert type="alert.type">
+                <pu-alert type="{{alert.type}}">
                     {{ alert.message }}
                 </pu-alert>
             </div>
@@ -55,6 +54,7 @@
 
 
     <script src="/movies/module.js"></script>
+    <script src="/movies/directives/puAlert.js"></script>
     <script src="/movies/controllers/movieListController.js"></script>
     <script src="/movies/services/exceptionHandlerDecorator.js"></script>
     <script src="/movies/services/alerting.js"></script>
