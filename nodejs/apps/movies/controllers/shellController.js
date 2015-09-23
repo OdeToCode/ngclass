@@ -1,20 +1,19 @@
 (function(module) {
 
-    function ShellController($timeout, $scope, $log, alerting) {
+    function ShellController($timeout, $scope, $log, alerting, requestCounter) {
 
         var shell = this;
 
         shell.counter = 0;
         shell.alerts = alerting.alerts;
+        shell.getRequestCount = getRequestCount;
 
         alerting.addInfo("Application started");
 
-        function incrementCounter() {
-            shell.counter += 1;
-            $timeout(incrementCounter, 1000);
+        function getRequestCount() {
+            return requestCounter.getRequestCount();
         }
 
-        incrementCounter();
     }
 
     module.controller("ShellController", ShellController);

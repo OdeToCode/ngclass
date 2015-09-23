@@ -6,7 +6,7 @@ exports.getAllMovies = function(request, response) {
         var movies = dataSource.getAll();
         response.send(movies);
     }, 2000);
-    
+
 };
 
 exports.getMovieById = function(request, response) {
@@ -24,7 +24,10 @@ exports.getMovieByIdSlowly = function(request, response) {
 exports.updateMovie = function(request, response) {
     var movie = request.body;
     dataSource.update(movie);
-    response.send(movie);
+
+    setTimeout(function() {
+        response.send(movie);
+    }, 2000);
 };
 
 exports.createMovie = function(request, response) {

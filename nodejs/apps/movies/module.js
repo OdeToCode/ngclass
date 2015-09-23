@@ -18,7 +18,7 @@
                 movies: function(movieData, alerting) {
                     return movieData
                             .getAllMovies()
-                            .catch(alerting.errorHandler("Could not fetch movies"))
+                            .catch(alerting.errorHandler("Could not fetch movies"));
                 }
             }
         }).when("/detail/:id", {

@@ -15,7 +15,7 @@ describe("IIFE", function() {
 
             return function(x,y) {
                 return x * y;
-            }
+            };
 
             /*
             function subtract(x, y) {
@@ -37,7 +37,7 @@ describe("IIFE", function() {
         function makeMessage(name) {
             return function() {
                 return "Hello, " + name;
-            }
+            };
         }
 
         var f1 = makeMessage("Scott");
@@ -84,7 +84,7 @@ describe("How prototypes work", function() {
             increaseRating: function() {
                 this.rating += 1;
             }
-        }
+        };
 
         var movie1 = new Movie("Star Wars", 4);
         var movie2 = new Movie("Star Wars 2", 3);

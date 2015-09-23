@@ -23,11 +23,22 @@
             <div ng-view></div>
         </div>
         <div class="col-md-2">
-            <div ng-repeat="alert in shell.alerts">
-                <div class="alert alert-{{alert.type}}">
-                    {{ alert.message }}
-                </div>
 
+            <div ng-show="shell.getRequestCount()">
+                Loading...
+                <img src="ajax-loader.gif"/>
+            </div>
+
+            <pu-alert type="warning">
+                This is my alert!
+            </pu-alert>
+
+
+
+            <div ng-repeat="alert in shell.alerts">
+                <pu-alert type="alert.type">
+                    {{ alert.message }}
+                </pu-alert>
             </div>
         </div>
 
@@ -40,6 +51,7 @@
 
     <script src="/common/module.js"></script>
     <script src="/common/services/movieData.js"></script>
+    <script src="/common/services/requestCounter.js"></script>
 
 
     <script src="/movies/module.js"></script>

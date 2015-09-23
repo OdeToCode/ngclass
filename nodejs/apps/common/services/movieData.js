@@ -13,7 +13,9 @@
 
             this.$get = function($http, $q) {
                 return movieDataFactory($http, $q, baseUrl);
-            }
+            };
+
+
 
         });
     });
@@ -48,7 +50,7 @@
             var url = baseUrl + id;
             return $http.get(url)
                         .then(processResponse);
-        };
+        }
 
         function getAll() {
             if(movies.length) {
@@ -59,7 +61,7 @@
                             .then(processResponse)
                             .then(cacheMovies);
             }
-        };
+        }
 
         return {
             getMovieById: getById,

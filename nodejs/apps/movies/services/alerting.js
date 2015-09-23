@@ -21,7 +21,7 @@
         function errorHandler(message) {
             return function(ex) {
                 addError(message);
-            }
+            };
         }
 
 
@@ -38,7 +38,7 @@
             addError: addError,
             addInfo: addInfo,
             alerts: alerts
-        }
+        };
 
     }
 

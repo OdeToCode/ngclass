@@ -10,7 +10,7 @@
                 var alerting = $injector.get("alerting");
                 alerting.addError(ex.message);
                 $delegate(ex);
-            }
+            };
         });
     });
 
