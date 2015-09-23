@@ -6,10 +6,14 @@
         <div class="form-group">
             <label for="title">Title</label>
             <input name="title" type="text" class="form-control"
+                    pu-starts-with="S"
                     ng-model="edit.movie.title"
                     required minlength="3">
             <div ng-show="editForm.$invalid" class="alert alert-warning"
                     ng-messages="editForm.title.$error">
+                <div ng-message="puStartsWith">
+                    Must start with the letter S
+                </div>
                 <div ng-message="required">
                     The title is required</div>
                 <div ng-message="minlength">

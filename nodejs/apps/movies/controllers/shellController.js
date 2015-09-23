@@ -7,8 +7,13 @@
         shell.counter = 0;
         shell.alerts = alerting.alerts;
         shell.getRequestCount = getRequestCount;
+        shell.closeAlert = closeAlert;
 
         alerting.addInfo("Application started");
+
+        function closeAlert(alert) {
+            alerting.removeAlert(alert);
+        }
 
         function getRequestCount() {
             return requestCounter.getRequestCount();

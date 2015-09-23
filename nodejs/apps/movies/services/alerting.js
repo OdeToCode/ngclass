@@ -10,12 +10,16 @@
             var alert = { type: type, message: message};
             alerts.push(alert);
             $timeout(function() {
-                for(var i = 0; i < alerts.length; i++){
-                    if(alerts[i] == alert){
-                        alerts.splice(i, 1);
-                    }
-                }
+                removeAlert(alert);
             }, 10000);
+        }
+
+        function removeAlert(alert) {
+            for(var i = 0; i < alerts.length; i++){
+                if(alerts[i] == alert){
+                    alerts.splice(i, 1);
+                }
+            }
         }
 
         function errorHandler(message) {
@@ -34,6 +38,7 @@
         }
 
         return {
+            removeAlert: removeAlert,
             errorHandler: errorHandler,
             addError: addError,
             addInfo: addInfo,

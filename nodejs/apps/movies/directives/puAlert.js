@@ -4,21 +4,13 @@
     function puAlert($log) {
         return {
             restrict: "EA",
+            scope: {
+                type: "@",
+                //reason: "=",
+                close: "&"
+            },
             templateUrl: "/movies/directives/puAlert.html",
-            transclude: true,
-            link: function(scope, element, attributes) {
-                $log.info("Linking puAlert");
-
-                var type = attributes.type || "info";
-                var div = element.children();
-                div.addClass("alert alert-" + type);
-
-                var button = angular.element(element[0].querySelector("button"));
-                button.on("click", function() {
-                    element.remove();
-                });
-
-            }
+            transclude: true
         };
     }
 
