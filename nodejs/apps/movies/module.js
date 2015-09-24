@@ -1,7 +1,9 @@
 // iife - keep variables out of global scope
 (function() {
     var module = angular.module("movies-app",
-        ["ng", "ngRoute", "ngMessages", "ngSanitize", "common"]);
+        ["ng", "ngRoute", "ngMessages",
+         "ngSanitize", "common", "ngAnimate",
+         "ui.bootstrap"]);
 
 
     module.config(function(movieDataProvider){

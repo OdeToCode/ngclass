@@ -19,7 +19,7 @@
             <th>Rating</th>
             <th></th>
         </tr>
-        <tr ng-repeat="movie in list.movies | filter:{title:list.searchTerm} | orderBy:list.orderByTerm">
+        <tr class="repeater" ng-repeat="movie in list.movies | filter:{title:list.searchTerm} | orderBy:list.orderByTerm">
             <td>
             <a ng-href="#/detail/{{movie.id}}">
                 {{ movie.title }}
@@ -36,6 +36,7 @@
                 <button class="btn btn-default" ng-click="list.increaseRating(movie)">+</button>
                 <button class="btn btn-default" ng-click="list.decreaseRating(movie)">-</button>
                 <a ng-href="#/edit/{{movie.id}}" class="btn btn-default">Edit</a>
+                <button class="btn btn-danger" ng-click="list.confirmDelete(movie)">Delete</button
             </td>
         </tr>
     </table>

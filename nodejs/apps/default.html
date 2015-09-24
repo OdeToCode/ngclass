@@ -3,6 +3,7 @@
 <head>
     <title>At The Movies! {{ version }}</title>
     <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/animate.css/animate.css">
     <link rel="stylesheet" href="/styles.css">
 </head>
 
@@ -19,7 +20,7 @@
 
     <div class="container">
         <div class="col-md-10">
-            <div ng-view></div>
+            <div ng-view class="view"></div>
         </div>
         <div class="col-md-2">
 
@@ -42,6 +43,9 @@
     <script src="/angular-route/angular-route.js"></script>
     <script src="/angular-messages/angular-messages.js"></script>
     <script src="/angular-sanitize/angular-sanitize.js"></script>
+    <script src="/angular-animate/angular-animate.js"></script>
+    <script src="/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
 
     <script src="/common/module.js"></script>
     <script src="/common/services/movieData.js"></script>

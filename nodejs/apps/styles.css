@@ -2,6 +2,26 @@ body {
 	background-color: #ccccbb;
 }
 
+.ng-hide {
+	-webkit-animation: "fadeOutLeft" 0.5s;
+	        animation: "fadeOutLeft" 0.5s;
+}
+
+.ng-enter {
+	-webkit-animation: "fadeInLeft" 0.5s;
+	        animation: "fadeInLeft" 0.5s;
+}
+
+.ng-leave {
+	-webkit-animation: "fadeOutLeft" 0.5s;
+	        animation: "fadeOutLeft" 0.5s;
+}
+
+.view.ng-enter {
+	-webkit-animation: "fadeIn" 1s;
+	        animation: "fadeIn" 1s;
+}
+
 input.ng-invalid.ng-dirty {
 	background-color: #990000;
 }

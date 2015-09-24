@@ -5,7 +5,7 @@ exports.getAllMovies = function(request, response) {
     setTimeout(function() {
         var movies = dataSource.getAll();
         response.send(movies);
-    }, 2000);
+    }, 100);
 
 };
 

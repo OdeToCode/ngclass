@@ -34,6 +34,12 @@
              return movies;
          }
 
+         function deleteMovie(movie) {
+             movies = [];
+             return $http.delete(baseUrl + movie.id)
+                         .then(processResponse);
+         }
+
         function saveMovie(movie) {
             movies = [];
             if(movie.id){
@@ -64,6 +70,7 @@
         }
 
         return {
+            deleteMovie: deleteMovie,
             getMovieById: getById,
             getAllMovies: getAll,
             saveMovie: saveMovie
