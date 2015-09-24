@@ -33,10 +33,12 @@
                 </pu-rating>
             </td>
             <td>
-                <button class="btn btn-default" ng-click="list.increaseRating(movie)">+</button>
-                <button class="btn btn-default" ng-click="list.decreaseRating(movie)">-</button>
-                <a ng-href="#/edit/{{movie.id}}" class="btn btn-default">Edit</a>
-                <button class="btn btn-danger" ng-click="list.confirmDelete(movie)">Delete</button
+                <div class="btn-group">
+                    <button class="btn btn-default" ng-click="list.increaseRating(movie)">+</button>
+                    <button class="btn btn-default" ng-click="list.decreaseRating(movie)">-</button>
+                    <a ng-href="#/edit/{{movie.id}}" class="btn btn-default">Edit</a>
+                    <button class="btn btn-danger" ng-click="list.confirmDelete(movie)">Delete</button
+                </div>
             </td>
         </tr>
     </table>

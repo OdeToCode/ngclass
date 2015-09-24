@@ -1,6 +1,8 @@
 <html ng-app="movies-app">
 
 <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
     <title>At The Movies! {{ version }}</title>
     <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="/animate.css/animate.css">
@@ -18,11 +20,11 @@
         </div>
     </nav>
 
-    <div class="container">
-        <div class="col-md-10">
+    <div class="container" class="">
+        <div class="col-lg-9">
             <div ng-view class="view"></div>
         </div>
-        <div class="col-md-2">
+        <div class="col-lg-3">
 
             <div ng-show="shell.getRequestCount()">
                 Loading...
@@ -53,6 +55,7 @@
 
 
     <script src="/movies/module.js"></script>
+    <script src="/movies/services/confirmMovieDeletion.js"></script>
     <script src="/movies/directives/puRating.js"></script>
     <script src="/movies/directives/puStartsWith.js"></script>
     <script src="/movies/directives/puAlert.js"></script>

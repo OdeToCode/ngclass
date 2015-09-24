@@ -1,5 +1,19 @@
 describe("IIFE", function() {
 
+    if("can use apply", function() {
+
+        function doWork(x, y, z) {
+            expect(arguments[0] == x);
+            return x + y + z;
+        };
+
+        var data = [1, 2, 3];
+
+        doWork.apply(this, data)
+        doWork.call(this, data[0], data[1], data[2]);
+
+    });
+
 
     it("functional javascript", function() {
 

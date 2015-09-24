@@ -2,7 +2,7 @@
 (function(){
     "use strict";
 
-    function MovieListController($log, alerting, movies, movieData, $modal) {
+    function MovieListController($log, alerting, movies, movieData, deletionConfirmer) {
         var model = this;
 
         model.movies = movies;
@@ -18,28 +18,18 @@
         }
 
         model.confirmDelete = function(movie) {
-            var modal = $modal.open({
-                templateUrl: "/movies/views/confirmDelete.html",
-                controller: function($scope) {
-                    $scope.movie = movie;
-                    $scope.ok = function() {
-                        $scope.$close(movie);
-                    };
-                    $scope.cancel = function() {
-                        $scope.$dismiss();
-                    };
-                }
-            });
 
-            modal.result.then(function(movie){
-                // success handler gets called when
-                // $scope.close is called from modal controller/
-                // and parameter to scope.close appears here
-                movieData.deleteMovie(movie).then(function() {
-                    alerting.addInfo(movie.title + " deleted!");
-                    refreshMovies();
-                });
-            });
+            deletionConfirmer.deleteMovie(movie)
+                    .then(function(movie){
+                            // success handler gets called when
+                            // $scope.close is called from modal controller/
+                            // and parameter to scope.close appears here
+                            movieData.deleteMovie(movie).then(function() {
+                                alerting.addInfo(movie.title + " deleted!");
+                                refreshMovies();
+                        });
+                    });
+
         };
 
         model.rateMovie = function(movie) {
@@ -72,6 +62,6 @@
 
     angular.module("movies-app")
            .controller("MovieListController",
-                ["$log", "alerting", "movies", "movieData", "$modal", MovieListController]);
+                ["$log", "alerting", "movies", "movieData", "deletionConfirmer", MovieListController]);
 
 }());
