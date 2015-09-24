@@ -8,7 +8,7 @@
         edit.movie = {};
         edit.saveMovie = saveMovie;
 
-        function movieSaved(movie) {            
+        function movieSaved(movie) {
             alerting.addInfo("Your movie was saved!!! :)");
             $location.path("/detail/" + movie.id);
         }

@@ -29,7 +29,9 @@
                 {{ movie.year }}
             </td>
             <td ng-class="list.rateMovie(movie)">
-                {{movie.rating}}
+                <pu-rating value="movie.rating">
+                </pu-rating>
+                {{ movie.rating }}
             </td>
             <td>
                 <button class="btn btn-default" ng-click="list.increaseRating(movie)">+</button>

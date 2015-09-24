@@ -11,7 +11,11 @@ module.exports = function(grunt) {
         },
 
         jshint: {
-            files: ["gruntfile.js", "./controllers/*.js", "./data/*.js", "./models/*.js", "./routes/*.js", "./apps/**/*.js"]
+            files:
+                ["gruntfile.js",
+                "./controllers/*.js",
+                "./data/*.js", "./models/*.js", "./routes/*.js",
+                "./apps/**/*.js"]
         },
 
         watch: {
@@ -41,7 +45,8 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask("default", ["express:dev", "jshint", "open", "watch"]);
+    grunt.registerTask("default",
+        ["express:dev", "jshint", "open", "watch"]);
     grunt.loadNpmTasks("grunt-contrib-jshint");
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks("grunt-express-server");

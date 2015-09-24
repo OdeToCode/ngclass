@@ -23,7 +23,7 @@
 
 
             }
-        }
+        };
     }
 
     module.directive("puStartsWith", puStartsWith);
