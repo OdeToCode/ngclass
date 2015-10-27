@@ -4,18 +4,8 @@
     var ListController = function (movieData, $log) {
         var model = this;
 
-        $log.info("ListCOntroller starting!");
-
-        function onMovies(movies) {
-            model.movies = movies;
-        }
-
-        function onError(response) {
-            model.errorMessage = response.data.message;
-        }
-
-        movieData.getAll()
-            .then(onMovies, onError);
+        model.searchTerm = "";
+        model.orderTerm = "-rating";
 
         model.rateMovie = function (movie) {
             return {
@@ -38,6 +28,19 @@
                 movie.rating = 1;
             }
         };
+
+        function onMovies(movies) {
+            model.movies = movies;
+        }
+
+        function onError(response) {
+            model.errorMessage = response.data.message;
+        }
+
+        $log.info("ListCOntroller starting!");
+
+        movieData.getAll()
+            .then(onMovies, onError);
 
     };
 

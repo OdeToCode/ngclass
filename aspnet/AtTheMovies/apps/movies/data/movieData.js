@@ -8,6 +8,11 @@
             return response.data;
         }
 
+        function saveMovie(movie) {
+            return $http.put(url, movie)
+                        .then(processResponse);
+        }
+
         function getAllMovies() {
             return $http.get(url)
                 .then(processResponse);
@@ -20,7 +25,8 @@
 
         return {
             getAll: getAllMovies,
-            getById: getMovieById
+            getById: getMovieById,
+            save: saveMovie
         };
     };
 

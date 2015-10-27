@@ -4,6 +4,14 @@
         {{ list.errorMessage }}
     </div>
 
+    <input type="search" ng-model="list.searchTerm"/>
+
+    <select ng-model="list.orderTerm">
+        <option value="-year">Newest</option>
+        <option value="-rating">Best</option>
+        <option value="+rating">Worst</option>
+    </select>
+
     <div class="container">
         <table class="table">
             <tr>
@@ -14,7 +22,8 @@
             </tr>
 
 
-            <tr ng-repeat="movie in list.movies" ng-class="list.rateMovie(movie)">
+            <tr ng-repeat="movie in list.movies | filter:{ title:list.searchTerm} | orderBy:list.orderTerm" 
+                ng-class="list.rateMovie(movie)">
                 <td>
                     <a ng-href="#/detail/{{movie.id}}">
                         {{movie.title}}
@@ -23,8 +32,9 @@
                 <td>{{movie.year}}</td>
                 <td>{{movie.rating}}</td>
                 <td>
-                    <button ng-click="list.increaseRating(movie)">+</button>
-                    <button ng-click="list.decreaseRating(movie)">-</button>
+                    <a class="btn btn-default" ng-href="#/edit/{{movie.id}}">Edit</a>
+                    <button class="btn btn-default" ng-click="list.increaseRating(movie)">+</button>
+                    <button class="btn btn-default" ng-click="list.decreaseRating(movie)">-</button>
                 </td>
             </tr>
 

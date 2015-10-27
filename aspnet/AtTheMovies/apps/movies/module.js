@@ -28,6 +28,10 @@
                 templateUrl: "/apps/movies/detail/detail.html",
                 controller: "DetailController as detail"
             })
+            .when("/edit/:id", {
+                templateUrl: "/apps/movies/edit/edit.html",
+                controller: "EditController as edit"
+            })
             .otherwise({
                 redirectTo: "/list"
             });

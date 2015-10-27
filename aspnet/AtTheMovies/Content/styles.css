@@ -2,6 +2,10 @@ body {
     background-color: #ffffff;
 }
 
+input.ng-invalid.ng-dirty {
+    background-color: red;
+}
+
 .bad {
     background-color: red;
 }
