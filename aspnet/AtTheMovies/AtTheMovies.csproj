@@ -93,6 +93,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="apps\movies\data\movieData.js" />
+    <Content Include="apps\movies\detail\detail.html" />
+    <Content Include="apps\movies\detail\DetailController.js" />
+    <Content Include="apps\movies\list\list.html" />
+    <Content Include="apps\movies\module.js" />
+    <Content Include="apps\movies\list\ListController.js" />
     <Content Include="Content\ajax-loader.gif" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap\css\bootstrap-theme.css" />

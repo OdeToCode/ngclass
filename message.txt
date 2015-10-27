@@ -2,29 +2,20 @@ Scott Allen
 AngularJS
 scott@OdeToCode.com
 
-10
-
-HTML + JS + CSS + Responsive Design
-
-Cordova
-Cordova + Ionic
+Now: 
+Next: 12:30
 
 
+ng-inspector
+http://ng-inspector.org/
 
+John Papa's Style Guide
+https://github.com/johnpapa/angular-styleguide
 
-Now: lunch
-Next: 12:00
-   best practices
-   future angular
-
-
-Material:
+Slides:
 http://goo.gl/QYJSzZ (case sensitive)
 
 GitHub Repo:
 https://github.com/OdeToCode/ngclass
-(Node or Visual Studio ASP.NET)
-
-  - http://nodejs.org
-  - Git
+   (Use NodeJS or Visual Studio ASP.NET)
 

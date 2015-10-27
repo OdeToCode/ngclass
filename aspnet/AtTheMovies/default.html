@@ -6,32 +6,19 @@
     <link rel="stylesheet" href="/Content/styles.css">
 </head>
 
-<body ng-cloak ng-controller="MainController as main">
+<body ng-cloak ng-controller="ShellController as shell">
 
-    <div class="container">
-        <table class="table">
-            <tr>
-                <th>Title</th>
-                <th>Year</th>
-                <th>Rating</th>
-                <th></th>
-            </tr>
+    <h1>{{shell.counter}}</h1>
 
-            
-            <tr ng-repeat="movie in main.movies" ng-class="main.rateMovie(movie)">
-                <td>{{movie.title}} {{$index}}</td>
-                <td>{{movie.year}}</td>
-                <td>{{movie.rating}}</td>
-                <td>
-                    <button ng-click="main.increaseRating(movie)">+</button>
-                    <button ng-click="main.decreaseRating(movie)">-</button>
-                </td>
-            </tr>
-
-        </table>
-    </div>
+    <ng-view></ng-view>
 
     <script src="Scripts/angular.js"></script>
-    <script src="apps/movies/app.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="apps/movies/module.js"></script>
+    <script src="apps/movies/detail/DetailController.js"></script>
+    <script src="apps/movies/list/ListController.js"></script>
+    <script src="apps/movies/data/movieData.js"></script>
+
+
 </body>
 </html>
