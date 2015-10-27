@@ -1,4 +1,4 @@
-<html>
+<html ng-app="atTheMovies">
 
 <head>
     <title>At The Movies!</title>
@@ -6,11 +6,32 @@
     <link rel="stylesheet" href="/Content/styles.css">
 </head>
 
-<body>
-   
-    <div class="container">
+<body ng-cloak ng-controller="MainController as main">
 
+    <div class="container">
+        <table class="table">
+            <tr>
+                <th>Title</th>
+                <th>Year</th>
+                <th>Rating</th>
+                <th></th>
+            </tr>
+
+            
+            <tr ng-repeat="movie in main.movies" ng-class="main.rateMovie(movie)">
+                <td>{{movie.title}} {{$index}}</td>
+                <td>{{movie.year}}</td>
+                <td>{{movie.rating}}</td>
+                <td>
+                    <button ng-click="main.increaseRating(movie)">+</button>
+                    <button ng-click="main.decreaseRating(movie)">-</button>
+                </td>
+            </tr>
+
+        </table>
     </div>
 
+    <script src="Scripts/angular.js"></script>
+    <script src="apps/movies/app.js"></script>
 </body>
 </html>
