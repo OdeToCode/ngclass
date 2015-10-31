@@ -1,16 +1,14 @@
 Scott Allen
 AngularJS
 scott@OdeToCode.com
-
-Now: 
-Next: 12:30
-
-
+s
 ng-inspector
 http://ng-inspector.org/
 
 John Papa's Style Guide
 https://github.com/johnpapa/angular-styleguide
+
+http://odetocode.com/blogs/scott/archive/2014/03/17/building-better-models-for-angularjs.aspx
 
 Slides:
 http://goo.gl/QYJSzZ (case sensitive)

@@ -3,21 +3,50 @@
 <head>
     <title>At The Movies!</title>
     <link rel="stylesheet" href="/Content/bootstrap/css/bootstrap.css">
+    <link href="Content/animate.css" rel="stylesheet" />
     <link rel="stylesheet" href="/Content/styles.css">
 </head>
 
-<body ng-cloak ng-controller="ShellController as shell">
+<body class="container" ng-cloak ng-controller="ShellController as shell">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">At The Movies!</a>
+            </div>
+        </div>
+    </nav>
 
-    <ng-view></ng-view>
+    <div class="row">
+
+        <div class="col-md-8">
+            <ng-view></ng-view>
+        </div>
+
+        <div class="col-md-4">
+            <button ng-click="shell.createError()">Error!</button>
+
+            <tdc-alert ng-repeat="alert in shell.alerts"
+                       type="alert.type" close="shell.closeAlert(alert)">
+                {{ alert.message }}
+            </tdc-alert>
+        </div>
+    </div>
+
+
 
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/angular-animate.js"></script>
+    <script src="Scripts/ui-bootstrap-tpls-0.12.1.js"></script>
     <script src="apps/movies/module.js"></script>
-<script src="apps/movies/detail/DetailController.js"></script>
+    <script src="apps/movies/detail/DetailController.js"></script>
     <script src="apps/movies/edit/EditController.js"></script>
     <script src="apps/movies/list/ListController.js"></script>
-    <script src="apps/movies/data/movieData.js"></script>
-
+    <script src="apps/movies/services/movieData.js"></script>
+    <script src="apps/movies/services/alerting.js"></script>
+    <script src="apps/movies/directives/tdcAlert.js"></script>
+    <script src="apps/movies/directives/startsWith.js"></script>
+    <script src="apps/movies/services/confirmDeleteMovie.js"></script>
 
 </body>
 </html>

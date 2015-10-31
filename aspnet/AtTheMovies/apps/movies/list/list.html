@@ -4,15 +4,16 @@
         {{ list.errorMessage }}
     </div>
 
-    <input type="search" ng-model="list.searchTerm"/>
+    <form>
+        <input type="search" ng-model="list.searchTerm" />
 
-    <select ng-model="list.orderTerm">
-        <option value="-year">Newest</option>
-        <option value="-rating">Best</option>
-        <option value="+rating">Worst</option>
-    </select>
-
-    <div class="container">
+        <select ng-model="list.orderTerm">
+            <option value="-year">Newest</option>
+            <option value="-rating">Best</option>
+            <option value="+rating">Worst</option>
+        </select>
+    </form>
+    <div>
         <table class="table">
             <tr>
                 <th>Title</th>
@@ -35,6 +36,7 @@
                     <a class="btn btn-default" ng-href="#/edit/{{movie.id}}">Edit</a>
                     <button class="btn btn-default" ng-click="list.increaseRating(movie)">+</button>
                     <button class="btn btn-default" ng-click="list.decreaseRating(movie)">-</button>
+                    <button class="btn btn-danger" ng-click="list.deleteMovie(movie)" >Delete</button>
                 </td>
             </tr>
 

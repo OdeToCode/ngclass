@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../../Scripts/jasmine/jasmine.js"></script>
+    <link href="../../Scripts/jasmine/jasmine.css" rel="stylesheet" />
+    <script src="../../Scripts/jasmine/jasmine-html.js"></script>
+    <script src="../../Scripts/jasmine/boot.js"></script>
+
+    <script src="/Scripts/angular.js"></script>
+    <script src="/Scripts/angular-route.js"></script>
+    <script src="../../Scripts/angular-mocks.js"></script>
+
+    <script src="/apps/movies/module.js"></script>
+    <script src="/apps/movies/detail/DetailController.js"></script>
+    <script src="/apps/movies/edit/EditController.js"></script>
+    <script src="/apps/movies/list/ListController.js"></script>
+    <script src="/apps/movies/services/movieData.js"></script>
+    <script src="/apps/movies/services/alerting.js"></script>
+    <script src="/apps/movies/directives/tdcAlert.js"></script>
+    <script src="/apps/movies/directives/startsWith.js"></script>
+
+    <script src="list/ListControllerSpec.js"></script>
+
+    <script>
+
+        describe("How Jasmine works", function() {
+
+            it("provides a done parameter for asynch", function(done) {
+
+                var name;
+
+                setTimeout(function() {
+                    name = "Scott";
+                    expect(name).toEqual("Scott");
+                    done();
+                }, 200);
+
+            });
+
+            it("provides expect asserts", function() {
+
+                var name = "Scott";
+                expect(name).toEqual("Scott");
+
+            });
+
+
+        });
+
+
+    </script>
+
+
+</head>
+<body>
+
+</body>
+</html>

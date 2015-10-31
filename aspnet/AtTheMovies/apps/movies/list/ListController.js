@@ -1,11 +1,16 @@
 ﻿(function () {
+
     var module = angular.module("atTheMovies");
 
-    var ListController = function (movieData, $log) {
+    var ListController = function (movieData, $log, alerting, confirmDeleteMovie) {
         var model = this;
 
         model.searchTerm = "";
         model.orderTerm = "-rating";
+
+        model.deleteMovie = function(movie) {
+            confirmDeleteMovie(movie).then(doDeleteMovie);
+        }
 
         model.rateMovie = function (movie) {
             return {
@@ -33,18 +38,24 @@
             model.movies = movies;
         }
 
-        function onError(response) {
-            model.errorMessage = response.data.message;
+        function onError() {
+            alerting.addError("Not able to fetch movies!");
+        }
+
+        function initialize() {
+            movieData.getAll()
+                .then(onMovies, onError);
+        }
+
+        function doDeleteMovie(movie) {
+            movieData.delete(movie).then(initialize);
         }
 
         $log.info("ListCOntroller starting!");
 
-        movieData.getAll()
-            .then(onMovies, onError);
-
+        initialize();
     };
 
-    module.controller("ListController",  ["movieData", "$log", ListController]);
-
+    module.controller("ListController",  ListController);
 
 }());

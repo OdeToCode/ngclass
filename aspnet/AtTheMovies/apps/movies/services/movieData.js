@@ -23,9 +23,15 @@
                         .then(processResponse);
         }
 
+        function deleteMovie(movie) {
+            return $http.delete(url + movie.id)
+                        .then(processResponse);
+        }
+
         return {
             getAll: getAllMovies,
             getById: getMovieById,
+            delete: deleteMovie,
             save: saveMovie
         };
     };

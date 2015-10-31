@@ -1,6 +1,6 @@
 ﻿(function(module) {
 
-    var EditController = function(movieData, $routeParams, $location) {
+    var EditController = function(movieData, $routeParams, $location, alerting) {
 
         var model = this;
         var id = $routeParams.id;
@@ -10,6 +10,7 @@
         }
 
         function goToDetails(movie) {
+            alerting.addInfo("Your movie was saved!");
             $location.path("/detail/" + movie.id);
         }
 

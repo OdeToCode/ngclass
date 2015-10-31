@@ -1,18 +1,27 @@
 ﻿(function () {
-    var module = angular.module("atTheMovies", ["ngRoute"]);
+    var module = angular.module("atTheMovies", ["ngRoute", "ngAnimate", "ui.bootstrap"]);
 
-    module.controller("ShellController", function ($timeout) {
+    module.config(function($provide) {
+        $provide.decorator("$exceptionHandler", function ($delegate, $injector) {
+            return function(exception) {
+                $delegate(exception);
+                $injector.get("alerting").addError(exception.message);
+            }
+        });
+    });
+
+    module.controller("ShellController", function (alerting) {
         var model = this;
-        model.counter = 0;
 
-        function incrementCounter() {
-            model.counter += 1;
-            $timeout(incrementCounter, 1000);
+        model.alerts = alerting.currentAlerts;
+
+        model.createError = function() {
+            throw new Error("oops! Something is wrong.");
         };
 
-
-        $timeout(incrementCounter, 1000);
-
+        model.closeAlert = function(alert) {
+            alerting.closeAlert(alert);
+        };
     });
 
 

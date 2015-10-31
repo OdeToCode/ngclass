@@ -4,7 +4,7 @@
 
     <form ng-submit="edit.saveMovie(editForm.$valid)" name="editForm" novalidate>
         <label>Title</label>
-        <input required name="title" ng-model="edit.movie.title" />
+        <input required starts-with="S" name="title" ng-model="edit.movie.title" />
 
         <div>
             <span ng-show="editForm.title.$error.required">This field is required</span>
