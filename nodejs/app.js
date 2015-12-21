@@ -4,8 +4,7 @@ var app = express();
 
 app.use(bodyParser.json());
 app.use("/", express.static(__dirname + "/apps"));
-app.use("/", express.static(__dirname + "/bower_components"));
-
+app.use("/", express.static(__dirname + "/node_modules"));
 
 require("./routes")(app);
 
