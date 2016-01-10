@@ -1,19 +1,22 @@
 Scott Allen
 AngularJS
 scott@OdeToCode.com
-s
-ng-inspector
-http://ng-inspector.org/
 
-John Papa's Style Guide
-https://github.com/johnpapa/angular-styleguide
-
-http://odetocode.com/blogs/scott/archive/2014/03/17/building-better-models-for-angularjs.aspx
+1. Intro
+2. Language
+3. Routing
+4. Http
+5. Templates
+6. Forms
+7. Directives
+8. Testing and Packaging
 
 Slides:
-http://goo.gl/QYJSzZ (case sensitive)
+  https://dl.dropboxusercontent.com/u/79231895/ng2-slides.zip
+ or
+  http://tinyurl.com/hm74xsn   (case sensitive)
 
 GitHub Repo:
 https://github.com/OdeToCode/ngclass
-   (Use NodeJS or Visual Studio ASP.NET)
+   (Use NodeJS or Visual Studio ASP.NET to work in)
 

@@ -4,31 +4,30 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width">
     <title>At The Movies!</title>
-    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="/styles.css">
 </head>
 
-
-
 <body>
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">At The Movies!</a>
-            </div>
-        </div>
-    </nav>
+        
+        <script src="/node_modules/reflect-metadata/reflect.js"></script>
+        <script src="/node_modules/zone.js/dist/zone.js"></script>
+        <script src="/node_modules/systemjs/dist/system.js"></script>
+        <script src="/node_modules/typescript/lib/typescript.js"></script>
+        <script src="/node_modules/rxjs/bundles/rx.js"></script>
+        <script src="/node_modules/angular2/bundles/angular2.dev.js"></script>
+        
+        <script>
 
-    <div class="container" class="">
-        <div class="col-md-9">
-            left            
-        </div>
-        <div class="col-md-3">
-            right
-        </div>
-    </div>
+            System.config({
+                transpiler: "typescript",
+                typescriptOptions: { emitDecoratorMetadata: true },
+                packages: {
+                    "app": {
+                        defaultExtension: "ts"
+                    }
+                }
+            });
 
-    
+        </script>
 
 </body>
 </html>
