@@ -1,15 +1,14 @@
+
 export class Movie {
-    title: string;
-    rating: number;
     
-    constructor(title: string, rating: number) {
-        this.title = title;
-        this.rating = rating;
+    constructor(public id: number,
+                public title: string, 
+                public rating: number) {
     }
     
     increaseRating() {
         if(this.rating < 5) {
-           // this.rating +=1;
+           this.rating +=1;
         }
         else{
             this.rating = 1;

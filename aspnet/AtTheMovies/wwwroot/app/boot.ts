@@ -1,27 +1,14 @@
 import {bootstrap} from "angular2/platform/browser"
-import {Component} from "angular2/core";
-import {Movie} from "./Movie";
+import {provide} from "angular2/core";
+import {MovieApp} from "./app";
+import {ROUTER_PROVIDERS,
+        LocationStrategy, HashLocationStrategy} from "angular2/router";
+import {MovieData} from "./movies/movie-data";
 
-@Component({
-    selector: "movie-app",
-    templateUrl: "/app/movie-app.html"
-})
-export class MovieApp {
-    message: string = "";
-    movies: Array<Movie> = [];
-    
-    constructor() {
-        this.movies.push(new Movie("Star Wars", 5));
-        this.movies.push(new Movie("Mission Impossible 6", 4));
-        this.movies.push(new Movie("American Pie", 1));
-    }
-    
-    changeMessage() {
-        this.message = "Changed from the component!";
-    }
-}
-
-bootstrap(MovieApp);
+bootstrap(MovieApp, 
+    [ROUTER_PROVIDERS,
+    MovieData,
+    provide(LocationStrategy, {useClass: HashLocationStrategy})]);
 
 
 

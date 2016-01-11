@@ -2,8 +2,8 @@ Scott Allen
 AngularJS
 scott@OdeToCode.com
 
-10 Coffee
-12 Lunch downstairs
+Now: break
+Next: 14:20
 
 1. Intro
 2. Language
@@ -22,4 +22,9 @@ Slides:
 GitHub Repo:
 https://github.com/OdeToCode/ngclass
    (Use NodeJS or Visual Studio ASP.NET)
+	in the folder with project.json
+https://docs.asp.net/en/latest/getting-started/installing-on-windows.html
+	npm install       
+        dnu restore
+        dnx web 
 
