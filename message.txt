@@ -2,6 +2,9 @@ Scott Allen
 AngularJS
 scott@OdeToCode.com
 
+10 Coffee
+12 Lunch downstairs
+
 1. Intro
 2. Language
 3. Routing
@@ -18,5 +21,5 @@ Slides:
 
 GitHub Repo:
 https://github.com/OdeToCode/ngclass
-   (Use NodeJS or Visual Studio ASP.NET to work in)
+   (Use NodeJS or Visual Studio ASP.NET)
 

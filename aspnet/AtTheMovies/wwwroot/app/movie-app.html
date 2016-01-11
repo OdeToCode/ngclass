@@ -1,0 +1,22 @@
+<div>
+    
+    <div [hidden]="isHidden"></div>
+    
+    
+    <div *ngIf="message">
+        Message: {{ message }}           
+    </div>
+    
+    <input [(ngModel)]="message" type="text">
+    <button (click)="changeMessage()">Change the message</button>
+    
+    <table>
+        <tr *ngFor="#movie of movies">
+            <td>{{movie.title}}</td>
+            <td>{{movie.rating}}</td>
+        </tr>
+    </table>
+    
+    
+    
+</div>

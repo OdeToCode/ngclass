@@ -3,6 +3,9 @@
         <title>At The Movies</title>
 </head>
 <body>
+    
+        <movie-app>Loading...</movie-app>
+    
         <script src="/node_modules/reflect-metadata/reflect.js"></script>
         <script src="/node_modules/zone.js/dist/zone.js"></script>
         <script src="/node_modules/systemjs/dist/system.js"></script>
@@ -21,6 +24,8 @@
                     }
                 }
             });
+
+            System.import("/app/boot");
 
 
         </script>
