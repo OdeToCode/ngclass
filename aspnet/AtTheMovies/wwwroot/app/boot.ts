@@ -13,6 +13,7 @@ export class MovieApp {
     constructor() {
         this.movies.push(new Movie("Star Wars", 5));
         this.movies.push(new Movie("Mission Impossible 6", 4));
+        this.movies.push(new Movie("American Pie", 1));
     }
     
     changeMessage() {

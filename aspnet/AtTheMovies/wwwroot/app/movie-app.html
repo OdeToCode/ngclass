@@ -11,9 +11,13 @@
     <button (click)="changeMessage()">Change the message</button>
     
     <table>
-        <tr *ngFor="#movie of movies">
+        <tr *ngFor="#movie of movies" >
             <td>{{movie.title}}</td>
-            <td>{{movie.rating}}</td>
+            <td [ngClass]="{good: movie.isGood(), bad: movie.isBad() }">{{movie.rating}}</td>
+            <td>
+                <button (click)="movie.increaseRating()">+</button>
+                <button (click)="movie.decreaseRating()">-</button>
+            </td>
         </tr>
     </table>
     
