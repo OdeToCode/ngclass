@@ -1,26 +1,35 @@
   
-   <table class="table">
+  <div *ngFor="#movie of movies">
+      
+      <movie-display [movie]="movie"
+                     (editMovie)="editMovie($event.id)">      
+      </movie-display>
+      
+  </div>
+  
+ 
+   <!--<table class="table">
         <tr *ngFor="#movie of movies" >
                        
             <td>
                 <a [routerLink]="['Detail', {id:movie.id}]">
                     {{movie.title}}                                        
                 </a>
-                  
-                   <input #title type="text" value="" />
-                  <input type="text" [value]="movie.title">
-                  <button (click)="changeTitle(movie, title.value)">Change</button>
-                  
+                                
              </td>
+             
              <td>
                  {{movie.length}}
              </td>
+             
             <td [ngClass]="{good: movie.isGood(), bad: movie.isBad() }">
                 {{movie.rating | rating }}
             </td>
-            <td>                
+            
+            <td>       
+                <button (click)="editMovie(movie.id)">Edit</button>         
                 <button (click)="movie.increaseRating()">+</button>
                 <button (click)="movie.decreaseRating()">-</button>                
             </td>
         </tr>
-    </table>
+    </table>-->

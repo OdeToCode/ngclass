@@ -3,7 +3,7 @@ Angular 2
 scott@OdeToCode.com
 
 Now: lunch lab 05
-Next: 13:00
+Next: 15:35
 
 5. Templates
 6. Forms

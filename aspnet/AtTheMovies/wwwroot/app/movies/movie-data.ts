@@ -1,7 +1,8 @@
-import {Movie} from "./Movie";
-import {Http} from "angular2/http";
+import {Movie, MovieType} from "./Movie";
+import {Http, RequestOptions, Headers} from "angular2/http";
 import {Injectable} from "angular2/core";
 import {Observable} from "rxjs";
+
 
 let baseUrl = "/movies";
 
@@ -11,7 +12,20 @@ export class MovieData {
    private movies: Array<Movie> = [];
     
     constructor(private http: Http) {
+        
     } 
+    
+    update(movie: MovieType) {
+        
+        var options = new RequestOptions();
+        options.headers = new Headers({
+           "Content-Type": "application/json" 
+        });
+        
+        
+        return this.http.put(`${baseUrl}`,
+                        JSON.stringify(movie), options);
+    }
     
     getAll() : Observable<Movie[]> {
         return this.http.get(baseUrl)

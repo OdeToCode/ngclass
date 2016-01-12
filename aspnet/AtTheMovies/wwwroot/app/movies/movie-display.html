@@ -1,0 +1,20 @@
+<div>
+
+    <h3>
+        <a [routerLink]="['Detail', {id:movie.id}]">
+              {{movie.title}}                                      
+        </a>
+     </h3>
+    <div>Length of {{movie.length}}</div>
+    <div [ngClass]="{good: movie.isGood(), bad: movie.isBad() }">
+        Rating is {{movie.rating | rating }}
+    </div>
+
+
+    <div>
+        <button (click)="edit()">Edit</button>
+        <button (click)="movie.increaseRating()">+</button>
+        <button (click)="movie.decreaseRating()">-</button>
+    </div>
+
+</div>

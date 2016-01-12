@@ -5,3 +5,7 @@
 .bad {
     background-color: red;
 }
+
+input.ng-invalid {
+    background-color: red;
+}

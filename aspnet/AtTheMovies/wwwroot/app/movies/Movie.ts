@@ -1,5 +1,12 @@
 
-export class Movie {
+export interface MovieType {
+    id: number,
+    title: string, 
+    rating: number,
+    length: number
+}
+
+export class Movie implements MovieType {
     
     constructor(public id: number,
                 public title: string, 

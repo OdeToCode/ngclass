@@ -1,0 +1,22 @@
+<div>
+    
+    
+    <form [ngFormModel]="editForm" (ngSubmit)="submit()">
+        
+        <label>Title</label>              
+        <input [ngFormControl]="title" type="text" required>
+        <span [hidden]="!title.hasError('required')">This is required</span>
+
+        
+        <label>Rating</label>
+        <input [ngFormControl]="rating" type="number">
+        
+        <label>Length</label>
+        <input [ngFormControl]="length" type="number">       
+        <input type="submit" value="Save">
+        
+    </form>
+    
+    Result: {{ result | json}}
+    
+</div>
