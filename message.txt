@@ -5,11 +5,6 @@ scott@OdeToCode.com
 Now: lunch lab 05
 Next: 15:35
 
-5. Templates
-6. Forms
-7. Directives
-8. Testing and Packaging
-
 Slides:
   https://dl.dropboxusercontent.com/u/79231895/ng2-slides.zip
  or

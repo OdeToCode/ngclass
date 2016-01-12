@@ -1,6 +1,6 @@
 module.exports = {
 	
-	entry: "./wwwroot/app/app",
+	entry: "./wwwroot/app/boot",
 	output: {
 		path: "./wwwroot/bundle",		
 		filename: "app.js"
