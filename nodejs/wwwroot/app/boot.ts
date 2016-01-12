@@ -6,6 +6,7 @@ import {MovieData} from "./movie/movie-data";
 
 bootstrap(MovieApp, 
     [ROUTER_PROVIDERS, 
-    MovieData,
+    provide(MovieData, {useClass: MovieData}),
+    provide("SomeValue", {useValue: "This is some random value to inject!"}),
     provide(LocationStrategy, {useClass: HashLocationStrategy})])
-        .then(() => console.log('bootsrapped!'));
+        .then(() => console.log('MovieApp bootsrapped!'));
