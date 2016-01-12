@@ -2,10 +2,9 @@ Scott Allen
 Angular 2
 scott@OdeToCode.com
 
-Now: break
-Next: 10:15
+Now: lunch lab 05
+Next: 13:00
 
-4. Http, Services, DI
 5. Templates
 6. Forms
 7. Directives

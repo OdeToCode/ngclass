@@ -17,4 +17,5 @@ import "rxjs/add/operator/map";
 ])
 export class MovieApp {
     public title: string = "At The Movies!";
+    public today: Date = new Date();
 }

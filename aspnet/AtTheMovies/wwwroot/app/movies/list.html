@@ -1,16 +1,23 @@
   
    <table class="table">
         <tr *ngFor="#movie of movies" >
+                       
             <td>
                 <a [routerLink]="['Detail', {id:movie.id}]">
-                    {{movie.title}}
+                    {{movie.title}}                                        
                 </a>
+                  
+                   <input #title type="text" value="" />
+                  <input type="text" [value]="movie.title">
+                  <button (click)="changeTitle(movie, title.value)">Change</button>
+                  
              </td>
              <td>
                  {{movie.length}}
              </td>
             <td [ngClass]="{good: movie.isGood(), bad: movie.isBad() }">
-                {{movie.rating}}</td>
+                {{movie.rating | rating }}
+            </td>
             <td>                
                 <button (click)="movie.increaseRating()">+</button>
                 <button (click)="movie.decreaseRating()">-</button>                
