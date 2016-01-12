@@ -1,0 +1,26 @@
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand">{{title}}</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+            <li>
+                <a [routerLink]="['List']">Movie List</a>
+            </li>
+            <li>
+                <a [routerLink]="['About']">About</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-xs-12">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+
+</div>

@@ -3,10 +3,19 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width">
+    <!--<base href="/">-->
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/style/styles.css">
     <title>At The Movies!</title>
 </head>
 
 <body>
+        <movie-app>
+            <div class="text-center" style="padding-top: 1em;"><i class="fa fa-spin fa-spinner"></i> Loading...</div>
+        </movie-app>
+    
+    
         
         <script src="/node_modules/reflect-metadata/reflect.js"></script>
         <script src="/node_modules/zone.js/dist/zone.js"></script>
@@ -14,7 +23,9 @@
         <script src="/node_modules/typescript/lib/typescript.js"></script>
         <script src="/node_modules/rxjs/bundles/rx.js"></script>
         <script src="/node_modules/angular2/bundles/angular2.dev.js"></script>
-        
+        <script src="/node_modules/angular2/bundles/router.js"></script>
+        <script src="/node_modules/angular2/bundles/http.js"></script>
+        <!--<script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>-->
         <script>
 
             System.config({
@@ -26,6 +37,8 @@
                     }
                 }
             });
+            
+            System.import('/app/boot');
 
         </script>
 

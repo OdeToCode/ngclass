@@ -1,0 +1,13 @@
+<div>
+    <h4>{{movie?.title}}</h4>
+    <dl>
+        <dt>Rating</dt>
+        <dd>{{movie?.rating}}</dd>
+        <dt>Year</dt>
+        <dd *ngIf="movie?.year">{{movie?.year}}</dd>
+        <dd *ngIf="!movie?.year">N/A</dd>
+    </dl>
+    
+    <button class="btn btn-default" (click)="backToList()"><i class="fa fa-back"></i> Back to list</button>
+    
+</div>

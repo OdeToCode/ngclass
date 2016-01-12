@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-xs-12">
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Year</th>
+                    <th>Rating</th>
+                    <th>Btns</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="#movie of movies" [ngClass]="{'text-success': movie.isGood(), 'text-danger': movie.isBad()}">
+                    <td>
+                        <a [routerLink]="['Detail', {id: movie.id}]">{{movie.title}}</a>
+                    </td>
+                    <td>{{movie.year}}</td>
+                    <td>{{movie.rating}}</td>
+                    <td>
+                        <button class="btn btn-success" (click)="movie.increaseRating()"><i class="fa fa-plus"></i></button>
+                        <button class="btn btn-danger" (click)="movie.decreaseRating()"><i class="fa fa-minus"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
