@@ -3,6 +3,7 @@ import {List} from "./movies/list";
 import {About} from "./about/about";
 import {Detail} from "./movies/detail";
 import {RouteConfig, ROUTER_DIRECTIVES} from "angular2/router";
+import "rxjs/add/operator/map";
 
 @Component({
     selector: "movie-app",    

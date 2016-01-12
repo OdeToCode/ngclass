@@ -1,14 +1,8 @@
 Scott Allen
-AngularJS
+Angular 2
 scott@OdeToCode.com
 
-Now: break
-Next: 14:20
-
-1. Intro
-2. Language
-3. Routing
-4. Http
+4. Http, Services, DI
 5. Templates
 6. Forms
 7. Directives

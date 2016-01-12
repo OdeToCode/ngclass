@@ -1,17 +1,24 @@
 import {Movie} from "./Movie";
+import {Http} from "angular2/http";
+import {Injectable} from "angular2/core";
 
+@Injectable()
 export class MovieData {
   
    private movies: Array<Movie> = [];
     
-    constructor() {
-        this.movies.push(new Movie(1, "Star Wars", 5));
-        this.movies.push(new Movie(2, "Mission Impossible 6", 4));
-        this.movies.push(new Movie(3, "American Pie", 1));
+    constructor(private http: Http) {
     } 
     
     getAll() {
-        return this.movies;
+        return this.http.get("/movies")
+                 .map(response => response.json())
+                 .map(json => {
+                     let movies: Movie[] = [];
+                     json.forEach(m => movies.push(
+                         new Movie(m.id, m.title, m.rating, m.length)));
+                     return movies;
+                 });
     }
     
     getById(id: number) {

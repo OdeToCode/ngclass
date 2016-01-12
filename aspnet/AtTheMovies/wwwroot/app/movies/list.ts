@@ -6,14 +6,17 @@ import {ROUTER_DIRECTIVES} from "angular2/router";
 @Component({
     selector: "movies-list",    
     templateUrl: "/app/movies/list.html",
-    directives: [ROUTER_DIRECTIVES]
+    directives: [ROUTER_DIRECTIVES] 
 })
 export class List {
     
     movies: Array<any>;  
     
     constructor(movieData: MovieData) {        
-        this.movies = movieData.getAll();
+         movieData.getAll().subscribe(
+             (movies) => this.movies = movies,
+             (e) => console.log(e)              
+         );
     }
       
 }
