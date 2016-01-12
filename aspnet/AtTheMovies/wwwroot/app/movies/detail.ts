@@ -20,7 +20,12 @@ export class Detail implements OnActivate{
     
     constructor(movieData: MovieData, params: RouteParams) {
         let id = params.get("id");
-        this.movie = movieData.getById(parseFloat(id));
+        
+        movieData.getById(parseFloat(id))
+                 .subscribe(
+                     movie => this.movie = movie,
+                     error => console.log(error)
+                 );
         
     }
     

@@ -13,6 +13,7 @@ export class List {
     movies: Array<any>;  
     
     constructor(movieData: MovieData) {        
+                  
          movieData.getAll().subscribe(
              (movies) => this.movies = movies,
              (e) => console.log(e)              

@@ -2,6 +2,9 @@ Scott Allen
 Angular 2
 scott@OdeToCode.com
 
+Now: break
+Next: 10:15
+
 4. Http, Services, DI
 5. Templates
 6. Forms

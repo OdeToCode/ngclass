@@ -6,6 +6,9 @@
                     {{movie.title}}
                 </a>
              </td>
+             <td>
+                 {{movie.length}}
+             </td>
             <td [ngClass]="{good: movie.isGood(), bad: movie.isBad() }">
                 {{movie.rating}}</td>
             <td>                
