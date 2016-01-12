@@ -9,7 +9,7 @@ import {MovieData} from "./movie-data";
     directives: [ROUTER_DIRECTIVES]
 })
 export class List {
-    movies: Array<any> = [];
+    movies: Array<Movie> = [];
     
     /**
      *

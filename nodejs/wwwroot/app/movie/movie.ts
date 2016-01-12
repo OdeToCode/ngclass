@@ -1,18 +1,17 @@
 export class Movie {
     title: string;
     rating: number;
-    year?: number;
-    length?: number;
+    year: number;
     id: number;
     
     /**
      * Movie model constructor
      */
-    constructor(id: number, title: string, rating: number, year?: number, length?: number) {
+    constructor(id: number, title: string, rating: number, year: number) {
         this.id = id;
         this.title = title;
         this.rating = rating;
-        this.length = length;       
+        this.year = year;       
     }
     
     increaseRating() {
