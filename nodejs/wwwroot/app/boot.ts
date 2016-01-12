@@ -9,6 +9,5 @@ bootstrap(MovieApp,
     [ROUTER_PROVIDERS, 
     provide(MovieData, {useClass: MovieData}),
     HTTP_PROVIDERS,
-    provide("SomeValue", {useValue: "This is some random value to inject!"}),
     provide(LocationStrategy, {useClass: HashLocationStrategy})])
         .then(() => console.log('MovieApp bootsrapped!'));

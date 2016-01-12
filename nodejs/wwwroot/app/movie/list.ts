@@ -19,10 +19,7 @@ export class List {
         movieData
             .getAll()
             .subscribe(
-                (movies) => {
-                    console.log(movies);
-                    this.movies = movies;
-                }, 
+                (movies) => this.movies = movies, 
                 (response) => console.log('error', response));
         
     }
