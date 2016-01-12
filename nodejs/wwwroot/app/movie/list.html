@@ -4,7 +4,7 @@
             <thead>
                 <tr>
                     <th>Title</th>
-                    <th>Length</th>
+                    <th>Year</th>
                     <th>Rating</th>
                     <th>Btns</th>
                 </tr>
@@ -14,7 +14,7 @@
                     <td>
                         <a [routerLink]="['Detail', {id: movie.id}]">{{movie.title}}</a>
                     </td>
-                    <td>{{movie.length}}</td>
+                    <td>{{movie.year}}</td>
                     <td>{{movie.rating}}</td>
                     <td>
                         <button class="btn btn-success" (click)="movie.increaseRating()"><i class="fa fa-plus"></i></button>

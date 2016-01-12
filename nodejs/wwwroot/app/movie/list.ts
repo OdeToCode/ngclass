@@ -9,13 +9,21 @@ import {MovieData} from "./movie-data";
     directives: [ROUTER_DIRECTIVES]
 })
 export class List {
-    movies: Array<Movie> = [];
+    movies: Array<any> = [];
     
     /**
      *
      */
     constructor(movieData: MovieData) {
-        this.movies = movieData.getAll();
+        //this.movies = 
+        movieData
+            .getAll()
+            .subscribe(
+                (movies) => {
+                    console.log(movies);
+                    this.movies = movies;
+                }, 
+                (response) => console.log('error', response));
         
     }
 }

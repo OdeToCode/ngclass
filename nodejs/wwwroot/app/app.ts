@@ -4,6 +4,7 @@ import {List} from "./movie/list";
 import {About} from "./about/about";
 import {Movie} from './movie/movie';
 import {Detail} from "./movie/detail";
+import "rxjs/add/operator/map";
 
 // component must have at least selector and template
 @Component({
