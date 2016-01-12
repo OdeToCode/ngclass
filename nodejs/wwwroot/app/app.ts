@@ -21,9 +21,9 @@ export class MovieApp {
     /**
      * Main app
      */
-    title: string = "At the movies";
+    title: string;
     
     constructor() {
-        
+        this.title = "At the Movies";
     }
 }
