@@ -21,6 +21,7 @@ namespace AtTheMovies
         public void Configure(IApplicationBuilder app, IApplicationEnvironment environemnt)
         {
             app.UseIISPlatformHandler();            
+           
             app.UseFileServer();
             
             var provider = new PhysicalFileProvider(Path.Combine(environemnt.ApplicationBasePath, "node_modules"));
