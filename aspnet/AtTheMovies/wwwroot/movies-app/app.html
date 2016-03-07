@@ -1,28 +1,11 @@
 <div class="container">
     
-    <h3>At The Movies</h3>
+    <div>
+        <a [routerLink]="['List']">List</a>
+        <a [routerLink]="['About']">About</a>
+    </div>
     
-    <table class="table">
-             
-        <tr *ngFor="#movie of movies">
-            <td [ngClass]="{ good: movie.isGood(), bad:movie.isBad() }">
-                {{movie.title}}
-                
-            </td>
-            <td>{{movie.rating}}</td>
-            <td>{{movie.length}}</td>
-            <td>
-                <button class="btn btn-default"
-                        (click)="movie.upRating()">
-                    <i class="glyphicon glyphicon-plus"></i>
-                </button>
-                <button class="btn btn-default"
-                        (click)="movie.downRating()">
-                    <i class="glyphicon glyphicon-minus"></i>
-                </button>
-            </td>
-        </tr>
-        
-    </table>    
     
+   <router-outlet></router-outlet>
+   
 </div>
