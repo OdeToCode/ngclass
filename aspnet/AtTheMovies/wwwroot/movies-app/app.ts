@@ -1,20 +1,19 @@
 import {Component} from "angular2/core";
+import {Movie} from "./movie";
 
 @Component({
     selector: "movies-app",
     templateUrl: "/movies-app/app.html"   
 })
 export class App {
-    name: string;
-    color: string;
+    
+    movies: Movie[];
   
     constructor() {
-        this.name = "World";
-        this.color = "green";      
-    }
-       
-       
-    setColor(newColor) {
-        this.color = newColor;
-    }
+        this.movies = [
+            new Movie(1, "Star Wars", 5, 120),
+            new Movie(2, "Star Trek", 5, 100),
+            new Movie(3, "Starship Troopers", 3, 90)
+        ];
+    }       
 }

@@ -1,11 +1,13 @@
+body {
+    background-color: #cccc99;
+}
+
 .good {
-    background-color: green;
+    color: green;
+    font-weight: bold;
 }
 
 .bad {
-    background-color: red;
-}
-
-input.ng-invalid {
-    background-color: red;
+    color:red;
+    font-weight: bold;  
 }
