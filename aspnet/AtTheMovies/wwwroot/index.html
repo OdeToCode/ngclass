@@ -6,6 +6,8 @@
 </head>
 <body>
     
+        <movies-app>... loading ...</movies-app>
+    
         <script src="/node_modules/reflect-metadata/reflect.js"></script>
         <script src="/node_modules/zone.js/dist/zone.js"></script>
         <script src="/node_modules/systemjs/dist/system.js"></script>
@@ -19,11 +21,13 @@
                 transpiler: "typescript",
                 typescriptOptions: { emitDecoratorMetadata: true },
                 packages: {
-                    "app": {
+                    "movies-app": {
                         defaultExtension: "ts"
                     }
                 }
             });
+            
+            System.import("movies-app/main")
 
         </script>
 </body>

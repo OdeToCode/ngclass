@@ -1,0 +1,7 @@
+<div *ngIf='name'>
+    <div [style.color]="color">Hello, {{name}}</div>
+    <div>
+        <input type="text" [(ngModel)]="name">
+        <button (click)="setColor('blue')">Change color</button>              
+    </div>
+</div>
