@@ -5,9 +5,13 @@
 
     <tr *ngFor="#movie of movies;">
         <td [ngClass]="{ good: movie.isGood(), bad:movie.isBad() }">
-            {{movie.title}}
+            {{movie.title}}           
         </td>
-        <td>{{movie.rating}}</td>
+        <td>
+            <i *ngFor="#x of getIterableForMovieRating(movie)"
+                class="glyphicon glyphicon-star"
+            ></i>    
+        </td>
         <td>{{movie.length}}</td>
         <td>
             <button class="btn btn-default" (click)="movie.upRating()">

@@ -3,11 +3,13 @@ import {Movie} from "../movie";
 import {Router, ROUTER_DIRECTIVES} from "angular2/router";
 import {Counter, InMemoryCounter} from "../services/counter";
 import {MovieData} from "../services/movie-data";
+import {StarPipe} from "./star-pipe";
 
 @Component({
     templateUrl: "/movies-app/list/list.html",
     directives: ROUTER_DIRECTIVES,
-    providers: []
+    providers: [],
+    pipes: [StarPipe]
 })
 export class List {
 
@@ -19,6 +21,14 @@ export class List {
         movieData.getAll()
                  .subscribe(result => this.movies = result,
                             error => console.log(error));
+    }
+    
+    getIterableForMovieRating(movie) {
+        var thing = [];
+        for(let i  = 0; i < movie.rating; i++) {
+            thing.push(i);
+        }
+        return thing;
     }
     
     goToDetails(movie:Movie) {
