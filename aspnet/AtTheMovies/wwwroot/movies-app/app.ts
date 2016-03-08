@@ -3,6 +3,7 @@ import {Movie} from "./movie";
 import {RouteConfig, ROUTER_DIRECTIVES} from "angular2/router";
 import {List} from "./list/list";
 import {About} from "./about/about";
+import {Details} from "./details/details";  
 
 @Component({
     selector: "movies-app",
@@ -11,7 +12,8 @@ import {About} from "./about/about";
 })
 @RouteConfig([
     { path: "/list", name:"List", component:List, useAsDefault:true},
-    { path: "/about", name:"About", component:About }
+    { path: "/about", name:"About", component:About },
+    { path: "/details/:id", name:"Details", component:Details }
 ])
 export class App {
 
