@@ -2,8 +2,9 @@ Scott Allen
 Angular 2
 scott@OdeToCode.com
 
-Now: lunch - setup - lab
-Next: 12:30pm
+Now: break / lab 3
+Next: 10:45 am
+
 
 Slides:
   https://dl.dropboxusercontent.com/u/79231895/ng2-slides.zip

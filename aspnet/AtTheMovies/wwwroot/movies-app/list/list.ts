@@ -1,16 +1,20 @@
 import {Component} from "angular2/core";
 import {Movie} from "../movie";
-import {Router} from "angular2/router";
+import {Router, ROUTER_DIRECTIVES} from "angular2/router";
+import {Counter, InMemoryCounter} from "../services/counter";
 
 @Component({
     templateUrl: "/movies-app/list/list.html",
-    directives: []
+    directives: ROUTER_DIRECTIVES,
+    providers: []
 })
 export class List {
 
     movies: Movie[];
 
-    constructor(private router: Router) {
+    constructor(private router: Router, 
+                public counter: Counter) {               
+        
         this.movies = [
             new Movie(1, "Star Wars", 5, 120),
             new Movie(2, "Star Trek", 5, 100),

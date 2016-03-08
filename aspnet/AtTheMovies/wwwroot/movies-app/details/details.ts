@@ -1,6 +1,7 @@
 import {Component} from "angular2/core";
 import {Movie} from "../movie";
 import {RouteParams, OnActivate, OnDeactivate, CanActivate} from "angular2/router";
+import {Counter, InMemoryCounter} from "../services/counter";
 
 // let canActivate = function(...parameters) {
 //     console.log(parameters);
@@ -18,7 +19,8 @@ import {RouteParams, OnActivate, OnDeactivate, CanActivate} from "angular2/route
 export class Details implements OnActivate, OnDeactivate {
     movie: Movie
     
-    constructor(routeParams: RouteParams) {        
+    constructor(routeParams: RouteParams,
+                public counter: Counter) {        
         let id = parseInt(routeParams.get("id"));                
         this.movie = new Movie(id, "STar Wars", 4, 120);
     }

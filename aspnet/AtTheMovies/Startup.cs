@@ -13,25 +13,40 @@ namespace AtTheMovies
     public class Startup
     {
         public void ConfigureServices(IServiceCollection services)
-        {            
+        {
             services.AddMvc()
                     .AddJsonOptions(o => o.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver());
             services.AddScoped<IMovieStore, InMemoryMovieStore>();
         }
         public void Configure(IApplicationBuilder app, IApplicationEnvironment environemnt)
         {
-            app.UseIISPlatformHandler();            
-           
-            app.UseFileServer();
-            
+            app.UseIISPlatformHandler();
+
             var provider = new PhysicalFileProvider(Path.Combine(environemnt.ApplicationBasePath, "node_modules"));
             var options = new FileServerOptions();
-            options.RequestPath = "/node_modules";            
+            options.RequestPath = "/node_modules";
             options.StaticFileOptions.FileProvider = provider;
-            options.EnableDirectoryBrowsing = true; 
+            options.EnableDirectoryBrowsing = true;
             app.UseFileServer(options);
-            
-            app.UseMvc();            
+
+            app.UseFileServer();
+            app.UseMvc();
+
+            //app.MapWhen(c => c.Request.Path.StartsWithSegments("movies"), subApp =>
+            //{
+            //    subApp.UseMvc();
+            //});
+
+            app.Run(async ctx =>
+            {
+                var pathToIndex = Path.Combine(environemnt.ApplicationBasePath, "wwwroot", "index.html");
+                using (var indexStream = File.Open(pathToIndex, FileMode.Open))
+                {
+                    ctx.Response.StatusCode = 200;
+                    await indexStream.CopyToAsync(ctx.Response.Body);
+                }
+            });
+
         }
 
         public static void Main(string[] args) => Microsoft.AspNet.Hosting.WebApplication.Run<Startup>(args);
