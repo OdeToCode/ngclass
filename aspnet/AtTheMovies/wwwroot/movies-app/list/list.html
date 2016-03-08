@@ -1,17 +1,11 @@
 <h3>At The Movies</h3>
 
-<div>Count: {{counter.getCount()}}
-    <button class="btn btn-danger" (click)="counter.incrementCount()">
-        Increment
-    </button>    
-</div>
-
 <table class="table">
 
-    <tr *ngFor="#movie of movies">
+
+    <tr *ngFor="#movie of movies;">
         <td [ngClass]="{ good: movie.isGood(), bad:movie.isBad() }">
             {{movie.title}}
-
         </td>
         <td>{{movie.rating}}</td>
         <td>{{movie.length}}</td>

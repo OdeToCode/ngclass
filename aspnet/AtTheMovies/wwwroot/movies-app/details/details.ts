@@ -2,6 +2,7 @@ import {Component} from "angular2/core";
 import {Movie} from "../movie";
 import {RouteParams, OnActivate, OnDeactivate, CanActivate} from "angular2/router";
 import {Counter, InMemoryCounter} from "../services/counter";
+import {MovieData} from "../services/movie-data";
 
 // let canActivate = function(...parameters) {
 //     console.log(parameters);
@@ -17,12 +18,14 @@ import {Counter, InMemoryCounter} from "../services/counter";
     templateUrl:"/movies-app/details/details.html"
 })
 export class Details implements OnActivate, OnDeactivate {
-    movie: Movie
+    movie: Movie;
     
-    constructor(routeParams: RouteParams,
-                public counter: Counter) {        
+    constructor(routeParams: RouteParams, movieData: MovieData) 
+    {        
         let id = parseInt(routeParams.get("id"));                
-        this.movie = new Movie(id, "STar Wars", 4, 120);
+        movieData.getById(id)
+                 .subscribe(movie => this.movie = movie,
+                            error => console.log(error));
     }
     
     routerOnDeactivate(...parameters) {

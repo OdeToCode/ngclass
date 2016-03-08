@@ -1,18 +1,12 @@
-<div>Count: {{counter.getCount()}}
-    <button class="btn btn-danger" (click)="counter.incrementCount()">
-        Increment
-    </button>    
-</div>
-
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        Details for {{ movie.id }}
+        Details for {{ movie?.title }}
     </div>
     
     <div class="panel-body">
-        Length: {{movie.length}}
-        Rating: {{movie.rating}}
+        Length: {{movie?.length}}
+        Rating: {{movie?.rating}}
     </div>
     
 </div>
