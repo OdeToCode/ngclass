@@ -1,0 +1,28 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading">
+        Editing {{movie?.title}}
+    </div>
+    <div class="panel-body">
+        {{ form.value | json }}      
+        <form #form="ngForm" (ngSubmit)="save(form)">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" [value]="movie.title" 
+                        ngControl="title" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="rating">Rating</label>
+                <input type="number" [value]="movie.rating" 
+                        ngControl="rating"  class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="length">Length</label>
+                <input type="number" [value]="movie.length" 
+                        ngControl="length" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div>

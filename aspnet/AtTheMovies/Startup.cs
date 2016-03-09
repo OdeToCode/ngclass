@@ -31,12 +31,7 @@ namespace AtTheMovies
 
             app.UseFileServer();
             app.UseMvc();
-
-            //app.MapWhen(c => c.Request.Path.StartsWithSegments("movies"), subApp =>
-            //{
-            //    subApp.UseMvc();
-            //});
-
+            
             app.Run(async ctx =>
             {
                 var pathToIndex = Path.Combine(environemnt.ApplicationBasePath, "wwwroot", "index.html");

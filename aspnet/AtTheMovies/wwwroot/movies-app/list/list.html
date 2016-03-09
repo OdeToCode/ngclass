@@ -23,7 +23,9 @@
             <button class="btn btn-default" (click)="goToDetails(movie)">
                 <i class="glyphicon glyphicon-zoom-in"></i>
             </button>
-                     
+            <a [routerLink]="['Edit', {id:movie.id}]" class="btn btn-default">
+                <i class="glyphicon glyphicon-edit"></i>
+            </a>         
         </td>
     </tr>
 
