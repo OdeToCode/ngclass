@@ -20,6 +20,14 @@ export class MovieData {
     constructor(private http: Http) {
     }
 
+    create(movie: Movie) {
+        return this.http.post(this._baseUrl, 
+                            JSON.stringify(movie), 
+                            getJsonOptions())
+                   .map(parseResponse)
+                   .map(movie => new Movie(movie.id, movie.title, movie.rating, movie.length));
+    }
+
     update(movie: Movie) {
 
 

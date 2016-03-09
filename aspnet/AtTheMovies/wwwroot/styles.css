@@ -11,3 +11,7 @@ body {
     color:red;
     font-weight: bold;  
 }
+
+input.ng-touched.ng-invalid {
+    background-color:red;
+}

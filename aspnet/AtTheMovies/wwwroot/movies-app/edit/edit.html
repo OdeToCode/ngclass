@@ -3,22 +3,35 @@
         Editing {{movie?.title}}
     </div>
     <div class="panel-body">
-        {{ form.value | json }}      
-        <form #form="ngForm" (ngSubmit)="save(form)">
+        <div *ngIf="disable">
+            Dancing cats ... loading
+        </div>
+        <form *ngIf="!disable" [ngFormModel]="form" (ngSubmit)="save()" novalidate>
             <div class="form-group">
                 <label for="title">Title</label>
-                <input type="text" [value]="movie.title" 
-                        ngControl="title" class="form-control">
+                <input type="text" [ngFormControl]="title" class="form-control">
+
+                <span *ngIf="title.hasError('required')">
+                    This is required
+                </span>
+                <span *ngIf="title.hasError('minlength')">
+                    This is too short
+                </span>
+                <span *ngIf="title.hasError('maxlength')">
+                    This is too long
+                </span>
+                <span *ngIf="title.hasError('invalidTitle')">
+                    Must start with S!
+                </span>
+
             </div>
             <div class="form-group">
                 <label for="rating">Rating</label>
-                <input type="number" [value]="movie.rating" 
-                        ngControl="rating"  class="form-control">
+                <input type="number" [ngFormControl]="rating" class="form-control">
             </div>
             <div class="form-group">
                 <label for="length">Length</label>
-                <input type="number" [value]="movie.length" 
-                        ngControl="length" class="form-control">
+                <input type="number" [ngFormControl]="length" class="form-control">
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary">
