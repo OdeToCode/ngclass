@@ -2,9 +2,11 @@ Scott Allen
 Angular 2
 scott@OdeToCode.com
 
-Now: labs
-Next: 9:00am
+Now: break
+Next: 10:20 Start
 
+Ideal Environment:
+   Install NodeJS and Visual Studio Code
 
 Slides:
   https://dl.dropboxusercontent.com/u/79231895/ng2-slides.zip
@@ -13,3 +15,4 @@ Slides:
 
 GitHub:
 	https://github.com/odetocode/ngclass
+   Clone and run "npm install" in the directory
