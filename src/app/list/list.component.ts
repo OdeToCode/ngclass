@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
 import {Movie} from "../models/movie";
-
+import {MovieService} from "../services/movies.service";
 
 @Component({
     selector: "atm-list",
@@ -10,12 +10,11 @@ export class ListComponent {
    
     movies: Array<Movie>;
     
-    constructor() {
-        this.movies = [
-                new Movie(1, "Star Wars", 5, 120),
-                new Movie(2, "Reservoir Dogs", 4, 130),
-                new Movie(3, "The Hobbit", 1, 90)            
-        ];
+    constructor(movieData: MovieService) {
+        movieData.getAll()
+                 .subscribe(result => {
+                    this.movies = result 
+                 });
     }
     
     rateMovie(movie: Movie) {

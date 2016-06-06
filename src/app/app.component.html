@@ -4,7 +4,10 @@
     <div>
         {{ message }}       
     </div>
-      
+    
+    <a [routerLink]="['List']">List</a>
+    <a [routerLink]="['About', 'Company']">About</a>
+
     <router-outlet></router-outlet>
     
 </div>
