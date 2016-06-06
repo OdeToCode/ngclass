@@ -1,14 +1,9 @@
 export class Movie {
-    id: number;
-    title: string;
-    rating: number;
-    length: number;
     
-    constructor(id: number, title: string, rating: number, length: number) {
-        this.id = id;
-        this.title = title;
-        this.rating = rating;
-        this.length = length;
+    constructor(public id: number, 
+                public title: string, 
+                public rating: number, 
+                public length: number) {
     }
     
     upRating() {

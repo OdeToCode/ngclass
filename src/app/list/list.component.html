@@ -1,0 +1,11 @@
+<table class="table">
+    <tr *ngFor="let movie of movies" [ngClass]="rateMovie(movie)">
+        <td>{{movie.title}}</td>
+        <td>{{movie.rating}}</td>
+        <td>{{movie.length}}</td>
+        <td>
+            <button (click)="upRating(movie)" class="glyphicon glyphicon-plus"></button>
+            <button (click)="movie.downRating()" class="glyphicon glyphicon-minus"></button>
+        </td>
+    </tr>
+</table>

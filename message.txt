@@ -2,8 +2,8 @@ Scott Allen
 Angular 2
 scott@OdeToCode.com
 
-Now: break
-Next: 10:20 Start
+Now: lunch
+Next: 13:10
 
 Ideal Environment:
    Install NodeJS and Visual Studio Code
@@ -13,6 +13,6 @@ Slides:
  or
   http://tinyurl.com/hm74xsn   (case sensitive)
 
-GitHub:
-	https://github.com/odetocode/ngclass
-   Clone and run "npm install" in the directory
+GitHub: https://github.com/odetocode/ngclass
+   Clone and run "npm install" in the root of the directory 
+   Execute "npm start" to build and run a web server on localhost:8080

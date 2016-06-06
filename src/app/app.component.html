@@ -1,24 +1,10 @@
-<div>
+<div class="container">
     <h1>At The Movies!</h1>
     
     <div>
-        {{ message }} 
-        <button (click)="changeMessage()">Change Message</button>      
+        {{ message }}       
     </div>
-   
-    <table class="table">
-        <tr *ngFor="let movie of movies">
-            <td [ngClass]="rateMovie(movie)">{{movie.title}}</td>
-            <td>{{movie.rating}}</td>
-            <td>{{movie.length}}</td>
-            <td>
-                <button (click)="upRating(movie)" class="glyphicon glyphicon-plus"></button>
-                <button (click)="movie.downRating()" class="glyphicon glyphicon-minus"></button>
-            </td>
-        </tr>
-        
-            
-       
-    </table>
+      
+    <router-outlet></router-outlet>
     
 </div>
