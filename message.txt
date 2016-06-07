@@ -2,8 +2,9 @@ Scott Allen
 Angular 2
 scott@OdeToCode.com
 
-Now: lunch
-Next: 13:10
+Now: break
+Next: 10:15
+
 
 Ideal Environment:
    Install NodeJS and Visual Studio Code

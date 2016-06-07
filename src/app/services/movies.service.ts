@@ -2,25 +2,9 @@ import {Movie} from "../models/movie";
 import {Http} from "@angular/http";
 import {Injectable} from "@angular/core";
 
-let onSuccess = function(...args) {
-    console.log(args);
-}
-
-let onError = function(...args) {
-    console.log(args);
-}
-
-//
-// $.ajax("/movies.json", function(result) { // ... });
-//
-
-//
-// $http.get("movies.json").then(success, errror);
-//
-
-//
-// http.get("movies.json") -> Observable
-//
+const baseUrl = "http://otc-movies.azurewebsites.net/movies/";
+const toJson = r => r.json();
+const toMovie = o => new Movie(o.id, o.title, o.rating, o.length);
 
 
 @Injectable()
@@ -30,9 +14,17 @@ export class MovieService {
 
     }
 
+    getById(id: string) {
+        return this.http.get(`${baseUrl}${id}`)
+                   .map(toJson)
+                   .map(toMovie)
+    }
+
+
     getAll() {
-        return this.http.get("movies.json")
-                   .map(res => res.json().map(o => 
+        return this.http.get(baseUrl)
+                   .map(res => res.json()
+                   .map(o => 
                         new Movie(o.id, o.title, o.rating, o.length)));
     }
     

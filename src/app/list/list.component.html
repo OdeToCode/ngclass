@@ -1,11 +1,23 @@
-<table class="table">
-    <tr *ngFor="let movie of movies" [ngClass]="rateMovie(movie)">
-        <td>{{movie.title}}</td>
+
+<h4>Number of movies: {{ movies?.length }}</h4>
+
+
+<table class="table" (click)="handleClick($event)">
+    <tr *ngFor="let movie of movies" [ngClass]="rateMovie(movie)" >
+        <td [attr.data-movie-id]="movie.id">{{movie.title}}</td>
         <td>{{movie.rating}}</td>
         <td>{{movie.length}}</td>
         <td>
-            <button (click)="upRating(movie)" class="glyphicon glyphicon-plus"></button>
-            <button (click)="movie.downRating()" class="glyphicon glyphicon-minus"></button>
+            <button (click)="upRating($event, movie)" class="btn btn-default">
+                <span class="glyphicon glyphicon-plus"></span>
+            </button>
+            <button (click)="movie.downRating()" class="btn btn-default">
+                <span class="glyphicon glyphicon-minus"></span>
+            </button>
+            <a class="btn btn-default" 
+                    [routerLink]="['Details', {id:movie.id}]">                
+                <span class="glyphicon glyphicon-zoom-in"></span>
+            </a>
         </td>
     </tr>
 </table>
