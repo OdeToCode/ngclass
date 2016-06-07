@@ -5,6 +5,7 @@ import {LocationStrategy, HashLocationStrategy} from "@angular/common";
 import {ListComponent} from "./list/list.component";
 import {AboutComponent} from "./about/about.component";
 import {DetailsComponent} from "./details/details.component";
+import {EditComponent} from "./edit/edit.component";
 
 @Component({
     selector: "atm-app",
@@ -14,7 +15,9 @@ import {DetailsComponent} from "./details/details.component";
 @RouteConfig([
     { path: "/list", component:ListComponent, name:"List", useAsDefault:true },
     { path: "/about/...", component: AboutComponent, name:"About"},
-    { path: "/details/:id", component:DetailsComponent, name:"Details"}    
+    { path: "/details/:id", component:DetailsComponent, name:"Details"},
+    { path: "/edit/:id", component:EditComponent, name:"Edit"}  
+     
 ])
 export class AppComponent {  
     

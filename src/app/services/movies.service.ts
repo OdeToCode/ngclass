@@ -1,5 +1,5 @@
 import {Movie} from "../models/movie";
-import {Http} from "@angular/http";
+import {Http, RequestOptions, Headers} from "@angular/http";
 import {Injectable} from "@angular/core";
 
 const baseUrl = "http://otc-movies.azurewebsites.net/movies/";
@@ -12,6 +12,20 @@ export class MovieService {
 
     constructor(private http: Http) {
 
+    }
+
+    update(movie:Movie) {
+        
+        let payload = JSON.stringify(movie);
+        let options = new RequestOptions();
+        let headers = new Headers({
+           "Content-type": "application/json" 
+        });
+        
+        options.headers = headers;
+        
+        return this.http.put(baseUrl, payload, options);
+                        
     }
 
     getById(id: string) {
