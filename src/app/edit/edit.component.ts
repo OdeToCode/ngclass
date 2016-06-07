@@ -1,30 +1,30 @@
-import {Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 import {FORM_DIRECTIVES, ControlGroup, AbstractControl,
-        Control, NgFormControl, Validators} from "@angular/common";
+    Control, NgFormControl, Validators} from "@angular/common";
 import {MovieService} from "../services/movies.service";
 import {RouteParams, Router} from "@angular/router-deprecated";
 import {Movie} from "../models/movie";
 
-let createRatingValidator = function(min: number, max: number) {
-    return function(control: AbstractControl) :any {
-        
+let createRatingValidator = function (min: number, max: number) {
+    return function (control: AbstractControl): any {
+
         let value = control.value;
-            let valueAsNumber = Number.parseInt(value);
-            if(valueAsNumber < min) {
-                return { min: true }
-            }    
-            else if(valueAsNumber > max) {
-                return { max: true }
+        let valueAsNumber = Number.parseInt(value);
+        if (valueAsNumber < min) {
+            return { min: true }
+        }
+        else if (valueAsNumber > max) {
+            return { max: true }
         }
     }
 }
 
-let movieTitleMustStartWithS = function(control: AbstractControl) {
-    
+let movieTitleMustStartWithS = function (control: AbstractControl) {
+
     let value = control.value;
-    if(value && value[0] != 'S') {
-        return { invalidTitle: true}
-    }  
+    if (value && value[0] != 'S') {
+        return { invalidTitle: true }
+    }
 };
 
 let movieValidator = Validators.compose(
@@ -37,7 +37,7 @@ let movieValidator = Validators.compose(
     template: require("./edit.component.html"),
     directives: [FORM_DIRECTIVES]
 })
-export class EditComponent {
+export class EditComponent implements OnInit {
 
     form: ControlGroup;
     title: Control;
@@ -51,14 +51,7 @@ export class EditComponent {
         private params: RouteParams,
         private router: Router) {
 
-        this.movieData.getById(params.get("id"))
-            .subscribe(movie => {
-                this.id = movie.id;
-                this.title.updateValue(movie.title);
-                this.rating.updateValue(movie.rating);
-                this.length.updateValue(movie.length);
-            });
-
+        this.id = parseInt(params.get("id"));
         this.minRating = 1;
         this.maxRating = 5;
         this.title = new Control(null, movieValidator);
@@ -69,9 +62,19 @@ export class EditComponent {
             length: this.length,
             rating: this.rating
         });
-        
+
         this.form.valueChanges.subscribe(args => console.log(args));
 
+    }
+
+    ngOnInit() {
+        this.movieData.getById(this.id.toString())
+            .subscribe(movie => {
+                this.id = movie.id;
+                this.title.updateValue(movie.title);
+                this.rating.updateValue(movie.rating);
+                this.length.updateValue(movie.length);
+            });
     }
 
     save() {
@@ -85,11 +88,11 @@ export class EditComponent {
             this.movieData.update(movie)
                 .subscribe(r => {
                     console.log(r);
-                    this.router.navigate(['Details', {id: this.id}]);
+                    this.router.navigate(['Details', { id: this.id }]);
                 }, e => {
                     console.log(e);
                 });
-        }   
+        }
     }
 
 }

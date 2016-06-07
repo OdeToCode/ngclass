@@ -1,0 +1,21 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        {{ movie?.title }}
+    </div>
+    <div class="panel-body">
+        <div>Rating: {{movie?.rating}}</div>
+        <div>Length: {{movie?.length}}</div>
+        <button (click)="upRating()" class="btn btn-default">
+                <span class="glyphicon glyphicon-plus"></span>
+            </button>
+        <button (click)="movie.downRating()" class="btn btn-default">
+                <span class="glyphicon glyphicon-minus"></span>
+            </button>
+        <a class="btn btn-default" [routerLink]="['Details', {id:movie.id}]">
+            <span class="glyphicon glyphicon-zoom-in"></span>
+        </a>
+        <a class="btn btn-default" [routerLink]="['Edit', {id:movie.id}]">
+            <span class="glyphicon glyphicon-pencil"></span>
+        </a>
+    </div>
+</div>

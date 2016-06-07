@@ -1,12 +1,13 @@
 import {Component} from "@angular/core";
 import {Movie} from "../models/movie";
 import {MovieService} from "../services/movies.service";
+import {MovieComponent} from "./movie.component";
 import {ROUTER_DIRECTIVES} from "@angular/router-deprecated";
 
 @Component({
     selector: "atm-list",
     template: require("./list.component.html"),
-    directives: [ROUTER_DIRECTIVES]
+    directives: [ROUTER_DIRECTIVES, MovieComponent]
 })
 export class ListComponent {
    
@@ -30,15 +31,16 @@ export class ListComponent {
         };
     }
     
-    upRating(event: any, movie:Movie) {
-        if(movie.rating < 5) {
-            movie.rating += 1;
-        } else {
+    changeRating(movie: Movie, $event) {
+        if($event > 5) {
             movie.rating = 1;
         }
-        event.movie = movie;
-        // event.stopPropagation();
-        
-    }      
+        else if($event < 1) {
+            movie.rating = 5;
+        }
+        else {
+            movie.rating = $event;
+        }
+    }  
 }
    
