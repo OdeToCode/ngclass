@@ -15,11 +15,11 @@ export class ListComponent {
     constructor(movieData: MovieService) {
         movieData.getAll()
                  .subscribe(result => {
-                    this.movies = result 
+                    this.movies = result;
                  });
     }
     
-    handleClick(event : Event) {
+    handleClick(event: Event) {
         console.log(event);
     }
     
@@ -27,7 +27,7 @@ export class ListComponent {
         return {
             good: movie.rating > 3,
             bad: movie.rating < 2 
-        }
+        };
     }
     
     upRating(event: any, movie:Movie) {
@@ -41,4 +41,4 @@ export class ListComponent {
         
     }      
 }
-    
+   

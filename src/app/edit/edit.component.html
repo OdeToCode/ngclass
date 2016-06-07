@@ -1,21 +1,27 @@
 <div>
     
-    <h3>Editing {{movie?.title}}</h3>
+    <h3>Editing</h3>
     
-    <form *ngIf="movie" #form="ngForm" (ngSubmit)="save(form)" novalidate>
+    <form  [ngFormModel]="form" (ngSubmit)="save()" novalidate>
         
         <label>Title
-            <input type="text" [(ngModel)]="movie.title" 
-                ngControl="title" required>        
+            <input type="text"  [ngFormControl]="title" >    
+            <span [hidden]="!title.hasError('required')">This is required</span>
+            <span [hidden]="!title.hasError('invalidTitle')">
+                Movie must start with S
+            </span>    
         </label>
         
         <label for="rating">Rating</label>
-        <input type="numbers" [(ngModel)]="movie.rating" 
-               ngControl="rating">
+            <span [hidden]="!rating.hasError('min')">This is too small</span>                
+            <span [hidden]="!rating.hasError('max')">
+                This is too large
+            </span>
+                    
+        <input type="number" [ngFormControl]="rating">
         
         <label for="length">Length</label>
-        <input type="number" [(ngModel)]="movie.length" 
-               ngControl="length">
+        <input type="number"  [ngFormControl]="length">
         
         
         <input type="submit" value="Save" class="btn btn-primary">

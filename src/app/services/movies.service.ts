@@ -31,7 +31,7 @@ export class MovieService {
     getById(id: string) {
         return this.http.get(`${baseUrl}${id}`)
                    .map(toJson)
-                   .map(toMovie)
+                   .map(toMovie);
     }
 
 

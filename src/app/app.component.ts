@@ -1,7 +1,6 @@
-import {Component, provide} from "@angular/core";
+import {Component} from "@angular/core";
 import {RouteConfig, ROUTER_DIRECTIVES} 
     from "@angular/router-deprecated";
-import {LocationStrategy, HashLocationStrategy} from "@angular/common";
 import {ListComponent} from "./list/list.component";
 import {AboutComponent} from "./about/about.component";
 import {DetailsComponent} from "./details/details.component";
@@ -31,4 +30,3 @@ export class AppComponent {
         this.message = $event.target.value;
     }
 }
-    

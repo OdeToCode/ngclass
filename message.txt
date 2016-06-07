@@ -3,7 +3,7 @@ Angular 2
 scott@OdeToCode.com
 
 Now: break
-Next: 1:00 pm
+Next: 14:25 pm
 
 
 Ideal Environment:
