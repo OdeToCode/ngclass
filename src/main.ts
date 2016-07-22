@@ -1,18 +1,18 @@
-import {AppComponent} from "./app/app.component";
-import {bootstrap} from "@angular/platform-browser-dynamic";
-import {ROUTER_PROVIDERS} from "@angular/router-deprecated";
-import {MovieService} from "./app/services/movies.service";
-import {HTTP_PROVIDERS} from "@angular/http";
-import {provide} from "@angular/core";
-import "./style/styles.css";
+import { enableProdMode } from '@angular/core';
+import { bootstrap } from '@angular/platform-browser-dynamic';
+import { HTTP_PROVIDERS } from '@angular/http';
 
-const onError = function(reason) {
-  console.log(reason);  
-};
+import { AppComponent } from './app/app.component';
+import { APP_ROUTER_PROVIDERS } from './app/app.routes';
+
+// depending on the env mode, enable prod mode or add debugging modules
+if (process.env.ENV === 'build') {
+  enableProdMode();
+}
 
 bootstrap(AppComponent, [
-    ROUTER_PROVIDERS, 
+    // These are dependencies of our App
     HTTP_PROVIDERS,
-    provide(MovieService, { useClass: MovieService })
+    APP_ROUTER_PROVIDERS
   ])
-    .catch(onError);
+  .catch(err => console.error(err));

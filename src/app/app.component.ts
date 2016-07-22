@@ -1,32 +1,24 @@
-import {Component} from "@angular/core";
-import {RouteConfig, ROUTER_DIRECTIVES} 
-    from "@angular/router-deprecated";
-import {ListComponent} from "./list/list.component";
-import {AboutComponent} from "./about/about.component";
-import {DetailsComponent} from "./details/details.component";
-import {EditComponent} from "./edit/edit.component";
+import { Component } from '@angular/core';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
+import { ApiService } from './shared';
+
+import '../style/app.scss';
+
+/*
+ * App Component
+ * Top Level Component
+ */
 @Component({
-    selector: "atm-app",
-    template: require("./app.component.html"),
-    directives: [...ROUTER_DIRECTIVES]
+  selector: 'my-app', // <my-app></my-app>
+  providers: [ApiService],
+  directives: [...ROUTER_DIRECTIVES],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
 })
-@RouteConfig([
-    { path: "/list", component:ListComponent, name:"List", useAsDefault:true },
-    { path: "/about/...", component: AboutComponent, name:"About"},
-    { path: "/details/:id", component:DetailsComponent, name:"Details"},
-    { path: "/edit/:id", component:EditComponent, name:"Edit"}  
-     
-])
-export class AppComponent {  
-    
-    message: string;
-   
-    constructor() {
-        this.message = "Hello from a component";
-    }
-    
-    changeMessage($event) {
-        this.message = $event.target.value;
-    }
+export class AppComponent {
+  url = 'https://github.com/preboot/angular2-webpack';
+
+  constructor(private api: ApiService) {
+  }
 }

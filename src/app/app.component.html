@@ -1,22 +1,17 @@
-<div class="container">
-    <h1>At The Movies!</h1>
-    
-    
-    <div>{{message}}</div>
-    
-    
-    <buttton (click)="someMethod($event)"></buttton>
-    
-    <!--<input #input type="text" [value]="message"/>
-    <button (click)="message=input.value">Update Message</button>-->
-      
-    <div>
-        {{ message }}       
-    </div>
-    
-    <a [routerLink]="['List']">List</a>
-    <a [routerLink]="['About', 'Company']">About</a>
+<header>
+  <nav>
+    <a [routerLink]="['']">Home</a>
+    <a [routerLink]="['about']">About</a>
+  </nav>
+</header>
+<main>
+  <h1 class="title">Hello from {{api.title}}!</h1>
 
-    <router-outlet></router-outlet>
-    
-</div>
+  <!-- Images (and assets) are parsed and loaded from within the public directory -->
+  <img src="/img/angular.png">
+
+  <router-outlet></router-outlet>
+</main>
+<footer>
+  <a [href]="url">Webpack Angular 2 Starter</a>
+</footer>

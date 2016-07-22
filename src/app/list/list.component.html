@@ -1,6 +1,0 @@
-
-<h4>Number of movies: {{ movies?.length }}</h4>
-
-<atm-movie *ngFor="let movie of movies" [movie]="movie"
-                                        (changeRating)="changeRating(movie, $event)">
-</atm-movie>

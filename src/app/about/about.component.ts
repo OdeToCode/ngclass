@@ -1,39 +1,18 @@
-import {Component} from "@angular/core";
-import {RouteConfig, ROUTER_DIRECTIVES, OnActivate, CanActivate} 
-        from "@angular/router-deprecated";
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-    template: "<h3>This is info about the company</h3>"
+  selector: 'my-about',
+  templateUrl: './about.component.html',
+  styleUrls: ['./about.component.scss']
 })
-class AboutCompanyComponent {
-    
-}
+export class AboutComponent implements OnInit {
 
-const canActivateAddress = function(next, prev) {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => resolve(true), 20); 
-    });
-};
+  constructor() {
+    // Do stuff
+  }
 
-@Component({
-    template: "<h3>This is the address of the company...</h3>"
-})
-@CanActivate(canActivateAddress)
-class AboutAddresssComponent implements OnActivate {
-    routerOnActivate(next, prev) {
-        console.dir(next, prev);
-    }
-}
+  ngOnInit() {
+    console.log('Hello About');
+  }
 
-@Component({
-    selector: "atm-about",
-    template: require("./about.component.html"),
-    directives: [ROUTER_DIRECTIVES]    
-})
-@RouteConfig([
-    { path: "/company", component:AboutCompanyComponent, name:"Company"},
-    { path: "/address", component:AboutAddresssComponent, name:"Address"}
-])
-export class AboutComponent {
-    
 }
