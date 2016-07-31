@@ -1,4 +1,4 @@
-This start on based on (https://github.com/preboot/angular2-webpack)[https://github.com/preboot/angular2-webpack]
+This starter is based on (https://github.com/preboot/angular2-webpack)[https://github.com/preboot/angular2-webpack]
 
 What you need to run this app:
 * `node` and `npm` (Use [NVM](https://github.com/creationix/nvm))
