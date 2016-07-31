@@ -1,7 +1,7 @@
 This starter is based on https://github.com/preboot/angular2-webpack
 
 What you need to run this app:
-* `node` and `npm` (Use [NVM](https://github.com/creationix/nvm))
+* `node` and `npm` 
 * Ensure you're running Node (`v5.x.x`+) and NPM (`3.x.x`+)
 
 ### Getting started
