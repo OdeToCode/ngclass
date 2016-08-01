@@ -1,8 +1,22 @@
-import {Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
+import {ActivatedRoute} from "@angular/router";
+import {Movie} from "../models/movie";
+import {MovieData} from "../services/movies.service";
 
 @Component({
-    template: "Movie Details..."
+    templateUrl: "./movie-detail.component.html"
 })
-export class MovieDetailComponent {
+export class MovieDetailComponent implements OnInit {
     
+    movie: Movie;
+
+    constructor(private route: ActivatedRoute,
+                private movieData: MovieData) {
+
+    }
+
+    ngOnInit() {
+        const id = +this.route.snapshot.params["id"];
+        this.movie = this.movieData.getById(id);
+    }
 }
