@@ -2,18 +2,20 @@ Scott Allen
 Angular 2
 scott@OdeToCode.com
 
-Now: --
-Next: --
+Now: ---
+Next: 9am Start
 
+WiFi:
+Hilton@Wireless
+password: ndcsydney
 
-Ideal Environment:
-   Install NodeJS and Visual Studio Code
+Class Materials:
+http://tinyurl.com/zj59gmq (slides)
+https://github.com/OdeToCode/ngclass (repo)
 
-Slides:
-  https://dl.dropboxusercontent.com/u/79231895/ng2-slides.zip
- or
-  http://tinyurl.com/hm74xsn   (case sensitive)
-
-GitHub: https://github.com/odetocode/ngclass
-   Clone and run "npm install" in the root of the directory 
-   Execute "npm start" to build and run a web server on localhost:8080
+To Follow Along:
+Clone or download ngClass repo
+Install NodeJS (v5.x+) and Visual Studio Code
+In repo directory:
+npm install
+npm start
