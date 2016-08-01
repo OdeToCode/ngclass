@@ -9,21 +9,21 @@ export class Movie {
     }
 
     increaseRating() {
-        if(this.rating < 5) {
+        if (this.rating < 5) {
             this.rating += 1;
-        }
-        else {
+        } else {
             this.rating = 1;
         }
     }
 
     decreaseRating() {
-        if(this.rating > 1) {
+        if (this.rating > 1) {
             this.rating -= 1;
-        }
-        else{
+        } else {
             this.rating = 5;
         }
     }
 
 }
+
+export default Movie;

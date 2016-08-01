@@ -20,10 +20,10 @@ export class MovieAppComponent {
             bad: false
         };
 
-        if(movie.rating > 4) {
+        if (movie.rating > 4 ) {
             result.good = true;
         }
-        if(movie.rating < 2) {
+        if ( movie.rating < 2 ) {
             result.bad = true;
         }
         return result;

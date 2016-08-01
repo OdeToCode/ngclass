@@ -14,8 +14,12 @@
             <td>{{movie.length}}</td>
             <td>{{movie.rating}}</td>
             <td>
-                <button class="btn btn-default" (click)="movie.increaseRating()">+</button>
-                <button class="btn btn-default" (click)="movie.decreaseRating()">-</button>
+                <button class="btn btn-default" (click)="movie.increaseRating()">
+                    <i class="glyphicon glyphicon-plus"> </i>
+                </button>
+                <button class="btn btn-default" (click)="movie.decreaseRating()">
+                    <i class="glyphicon glyphicon-minus" ></i>
+                </button>
 
             </td>
         </tr>
