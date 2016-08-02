@@ -27,8 +27,8 @@ describe('App', () => {
     ]);
   });
 
-  it('should have an url', inject([MovieAppComponent], (app: MovieAppComponent) => {
-      expect(true).toBe(false);
+  it("Should have a greeting message", inject([MovieAppComponent], (app: MovieAppComponent) => {
+      expect(app.greeting).toBe("Hello!");
   }));
 
 });

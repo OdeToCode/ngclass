@@ -14,6 +14,7 @@
     "lint": "tslint --force \"src/**/*.ts\"",
     "e2e": "protractor",
     "e2e-live": "protractor --elementExplorer",
+    "foo": "cls",
     "pretest": "npm run lint",
     "test": "karma start",
     "test-watch": "karma start --no-single-run --auto-watch",

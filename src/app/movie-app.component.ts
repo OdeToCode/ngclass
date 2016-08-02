@@ -7,6 +7,9 @@ import {ROUTER_DIRECTIVES} from "@angular/router";
     directives: [ROUTER_DIRECTIVES]
 })
 export class MovieAppComponent {
+    greeting: string;
 
-
+    constructor() {
+        this.greeting = "Hello!";
+    }
 }
