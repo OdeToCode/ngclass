@@ -9,17 +9,6 @@ export class Movie {
     }
 
     increaseRating() {
-
-
-        let doWork = function(...grabAll: any[]){
-
-        } ;
-
-        doWork([1,"s",3]);
-        doWork("s");
-        doWork(1, 2, 3);
-
-
         if (this.rating < 5) {
             this.rating += 1;
         } else {

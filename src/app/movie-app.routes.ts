@@ -6,7 +6,7 @@ import {aboutRoutes} from "./about/movie-about.component";
 
 const routes: RouterConfig = [
     { path: "", component: MovieListComponent },
-    { path: "about", component: MovieAboutComponent, 
+    { path: "about", component: MovieAboutComponent,
                      children: aboutRoutes },
     { path: "detail/:id", component: MovieDetailComponent },
     { path: "**", redirectTo: "" }

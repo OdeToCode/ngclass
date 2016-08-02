@@ -1,24 +1,28 @@
+import {Http} from "@angular/http";
+import {Observable} from "rxjs";
+import {Injectable} from "@angular/core";
 import {Movie} from "../models/movie";
 
+const apiUrl = "http://otc-movies.azurewebsites.net/api/movies/";
+const deserialize = response => response.json();
+
+@Injectable()
 export class MovieData {
 
-    movies: Movie[];
-
-    constructor() {
-        this.movies = [
-            new Movie(1, "Star Wars", 120, 5),
-            new Movie(2, "Star Trek", 90, 4),
-            new Movie(3, "Deadpool", 100, 5),
-            new Movie(4, "Love, Actually", 75, 1)
-        ];
+    constructor(private http: Http) {
+      
     }
 
-    getAll() {
-        return this.movies;
+    getAll() : Observable<Movie[]>  {
+        return this.http.get(apiUrl)
+                   .map(deserialize)
+                   .map(movies => movies.map(m => new Movie(m.id, m.title, m.length, m.rating)));                
     }
 
     getById(id: number) {
-        return this.movies.find(m => m.id === id);
+        return this.http.get(`${apiUrl}${id}`)
+                   .map(deserialize)
+                   .map(m => new Movie(m.id, m.title, m.length, m.rating));
     }
 
 }

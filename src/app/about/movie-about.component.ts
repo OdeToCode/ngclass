@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {RouterConfig, provideRouter, ROUTER_DIRECTIVES} from "@angular/router";
+import {RouterConfig, ROUTER_DIRECTIVES} from "@angular/router";
 
 @Component({
     template: "This is the phone information...."
@@ -15,9 +15,9 @@ class MovieAboutLocationComponent {
 }
 
 export const aboutRoutes: RouterConfig = [
-    {path: "phone", component:MovieAboutPhoneComponent},
+    {path: "phone", component: MovieAboutPhoneComponent},
     {path: "location", component: MovieAboutLocationComponent },
-    { path: "**", redirectTo:"location"}
+    { path: "**", redirectTo: "location"}
 ];
 
 @Component({
@@ -25,5 +25,5 @@ export const aboutRoutes: RouterConfig = [
     directives: [ROUTER_DIRECTIVES]
 })
 export class MovieAboutComponent {
-    
+
 }

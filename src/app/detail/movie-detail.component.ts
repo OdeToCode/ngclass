@@ -7,7 +7,7 @@ import {MovieData} from "../services/movies.service";
     templateUrl: "./movie-detail.component.html"
 })
 export class MovieDetailComponent implements OnInit {
-    
+
     movie: Movie;
 
     constructor(private route: ActivatedRoute,
@@ -17,6 +17,7 @@ export class MovieDetailComponent implements OnInit {
 
     ngOnInit() {
         const id = +this.route.snapshot.params["id"];
-        this.movie = this.movieData.getById(id);
+        this.movieData.getById(id)
+            .subscribe(movie => this.movie = movie);
     }
 }
