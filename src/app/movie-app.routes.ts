@@ -11,7 +11,7 @@ const routes: RouterConfig = [
     { path: "about", component: MovieAboutComponent,
                      children: aboutRoutes },
     { path: "detail/:id", component: MovieDetailComponent },
-    { path: "edit/:id", component: MovieEditComponent },    
+    { path: "edit/:id", component: MovieEditComponent },
     { path: "new", component: MovieNewComponent },
     { path: "**", redirectTo: "" }
 ];

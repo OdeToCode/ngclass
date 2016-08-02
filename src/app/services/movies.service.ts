@@ -16,19 +16,25 @@ const jsonOptions = new RequestOptions({headers:jsonHeaders});
 export class MovieData {
 
     constructor(private http: Http) {
-      
+
+    }
+
+    update(movie: Movie) {
+        return this.http.put(apiUrl, JSON.stringify(movie), jsonOptions)
+                   .map(deserialize)
+                   .map(m => new Movie(m.id, m.title, m.length, m.rating));
     }
 
     create(movie: Movie) {
         return this.http.post(apiUrl, JSON.stringify(movie), jsonOptions)
                 .map(deserialize)
-                .map(m => new Movie(m.id, m.title, m.length, m.rating));                                   
+                .map(m => new Movie(m.id, m.title, m.length, m.rating));
     }
 
     getAll() : Observable<Movie[]>  {
         return this.http.get(apiUrl)
                    .map(deserialize)
-                   .map(movies => movies.map(m => new Movie(m.id, m.title, m.length, m.rating)));                
+                   .map(movies => movies.map(m => new Movie(m.id, m.title, m.length, m.rating)));
     }
 
     getById(id: number) {
