@@ -2,10 +2,11 @@ import {Component, OnInit} from "@angular/core";
 import {ROUTER_DIRECTIVES, Router} from "@angular/router";
 import {MovieData} from "../services/movies.service";
 import {Movie} from "../models/movie";
+import {MoviePanelComponent} from "./movie-panel.component";
 
 @Component({
     templateUrl: "./movie-list.component.html",
-    directives: [ROUTER_DIRECTIVES]
+    directives: [ROUTER_DIRECTIVES, MoviePanelComponent]
 })
 export class MovieListComponent  implements OnInit {
      movies: Movie[] = [];

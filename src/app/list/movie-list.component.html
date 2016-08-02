@@ -1,33 +1,11 @@
-<table class="table">
-    <tr>
-        <th>Title</th>
-        <th>Length</th>
-        <th>Rating</th>
-        <th></th>
-    </tr>
-
-    <tr *ngFor="let movie of movies;">
-        <td [ngClass]="rateMovie(movie)">{{movie.title}}        
-        </td>
-        <td>{{movie.length}}</td>
-        <td>{{movie.rating}}</td>
-        <td>
-            <button class="btn btn-default" (click)="movie.increaseRating()">
-                    <i class="glyphicon glyphicon-plus"> </i>
-                </button>
-            <button class="btn btn-default" (click)="movie.decreaseRating()">
-                    <i class="glyphicon glyphicon-minus" ></i>
-            </button>
-            <a [routerLink]="['edit', movie.id]" class="btn btn-default">
-                    <i class="glyphicon glyphicon-edit" ></i>
-            </a>
-            <a (click)="goToMovie(movie.id)" class="btn btn-default">
-                    <i class="glyphicon glyphicon-zoom-in" ></i>
-            </a>
-
-        </td>
-    </tr>
-
-</table>
-
+<div>
+    <movie-panel *ngFor="let movie of movies"
+                [movie]="movie"
+                (navigate)="goToMovie($event)">
+        
+    </movie-panel>
+</div>
+<div *unless="someexpression"></div>
 <a [routerLink]="['new']" class="btn btn-default">Create A Movie</a>
+
+

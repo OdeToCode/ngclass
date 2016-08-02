@@ -25,9 +25,11 @@ export class MovieEditComponent implements OnInit  {
         this.length = new FormControl();
         this.form = new FormGroup({
             title: this.title,
-            length: this.length, 
+            length: this.length,
             rating: this.rating
         });
+
+        this.form.valueChanges.subscribe(o => console.log(o));
     }
 
     ngOnInit() {
