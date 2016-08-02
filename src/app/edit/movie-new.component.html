@@ -1,0 +1,17 @@
+<div>
+    <form #form="ngForm" (ngSubmit)="save(form)">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" name="title" [(ngModel)]="movie.title">
+        </div>
+        <div class="form-group">
+            <label for="length">Length</label>
+            <input type="number" class="form-control" name="length" [(ngModel)]="movie.length">
+        </div>
+        <div class="form-group">
+            <label for="rating">Rating</label>
+            <input type="number" class="form-control" name="rating" [(ngModel)]="movie.rating">
+        </div>
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </form>
+</div>

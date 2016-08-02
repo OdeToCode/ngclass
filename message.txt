@@ -3,7 +3,7 @@ Angular 2
 scott@OdeToCode.com
 
 Now: break
-Next: 10:20am
+Next: 11:50am
 
 WiFi:
 Hilton@Wireless
