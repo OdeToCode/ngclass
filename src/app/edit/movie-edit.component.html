@@ -1,6 +1,22 @@
 <div>
-    Editing ...
-    <form>
+    <form [formGroup]="form" (ngSubmit)="save()" novalidate>
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input [formControl]="title" type="text" class="form-control" 
+                name="title" >
 
+        </div>
+        <div class="form-group">
+            <label for="length">Length</label>
+            <input type="number" class="form-control" 
+                   name="length" [formControl]="length" >
+        </div>
+        <div class="form-group">
+            <label for="rating">Rating</label>
+            <input type="number" class="form-control" 
+                   name="rating" [formControl]="rating">
+        </div>
+        <input type="submit" value="Save" 
+                class="btn btn-primary" />
     </form>
 </div>
