@@ -5,11 +5,11 @@ describe('App', function () {
   });
 
   it('should have a title', function () {
-    expect(browser.getTitle()).toEqual("");
+    expect(browser.getTitle()).toEqual("At The Movies");
   });
 
   it('should have a main title', function () {
-    expect(element(by.css('main .title')).getText()).toEqual('');
+    expect(element(by.css('.greeting')).getText()).toEqual('Hello!');
   });
   
 });
