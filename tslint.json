@@ -9,7 +9,7 @@
       "check-space"
     ],
     "curly": true,
-    "eofline": false,
+    "eofline": true,
     "forin": true,
     "indent": [
       true,
@@ -62,7 +62,7 @@
       "check-whitespace"
     ],
     "quotemark": [
-      false,
+      true,
       "single"
     ],
     "radix": true,
@@ -106,8 +106,8 @@
     "use-pipe-transform-interface": true,
     "component-class-suffix": true,
     "directive-class-suffix": true,
-    "directive-selector-prefix": [true, "movie"],
-    "component-selector-prefix": [true, "movie"],
-    "pipe-naming": [true, "camelCase", "movie"]
+    "directive-selector-prefix": [true, "my"],
+    "component-selector-prefix": [true, "my"],
+    "pipe-naming": [true, "camelCase", "my"]
   }
 }

@@ -1,11 +1,8 @@
-.ng-touched.ng-invalid {
-    border-left: 5px red solid;
+// styles in src/style directory are applied to the whole page
+body {
+    background: #0147A7;
+    color: #fff;
 }
-
-.good { 
-    color: green;
-}
-
-.bad { 
-    color: red;
+a {
+    color: #03A9F4;
 }
