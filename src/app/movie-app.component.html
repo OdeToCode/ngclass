@@ -1,0 +1,35 @@
+<div *ngIf="messageOfTheDay">   
+    <h3>Hello!</h3>
+    <span>{{messageOfTheDay}}</span>
+</div>
+
+<div *ngIf="outer()">
+    Outer
+    <div *ngIf="inner()">Inner</div>
+</div>
+
+
+<div>                
+    <button (click)="changeMessage()">Change Message</button>
+</div>
+<div>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Length</th>
+            <th>Rating</th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let movie of movies">
+            <td>{{movie.id}}</td>
+            <td [ngClass]="rateMovie(movie)">{{movie.title}}</td>
+            <td>{{movie.length}}</td>
+            <td>{{movie.rating}}</td>
+            <td>
+                <button (click)="movie.upVote()">+</button>
+                <button (click)="movie.downVote()">-</button>
+            </td>
+        </tr>
+    </table>
+</div>

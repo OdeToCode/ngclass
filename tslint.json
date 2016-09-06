@@ -62,7 +62,7 @@
       "check-whitespace"
     ],
     "quotemark": [
-      true,
+      false,
       "single"
     ],
     "radix": true,
@@ -106,8 +106,8 @@
     "use-pipe-transform-interface": true,
     "component-class-suffix": true,
     "directive-class-suffix": true,
-    "directive-selector-prefix": [true, "my"],
-    "component-selector-prefix": [true, "my"],
+    "directive-selector-prefix": [true, "movie"],
+    "component-selector-prefix": [true, "movie"],
     "pipe-naming": [true, "camelCase", "my"]
   }
 }
