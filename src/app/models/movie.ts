@@ -1,16 +1,11 @@
 export class Movie {
-    id: number;
-    title: string;
-    length: number;
-    rating: number;
 
-    constructor(id: number, title: string, length: number, rating: number) {
-        this.id = id;
-        this.title = title;
-        this.length = length;
-        this.rating = rating;
+    constructor(public id: number, 
+                public title: string, 
+                public length: number, 
+                public rating: number) {       
     }
-
+ 
     upVote() {
         if( this.rating < 5 ) {
             this.rating += 1;
@@ -20,7 +15,7 @@ export class Movie {
     }
 
     downVote() {
-        if(this.rating > 1) {
+        if( this.rating > 1 ) {
             this.rating -= 1;
         } else {
             this.rating = 5;

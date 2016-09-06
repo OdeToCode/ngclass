@@ -3,12 +3,6 @@
     <span>{{messageOfTheDay}}</span>
 </div>
 
-<div *ngIf="outer()">
-    Outer
-    <div *ngIf="inner()">Inner</div>
-</div>
-
-
 <div>                
     <button (click)="changeMessage()">Change Message</button>
 </div>

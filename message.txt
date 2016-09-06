@@ -1,0 +1,12 @@
+Scott Allen
+scott@odetocode.com
+
+
+GitHub: https://github.com/OdeToCode/ngclass
+
+git clone https://github.com/odetocode/ngclass.git
+npm install
+npm start
+
+Slides: http://tinyurl.com/hm74xsn
+

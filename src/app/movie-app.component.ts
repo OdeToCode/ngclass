@@ -1,5 +1,6 @@
 import {Component} from "@angular/core";
 import {Movie} from "./models/movie";
+import {MovieData} from './services/moviedata.service';
 
 @Component({
     selector: "movies-app",
@@ -10,27 +11,15 @@ export class MovieAppComponent {
     messageOfTheDay: string;
     movies: Movie[];
 
-    constructor() {
+    constructor(movieData: MovieData) {
         this.messageOfTheDay = null;
-        this.movies = [
-            new Movie(1, "Star Wars", 120, 5),
-            new Movie(2, "Star Trek", 90, 4),
-            new Movie(3, "Deadpool", 100, 1)
-        ];
-    }
-
-    outer() {
-        console.log("outer");
-        return false;
-    }
-
-    inner() {
-        console.log("inner");
-        return true;
+        movieData.getAll()
+                 .subscribe(movies => this.movies = movies,
+                            error => console.log(error)); 
     }
 
     changeMessage() {
-        this.messageOfTheDay = "This has changed";
+        this.messageOfTheDay = "This has changed!";
     }
 
     rateMovie(movie: Movie) {
