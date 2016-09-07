@@ -1,7 +1,7 @@
 Scott Allen
 scott@odetocode.com
 
-- forms and validation
+
 - testing and production
 
 
