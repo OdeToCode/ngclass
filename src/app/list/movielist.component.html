@@ -1,22 +1,3 @@
-<div>
-    <table>
-        <tr>
-            <th>Id</th>
-            <th>Title</th>
-            <th>Length</th>
-            <th>Rating</th>
-            <th></th>
-        </tr>
-        <tr *ngFor="let movie of movies">
-            <td>{{movie.id}}</td>
-            <td [ngClass]="rateMovie(movie)">{{movie.title}}</td>
-            <td>{{movie.length}}</td>
-            <td>{{movie.rating}}</td>
-            <td>
-                <a [routerLink]="getMovieUrl(movie)" >Details</a>
-                <button (click)="movie.upVote()">+</button>
-                <button (click)="movie.downVote()">-</button>
-            </td>
-        </tr>
-    </table>
+<div *ngFor="let movie of movies">
+    <movie-summary [movie]="movie"></movie-summary>
 </div>

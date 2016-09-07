@@ -20,10 +20,6 @@ export class MovieListComponent implements OnInit {
                             error => console.log(error)); 
     }
 
-    getMovieUrl(movie: Movie) {
-        return `/details/${movie.id}`;
-    }
-
     rateMovie(movie: Movie) {
         return {
             good: movie.rating >= 4,

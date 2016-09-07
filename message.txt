@@ -1,8 +1,6 @@
 Scott Allen
 scott@odetocode.com
 
-- routing
-- components
 - forms and validation
 - testing and production
 

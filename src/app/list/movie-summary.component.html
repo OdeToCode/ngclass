@@ -1,0 +1,11 @@
+<div>
+    <h3>{{movie.title}}</h3>
+    <div>
+        Current rating: {{movie.rating}}
+    </div>
+    <div>
+        <a [routerLink]="getMovieUrl(movie)">Details</a>
+        <button (click)="movie.upVote()">+</button>
+        <button (click)="movie.downVote()">-</button>
+    </div>
+</div>
