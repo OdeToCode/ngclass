@@ -8,7 +8,11 @@ import {Movie} from "../models/movie";
 export class MovieSummaryComponent {
     @Input() movie: Movie;
 
-    getMovieUrl(movie: Movie) {
+    getMovieDetailUrl(movie: Movie) {
         return `/details/${movie.id}`;
+    }
+
+     getMovieEditUrl(movie: Movie) {
+        return `/edit/${movie.id}`;
     }
 }

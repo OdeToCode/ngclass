@@ -1,11 +1,18 @@
-<div>
-    <h3>{{movie.title}}</h3>
-    <div>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3>{{movie.title}}</h3>
+    </div>
+    <div class="panel-body">
         Current rating: {{movie.rating}}
     </div>
-    <div>
-        <a [routerLink]="getMovieUrl(movie)">Details</a>
-        <button (click)="movie.upVote()">+</button>
-        <button (click)="movie.downVote()">-</button>
+    <div class="panel-footer">
+        <a class="btn btn-default" [routerLink]="getMovieDetailUrl(movie)">
+            Details
+        </a>
+        <a class="btn btn-default" [routerLink]="getMovieEditUrl(movie)">
+            Edit
+        </a>
+        <button class="btn btn-default" (click)="movie.upVote()">+</button>
+        <button class="btn btn-default" (click)="movie.downVote()">-</button>
     </div>
 </div>

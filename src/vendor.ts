@@ -9,5 +9,7 @@ import '@angular/router';
 import 'rxjs';
 import '@angularclass/hmr';
 
+import "bootstrap/dist/css/bootstrap.css";
+
 // Other vendors for example jQuery, Lodash or Bootstrap
 // You can import js, ts, css, sass, ...
