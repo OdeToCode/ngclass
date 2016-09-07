@@ -9,6 +9,7 @@ import {MovieData} from "./services/moviedata.service";
 import {HttpModule} from "@angular/http";
 import {routing} from "./movie-app.routing";
 import {MovieSummaryComponent} from "./list/movie-summary.component";
+import {MovieEditComponent} from "./edit/movieedit.component";
 
 @NgModule({
     imports: [BrowserModule, 
@@ -19,7 +20,8 @@ import {MovieSummaryComponent} from "./list/movie-summary.component";
     declarations: [MovieAppComponent, 
                    MovieListComponent, 
                    MovieDetailComponent,
-                   MovieSummaryComponent],
+                   MovieSummaryComponent,
+                   MovieEditComponent],
     providers: [MovieData],
     bootstrap: [MovieAppComponent]
 })
