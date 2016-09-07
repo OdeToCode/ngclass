@@ -1,6 +1,11 @@
 Scott Allen
 scott@odetocode.com
 
+- routing
+- components
+- forms and validation
+- testing and production
+
 
 GitHub: https://github.com/OdeToCode/ngclass
 

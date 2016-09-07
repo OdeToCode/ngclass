@@ -7,7 +7,7 @@ export class Movie {
     }
  
     upVote() {
-        if( this.rating < 5 ) {
+        if (this.rating < 5) {
             this.rating += 1;
         } else {
             this.rating = 1;
@@ -15,7 +15,7 @@ export class Movie {
     }
 
     downVote() {
-        if( this.rating > 1 ) {
+        if (this.rating > 1) {
             this.rating -= 1;
         } else {
             this.rating = 5;

@@ -1,0 +1,8 @@
+<div *ngIf="movie">
+    <h3>{{movie.title}}</h3>
+    <div>
+        Length: {{movie.length}}
+        Rating: {{movie.rating}}
+    </div>
+</div>
+<button (click)="goToList()">Back to List</button>

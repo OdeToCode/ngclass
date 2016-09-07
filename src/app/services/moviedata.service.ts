@@ -11,12 +11,21 @@ export class MovieData {
         
     }
 
+    getById(id: string) {
+        let result = this.http.get(`${baseUrl}/${id}`)
+                         .map(response => {
+                             let movie = response.json();
+                             return new Movie(movie.id, movie.title, movie.length, movie.rating);
+                         });
+        return result;
+    }
+
     getAll() {
        let result =  this.http.get(baseUrl)
                           .map(response => {
-                                let result = response.json();
-                                result = result.map(m => new Movie(m.id, m.title, m.length, m.rating))
-                                return result;
+                                let movies = response.json();
+                                movies = movies.map(m => new Movie(m.id, m.title, m.length, m.rating));
+                                return movies;
                             });
        return result;
     }
