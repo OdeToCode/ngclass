@@ -1,0 +1,14 @@
+Angular 2
+scott@OdeToCode.com
+
+Now: break
+Next: 11:20am
+
+Breaks: ~11:00, ~13:00, ~15:00
+
+Wifi: etcvenues
+      45973411
+
+Repo: https://github.com/OdeToCode/ngclass
+
+Slides: http://bit.ly/2fjp6qv

@@ -1,0 +1,19 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+ <style>
+    .good { color: green }
+    .bad { color:red}
+</style>
+
+<movie-app>
+    Loading the movie app...
+</movie-app>
+
+
+@*<app asp-prerender-module="ClientApp/dist/main-server">Loading...</app>*@
+<script src="~/dist/vendor.js" asp-append-version="true"></script>
+@section scripts {
+    <script src="~/dist/main-client.js" asp-append-version="true"></script>
+}
