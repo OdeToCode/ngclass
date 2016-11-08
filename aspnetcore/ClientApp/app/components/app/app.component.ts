@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app',
+    selector: 'movie-app',
     template: require('./app.component.html'),
     styles: [require('./app.component.css')]
 })
