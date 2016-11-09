@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import {createMovies} from "../../models";
-import {Movie} from "../../models";
+import {Movie, MovieData} from "../../models";
 
 @Component({
     selector: 'home',
@@ -9,7 +8,7 @@ import {Movie} from "../../models";
 export class HomeComponent {
     movies: Movie[];
 
-    constructor() {
-        this.movies =createMovies();
+    constructor(movieData: MovieData) {
+        this.movies = movieData.getAll();
     }
 }

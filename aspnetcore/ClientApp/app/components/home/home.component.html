@@ -1,4 +1,4 @@
-<h1>Movies</h1>
+<h1>Movies!</h1>
 
 <table class='table'>
     <tr *ngFor="let movie of movies">
@@ -7,6 +7,7 @@
         <td>
             {{movie.rating}}
             <button (click)="movie.increaseRating()">+</button>
+            <a [routerLink]="['/movie', movie.id]">Details</a>
         </td>
     </tr>
 </table>
