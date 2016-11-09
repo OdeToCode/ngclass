@@ -1,16 +1,12 @@
-<h1>Hello, world!</h1>
-Hello,{{name}} from Angular 2!
-<button (click)="changeName()">Change Name</button>
+<h1>Movies</h1>
 
 <table class='table'>
     <tr *ngFor="let movie of movies">
         <td>{{movie.id}}</td>
-        <td [ngClass]="{good: movie.rating > 8, bad: movie.rating < 3}">{{movie.title}}</td>
+        <td [ngClass]="movie.rate()">{{movie.title}}</td>
         <td>
             {{movie.rating}}
-            <button (click)="increaseRating(movie)">+</button>
+            <button (click)="movie.increaseRating()">+</button>
         </td>
     </tr>
 </table>
-
-<input type="text" [(ngModel)]="name" />

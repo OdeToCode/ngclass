@@ -1,8 +1,16 @@
 Angular 2
 scott@OdeToCode.com
 
-Now: break
-Next: 11:20am
+Now: --
+Next: 9:00am
+
+1) Get Angular 2 app running
+
+2) Define a models module
+
+	- use movie.increaseRating and movie.rateMovie
+	  in the home component template
+
 
 Breaks: ~11:00, ~13:00, ~15:00
 
