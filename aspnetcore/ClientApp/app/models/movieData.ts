@@ -1,19 +1,38 @@
+import {Http, Response} from "@angular/http";
+import {Injectable} from "@angular/core";
 import {Movie} from "./Movie";
 
-var movies = [
-    new Movie(1, "Star Wars", 5),
-    new Movie(2, "Gone With the Wind", 4),
-    new Movie(3, "Bad Movie", 2)
-];
+import "rxjs/add/operator/map";
+import "rxjs/add/operator/retry";
 
+const baseUrl = "http://otcmovies.azurewebsites.net/api/movies/";
+
+const processAllMovies = function(response: Response) {
+    let movies = response.json();
+    return movies.map(m => new Movie(m.id, m.title, m.rating));
+}
+
+const processMovie = function(response: Response) {
+    let movie = response.json();
+    return new Movie(movie.id, movie.title, movie.rating);
+}
+
+
+@Injectable()
 export class MovieData {
 
-    getAll() {
-        return movies;
+    constructor(private http: Http) {
+
+    }
+
+    getAll() {    
+        return this.http.get(baseUrl)
+                        .retry(3)
+                        .map(processAllMovies);
     }
 
     getById(id: number) {
-        let movie = movies.find(m => m.id == id);
-        return movie;
+       return this.http.get(`${baseUrl}${id}`)
+                       .map(processMovie);
     }
 }

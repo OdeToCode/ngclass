@@ -1,13 +1,13 @@
 import {Component} from "@angular/core";
 import {ActivatedRoute} from "@angular/router";
-import {MovieData} from "../../models"; 
+import {MovieData, Movie} from "../../models"; 
 
 @Component({
     selector: "movie-detail",
     template: require("./movieDetail.component.html")
 })
 export class MovieDetailComponent {
-    movie: any;
+    movie: Movie;
 
     constructor(private route: ActivatedRoute,
                 private movieData: MovieData) {
@@ -16,6 +16,7 @@ export class MovieDetailComponent {
 
     ngOnInit() {
         let id = this.route.snapshot.params["id"];
-        this.movie = this.movieData.getById(id);                   
+        this.movieData.getById(id)
+            .subscribe(movie => this.movie = movie);                  
     }
 }
