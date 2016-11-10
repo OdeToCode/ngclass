@@ -1,6 +1,7 @@
 <h2>Edit {{movie.title}}</h2>
 
 <form #form="ngForm" (ngSubmit)="save(form)" novalidate>
+    
     <div class="form-group">
         <label for="title">Title</label>
         <input type="text" [(ngModel)]="movie.title" 

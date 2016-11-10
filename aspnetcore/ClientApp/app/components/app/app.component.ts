@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import {Http, Response} from "@angular/http";
+import {Http, RequestOptions, Headers, Response} from "@angular/http";
 import {Observable} from "rxjs";
 import 'rxjs/Rx';
 
@@ -16,7 +16,8 @@ export class AppComponent {
 
    // testing
    constructor(private http: Http) {
-
+      
+    
    }
 
 //    ngOnInit() {

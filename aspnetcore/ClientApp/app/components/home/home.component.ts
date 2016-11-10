@@ -9,10 +9,25 @@ import {Movie, MovieData} from "../../models";
 export class HomeComponent {
     movies: Movie[] = [];
 
-    constructor(movieData: MovieData) {
-        movieData.getAll()   
+    constructor(private movieData: MovieData) {
+        
+    }
+
+    ngOnInit() {
+        this.refreshMovies();
+    }
+
+    refreshMovies() {
+        this.movieData.getAll()   
             .subscribe(movies => this.movies = movies, 
                        err => console.log(err),
                        () => console.log("complete!"));
+    }
+
+    delete(movie: Movie) {
+        this.movieData.delete(movie)
+            .subscribe(movie => {
+                this.refreshMovies();
+            }); 
     }
 }

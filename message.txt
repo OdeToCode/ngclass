@@ -4,10 +4,11 @@ scott@OdeToCode.com
 Now: lab work
 Next: 9:30am
 
-1) Implement a movie detail "page" 
-   and a movie data service. 
-   
-Route to the movie detail page when user clicks on movie    title
+1) Implement an ADD movie component. 
+
+	http.put is an update
+	http.post 
+
 
 Fetch movies using HTTP from 
      http://otcmovies.azurewebsites.net/api/movies/

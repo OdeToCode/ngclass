@@ -8,7 +8,7 @@
             {{movie.rating}}            
             <button class="btn btn-default" (click)="movie.increaseRating()">+</button>
             <a class="btn btn-default" [routerLink]="['/movie', movie.id]">Details</a>
-
+            <button (click)="delete(movie)" class="btn btn-default">Delete</button>
             <a [routerLink]="['/movieedit', movie.id]" 
                 class="btn btn-default">Edit</a>
 
