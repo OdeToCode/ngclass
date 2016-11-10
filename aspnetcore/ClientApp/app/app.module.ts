@@ -4,6 +4,7 @@ import { FormsModule } from "@angular/forms";
 import { UniversalModule } from 'angular2-universal';
 import { AppComponent } from './components/app/app.component'
 import { MovieDetailComponent } from "./components/movieDetail/movieDetail.component";
+import { MoviePanelComponent } from "./components/moviePanel/moviePanel.component";
 import { MovieEditComponent } from "./components/movieEdit/movieEdit.component";
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
@@ -16,6 +17,7 @@ import { MovieData } from "./models";
     declarations: [
         AppComponent,
         NavMenuComponent,
+        MoviePanelComponent,
         CounterComponent,
         FetchDataComponent,
         MovieDetailComponent,

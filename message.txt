@@ -1,22 +1,11 @@
 Angular 2
 scott@OdeToCode.com
 
-Now: lab work
-Next: 9:30am
-
-1) Implement an ADD movie component. 
-
-	http.put is an update
-	http.post 
-
+Now: lunch
+Next: 1:45pm
 
 Fetch movies using HTTP from 
      http://otcmovies.azurewebsites.net/api/movies/
-
-Breaks: ~11:00, ~13:00, ~15:00
-
-Wifi: etcvenues
-      45973411
 
 Repo: https://github.com/OdeToCode/ngclass
 
