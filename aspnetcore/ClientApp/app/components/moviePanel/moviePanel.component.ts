@@ -12,5 +12,9 @@ export class MoviePanelComponent {
     plus() {
         this.increaseRating.emit(this.movie);   
     }
+
+    ngOnChanges(changes) {
+        console.log(changes);
+    }
 }
 

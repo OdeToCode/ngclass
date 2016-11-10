@@ -20,13 +20,17 @@ export class MovieEditComponent implements OnInit {
 
     ngOnInit() {
         let id = this.route.snapshot.params["id"];
-        this.movieData.getById(id)
+        var subscriber = this.movieData.getById(id)
             .subscribe(movie => this.movie = movie);
     }
 
     save(form: NgForm) {
+        
+        for(let p in form.controls) {
+            form.controls[p].updateValueAndValidity();
+        }
+
         if(form.valid) {
-            debugger;
             this.movieData.save(this.movie)
                 .subscribe( movie => 
                     this.router.navigate(["/movie", movie.id])

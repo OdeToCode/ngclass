@@ -1,13 +1,12 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 [ngClass]="movie.rate()">{{movie.title}}</h3>
+        <ng-content></ng-content>
     </div>
     <div class="panel-body">
         <div>Rated as a {{movie.rating}}</div>
     </div>
     <div class="panel-footer">
-        
-        
+            
         <button class="btn btn-default" 
                 (click)="plus()">+
         </button>
