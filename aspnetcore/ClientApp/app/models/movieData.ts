@@ -25,9 +25,13 @@ export class MovieData {
 
     }
 
+    save(movie: Movie) {
+        return this.http.put(baseUrl, movie)
+                   .map(processMovie);
+    }
+
     getAll() {    
         return this.http.get(baseUrl)
-                        .retry(3)
                         .map(processAllMovies);
     }
 

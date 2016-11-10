@@ -1,13 +1,18 @@
 <h1>Movies!</h1>
 
 <table class='table'>
-    <tr *ngFor="let movie of movies">
+    <tr *ngFor="let movie of movies;">
         <td>{{movie.id}}</td>
         <td [ngClass]="movie.rate()">{{movie.title}}</td>
         <td>
-            {{movie.rating}}
-            <button (click)="movie.increaseRating()">+</button>
-            <a [routerLink]="['/movie', movie.id]">Details</a>
+            {{movie.rating}}            
+            <button class="btn btn-default" (click)="movie.increaseRating()">+</button>
+            <a class="btn btn-default" [routerLink]="['/movie', movie.id]">Details</a>
+
+            <a [routerLink]="['/movieedit', movie.id]" 
+                class="btn btn-default">Edit</a>
+
+
         </td>
     </tr>
 </table>

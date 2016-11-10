@@ -1,16 +1,16 @@
 Angular 2
 scott@OdeToCode.com
 
-Now: break
-Next: 11:20am
+Now: lab work
+Next: 9:30am
 
-1) Get Angular 2 app running
+1) Implement a movie detail "page" 
+   and a movie data service. 
+   
+Route to the movie detail page when user clicks on movie    title
 
-2) Define a models module
-
-	- use movie.increaseRating and movie.rateMovie
-	  in the home component template
-
+Fetch movies using HTTP from 
+     http://otcmovies.azurewebsites.net/api/movies/
 
 Breaks: ~11:00, ~13:00, ~15:00
 
