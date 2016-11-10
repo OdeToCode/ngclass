@@ -5,7 +5,9 @@ import { Movie } from "./Movie";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/retry";
 
-const baseUrl = "http://otcmovies.azurewebsites.net/api/movies/";
+//const baseUrl = "http://otcmovies.azurewebsites.net/api/movies/";
+
+const baseUrl = "/api/movies/";
 
 const processAllMovies = function (response: Response) {
     let movies = response.json();
