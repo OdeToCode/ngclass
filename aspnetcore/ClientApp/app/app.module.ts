@@ -7,6 +7,7 @@ import { MovieDetailComponent } from "./components/movieDetail/movieDetail.compo
 import { MoviePanelComponent } from "./components/moviePanel/moviePanel.component";
 import { MovieEditComponent } from "./components/movieEdit/movieEdit.component";
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
+import { AntiForgeryTestComponent } from "./components/antiforgery/antiforgerytest.component";
 import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
@@ -22,6 +23,7 @@ import { MovieData } from "./models";
         FetchDataComponent,
         MovieDetailComponent,
         MovieEditComponent,
+        AntiForgeryTestComponent,
         HomeComponent
     ],
     providers: [MovieData],
@@ -34,6 +36,7 @@ import { MovieData } from "./models";
             { path: 'movie/:id', component: MovieDetailComponent },
             { path: 'movieedit/:id', component: MovieEditComponent },
             { path: 'counter', component: CounterComponent },
+            { path: 'antiforgery', component: AntiForgeryTestComponent },
             { path: 'fetch-data', component: FetchDataComponent },
             { path: '**', redirectTo: 'home' }
         ])

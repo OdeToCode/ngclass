@@ -1,0 +1,37 @@
+﻿<div class="panel panel-default">
+    <h3 class="panel-heading">Current Request Token</h3>
+    <div class="panel-body">
+        <pre *ngIf="aftRequestToken">
+{{ aftRequestToken | json }}
+        </pre>
+        <pre *ngIf="!aftRequestToken">
+No token saved
+        </pre>
+    </div>
+</div>
+<hr />
+<div class="panel panel-default">
+    <h3 class="panel-heading">Manage Tokens</h3>
+    <div class="panel-body">
+        <button (click)="getToken()" class="btn btn-primary">Get Token</button>        
+    </div>
+</div>
+<hr />
+<div class="panel panel-default">
+    <h3 class="panel-heading">Use Tokens</h3>
+    <div class="panel-body">
+        <button (click)="makePostWithToken()" class="btn btn-primary">Make Request with Token</button>
+        <button (click)="makePostWithoutToken()" class="btn btn-primary">Make Request without Token</button>        
+    </div>
+</div>
+<div class="panel panel-default">
+    <h3 class="panel-heading">
+        Last Response :
+        <span [ngClass]="computeResponseStatus()">{{lastResponse?.status}}</span>
+    </h3>
+    <div class="panel-body">
+        <pre>
+{{ lastResponse | json }}
+        </pre>
+    </div>
+</div>
