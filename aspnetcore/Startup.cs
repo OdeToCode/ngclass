@@ -31,6 +31,10 @@ namespace Movies
         {
             // Add framework services.
             services.AddMvc();
+            services.AddAntiforgery(options =>
+            {
+                options.HeaderName = "X-XSRF-TOKEN";
+            });                   
             services.AddSingleton<IMovieStore, InMemoryMovieStore>();
         }
 
