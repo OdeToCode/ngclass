@@ -1,9 +1,0 @@
-<h1>Movies!</h1>
-
-<div *ngFor="let movie of movies">
-    <movie-panel [movie]="movie"
-                (increaseRating)="movie.increaseRating()">
-        <h2 [ngClass]="movie.rate()">{{movie.title}}</h2>
-    </movie-panel>
-</div>
-

@@ -1,11 +1,8 @@
 Angular 2
   scott@OdeToCode.com
 
-Now: work
+Now: ---
 Next: ---
-
-Fetch movies using HTTP from 
-     http://otcmovies.azurewebsites.net/api/movies/
 
 Repo: https://github.com/OdeToCode/ngclass
 
