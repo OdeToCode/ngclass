@@ -1,8 +1,13 @@
 Angular 2
   scott@OdeToCode.com
 
-Now: ---
-Next: ---
+Now: lunch
+Next: 13:30
+
+WiFi:
+ExCel_London
+U: HOT5401
+P: 342540
 
 Repo: https://github.com/OdeToCode/ngclass
 

@@ -1,0 +1,29 @@
+<div>
+    <h3>Movies!</h3>
+
+    <table class="table">
+
+        <thead>
+            <tr>
+                <td>Title</td>
+                <td>Rating</td>
+                <td>Length</td>
+                <td></td>
+            </tr>
+        </thead>
+
+        <tr *ngFor="let movie of movies" [ngClass]="movie.rate()">
+            <td>{{movie.title}}</td>    
+            <td>{{movie.rating}}</td>
+            <td>{{movie.length}}</td>
+            <td>
+                <button (click)="movie.increaseRating()" class="btn btn-primary">+</button>
+                <button (click)="movie.decreaseRating()" class="btn btn-primary">-</button>
+            </td>
+        </tr>
+
+
+    </table>
+
+
+</div>
