@@ -1,4 +1,4 @@
-import {Component, Input} from "@angular/core";
+import {Component, Input, OnInit} from "@angular/core";
 import {Movie} from "../../../models/Movie";
 
 @Component({
@@ -13,6 +13,14 @@ import {Movie} from "../../../models/Movie";
             background-color: #ff0000
         }`]
 })
-export class MoviePanelComponent {
+export class MoviePanelComponent implements OnInit {
     @Input() movie: Movie;
+    titleLength: number;
+
+    ngOnInit() {
+        this.titleLength = this.movie.title.length;
+
+         // ...
+    }
+
 }

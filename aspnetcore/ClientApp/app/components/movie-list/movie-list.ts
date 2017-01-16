@@ -9,7 +9,11 @@ export class MovieListComponent {
 
     movies: Movie[];
 
+    message = "Hello!";
+
+
     constructor() {
+      
         this.movies = [
             new Movie(1, "Star Wars", 60, 5),
             new Movie(2, "Harry Potter", 90, 4),

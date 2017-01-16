@@ -1,10 +1,15 @@
 <div class="panel panel-primary">
     <div class="panel-header">
-        <span [ngClass]="movie.rate()">{{movie.title}}</span>
+        <span [ngClass]="movie.rate()">
+            <ng-content select="header"></ng-content>
+        </span>
     </div>
     <div class="panel-body">
+        <ng-content></ng-content>
         Lngth: {{movie.length}}
         Rating: {{movie.rating}}
+        Title Length: {{titleLength}}
+        <ng-content select="main"></ng-content>
     </div>
     <div class="panel-footer">
          <button (click)="movie.increaseRating()" class="btn btn-primary">+</button>
