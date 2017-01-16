@@ -1,7 +1,12 @@
 <div>
     <h3>Movies!</h3>
 
-    <table class="table">
+    <div *ngFor="let movie of movies">
+        <movie-panel [movie]="movie"></movie-panel>
+    </div>
+
+
+    <!--<table class="table">
 
         <thead>
             <tr>
@@ -23,7 +28,7 @@
         </tr>
 
 
-    </table>
+    </table>-->
 
 
 </div>

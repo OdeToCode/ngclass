@@ -1,7 +1,7 @@
 Angular 2
   scott@OdeToCode.com
 
-Now: lunch
+Now: coffee
 Next: 13:30
 
 WiFi:

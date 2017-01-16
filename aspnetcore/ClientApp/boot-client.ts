@@ -14,7 +14,13 @@ if (module['hot']) {
 
 // Boot the application, either now or when the DOM content is loaded
 const platform = platformUniversalDynamic();
-const bootApplication = () => { platform.bootstrapModule(AppModule); };
+const bootApplication = () => { 
+    platform.bootstrapModule(AppModule)
+            .then(() => console.log("bootstrap complete"));            
+
+
+    
+};
 if (document.readyState === 'complete') {
     bootApplication();
 } else {

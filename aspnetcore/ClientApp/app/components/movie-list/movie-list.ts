@@ -3,15 +3,7 @@ import {Movie} from "../../../models/Movie";
 
 @Component({
     selector: "movie-list",
-    templateUrl: "./movie-list.html",
-    styles: [`
-        .good {
-            background-color: #00ff00
-        }
-
-        .bad {
-            background-color: #ff0000
-        }`]
+    templateUrl: "./movie-list.html"
 })
 export class MovieListComponent {
 

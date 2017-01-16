@@ -14,7 +14,7 @@ export class Movie {
     }
 
     increaseRating() {
-        if (this.rating < 10) {
+        if (this.rating < 5) {
             this.rating += 1;
         }
         else {
