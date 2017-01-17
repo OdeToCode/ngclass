@@ -10,6 +10,7 @@ namespace Atthemovies.Services
         IEnumerable<Movie> GetAllMovies();
         Movie GetById(int id);
         Movie Update(Movie movie);
+        Movie Create(Movie movie);
     }
 
     public class InMemoryMovieDataStore : IMovieDataStore
@@ -34,6 +35,13 @@ namespace Atthemovies.Services
                 movie.Rating = updatedMovie.Rating;
             }
             return movie;
+        }
+
+        public Movie Create(Movie newMovie)
+        {
+            newMovie.Id = _movies.Max(m => m.Id) + 1;
+            _movies.Add(newMovie);
+            return newMovie;
         }
 
         private static List<Movie> _movies = new List<Movie>

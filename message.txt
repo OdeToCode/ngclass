@@ -1,8 +1,8 @@
 Angular 2
   scott@OdeToCode.com
 
-Now: lunch
-Next: --
+Now: break
+Next: 3:05
 
 forms
 templates

@@ -1,6 +1,7 @@
+import { MovieNewComponent } from './components/movie-new/movie-new';
 import { MovieEditComponent } from './components/movie-edit/movie-edit';
 import { NgModule } from '@angular/core';
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule, CanActivate, CanDeactivate } from '@angular/router';
 import { UniversalModule } from 'angular2-universal';
 import { AppComponent } from './components/app/app.component'
@@ -37,12 +38,13 @@ export class CounterRouteGuard implements CanActivate, CanDeactivate<CounterComp
         FetchDataComponent,
         HomeComponent,
         MovieListComponent, MoviePanelComponent, 
-        MovieDetailComponent, MovieEditComponent
+        MovieDetailComponent, MovieEditComponent, MovieNewComponent
     ],
     providers: [CounterRouteGuard, MovieData],
     imports: [
         UniversalModule, // Must be first import. This automatically imports BrowserModule, HttpModule, and JsonpModule too.
         FormsModule,
+        ReactiveFormsModule,
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
@@ -52,6 +54,7 @@ export class CounterRouteGuard implements CanActivate, CanDeactivate<CounterComp
             { path: 'movies', component: MovieListComponent },
             { path: 'movies/detail/:id', component: MovieDetailComponent },
             { path: "movies/edit/:id", component: MovieEditComponent },
+            { path: "movies/new", component: MovieNewComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]

@@ -3,6 +3,13 @@ import { Injectable } from "@angular/core";
 import {Observable} from "rxjs/Observable";
 import { Movie } from './../models/';
 
+export interface IMovie {
+    id: number;
+    rating: number;
+    title: string;
+    length? : number;
+}
+
 let parseResponse = r => r.json();
 let toMovie = m => new Movie(m.id, m.title, m.length, m.rating);
 
@@ -30,6 +37,12 @@ export class MovieData {
                    .map(parseResponse)
                    .map(toMovie);
                    
+    }
+
+    create(movie: IMovie) {
+        return this.http.post("/api/movies", movie)
+                .map(parseResponse)
+                .map(toMovie);
     }
 
     

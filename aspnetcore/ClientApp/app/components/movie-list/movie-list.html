@@ -1,12 +1,16 @@
 <div>
     <h3>Movies!</h3>
 
+    <a [routerLink]="['/movies/new']" class="btn btn-default">Create</a>
+
+
     <div *ngFor="let movie of movies">
         <movie-panel [movie]="movie">
             <header>{{movie.title}}</header>            
         </movie-panel>
     </div>
 
-   
+
+    
 
 </div>

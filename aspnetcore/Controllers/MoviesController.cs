@@ -42,5 +42,12 @@ namespace Atthemovies.Controllers
             movie = _store.Update(movie);
             return new ObjectResult(movie);
         }
+
+        [HttpPost]
+        public IActionResult Post([FromBody] Movie movie)
+        {
+            movie = _store.Create(movie);
+            return new ObjectResult(movie);
+        }
     }
 }
