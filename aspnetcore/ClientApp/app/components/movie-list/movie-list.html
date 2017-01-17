@@ -4,6 +4,12 @@
     <a [routerLink]="['/movies/new']" class="btn btn-default">Create</a>
 
 
+
+<pre>
+    {{ movies | json }}
+
+</pre>
+
     <div *ngFor="let movie of movies">
         <movie-panel [movie]="movie">
             <header>{{movie.title}}</header>            

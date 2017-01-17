@@ -24,6 +24,6 @@ describe('Counter component', () => {
         const incrementButton = fixture.nativeElement.querySelector('button');
         incrementButton.click();
         fixture.detectChanges();
-        expect(countElement.textContent).toEqual('1');
+        expect(countElement.textContent).toEqual('2');
     }));
 });
