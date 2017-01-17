@@ -2,7 +2,14 @@ Angular 2
   scott@OdeToCode.com
 
 Now: coffee
-Next: 13:30
+Next: 10:30am
+
+Routing
+Services (http)
+templates
+testing
+
+
 
 WiFi:
 ExCel_London

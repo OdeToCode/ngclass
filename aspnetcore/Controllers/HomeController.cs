@@ -13,6 +13,10 @@ namespace Atthemovies.Controllers
             return View();
         }
 
+        public IActionResult Foo() {
+            return Content("Hello from Foo");
+        }
+
         public IActionResult Error()
         {
             return View();

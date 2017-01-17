@@ -10,4 +10,8 @@ export class CounterComponent {
     public incrementCounter() {
         this.currentCount++;
     }
+
+    public isDirty() {
+        return false;
+    }
 }

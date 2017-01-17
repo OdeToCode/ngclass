@@ -13,6 +13,9 @@
     </div>
     <div class="panel-footer">
          <button (click)="movie.increaseRating()" class="btn btn-primary">+</button>
-        <button (click)="movie.decreaseRating()" class="btn btn-primary">-</button>
+         <button (click)="movie.decreaseRating()" class="btn btn-primary">-</button>
+         <a [routerLink]="['/movies/detail', movie.id]" class="btn btn-primary">
+            Details
+         </a>
     </div>
 </div>
