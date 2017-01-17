@@ -22,5 +22,17 @@ namespace Atthemovies.Controllers
         {
             return new ObjectResult(_store.GetAllMovies());
         }
+
+        [HttpGet]
+        [Route("{id}")]
+        public IActionResult Get(int id)
+        {
+            var movie = _store.GetById(id);
+            if (movie == null)
+            {
+                return NotFound();
+            }
+            return new ObjectResult(movie);
+        }
     }
 }

@@ -1,11 +1,10 @@
 Angular 2
   scott@OdeToCode.com
 
-Now: coffee
-Next: 10:30am
+Now: lunch
+Next: --
 
-Routing
-Services (http)
+forms
 templates
 testing
 
