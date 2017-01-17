@@ -7,7 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 import {MovieDetailComponent} from "./components/movie-detail/movie-detail";
-
+import { MovieData } from './services/';
 import { MovieListComponent, MoviePanelComponent} 
     from './components/movie-list';
 
@@ -35,7 +35,7 @@ export class CounterRouteGuard implements CanActivate, CanDeactivate<CounterComp
         HomeComponent,
         MovieListComponent, MoviePanelComponent, MovieDetailComponent
     ],
-    providers: [CounterRouteGuard],
+    providers: [CounterRouteGuard, MovieData],
     imports: [
         UniversalModule, // Must be first import. This automatically imports BrowserModule, HttpModule, and JsonpModule too.
         RouterModule.forRoot([
