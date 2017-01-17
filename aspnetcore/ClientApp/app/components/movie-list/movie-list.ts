@@ -9,12 +9,14 @@ import {Movie} from "../../models/";
 export class MovieListComponent {
 
     movies: Movie[];
-
+    error: any;
     message = "Hello!";
 
 
     constructor(movieData: MovieData) {
-        this.movies = movieData.getAllMovies();
+        movieData.getAllMovies()
+                 .subscribe(movies => this.movies = movies, 
+                            error => this.error = error);
     }
 
 }

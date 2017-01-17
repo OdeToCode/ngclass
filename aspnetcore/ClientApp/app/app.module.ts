@@ -10,6 +10,7 @@ import {MovieDetailComponent} from "./components/movie-detail/movie-detail";
 import { MovieData } from './services/';
 import { MovieListComponent, MoviePanelComponent} 
     from './components/movie-list';
+import "rxjs/add/operator/map";
 
 
 export class CounterRouteGuard implements CanActivate, CanDeactivate<CounterComponent> {

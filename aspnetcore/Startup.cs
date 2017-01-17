@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Atthemovies.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
@@ -30,6 +31,8 @@ namespace Atthemovies
         {
             // Add framework services.
             services.AddMvc();
+
+            services.AddSingleton<IMovieDataStore, InMemoryMovieDataStore>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
