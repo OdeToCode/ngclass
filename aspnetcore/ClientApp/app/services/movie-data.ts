@@ -3,6 +3,9 @@ import { Injectable } from "@angular/core";
 import {Observable} from "rxjs/Observable";
 import { Movie } from './../models/';
 
+let parseResponse = r => r.json();
+let toMovie = m => new Movie(m.id, m.title, m.length, m.rating);
+
 @Injectable()
 export class MovieData {
 
@@ -12,16 +15,21 @@ export class MovieData {
 
     getById(id: string) {
         return this.http.get(`/api/movies/${id}`)
-                .map(response => response.json())
-                .map(m => new Movie(m.id, m.title, m.length, m.rating));
+                .map(parseResponse)
+                .map(toMovie);
     }
 
     getAllMovies() : Observable<Movie[]> {
         return this.http.get("/api/movies")
-                    .map(response => response.json())
-                    .map(arr => arr.map(m => new Movie(m.id, m.title, m.length, m.rating)));
+                    .map(parseResponse)
+                    .map(arr => arr.map(toMovie));
+    }
 
-
+    save(movie: Movie){
+        return this.http.put("/api/movies", movie)
+                   .map(parseResponse)
+                   .map(toMovie);
+                   
     }
 
     

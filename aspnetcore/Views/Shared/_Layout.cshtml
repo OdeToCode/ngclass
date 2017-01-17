@@ -6,6 +6,13 @@
         <title>@ViewData["Title"] - Atthemovies</title>
         <base href="/" />
         <link rel="stylesheet" href="~/dist/vendor.css" asp-append-version="true" />
+
+        <style>
+            input.ng-invalid.ng-touched {
+                background-color: red;
+            }
+        </style>
+
     </head>
     <body>
         @RenderBody()

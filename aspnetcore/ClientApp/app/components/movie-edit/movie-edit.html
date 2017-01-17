@@ -1,0 +1,25 @@
+<div>
+    <h3>Editing {{movie?.title}}</h3>
+    
+    <form #form="ngForm" (ngSubmit)="save(form)" novalidate>
+        <div class="form-group">
+            <label for="title">Title</label>
+            
+            <input type="" name="title" #title="ngModel"
+                required="true"
+                [(ngModel)]="movie.title" class="form-control">
+            <div *ngIf="title?.errors?.required" class="alert alert-danger">
+                Title is required
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="rating">Rating</label>
+            <input type="number" name="rating" min="1" max="5" 
+                  [(ngModel)]="movie.rating" class="form-control">
+        </div>
+        <div class="form-group">
+            <input [disabled]="!form.valid" type="submit" value="Save!" class="btn btn-primary">
+        </div>
+    </form>
+
+</div>

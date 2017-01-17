@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Atthemovies.Models;
 using Atthemovies.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -32,6 +33,13 @@ namespace Atthemovies.Controllers
             {
                 return NotFound();
             }
+            return new ObjectResult(movie);
+        }
+
+        [HttpPut]
+        public IActionResult Put([FromBody] Movie movie)
+        {
+            movie = _store.Update(movie);
             return new ObjectResult(movie);
         }
     }

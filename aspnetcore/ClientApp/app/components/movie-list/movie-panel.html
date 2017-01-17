@@ -7,8 +7,7 @@
     <div class="panel-body">
         <ng-content></ng-content>
         Lngth: {{movie.length}}
-        Rating: {{movie.rating}}
-        Title Length: {{titleLength}}
+        Rating: {{movie.rating}}    
         <ng-content select="main"></ng-content>
     </div>
     <div class="panel-footer">
@@ -16,6 +15,9 @@
          <button (click)="movie.decreaseRating()" class="btn btn-primary">-</button>
          <a [routerLink]="['/movies/detail', movie.id]" class="btn btn-primary">
             Details
+         </a>
+          <a [routerLink]="['/movies/edit', movie.id]" class="btn btn-primary">
+            Edit
          </a>
     </div>
 </div>
